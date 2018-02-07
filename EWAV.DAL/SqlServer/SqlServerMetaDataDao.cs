@@ -41,28 +41,8 @@ namespace EWAV.DAL.SqlServer
         /// <returns>A data table with one row of meta data for each data source</returns>
         public DataTable GetAllDataSources(string userName)
         {
-            //string queryString =
-            //    string.Format("SELECT * FROM {0} WHERE active =  'True' And   username =  '{1}'       ", this.MetaDataViewName, userName);
-
-            string queryString;
-
-            //if (userName == "*")
-            //{
-            //    queryString =
-            //        string.Format("SELECT * FROM {0} Left join vwUserOrganizationUser On vwUserDatasource.UserID = vwUserOrganizationUser.UserID and vwUserDatasource.OrganizationId =  vwUserOrganizationUser.OrganizationId   WHERE IsDatasourceactive =  'True'  and Active = 'True' And IsOrgActive ='True'", this.MetaDataViewName);
-            //}
-            //else
-            //{
-            //    queryString =
-            //       string.Format("SELECT * FROM {0} Left join vwUserOrganizationUser On vwUserDatasource.UserID = vwUserOrganizationUser.UserID and vwUserDatasource.OrganizationId =  vwUserOrganizationUser.OrganizationId   WHERE IsDatasourceactive =  'True' And   vwUserOrganizationUser.username =  '{1}' and Active = 'True' And IsOrgActive ='True'", this.MetaDataViewName, userName);
-
-            //}
-
-
-
             SqlConnection conn = new SqlConnection(this.MetaDataConnectionString);
 
-            // Create the Command and Parameter objects.
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "usp_read_all_datasources";
@@ -100,35 +80,13 @@ namespace EWAV.DAL.SqlServer
         /// <returns></returns>
         public DataBaseTypeEnum GetDatabaseType(string dataSourceName)
         {
-            //string queryString =
-            //    string.Format("SELECT * FROM {0} WHERE DataSourceName =  '{1}' ", this.MetaDataViewName, dataSourceName);
-
-            //SqlConnection conn = new SqlConnection(this.ConnectionString);
             SqlDatabase ewavDB = new SqlDatabase(this.MetaDataConnectionString);
-
-            // Create the Command and Parameter objects.
-            //SqlCommand command = new SqlCommand();
-
-            //command.Connection = conn;
-            //command.CommandText = "usp_read_database_type";
-            //command.Parameters.Add(new SqlParameter("DatabaseObject", dataSourceName));
-            //command.Parameters.Add(new SqlParameter("TableName", this.MetaDataViewName));
-
-            //// create a new data adapter based on the specified query.
-            //SqlDataAdapter da = new SqlDataAdapter(command);
-            ////set the SelectCommand of the adapter
-            ////da.SelectCommand = command;
-            //// create a new DataTable
-            //DataTable dtGet = new DataTable();
-            ////fill the DataTable
-            //da.Fill(dtGet);
             DataTable dtGet = ewavDB.ExecuteDataSet("usp_read_database_type", dataSourceName, this.MetaDataViewName).Tables[0];
 
-            return ((DataBaseTypeEnum)Enum.Parse(typeof(DataBaseTypeEnum),
-                dtGet.Rows[0]["DatabaseType"].ToString()));
-            dtGet.Rows[0]["DataSourceName"].ToString();
-
-
+            return 
+            (
+                (DataBaseTypeEnum)Enum.Parse(typeof(DataBaseTypeEnum), dtGet.Rows[0]["DatabaseType"].ToString())
+            );
         }
 
         /// <summary>
@@ -175,34 +133,7 @@ namespace EWAV.DAL.SqlServer
         /// <returns></returns>
         public string GetExternalConnectionString(string dataSourceName, out string tableName)  //     out    DataBaseTypeEnum databaseType)
         {
-            //SqlDatabase ewavDB = new SqlDatabase(this.MetaDataConnectionString);
-
-            ////string queryString =
-            ////    string.Format("SELECT *  FROM {0} WHERE DatasourceName =  '{1}'", this.MetaDataViewName, dataSourceName);
-
-            ////DataTable dtGet = ewavDB.ExecuteDataSet(CommandType.Text, queryString).Tables[0];
-            //DataTable dtGet = ewavDB.ExecuteDataSet("usp_read_external_connec_str", this.MetaDataViewName, dataSourceName).Tables[0];
-
-            ////  string databaseType = dtGet.Rows[0]["DatabaseType"].ToString();
-
-            ////DataBaseTypeEnum dataBaseTypeEnum = ((DataBaseTypeEnum)Enum.Parse(typeof(DataBaseTypeEnum),
-            ////    dtGet.Rows[0]["DatabaseType"].ToString()));
-
-            //string extConnectionString = " ";
-
-            //extConnectionString = Utilities.CreateConnectionString(DataBaseTypeEnum.SQLServer,
-            //    new DataRow[] { dtGet.Rows[0] });
-            ////  string.Format("Data Source={0};Initial Catalog={1};Persist Security Info={2};User ID={3};Password={4}", dtGet.Rows[0]["DatasourceServerName"].ToString(), dtGet.Rows[0]["InitialCatalog"], dtGet.Rows[0]["PersistSecurityInfo"], dtGet.Rows[0]["DatabaseUserID"], dtGet.Rows[0]["Password"]);                  //     shorterd01"   
-
-            //EWAV.Security.Cryptography cy = new Security.Cryptography();
-            //tableName = cy.Decrypt(dtGet.Rows[0]["DatabaseObject"].ToString());
-
-
-            //return extConnectionString;    
-
-
             throw new NotImplementedException();
-
         }
 
         public void SaveCanvas(CanvasDto canvasDto)

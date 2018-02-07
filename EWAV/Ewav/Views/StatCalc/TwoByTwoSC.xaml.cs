@@ -329,10 +329,7 @@ namespace EWAV
 
 
             }
-            catch (Exception ex)
-            {
-                //
-            }
+            catch { }
         }
 
         void statcalcViewModel_SingleTableLoadedEvent(object sender, SimpleMvvmToolkit.NotificationEventArgs<Exception> e)

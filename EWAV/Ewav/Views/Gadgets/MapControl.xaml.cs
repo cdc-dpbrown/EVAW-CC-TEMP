@@ -1025,7 +1025,7 @@ namespace EWAV
                 }
 
             }
-            catch (Exception ex)
+            catch 
             {
                 throw new Exception("Error with makeLegend");
             }
@@ -1092,8 +1092,6 @@ namespace EWAV
             List<string> LongitudeCandidates = new List<string>();
             List<string> LatitudeCandidates = new List<string>();
 
-            int x;
-
             LongitudeCandidates.Add("lng");
             LongitudeCandidates.Add("longitude");
             LongitudeCandidates.Add("longx");
@@ -1108,10 +1106,6 @@ namespace EWAV
             for (int i = 0; i < cbxLongitude.Items.Count; i++)
             {
                 string colName = ((EWAVColumn)cbxLongitude.Items[i]).Name;
-
-                //x = LongitudeCandidates.IndexOf(colName.ToLower());
-                //if (x > -1)
-                //    cbxLongitude.SelectedIndex = i;
 
                 if (LongitudeCandidates.Contains(colName.ToLower()))
                 {

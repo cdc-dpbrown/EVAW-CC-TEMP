@@ -49,7 +49,6 @@ namespace EWAV
         List<string> dateColumnNames = new List<string>();
         List<string> numericColumnNames = new List<string>();
         List<List<StringDataValue>> dataValues = new List<List<StringDataValue>>();
-        public event GadgetClosingHandler GadgetClosing;
         public event GadgetProcessingFinishedHandler GadgetProcessingFinished;
         public event GadgetStatusUpdateHandler GadgetStatusUpdate;
         public event GadgetCheckForCancellationHandler GadgetCheckForCancellation;

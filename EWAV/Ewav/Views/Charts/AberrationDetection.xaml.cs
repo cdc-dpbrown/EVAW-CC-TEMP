@@ -57,7 +57,6 @@ namespace EWAV
         #region Private Variables
 
         private bool loadingCombos;
-        private bool triangleCollapsed;
         private GadgetParameters gadgetOptions;
         private object syncLock = new object();
         private const int DEFAULT_DEVIATIONS = 3;
@@ -1685,8 +1684,6 @@ namespace EWAV
         {
             LoadingCanvas = true;
 
-            //InitializeControl();
-
             List<EWAVColumn> dateColList = cmnClass.GetItemsSource(GetFieldDateDataType);
             List<EWAVColumn> weightColList = cmnClass.GetItemsSource(GetFieldWeightDataType);
             List<EWAVColumn> syndromeColList = cmnClass.GetItemsSource(GetFieldSyndromeDataType);
@@ -1763,17 +1760,7 @@ namespace EWAV
                         }
 
                         break;
-                    //case "spacesbetweenbars":
-                    //    if (!string.IsNullOrEmpty(child.Value.ToString()))
-                    //    {
-                    //        viewModel.SpacesBetweenBars = child.Value.ToString();
-                    //    }
-                    //    else
-                    //    {
-                    //        viewModel.SpacesBetweenBars = Defaults.SPACE_BETWEEN_BARS;
-                    //    }
 
-                    //    break;
                     case "showlegend":
                         if (!string.IsNullOrEmpty(child.Value.ToString()))
                         {
@@ -1785,17 +1772,7 @@ namespace EWAV
                         }
 
                         break;
-                    //case "showvariablenames":
-                    //    if (!string.IsNullOrEmpty(child.Value.ToString()))
-                    //    {
-                    //        viewModel.ShowVariableNames = Convert.ToBoolean(child.Value.ToString());
-                    //    }
-                    //    else
-                    //    {
-                    //        viewModel.ShowVariableNames = Defaults.SHOW_CHART_VAR_NAMES;
-                    //    }
 
-                    //    break;
                     case "legendposition":
                         if (!string.IsNullOrEmpty(child.Value.ToString()))
                         {
@@ -1951,10 +1928,6 @@ namespace EWAV
             string strataVar = string.Empty;
             string weightVar = string.Empty;
             string sort = string.Empty;
-            bool allValues = false;
-            bool showConfLimits = true;
-            bool showCumulativePercent = true;
-            bool includeMissing = false;
             int lagTime = 7;
             int deviations = 3;
 

@@ -1316,28 +1316,10 @@ namespace EWAV
         {
             waitCursor.Visibility = Visibility.Collapsed;
 
-            int rowCount = 1;
-            int columnCount = 1;
-            bool exceededMaxRows = false;
-            bool exceededMaxColumns = false;
-            bool includeMissing = false;
-
             gridCells = resultSet.DatatableBagArray[0].GridCellData;
 
-            //if (twoByTwoTable.Rows.Length == 3)
-            //{
-            //    pnlStatus.Visibility = Visibility.Visible;
-            //    //pnlErrorMessages.Margin = new Thickness(0, ConfigGrid.ActualHeight, 0, 0);
-            //    txtStatus.Text = twoByTwoTable.Rows[2, 0].ToString();
-            //    return;
-            //    }
-            //else
-            //{
-            //pnlErrorMessages.Visibility = System.Windows.Visibility.Collapsed;
-            // TODO 2x2
             pnlStatus.Visibility = Visibility.Collapsed;
             txtStatus.Text = string.Empty;
-            //     }
 
             if (twoByTwoTable != null)  //  && twoByTwoTable.Rows.Length > 0)
             {
@@ -1346,26 +1328,8 @@ namespace EWAV
                 exposureYes.Text = resultSet.DatatableBag.RecordList[0].Fields[0].VarName;         //        twoByTwoTable.ColumnName1;
                 exposureNo.Text = resultSet.DatatableBag.RecordList[1].Fields[0].VarName;       //     twoByTwoTable.ColumnName2;
 
-                //List<MyString> ListOfVars = new List<MyString>();
-                //ListOfVars.Add(resultSet.DatatableBag.RecordList[1].Fields[0]);
-                //ListOfVars.Add(resultSet.DatatableBag.RecordList[0].Fields[0]);
-
-                //if (checkboxSmartTable.IsChecked == true)
-                //{
-                //    exposureYes.Text = ReadYesValue(ListOfVars);
-                //    exposureNo.Text = ReadNoValue(ListOfVars);
-                //}
-                //else
-                //{
-                //    exposureYes.Text = ReadNoValue(ListOfVars);
-                //    exposureNo.Text = ReadYesValue(ListOfVars);
-                //}
-
                 outcomeYes.Text = resultSet.DatatableBag.ColumnNameList[1].VarName;     //    twoByTwoTable.ColumnName1;
                 outcomeNo.Text = resultSet.DatatableBag.ColumnNameList[2].VarName;      //  twoByTwoTable.ColumnName2;
-
-                //outcomeYes.Text = ReadYesValue(resultSet.DatatableBag.ColumnNameList);
-                //outcomeNo.Text = ReadNoValue(resultSet.DatatableBag.ColumnNameList);
 
                 List<RenderGridCellsDTO> dt = new List<RenderGridCellsDTO>();
 

@@ -281,17 +281,17 @@ namespace EWAV.DAL.MySqlLayer
 
             Cryptography cy = new Cryptography();
 
-            addDSCommand.Parameters.Add("DatasourceNameArg", dsDto.DatasourceName);
-            addDSCommand.Parameters.Add("DatabaseType", dsDto.Connection.DatabaseType.ToString());
-            addDSCommand.Parameters.Add("PersistSecurityInfo", dsDto.Connection.PersistSecurityInfo.ToString());
-            addDSCommand.Parameters.Add("InitialCatalog", cy.Encrypt(dsDto.Connection.DatabaseName));
-            addDSCommand.Parameters.Add("DatasourceServerName", cy.Encrypt(dsDto.Connection.ServerName));
-            addDSCommand.Parameters.Add("DatabaseUserID", cy.Encrypt(dsDto.Connection.UserId));
-            addDSCommand.Parameters.Add("Password", cy.Encrypt(dsDto.Connection.Password));
-            addDSCommand.Parameters.Add("DatabaseObject", cy.Encrypt(dsDto.Connection.DatabaseObject));
-            addDSCommand.Parameters.Add("DatasourceID", dsDto.DatasourceId);
+            addDSCommand.Parameters.AddWithValue("DatasourceNameArg", dsDto.DatasourceName);
+            addDSCommand.Parameters.AddWithValue("DatabaseType", dsDto.Connection.DatabaseType.ToString());
+            addDSCommand.Parameters.AddWithValue("PersistSecurityInfo", dsDto.Connection.PersistSecurityInfo.ToString());
+            addDSCommand.Parameters.AddWithValue("InitialCatalog", cy.Encrypt(dsDto.Connection.DatabaseName));
+            addDSCommand.Parameters.AddWithValue("DatasourceServerName", cy.Encrypt(dsDto.Connection.ServerName));
+            addDSCommand.Parameters.AddWithValue("DatabaseUserID", cy.Encrypt(dsDto.Connection.UserId));
+            addDSCommand.Parameters.AddWithValue("Password", cy.Encrypt(dsDto.Connection.Password));
+            addDSCommand.Parameters.AddWithValue("DatabaseObject", cy.Encrypt(dsDto.Connection.DatabaseObject));
+            addDSCommand.Parameters.AddWithValue("DatasourceID", dsDto.DatasourceId);
 
-            addDSCommand.Parameters.Add("active", dsDto.IsActive);
+            addDSCommand.Parameters.AddWithValue("active", dsDto.IsActive);
 
             try
             {
@@ -318,10 +318,7 @@ namespace EWAV.DAL.MySqlLayer
             }
 
             return true;
-
-            return true;
         }
-
 
         public object ReadEWEDatasourceFormId(DTO.EWEDatasourceDto EWEDsDto)
         {
@@ -335,9 +332,5 @@ namespace EWAV.DAL.MySqlLayer
         }
 
 
-        //public List<int> ReadEWAVDatasource(Guid DatasourceId)
-        //{
-        //    throw new NotImplementedException("Functionality is not supported for underlying database type.");
-        //}
     }
 }

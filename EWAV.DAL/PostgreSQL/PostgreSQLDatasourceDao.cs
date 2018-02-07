@@ -144,7 +144,7 @@ namespace EWAV.DAL.PostgreSQL
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }

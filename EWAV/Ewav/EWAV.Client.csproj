@@ -19,7 +19,7 @@
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>Ewav.xap</XapFilename>
+    <XapFilename>EWAV.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>Ewav.App</SilverlightAppEntry>
     <TestPageFileName>EwavTestPage.html</TestPageFileName>

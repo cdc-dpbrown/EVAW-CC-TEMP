@@ -349,9 +349,8 @@ namespace EWAV.DAL.PostgreSQL
             {
                 db.ExecuteNonQuery(Command);
             }
-            catch (Exception ex)
+            catch
             {
-                //throw new Exception(ex.Message);
                 return false;
             }
 

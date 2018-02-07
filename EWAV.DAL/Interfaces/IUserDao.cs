@@ -1,12 +1,6 @@
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
-using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
-
 namespace EWAV.DAL.Interfaces
 {
-    using System;
     using System.Data;
-    using System.Collections.Generic;
     using EWAV.DTO;
 
     public interface IUserDao

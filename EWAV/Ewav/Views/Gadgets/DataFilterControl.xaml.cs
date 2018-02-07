@@ -28,16 +28,11 @@ namespace EWAV
     public partial class DataFilterControl : UserControl
     {
         public ApplicationViewModel applicationViewModel = ApplicationViewModel.Instance;
-        List<EWAVColumn> colsList;
-        List<string> extractedList, operatorsList, configList;
-        int globalPointer = 0, globalRemovedPointer = 0;
         private bool dataFilterSlideCheck = false;
         List<int> rowRemoved = new List<int>();
         private Storyboard SlideIn = new Storyboard();
         private Storyboard SlideOut = new Storyboard();
-        List<EWAVColumn> SourceColumns;
-        bool unsavedIndicator = false;
-        //EWAVFilterControl filterControl;
+
         /// <summary>
         /// Default Constructor
         /// </summary>
@@ -67,9 +62,7 @@ namespace EWAV
 
             FilterControl.FilterType = FilterControlType.DataFilter;
             FilterControl.InitializeDataFilter();
-
-
-
+            
         }
 
         private void WireEvents()

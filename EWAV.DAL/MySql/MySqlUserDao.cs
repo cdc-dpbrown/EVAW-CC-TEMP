@@ -49,29 +49,29 @@
                 addUserCommand.CommandType = CommandType.StoredProcedure;
                 addUserCommand.CommandText = "usp_add_user";
 
-                addUserCommand.Parameters.Add("UserNameArg", User.UserName);
-                addUserCommand.Parameters.Add("FirstName", User.FirstName);
-                addUserCommand.Parameters.Add("LastName", User.LastName);
-                addUserCommand.Parameters.Add("EmailAddressArg", User.Email);
-                addUserCommand.Parameters.Add("PhoneNumber", User.Phone);
-                addUserCommand.Parameters.Add("PasswordHash", User.PasswordHash);
-                addUserCommand.Parameters.Add("ResetPassword", User.ShouldResetPassword);
-                //addUserCommand.Parameters.Add("IsExistingUser", User.IsExistingUser);
+                addUserCommand.Parameters.AddWithValue("UserNameArg", User.UserName);
+                addUserCommand.Parameters.AddWithValue("FirstName", User.FirstName);
+                addUserCommand.Parameters.AddWithValue("LastName", User.LastName);
+                addUserCommand.Parameters.AddWithValue("EmailAddressArg", User.Email);
+                addUserCommand.Parameters.AddWithValue("PhoneNumber", User.Phone);
+                addUserCommand.Parameters.AddWithValue("PasswordHash", User.PasswordHash);
+                addUserCommand.Parameters.AddWithValue("ResetPassword", User.ShouldResetPassword);
+                //addUserCommand.Parameters.AddWithValue("IsExistingUser", User.IsExistingUser);
 
                 if (User.IsExistingUser)
                 {
-                    addUserCommand.Parameters.Add("UsrId", User.UserID);
+                    addUserCommand.Parameters.AddWithValue("UsrId", User.UserID);
                 }
                 else
                 {
-                    addUserCommand.Parameters.Add("UsrId", -1);
+                    addUserCommand.Parameters.AddWithValue("UsrId", -1);
                 }
 
-                addUserCommand.Parameters.Add("OrganizationId", dto.Organization.Id);
-                addUserCommand.Parameters.Add("RoleId", dto.RoleId);
-                addUserCommand.Parameters.Add("Active", dto.Active);
+                addUserCommand.Parameters.AddWithValue("OrganizationId", dto.Organization.Id);
+                addUserCommand.Parameters.AddWithValue("RoleId", dto.RoleId);
+                addUserCommand.Parameters.AddWithValue("Active", dto.Active);
 
-                addUserCommand.Parameters.Add("@DatasourceUser", SqlDbType.Structured);
+                addUserCommand.Parameters.AddWithValue("@DatasourceUser", SqlDbType.Structured);
                 addUserCommand.Parameters["@DatasourceUser"].Direction = ParameterDirection.Input;
 
                 try
@@ -81,11 +81,9 @@
                 catch (Exception ex)
                 {
                     throw new Exception(ex.Message);
-                    return false;
                 }
 
                 int defaultUserId = 0;
-
 
                 try
                 {
@@ -102,9 +100,7 @@
                 catch (Exception ex)
                 {
                     throw new Exception(ex.Message);
-                    return false;
                 }
-
 
                 return true;
             }
@@ -317,14 +313,14 @@
                 {
                     updUsercommand.CommandType = CommandType.StoredProcedure;
                     updUsercommand.CommandText = "usp_update_user";
-                    updUsercommand.Parameters.Add("FirstName", User.FirstName);
-                    updUsercommand.Parameters.Add("LastName", User.LastName);
-                    updUsercommand.Parameters.Add("EmailAddressArg", User.Email);
-                    updUsercommand.Parameters.Add("PhoneNumber", User.Phone);
-                    updUsercommand.Parameters.Add("UserId", User.UserID);
-                    updUsercommand.Parameters.Add("OrganizationId", dto.Organization.Id);
-                    updUsercommand.Parameters.Add("IsUserOrgActive", dto.Active);
-                    updUsercommand.Parameters.Add("RoleId", dto.RoleId);
+                    updUsercommand.Parameters.AddWithValue("FirstName", User.FirstName);
+                    updUsercommand.Parameters.AddWithValue("LastName", User.LastName);
+                    updUsercommand.Parameters.AddWithValue("EmailAddressArg", User.Email);
+                    updUsercommand.Parameters.AddWithValue("PhoneNumber", User.Phone);
+                    updUsercommand.Parameters.AddWithValue("UserId", User.UserID);
+                    updUsercommand.Parameters.AddWithValue("OrganizationId", dto.Organization.Id);
+                    updUsercommand.Parameters.AddWithValue("IsUserOrgActive", dto.Active);
+                    updUsercommand.Parameters.AddWithValue("RoleId", dto.RoleId);
 
                     string assocUsers = "";
                     string assocDatasources = "";
@@ -335,15 +331,15 @@
                         assocDatasources += string.Format("{0},", item.DatasourceId.ToString());
                     }
 
-                    updUsercommand.Parameters.Add("datasource_ids", assocDatasources);
-                    updUsercommand.Parameters.Add("user_ids", assocUsers);
+                    updUsercommand.Parameters.AddWithValue("datasource_ids", assocDatasources);
+                    updUsercommand.Parameters.AddWithValue("user_ids", assocUsers);
                 }
                 else
                 {
                     updUsercommand.CommandType = CommandType.StoredProcedure;
                     updUsercommand.CommandText = "usp_update_password";
-                    updUsercommand.Parameters.Add("UserId", User.UserID);
-                    updUsercommand.Parameters.Add("HashedPassword", User.PasswordHash);
+                    updUsercommand.Parameters.AddWithValue("UserId", User.UserID);
+                    updUsercommand.Parameters.AddWithValue("HashedPassword", User.PasswordHash);
                 }
                 try
                 {

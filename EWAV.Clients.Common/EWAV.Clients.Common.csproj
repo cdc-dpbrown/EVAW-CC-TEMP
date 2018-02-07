@@ -8,8 +8,8 @@
     <ProjectGuid>{0210956F-A6F3-42FC-87B3-6867688B73BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ewav.Clients.Common</RootNamespace>
-    <AssemblyName>Ewav.Clients.Common</AssemblyName>
+    <RootNamespace>EWAV.Clients.Common</RootNamespace>
+    <AssemblyName>EWAV.Clients.Common</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

@@ -442,9 +442,7 @@ namespace EWAV.ViewModels
 
         public int UserIdForOpenedCanvas { get; set; }
 
-
-
-
+        
         public string AssemblyVersion
         {
             get
@@ -458,12 +456,10 @@ namespace EWAV.ViewModels
 
                     return fullversion;
                 }
-                catch (Exception ex)
+                catch 
                 {
                     return " ";
                 }
-
-
             }
         }
         public DatatableBag AllUsersInMyOrg { get; set; }

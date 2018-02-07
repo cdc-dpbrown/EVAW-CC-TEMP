@@ -165,9 +165,8 @@ namespace EWAV.DAL.PostgreSQL
             {
                 ds = db.ExecuteDataSet(Command);
             }
-            catch (Exception Ex)
+            catch
             {
-
                 throw;
             }
                         

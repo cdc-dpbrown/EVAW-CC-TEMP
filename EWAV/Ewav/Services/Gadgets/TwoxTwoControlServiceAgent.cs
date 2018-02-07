@@ -10,9 +10,6 @@ namespace EWAV.Services
 {
     public class TwoxTwoControlServiceAgent : ITwoxTwoControlServiceAgent
     {
-        FrequencyDomainContext freqCtx;
-        TwoByTwoDomainContext twoxTwoCtx;
-
         private Action<List<EWAVColumn>, Exception> _completed;
         private Action<List<FrequencyResultData>, Exception> _frequencyResultsCompleted;
         private Action<TwoxTwoAndMxNResultsSet, Exception> _setupCompleted;
@@ -39,11 +36,9 @@ namespace EWAV.Services
                 ex = result.Error;
                 result.MarkErrorAsHandled();
             }
-            //else
-            //{
-                List<FrequencyResultData> returnedData = ((InvokeOperation<List<FrequencyResultData>>)sender).Value;
-                _frequencyResultsCompleted(returnedData, null);
-            //}
+
+            List<FrequencyResultData> returnedData = ((InvokeOperation<List<FrequencyResultData>>)sender).Value;
+            _frequencyResultsCompleted(returnedData, null);
         }
 
         public string CheckColumnType(string p)

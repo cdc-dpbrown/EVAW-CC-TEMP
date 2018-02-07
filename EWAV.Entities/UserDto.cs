@@ -11,60 +11,11 @@
     /// </summary>
     public class UserDTO   
     {
-
-
-        
-        /// <summary>
-        /// The password hash
-        /// </summary>
         private string passwordHash = false.ToString();
-
-        /// <summary>
-        /// The organization ID
-        /// </summary>
-        private int organizationID = -1;
-
-        /// <summary>
-        /// The update
-        /// </summary>
-        private bool Update;
-
-
-        /// <summary>
-        /// The highest role
-        /// </summary>
         private int highestRole;
-
-        /// <summary>
-        /// Gets or sets the user ID.
-        /// </summary>
-        /// <value>
-        /// The user ID.
-        /// </value>
         public int UserID { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the user.
-        /// </summary>
-        /// <value>
-        /// The name of the user.
-        /// </value>
         public string UserName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user role in organization.
-        /// </summary>
-        /// <value>
-        /// The user role in organization.
-        /// </value>
         public string UserRoleInOrganization { get; set; }
-
-        /// <summary>
-        /// Gets or sets the highest role across the organizations.
-        /// </summary>
-        /// <value>
-        /// The highest role.
-        /// </value>
         public int HighestRole
         {
             get
@@ -77,34 +28,6 @@
             }
         }
 
-
-
-        /// <summary>
-        /// Gets or sets the organization ID.
-        /// </summary>
-        /// <value>
-        /// The organization ID.
-        /// </value>
-        //public int OrganizationID
-        //{
-        //    get
-        //    {
-        //        return organizationID;
-        //    }
-        //    set
-        //    {
-        //        organizationID = value;
-        //    }
-        //}
-        //public int SecurityLevelID { get; set; }
-        //public int RoleValue { get; set; }
-
-        /// <summary>
-        /// Gets or sets the first name.
-        /// </summary>
-        /// <value>
-        /// The first name.
-        /// </value>
         public string FirstName { get; set; }
         /// <summary>
         /// Gets or sets the last name.

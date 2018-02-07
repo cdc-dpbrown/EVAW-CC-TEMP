@@ -112,35 +112,31 @@ namespace EWAV.DAL.SqlServer
 
             Cryptography cy = new Cryptography();
 
-            addDSCommand.Parameters.Add("EIWSSurveyId", (Formobj != null) ? Formobj : DBNull.Value);
-            addDSCommand.Parameters.Add("DatasourceName", dsDto.DatasourceName);
-            addDSCommand.Parameters.Add("OrganizationId", dsDto.OrganizationId);
-            addDSCommand.Parameters.Add("DatasourceServerName", cy.Encrypt(dsDto.Connection.ServerName));
-            addDSCommand.Parameters.Add("DatabaseType", dsDto.Connection.DatabaseType.ToString());
-            addDSCommand.Parameters.Add("InitialCatalog", cy.Encrypt(dsDto.Connection.DatabaseName));
-            addDSCommand.Parameters.Add("PersistSecurityInfo", dsDto.Connection.PersistSecurityInfo.ToString());
-            addDSCommand.Parameters.Add("DatabaseUserID", cy.Encrypt(dsDto.Connection.UserId));
-            addDSCommand.Parameters.Add("Password", cy.Encrypt(dsDto.Connection.Password));
-            addDSCommand.Parameters.Add("DatabaseObject", cy.Encrypt(dsDto.Connection.DatabaseObject));
-            addDSCommand.Parameters.Add("SQLQuery", dsDto.SQLQuery());
+            addDSCommand.Parameters.AddWithValue("EIWSSurveyId", (Formobj != null) ? Formobj : DBNull.Value);
+            addDSCommand.Parameters.AddWithValue("DatasourceName", dsDto.DatasourceName);
+            addDSCommand.Parameters.AddWithValue("OrganizationId", dsDto.OrganizationId);
+            addDSCommand.Parameters.AddWithValue("DatasourceServerName", cy.Encrypt(dsDto.Connection.ServerName));
+            addDSCommand.Parameters.AddWithValue("DatabaseType", dsDto.Connection.DatabaseType.ToString());
+            addDSCommand.Parameters.AddWithValue("InitialCatalog", cy.Encrypt(dsDto.Connection.DatabaseName));
+            addDSCommand.Parameters.AddWithValue("PersistSecurityInfo", dsDto.Connection.PersistSecurityInfo.ToString());
+            addDSCommand.Parameters.AddWithValue("DatabaseUserID", cy.Encrypt(dsDto.Connection.UserId));
+            addDSCommand.Parameters.AddWithValue("Password", cy.Encrypt(dsDto.Connection.Password));
+            addDSCommand.Parameters.AddWithValue("DatabaseObject", cy.Encrypt(dsDto.Connection.DatabaseObject));
+            addDSCommand.Parameters.AddWithValue("SQLQuery", dsDto.SQLQuery());
 
-            addDSCommand.Parameters.Add("active", dsDto.IsActive);
+            addDSCommand.Parameters.AddWithValue("active", dsDto.IsActive);
 
-            addDSCommand.Parameters.Add("pnumber", cy.Encrypt(dsDto.Connection.PortNumber));
+            addDSCommand.Parameters.AddWithValue("pnumber", cy.Encrypt(dsDto.Connection.PortNumber));
 
-            addDSCommand.Parameters.Add("@DatasourceUser", SqlDbType.Structured);
+            addDSCommand.Parameters.AddWithValue("@DatasourceUser", SqlDbType.Structured);
             addDSCommand.Parameters["@DatasourceUser"].Direction = ParameterDirection.Input;
             addDSCommand.Parameters["@DatasourceUser"].TypeName = "DatasourceUserTableType";
 
             List<SqlDataRecord> sqlDrList = new List<SqlDataRecord>();
-
             SqlDataRecord sqdr;
-
 
             try
             {
-
-
                 foreach (EWAV.DTO.UserDTO item in dsDto.AssociatedUsers)
                 {
                     sqdr = new SqlDataRecord(new SqlMetaData[] 
@@ -148,23 +144,11 @@ namespace EWAV.DAL.SqlServer
                        new SqlMetaData("UserID", SqlDbType.Int)      
                     });
 
-                    // Set the record fields.
                     sqdr.SetInt32(0, 0);
                     sqdr.SetInt32(1, item.UserID);
 
                     sqlDrList.Add(sqdr);
                 }
-
-                //// Also add the creator    
-                //sqdr = new SqlDataRecord(new SqlMetaData[] 
-                //    { new SqlMetaData("DatasourceID", SqlDbType.Int ), 
-                //       new SqlMetaData("UserID", SqlDbType.Int)      
-                //    });
-
-                //sqdr.SetInt32(0, 0);
-                //sqdr.SetInt32(1, dsDto.CreatorID);
-                //sqlDrList.Add(sqdr);
-
 
                 if (dsDto.AssociatedUsers.Count == 0)
                     addDSCommand.Parameters["@DatasourceUser"].Value = null;
@@ -172,24 +156,17 @@ namespace EWAV.DAL.SqlServer
                     addDSCommand.Parameters["@DatasourceUser"].Value = sqlDrList;
 
             }
-            catch (Exception e)
-            {
-
-            }
-
-
+            catch { }
 
             try
             {
                 dsId = Convert.ToInt32(addDSCommand.ExecuteScalar());
             }
-            catch (Exception)
+            catch 
             {
-
                 return false;
             }
-
-
+            
             return true;
         }
 
@@ -215,33 +192,30 @@ namespace EWAV.DAL.SqlServer
             addDSCommand.CommandText = "usp_update_datasource";
 
             Cryptography cy = new Cryptography();
-            addDSCommand.Parameters.Add("EIWSSurveyId", (Formobj != null) ? Formobj : DBNull.Value);
-            addDSCommand.Parameters.Add("DatasourceName", dsDto.DatasourceName);
-            addDSCommand.Parameters.Add("DatabaseType", dsDto.Connection.DatabaseType.ToString());
-            addDSCommand.Parameters.Add("PersistSecurityInfo", dsDto.Connection.PersistSecurityInfo.ToString());
-            addDSCommand.Parameters.Add("InitialCatalog", cy.Encrypt(dsDto.Connection.DatabaseName));
-            addDSCommand.Parameters.Add("DatasourceServerName", cy.Encrypt(dsDto.Connection.ServerName));
-            addDSCommand.Parameters.Add("DatabaseUserID", cy.Encrypt(dsDto.Connection.UserId));
-            addDSCommand.Parameters.Add("Password", cy.Encrypt(dsDto.Connection.Password));
-            addDSCommand.Parameters.Add("DatabaseObject", cy.Encrypt(dsDto.Connection.DatabaseObject));
-            addDSCommand.Parameters.Add("DatasourceID", dsDto.DatasourceId);
+            addDSCommand.Parameters.AddWithValue("EIWSSurveyId", (Formobj != null) ? Formobj : DBNull.Value);
+            addDSCommand.Parameters.AddWithValue("DatasourceName", dsDto.DatasourceName);
+            addDSCommand.Parameters.AddWithValue("DatabaseType", dsDto.Connection.DatabaseType.ToString());
+            addDSCommand.Parameters.AddWithValue("PersistSecurityInfo", dsDto.Connection.PersistSecurityInfo.ToString());
+            addDSCommand.Parameters.AddWithValue("InitialCatalog", cy.Encrypt(dsDto.Connection.DatabaseName));
+            addDSCommand.Parameters.AddWithValue("DatasourceServerName", cy.Encrypt(dsDto.Connection.ServerName));
+            addDSCommand.Parameters.AddWithValue("DatabaseUserID", cy.Encrypt(dsDto.Connection.UserId));
+            addDSCommand.Parameters.AddWithValue("Password", cy.Encrypt(dsDto.Connection.Password));
+            addDSCommand.Parameters.AddWithValue("DatabaseObject", cy.Encrypt(dsDto.Connection.DatabaseObject));
+            addDSCommand.Parameters.AddWithValue("DatasourceID", dsDto.DatasourceId);
 
-            addDSCommand.Parameters.Add("active", dsDto.IsActive);
+            addDSCommand.Parameters.AddWithValue("active", dsDto.IsActive);
 
-            addDSCommand.Parameters.Add("pnumber", cy.Encrypt(dsDto.Connection.PortNumber));
-            addDSCommand.Parameters.Add("@DatasourceUser", SqlDbType.Structured);
+            addDSCommand.Parameters.AddWithValue("pnumber", cy.Encrypt(dsDto.Connection.PortNumber));
+            addDSCommand.Parameters.AddWithValue("@DatasourceUser", SqlDbType.Structured);
             addDSCommand.Parameters["@DatasourceUser"].Direction = ParameterDirection.Input;
             addDSCommand.Parameters["@DatasourceUser"].TypeName = "DatasourceUserTableType";
 
 
             List<SqlDataRecord> sqlDrList = new List<SqlDataRecord>();
-
             SqlDataRecord sqdr;
 
             try
             {
-
-
                 foreach (EWAV.DTO.UserDTO item in dsDto.AssociatedUsers)
                 {
                     sqdr = new SqlDataRecord(new SqlMetaData[] 
@@ -256,39 +230,25 @@ namespace EWAV.DAL.SqlServer
                     sqlDrList.Add(sqdr);
                 }
 
-                //// Also add the creator    
-                //sqdr = new SqlDataRecord(new SqlMetaData[] 
-                //    { new SqlMetaData("DatasourceID", SqlDbType.Int ), 
-                //       new SqlMetaData("UserID", SqlDbType.Int)      
-                //    });
-
-                //sqdr.SetInt32(0, dsDto.DatasourceId);
-                //sqdr.SetInt32(1, dsDto.CreatorID);
-                //sqlDrList.Add(sqdr);
-
-
                 if (dsDto.AssociatedUsers.Count == 0)
+                {
                     addDSCommand.Parameters["@DatasourceUser"].Value = null;
+                }
                 else
+                {
                     addDSCommand.Parameters["@DatasourceUser"].Value = sqlDrList;
-
+                }
             }
-            catch (Exception e)
-            {
-
-            }
-
-
+            catch { }
+            
             try
             {
                 addDSCommand.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch
             {
-                //throw ex;
                 return false;
             }
-
 
             return true;
         }
@@ -328,11 +288,7 @@ namespace EWAV.DAL.SqlServer
             }
 
             return ds.Tables[0];
-
-
         }
-
-
 
         public DataSet GetDatasource(int datasourceId)
         {
@@ -423,25 +379,7 @@ namespace EWAV.DAL.SqlServer
             set;
         }
 
-        //public string TableName
-        //{
-        //    get;
-        //    set;
-        //}
-
-
-        //public int OrganizationId
-        //{
-        //    get;
-        //    set;
-        //}
-
-
-
-
         private string tableName;
-
-
 
         public int OrganizationId
         {
@@ -477,17 +415,9 @@ namespace EWAV.DAL.SqlServer
                 throw new Exception(ex.Message);
             }
 
-            //return
-            //string.Format("Data Source={0};Initial Catalog={1};Persist Security Info={2};User ID={3};Password={4}", ds.Tables[0].Rows[0]["DatasourceServerName"].ToString(), ds.Tables[0].Rows[0]["InitialCatalog"], ds.Tables[0].Rows[0]["PersistSecurityInfo"], ds.Tables[0].Rows[0]["DatabaseUserID"], ds.Tables[0].Rows[0]["Password"]);
             return Utilities.CreateConnectionString(DTO.DataBaseTypeEnum.SQLServer, new DataRow[] { ds.Tables[0].Rows[0] });
-
-            //DataRow[] dr;
-            //string qstr = Utilities.createConnectionString(DTO.DataBaseTypeEnum.SQLServer, dr);
-
-            //return "
         }
-
-
+        
         public bool CopyDashboard(string OldCanvasName, string NewCanvasName, string NewDatasourceName)
         {
             SqlDatabase db = new SqlDatabase(ConnectionString);
@@ -519,21 +449,15 @@ namespace EWAV.DAL.SqlServer
             }
 
         }
-
-
+        
         public object ReadEWEDatasourceFormId(DTO.EWEDatasourceDto EWEDsDto)
         {
             SqlDatabase db = new SqlDatabase(this.ConnectionString);
-
             string sqlQuery = "SELECT SurveyId from EIDatasource where InitialCatalog = '" + EWEDsDto.DatabaseName + "'";
-
-
-
+            
             try
             {
                 object formobj = db.ExecuteScalar(CommandType.Text, sqlQuery);
-                // string FormId = (formobj != null) ? formobj.ToString() : string.Empty;
-
                 return formobj;
             }
             catch (Exception ex)
@@ -561,30 +485,6 @@ namespace EWAV.DAL.SqlServer
             {
                 throw new Exception(ex.Message);
             }
-
         }
-
-
-        //public List<int> ReadEWAVDatasource(Guid DatasourceId)
-        //{
-        //    SqlDatabase db = new SqlDatabase(this.ConnectionString);
-
-        //    string sqlQuery = "SELECT DatasourceId from Datasource where EIWSSurveyId = '" + DatasourceId + "'";
-
-
-
-        //    try
-        //    {
-        //        object formobj = db.ExecuteScalar(CommandType.StoredProcedure, "");
-        //        // string FormId = (formobj != null) ? formobj.ToString() : string.Empty;
-
-        //        return Convert.ToInt16(formobj);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //    // return string.Empty;
-        //}
     }
 }

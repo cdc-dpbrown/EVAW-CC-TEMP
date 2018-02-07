@@ -43,12 +43,8 @@ namespace EWAV.Services
                         ApplicationViewModel.Instance.EWAVDefinedVariables,
                         ApplicationViewModel.Instance.AdvancedDataFilterString);
                 MapControlResutls.Completed += new EventHandler(MapControlResutls_Completed);               
-
-
-
-
             }
-            catch (Exception ex)
+            catch 
             {
                 throw new Exception();     
             }

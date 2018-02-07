@@ -848,30 +848,6 @@
 
                 return resultUserDTO;
             }
-            //else
-            //{
-            //    DataRow dr = dt.Rows[0];
-
-            //    resultUserDTO = new UserDTO()
-            //    {
-            //        PasswordHash = dr["PasswordHash"].ToString(),
-            //        UserID = Convert.ToInt32(dr["UserID"].ToString()),
-            //        UserName = dr["UserName"].ToString(),
-            //        FirstName = dr["FirstName"].ToString(),
-            //        LastName = dr["LastName"].ToString(),
-            //        Phone = dr["PhoneNumber"].ToString(),
-            //        Email = dr["EmailAddress"].ToString(),
-            //        ShouldResetPassword = Convert.ToBoolean(dr["ResetPassword"])//,
-            //        //DatasourceCount = dr["DatasourceCount"].ToString()
-            //    };
-
-            //        dt.DefaultView.Sort = "RoleValue desc";
-
-            //        resultUserDTO.HighestRole = Convert.ToInt32(dt.DefaultView[0]["RoleValue"].ToString());
-
-            //}
-
-            return resultUserDTO;
         }
 
         /// <summary>
@@ -887,11 +863,7 @@
             canvasDao.TableName = CANVAS_TABLE_NAME;
             canvasDao.ConnectionString = this.MetaDataConnectionString;
             DataSet ds = canvasDao.LoadCanvas(canvasId);
-            //if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-            //{
-            //    return ds.Tables[0].Rows[0][0].ToString();
-            //}
-            //return string.Empty;
+
             CanvasDto dto = new CanvasDto();
 
             dto.UserId = Convert.ToInt32(ds.Tables[0].Rows[0]["UserId"].ToString());
@@ -902,17 +874,11 @@
             dto.CanvasGUID = new Guid(ds.Tables[0].Rows[0]["CanvasGUID"].ToString());
             dto.DatasourceID = Convert.ToInt32(ds.Tables[0].Rows[0]["DatasourceID"].ToString());
 
-
-
-            //TBD - IGNORE THIS CODE IN CASE OF EWAVLITE
             try
             {
                 dto = GetPermalinks(dto);
             }
-            catch (Exception ex)
-            {
-
-            }
+            catch { }
 
             return dto;
         }
@@ -927,12 +893,6 @@
             canvasDao.ConnectionString = this.MetaDataConnectionString;
             DataSet ds = canvasDao.LoadCanvas(canvasGUID);
 
-
-            //if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-            //{
-            //    return ds.Tables[0].Rows[0][0].ToString();
-            //}
-            //return string.Empty;
             CanvasDto dto = new CanvasDto();
 
             dto.UserId = Convert.ToInt32(ds.Tables[0].Rows[0]["UserId"].ToString());

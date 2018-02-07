@@ -74,10 +74,9 @@ namespace EWAV.ViewModels.Gadgets
         {
             try
             {
-          //       MapControlServiceAgent mcsa = new MapControlServiceAgent();
                 serviceAgent.LoadMapData(gp, LoadMapDataCompleted);
             }
-            catch (Exception ex)
+            catch 
             {
                 throw new Exception();
             }
@@ -90,8 +89,6 @@ namespace EWAV.ViewModels.Gadgets
         /// <param name="arg2">The arg2.</param>
         private void LoadMapDataCompleted(List<PointDTOCollection> result, Exception exception)
         {
-
-
             if (exception != null)
             {
                 NotificationEventArgs<Exception> notification = new NotificationEventArgs<Exception>("", exception);

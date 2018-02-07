@@ -8,9 +8,6 @@ namespace EWAV.DTO
 {
     public class DatasourceDto
     {
-
-        private int creatorID;
-
         private string datasourceServerName;
 
         public int DatasourceId { get; set; }

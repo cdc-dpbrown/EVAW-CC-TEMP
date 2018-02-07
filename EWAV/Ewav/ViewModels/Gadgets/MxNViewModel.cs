@@ -128,22 +128,8 @@ namespace EWAV.ViewModels
 
         #region Notifications
 
-        //public void GetColumns(string DataSourceName, string TableName)
-        //{
-        //    //if (this.applicationViewModel.AllColumns == null)
-        //    //{
-        //        this.ServiceAgent.GetColumns(DataSourceName, TableName, GetColumnsCompleted);
-        //    //}
-        //    //else
-        //    //{
-        //    //    this.Get2x2FilteredColumns();
-        //    //}
-        //}
-
         private void Get2x2FilteredColumns()
         {
-           //   this.allColumns = this.applicationViewModel.AllColumns;
-
             this.Notify(ColumnsLoadedEvent, new NotificationEventArgs<Exception>());
         }
 
