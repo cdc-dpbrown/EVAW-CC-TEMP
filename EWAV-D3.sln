@@ -6,6 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWAV.Web", "Ewav\Ewav.Web\E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{899B2BB2-52EC-4305-9999-A3015F9891F2}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		Ewav.vsmdi = Ewav.vsmdi
 		Local.testsettings = Local.testsettings
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings

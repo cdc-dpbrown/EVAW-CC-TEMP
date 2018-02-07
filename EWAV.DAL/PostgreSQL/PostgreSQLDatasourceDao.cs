@@ -107,7 +107,7 @@ namespace EWAV.DAL.PostgreSQL
                 postDb.CloseConnection();
                 return true;
             }
-            catch (Exception ex)
+            catch 
             {
                 postDb.CloseConnection();
                 postDb = null;

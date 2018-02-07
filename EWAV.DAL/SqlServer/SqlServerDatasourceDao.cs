@@ -42,7 +42,7 @@ namespace EWAV.DAL.SqlServer
                 sqlConn.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch 
             {
                 sqlConn.Close();
                 sqlConn = null;

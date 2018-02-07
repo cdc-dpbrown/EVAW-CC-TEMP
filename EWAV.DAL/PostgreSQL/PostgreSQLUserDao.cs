@@ -489,16 +489,16 @@ namespace EWAV.DAL.PostgreSQL
                 parameter.Value = hashedPwd;
                 parameter.Direction = ParameterDirection.Input;
                 Command.Parameters.Add(parameter);
+
                 try
                 {
                     db.ExecuteNonQuery(Command);
                 }
-                catch (Exception ex)
+                catch
                 {
-
-                    //throw new Exception(ex.Message);
                     return false;
                 }
+
                 return true;
             }
             return false;

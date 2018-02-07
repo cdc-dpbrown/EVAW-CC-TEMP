@@ -39,38 +39,27 @@ namespace EWAV
 
         void LoggedInUser_UserChanged(object sender, EventArgs e)
         {
-
-
             if (applicationViewModel.LoggedInUser.HighestRolesEnum == Membership.RolesEnum.SuperAdministrator)
             {
                 ManageOrg.Visibility = System.Windows.Visibility.Visible;
                 ManageUsers.Visibility = System.Windows.Visibility.Visible;
                 ManageDataSources.Visibility = System.Windows.Visibility.Visible;
                 CopyDashboard.Visibility = System.Windows.Visibility.Visible;        
-
-            }
+                            }
             if (applicationViewModel.LoggedInUser.HighestRolesEnum == Membership.RolesEnum.Administrator)
             {
-
-
                 ManageUsers.Visibility = System.Windows.Visibility.Visible;
                 ManageDataSources.Visibility = System.Windows.Visibility.Visible;
                 CopyDashboard.Visibility = System.Windows.Visibility.Visible;        
-
-
-
             }
-
         }
+
         void AppMenuView_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
             try
             {
-
-
                 tbVersion.Text = "Version " + applicationViewModel.AssemblyVersion;
-
-
+                
                 if (applicationViewModel.DemoMode)
                 {
                     AppNameText2.Text = "Epi Info Cloud Data Analytics Administration (Demo Mode)";
@@ -79,21 +68,15 @@ namespace EWAV
                 {
                     AppNameText2.Text = "Epi Info Cloud Data Analytics Administration ";
                 }
-
-
-
-
+                
                 ManageOrg.Visibility = System.Windows.Visibility.Collapsed;
                 ManageUsers.Visibility = System.Windows.Visibility.Collapsed;
                 ManageDataSources.Visibility = System.Windows.Visibility.Collapsed;
                 CopyDashboard.Visibility = System.Windows.Visibility.Collapsed;    
 
-
                 AppMenuViewModel appMenuViewModel = (AppMenuViewModel)this.DataContext;
-
-
             }
-            catch (System.Exception ex)
+            catch
             {
                 throw new Exception("aa");
             }
@@ -101,17 +84,7 @@ namespace EWAV
 
         private void CopyDashboard_Click(object sender, RoutedEventArgs e)
         {
-
-
             AdminViewClickEvent(sender, new EventArgs());
-
-
-
-
         }
-
-
-    
     }
-
 }

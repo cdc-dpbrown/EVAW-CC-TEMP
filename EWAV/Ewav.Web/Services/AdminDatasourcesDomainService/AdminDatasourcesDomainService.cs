@@ -73,20 +73,15 @@
         /// <returns></returns>
         public List<DatasourceDto> ReadDatasource(int orgId)
         {
-
             try
             {
                 return em.ReadDatasource(orgId);
-
-
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message + " -- " + ex.StackTrace);
             }
-
         }
-
 
         /// <summary>
         /// Reads the associated users.
@@ -103,20 +98,16 @@
             {
                 throw new Exception(ex.Message + " -- " + ex.StackTrace);
             }
-
         }
 
         public IEnumerable<DatasourceUserDto> GetAllDatasourceUser()
         {
             try
             {
-
                 EntityManager em = new EntityManager();
                 List<DatasourceUserDto> datasourceUserDtoList = em.GetAllDatasourceUser();
 
-
                 return datasourceUserDtoList as IEnumerable<DatasourceUserDto>;
-
 
             }
             catch (Exception ex)
@@ -153,24 +144,10 @@
             {
                 return em.ReadEWEDatasourceFormId(EWEDsDto);
             }
-            catch (Exception ex)
+            catch 
             {
-                
                 throw;
             }
         }
-
-        //public int ReadEWAVDatasource(Guid DatasourceId)
-        //{
-        //    try
-        //    {
-        //        return em.ReadEWAVDatasource(DatasourceId);
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        throw;
-        //    }
-        //}
     }
 }

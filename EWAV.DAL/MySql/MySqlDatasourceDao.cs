@@ -69,23 +69,23 @@ namespace EWAV.DAL.MySqlLayer
 
             Cryptography cy = new Cryptography();
 
-            addDSCommand.Parameters.Add("DatasourceNameArg", dsDto.DatasourceName);
-            addDSCommand.Parameters.Add("OrganizationId", dsDto.OrganizationId);
-            addDSCommand.Parameters.Add("DatasourceServerName", cy.Encrypt(dsDto.Connection.ServerName));
-            addDSCommand.Parameters.Add("DatabaseType", dsDto.Connection.DatabaseType.ToString());
-            addDSCommand.Parameters.Add("InitialCatalog", cy.Encrypt(dsDto.Connection.DatabaseName));
-            addDSCommand.Parameters.Add("PersistSecurityInfo", dsDto.Connection.PersistSecurityInfo.ToString());
-            addDSCommand.Parameters.Add("DatabaseUserID", cy.Encrypt(dsDto.Connection.UserId));
-            addDSCommand.Parameters.Add("Password", cy.Encrypt(dsDto.Connection.Password));
-            addDSCommand.Parameters.Add("DatabaseObject", cy.Encrypt(dsDto.Connection.DatabaseObject));
-            addDSCommand.Parameters.Add("SQLQuery", dsDto.SQLQuery());
+            addDSCommand.Parameters.AddWithValue("DatasourceNameArg", dsDto.DatasourceName);
+            addDSCommand.Parameters.AddWithValue("OrganizationId", dsDto.OrganizationId);
+            addDSCommand.Parameters.AddWithValue("DatasourceServerName", cy.Encrypt(dsDto.Connection.ServerName));
+            addDSCommand.Parameters.AddWithValue("DatabaseType", dsDto.Connection.DatabaseType.ToString());
+            addDSCommand.Parameters.AddWithValue("InitialCatalog", cy.Encrypt(dsDto.Connection.DatabaseName));
+            addDSCommand.Parameters.AddWithValue("PersistSecurityInfo", dsDto.Connection.PersistSecurityInfo.ToString());
+            addDSCommand.Parameters.AddWithValue("DatabaseUserID", cy.Encrypt(dsDto.Connection.UserId));
+            addDSCommand.Parameters.AddWithValue("Password", cy.Encrypt(dsDto.Connection.Password));
+            addDSCommand.Parameters.AddWithValue("DatabaseObject", cy.Encrypt(dsDto.Connection.DatabaseObject));
+            addDSCommand.Parameters.AddWithValue("SQLQuery", dsDto.SQLQuery());
 
-            addDSCommand.Parameters.Add("active", dsDto.IsActive);
+            addDSCommand.Parameters.AddWithValue("active", dsDto.IsActive);
 
-            addDSCommand.Parameters.Add("@DatasourceUser", SqlDbType.Structured);
+            addDSCommand.Parameters.AddWithValue("@DatasourceUser", SqlDbType.Structured);
             addDSCommand.Parameters["@DatasourceUser"].Direction = ParameterDirection.Input;
 
-            addDSCommand.Parameters.Add("portnumber", cy.Encrypt(dsDto.Connection.PortNumber));
+            addDSCommand.Parameters.AddWithValue("portnumber", cy.Encrypt(dsDto.Connection.PortNumber));
 
             try
             {
@@ -99,11 +99,8 @@ namespace EWAV.DAL.MySqlLayer
                 }
 
 
-                addDSCommand.Parameters.Add("datasource_ids", datasourceID);
-                addDSCommand.Parameters.Add("user_ids", assUsers);
-
-
-
+                addDSCommand.Parameters.AddWithValue("datasource_ids", datasourceID);
+                addDSCommand.Parameters.AddWithValue("user_ids", assUsers);
             }
             catch (Exception  ex  ) 
             {
