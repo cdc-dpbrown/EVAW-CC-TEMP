@@ -1,4 +1,0 @@
-C:\_CODE\EVAW-CC-TEMP\CommonLibrary\CommonLibrary.csproj,636535963590994432,
-C:\_CODE\EVAW-CC-TEMP\Ewav.ContextMenu.Components\EWAV.ContextMenu.Components.csproj,636535966399568557,
-C:\_CODE\EVAW-CC-TEMP\Ewav.ContextMenu.Menu\EWAV.ContextMenu.Menu.csproj,636535966561115620,
-C:\_CODE\EVAW-CC-TEMP\Ewav.ContextMenu\EWAV.ContextMenu.csproj,636535966177854496,
