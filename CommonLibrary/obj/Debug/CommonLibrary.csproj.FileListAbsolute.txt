@@ -1,0 +1,9 @@
+C:\TFSCode\EWAV\CommonLibrary\Bin\Debug\CommonLibrary.dll
+C:\TFSCode\EWAV\CommonLibrary\Bin\Debug\CommonLibrary.pdb
+C:\TFSCode\EWAV\CommonLibrary\obj\Debug\CommonLibrary.csprojResolveAssemblyReference.cache
+C:\TFSCode\EWAV\CommonLibrary\obj\Debug\WaitCursor.g.cs
+C:\TFSCode\EWAV\CommonLibrary\obj\Debug\CommonLibrary.g.resources
+C:\TFSCode\EWAV\CommonLibrary\obj\Debug\CommonLibrary.SharedStrings.resources
+C:\TFSCode\EWAV\CommonLibrary\obj\Debug\CommonLibrary.csproj.GenerateResource.Cache
+C:\TFSCode\EWAV\CommonLibrary\obj\Debug\CommonLibrary.dll
+C:\TFSCode\EWAV\CommonLibrary\obj\Debug\CommonLibrary.pdb

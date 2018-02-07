@@ -1,0 +1,64 @@
+﻿<xapCache source="C:\TFSCode\EWAV\Ewav\Ewav\Bin\Debug\Ewav.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="1/19/2018 11:36:51 AM">
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\obj\Debug\Ewav.dll" archivePath="Ewav.dll" lastWriteTime="1/19/2018 11:36:41 AM" />
+  <file source="C:\TFSCode\EWAV\CommonLibrary\Bin\Debug\CommonLibrary.dll" archivePath="CommonLibrary.dll" lastWriteTime="1/19/2018 11:36:16 AM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical.dll" archivePath="ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical.dll" lastWriteTime="7/7/2017 2:53:31 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.Charting.dll" archivePath="ComponentArt.Silverlight.DataVisualization.Charting.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.Common.dll" archivePath="ComponentArt.Silverlight.DataVisualization.Common.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.Export.PDF.dll" archivePath="ComponentArt.Silverlight.Export.PDF.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.VisualStudio.Silverlight.dll" archivePath="ComponentArt.VisualStudio.Silverlight.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Behaviors.dll" archivePath="ESRI.ArcGIS.Client.Behaviors.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Bing.dll" archivePath="ESRI.ArcGIS.Client.Bing.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.dll" archivePath="ESRI.ArcGIS.Client.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Portal.dll" archivePath="ESRI.ArcGIS.Client.Portal.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Printing.dll" archivePath="ESRI.ArcGIS.Client.Printing.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Toolkit.DataSources.dll" archivePath="ESRI.ArcGIS.Client.Toolkit.DataSources.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Toolkit.dll" archivePath="ESRI.ArcGIS.Client.Toolkit.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav.ContextMenu.Components\Bin\Debug\Ewav.ContextMenu.Components.dll" archivePath="Ewav.ContextMenu.Components.dll" lastWriteTime="1/19/2018 11:36:18 AM" />
+  <file source="C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\Ewav.ContextMenu.dll" archivePath="Ewav.ContextMenu.dll" lastWriteTime="1/19/2018 11:36:17 AM" />
+  <file source="C:\TFSCode\EWAV\Ewav.ContextMenu.Menu\Bin\Debug\Ewav.ContextMenu.Menu.dll" archivePath="Ewav.ContextMenu.Menu.dll" lastWriteTime="1/19/2018 11:36:19 AM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\FJ.Core.dll" archivePath="FJ.Core.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Silverlight\v5.0\Libraries\Microsoft.Expression.Interactions.dll" archivePath="Microsoft.Expression.Interactions.dll" lastWriteTime="2/18/2013 1:32:08 PM" />
+  <file source="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\mscorlib.dll" archivePath="mscorlib.dll" lastWriteTime="11/17/2011 10:52:22 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\SimpleMvvmToolkit.dll" archivePath="SimpleMvvmToolkit.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.dll" archivePath="System.dll" lastWriteTime="11/17/2011 10:52:22 PM" />
+  <file source="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.Net.dll" archivePath="System.Net.dll" lastWriteTime="11/17/2011 10:52:22 PM" />
+  <file source="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.Runtime.Serialization.dll" archivePath="System.Runtime.Serialization.dll" lastWriteTime="11/17/2011 10:52:22 PM" />
+  <file source="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.ServiceModel.dll" archivePath="System.ServiceModel.dll" lastWriteTime="11/17/2011 10:52:22 PM" />
+  <file source="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.Windows.Browser.dll" archivePath="System.Windows.Browser.dll" lastWriteTime="11/17/2011 10:52:22 PM" />
+  <file source="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.Windows.dll" archivePath="System.Windows.dll" lastWriteTime="11/17/2011 10:52:22 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.Xml.dll" archivePath="System.Xml.dll" lastWriteTime="11/17/2011 10:52:22 PM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Toolkit\dec11\Bin\System.Windows.Controls.Toolkit.Internals.dll" archivePath="System.Windows.Controls.Toolkit.Internals.dll" lastWriteTime="12/9/2011 10:25:04 AM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Behaviors.dll" archivePath="Assemblies\ESRI.ArcGIS.Client.Behaviors.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Behaviors.xml" archivePath="Assemblies\ESRI.ArcGIS.Client.Behaviors.xml" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Bing.dll" archivePath="Assemblies\ESRI.ArcGIS.Client.Bing.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Bing.xml" archivePath="Assemblies\ESRI.ArcGIS.Client.Bing.xml" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.dll" archivePath="Assemblies\ESRI.ArcGIS.Client.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Portal.dll" archivePath="Assemblies\ESRI.ArcGIS.Client.Portal.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Portal.xml" archivePath="Assemblies\ESRI.ArcGIS.Client.Portal.xml" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Printing.dll" archivePath="Assemblies\ESRI.ArcGIS.Client.Printing.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Printing.xml" archivePath="Assemblies\ESRI.ArcGIS.Client.Printing.xml" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Toolkit.DataSources.dll" archivePath="Assemblies\ESRI.ArcGIS.Client.Toolkit.DataSources.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Toolkit.DataSources.xml" archivePath="Assemblies\ESRI.ArcGIS.Client.Toolkit.DataSources.xml" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Toolkit.dll" archivePath="Assemblies\ESRI.ArcGIS.Client.Toolkit.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.Toolkit.xml" archivePath="Assemblies\ESRI.ArcGIS.Client.Toolkit.xml" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ESRI.ArcGIS.Client.xml" archivePath="Assemblies\ESRI.ArcGIS.Client.xml" lastWriteTime="7/7/2017 2:53:34 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\FJ.Core.dll" archivePath="Assemblies\FJ.Core.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\SimpleMvvmToolkit.dll" archivePath="Assemblies\SimpleMvvmToolkit.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\System.Windows.Interactivity.dll" archivePath="Assemblies\System.Windows.Interactivity.dll" lastWriteTime="7/7/2017 2:53:33 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical.dll" archivePath="Assemblies\ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical.dll" lastWriteTime="7/7/2017 2:53:31 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical.xml" archivePath="Assemblies\ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical.xml" lastWriteTime="7/7/2017 2:53:31 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.Charting.Design.4.0.dll" archivePath="Assemblies\ComponentArt.Silverlight.DataVisualization.Charting.Design.4.0.dll" lastWriteTime="7/7/2017 2:53:31 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.Charting.dll" archivePath="Assemblies\ComponentArt.Silverlight.DataVisualization.Charting.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.Charting.xml" archivePath="Assemblies\ComponentArt.Silverlight.DataVisualization.Charting.xml" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.Common.Design.4.0.dll" archivePath="Assemblies\ComponentArt.Silverlight.DataVisualization.Common.Design.4.0.dll" lastWriteTime="7/7/2017 2:53:31 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.Common.dll" archivePath="Assemblies\ComponentArt.Silverlight.DataVisualization.Common.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.DataVisualization.Common.xml" archivePath="Assemblies\ComponentArt.Silverlight.DataVisualization.Common.xml" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.Export.PDF.dll" archivePath="Assemblies\ComponentArt.Silverlight.Export.PDF.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Silverlight.Export.PDF.xml" archivePath="Assemblies\ComponentArt.Silverlight.Export.PDF.xml" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.VisualStudio.Common.dll" archivePath="Assemblies\ComponentArt.VisualStudio.Common.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.VisualStudio.Silverlight.dll" archivePath="Assemblies\ComponentArt.VisualStudio.Silverlight.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Assemblies\ComponentArt.Win.DataVisualization.Common.dll" archivePath="Assemblies\ComponentArt.Win.DataVisualization.Common.dll" lastWriteTime="7/7/2017 2:53:32 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\ReadMe-2nd.txt" archivePath="ReadMe-2nd.txt" lastWriteTime="7/7/2017 2:53:31 PM" />
+  <file source="C:\TFSCode\EWAV\Ewav\Ewav\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="7/14/2017 9:53:26 AM" />
+</xapCache>

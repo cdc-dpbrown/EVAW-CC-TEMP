@@ -1,0 +1,6 @@
+C:\_CODE\EVAW-CC-TEMP\Ewav\Ewav
+Generated_Code\EWAV.Web.g.cs
+Generated_Code\StringLiterals.Shared.cs
+Generated_Code\EWAV.BAL\PasswordHasher.shared.cs
+Generated_Code\EWAV.DTO\RolesEnum.shared.cs
+Generated_Code\EWAV.Security\PasswordHasher.shared.cs

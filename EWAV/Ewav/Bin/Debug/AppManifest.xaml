@@ -1,0 +1,56 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Ewav" EntryPointType="Ewav.App" RuntimeVersion="5.0.61118.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="Ewav" Source="Ewav.dll" />
+    <AssemblyPart x:Name="CommonLibrary" Source="CommonLibrary.dll" />
+    <AssemblyPart x:Name="ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical" Source="ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical.dll" />
+    <AssemblyPart x:Name="ComponentArt.Silverlight.DataVisualization.Charting" Source="ComponentArt.Silverlight.DataVisualization.Charting.dll" />
+    <AssemblyPart x:Name="ComponentArt.Silverlight.DataVisualization.Common" Source="ComponentArt.Silverlight.DataVisualization.Common.dll" />
+    <AssemblyPart x:Name="ComponentArt.Silverlight.Export.PDF" Source="ComponentArt.Silverlight.Export.PDF.dll" />
+    <AssemblyPart x:Name="ComponentArt.VisualStudio.Silverlight" Source="ComponentArt.VisualStudio.Silverlight.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Behaviors" Source="ESRI.ArcGIS.Client.Behaviors.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Bing" Source="ESRI.ArcGIS.Client.Bing.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client" Source="ESRI.ArcGIS.Client.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Portal" Source="ESRI.ArcGIS.Client.Portal.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Printing" Source="ESRI.ArcGIS.Client.Printing.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Toolkit.DataSources" Source="ESRI.ArcGIS.Client.Toolkit.DataSources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Toolkit" Source="ESRI.ArcGIS.Client.Toolkit.dll" />
+    <AssemblyPart x:Name="Ewav.ContextMenu.Components" Source="Ewav.ContextMenu.Components.dll" />
+    <AssemblyPart x:Name="Ewav.ContextMenu" Source="Ewav.ContextMenu.dll" />
+    <AssemblyPart x:Name="Ewav.ContextMenu.Menu" Source="Ewav.ContextMenu.Menu.dll" />
+    <AssemblyPart x:Name="FJ.Core" Source="FJ.Core.dll" />
+    <AssemblyPart x:Name="Microsoft.Expression.Interactions" Source="Microsoft.Expression.Interactions.dll" />
+    <AssemblyPart x:Name="mscorlib" Source="mscorlib.dll" />
+    <AssemblyPart x:Name="SimpleMvvmToolkit" Source="SimpleMvvmToolkit.dll" />
+    <AssemblyPart x:Name="System" Source="System.dll" />
+    <AssemblyPart x:Name="System.Net" Source="System.Net.dll" />
+    <AssemblyPart x:Name="System.Runtime.Serialization" Source="System.Runtime.Serialization.dll" />
+    <AssemblyPart x:Name="System.ServiceModel" Source="System.ServiceModel.dll" />
+    <AssemblyPart x:Name="System.Windows.Browser" Source="System.Windows.Browser.dll" />
+    <AssemblyPart x:Name="System.Windows" Source="System.Windows.dll" />
+    <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
+    <AssemblyPart x:Name="System.Xml" Source="System.Xml.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Toolkit.Internals" Source="System.Windows.Controls.Toolkit.Internals.dll" />
+  </Deployment.Parts>
+  <Deployment.ExternalParts>
+    <ExtensionPart Source="System.ComponentModel.Composition.zip" />
+    <ExtensionPart Source="System.ComponentModel.Composition.Initialization.zip" />
+    <ExtensionPart Source="System.ComponentModel.DataAnnotations.zip" />
+    <ExtensionPart Source="System.ServiceModel.DomainServices.Client.zip" />
+    <ExtensionPart Source="System.ServiceModel.DomainServices.Client.Web.zip" />
+    <ExtensionPart Source="System.ServiceModel.Web.Extensions.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Data.DataForm.Toolkit.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Data.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Data.Input.zip" />
+    <ExtensionPart Source="System.Windows.Controls.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Input.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Input.Toolkit.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Layout.Toolkit.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Navigation.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Toolkit.zip" />
+    <ExtensionPart Source="System.Windows.Data.zip" />
+    <ExtensionPart Source="System.Xml.Linq.zip" />
+    <ExtensionPart Source="System.Json.zip" />
+    <ExtensionPart Source="System.ServiceModel.Syndication.zip" />
+    <ExtensionPart Source="System.Xml.Serialization.zip" />
+  </Deployment.ExternalParts>
+</Deployment>

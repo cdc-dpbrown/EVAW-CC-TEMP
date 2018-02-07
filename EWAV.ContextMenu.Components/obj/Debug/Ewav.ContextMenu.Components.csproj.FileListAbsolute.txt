@@ -1,0 +1,4 @@
+C:\TFSCode\EWAV\Ewav.ContextMenu.Components\Bin\Debug\Ewav.ContextMenu.Components.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu.Components\Bin\Debug\Ewav.ContextMenu.Components.pdb
+C:\TFSCode\EWAV\Ewav.ContextMenu.Components\obj\Debug\Ewav.ContextMenu.Components.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu.Components\obj\Debug\Ewav.ContextMenu.Components.pdb

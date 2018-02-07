@@ -1,0 +1,4 @@
+C:\TFSCode\EWAV\CommonLibrary\CommonLibrary.csproj,636350360070229005,
+C:\TFSCode\EWAV\Ewav.ContextMenu.Components\Ewav.ContextMenu.Components.csproj,636350360305077282,
+C:\TFSCode\EWAV\Ewav.ContextMenu.Menu\Ewav.ContextMenu.Menu.csproj,636350360308514853,
+C:\TFSCode\EWAV\Ewav.ContextMenu\Ewav.ContextMenu.csproj,636350360300077235,

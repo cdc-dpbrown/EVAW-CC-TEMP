@@ -1,0 +1,17 @@
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\Ewav.ContextMenu.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\Ewav.ContextMenu.pdb
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\System.Windows.Controls.Navigation.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\System.Windows.Controls.Navigation.xml
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\de\System.Windows.Controls.Navigation.resources.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\es\System.Windows.Controls.Navigation.resources.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\fr\System.Windows.Controls.Navigation.resources.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\it\System.Windows.Controls.Navigation.resources.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\ja\System.Windows.Controls.Navigation.resources.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\ko\System.Windows.Controls.Navigation.resources.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\ru\System.Windows.Controls.Navigation.resources.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\zh-Hans\System.Windows.Controls.Navigation.resources.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\Bin\Debug\zh-Hant\System.Windows.Controls.Navigation.resources.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\obj\Debug\Ewav.ContextMenu.csprojResolveAssemblyReference.cache
+C:\TFSCode\EWAV\Ewav.ContextMenu\obj\Debug\Ewav.ContextMenu.g.resources
+C:\TFSCode\EWAV\Ewav.ContextMenu\obj\Debug\Ewav.ContextMenu.dll
+C:\TFSCode\EWAV\Ewav.ContextMenu\obj\Debug\Ewav.ContextMenu.pdb

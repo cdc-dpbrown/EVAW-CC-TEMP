@@ -1,0 +1,15 @@
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\Ewav.Security.dll
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\Ewav.Security.pdb
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\Ewav.DTO.dll
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\Microsoft.CSharp.dll
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\System.Configuration.dll
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\System.Data.DataSetExtensions.dll
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\System.Data.dll
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\System.dll
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\System.Web.dll
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\System.Xml.dll
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\System.Xml.Linq.dll
+C:\TFSCode\EWAV\Ewav.Security\bin\Debug\Ewav.DTO.pdb
+C:\TFSCode\EWAV\Ewav.Security\obj\Debug\Ewav.Security.csprojResolveAssemblyReference.cache
+C:\TFSCode\EWAV\Ewav.Security\obj\Debug\Ewav.Security.dll
+C:\TFSCode\EWAV\Ewav.Security\obj\Debug\Ewav.Security.pdb

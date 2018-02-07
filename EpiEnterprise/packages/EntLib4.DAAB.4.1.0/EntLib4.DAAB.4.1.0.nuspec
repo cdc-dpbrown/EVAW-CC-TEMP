@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>EntLib4.DAAB</id>
+    <version>4.1.0</version>
+    <title>Enterprise Library 4 Data Access Application Block</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://entlib.codeplex.com/license</licenseUrl>
+    <projectUrl>http://msdn.microsoft.com/en-us/library/ff647292.aspx</projectUrl>
+    <iconUrl>https://nugetgallery.blob.core.windows.net/icons/EntLib4.DAAB.4.1.0.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The necessary signed files for running the Data Access Application Block (DAAB) from the Enterprise Library 4.1</description>
+    <summary>The necessary signed files for running the Data Access Application Block (DAAB) from the Enterprise Library 4.1</summary>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>enterprise library entlib data access application block daab .net35</tags>
+  </metadata>
+</package>
