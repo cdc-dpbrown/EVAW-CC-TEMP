@@ -2,3 +2,7 @@ C:\TFSCode\EWAV\Ewav.ContextMenu.Components\Bin\Debug\Ewav.ContextMenu.Component
 C:\TFSCode\EWAV\Ewav.ContextMenu.Components\Bin\Debug\Ewav.ContextMenu.Components.pdb
 C:\TFSCode\EWAV\Ewav.ContextMenu.Components\obj\Debug\Ewav.ContextMenu.Components.dll
 C:\TFSCode\EWAV\Ewav.ContextMenu.Components\obj\Debug\Ewav.ContextMenu.Components.pdb
+C:\_CODE\EVAW-CC-TEMP\Ewav.ContextMenu.Components\Bin\Debug\EWAV.ContextMenu.Components.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.ContextMenu.Components\Bin\Debug\EWAV.ContextMenu.Components.pdb
+C:\_CODE\EVAW-CC-TEMP\Ewav.ContextMenu.Components\obj\Debug\EWAV.ContextMenu.Components.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.ContextMenu.Components\obj\Debug\EWAV.ContextMenu.Components.pdb

@@ -5,14 +5,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using EWAV.ViewModels;
-//using EWAV.Views.Admin;
 using EWAV.Membership;
 using EWAV.DTO;
 using System.Collections.ObjectModel;
 using EWAV.Client.Application;
 using EWAV.BAL;
 using EWAV.ExtensionMethods;
-using EWAV.Views.Admin;
+using EWAVD3.Views.Admin;
 using EWAV.Views.Dialogs;
 
 namespace EWAV

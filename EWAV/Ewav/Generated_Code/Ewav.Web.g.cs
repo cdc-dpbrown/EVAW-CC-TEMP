@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ewav
+namespace EWAV
 {
     using System;
     using System.Collections.Generic;
@@ -25,7 +25,7 @@ namespace Ewav
     /// <summary>
     /// The 'CanvasDto' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV")]
     public sealed partial class CanvasDto : ComplexObject
     {
         
@@ -49,7 +49,7 @@ namespace Ewav
         
         private int _datasourceID;
         
-        private string _ewavLITEPermalink;
+        private string _ewavlitePermalink;
         
         private string _ewavPermalink;
         
@@ -96,10 +96,10 @@ namespace Ewav
         partial void OnDatasourceChanged();
         partial void OnDatasourceIDChanging(int value);
         partial void OnDatasourceIDChanged();
-        partial void OnEwavLITEPermalinkChanging(string value);
-        partial void OnEwavLITEPermalinkChanged();
-        partial void OnEwavPermalinkChanging(string value);
-        partial void OnEwavPermalinkChanged();
+        partial void OnEWAVLITEPermalinkChanging(string value);
+        partial void OnEWAVLITEPermalinkChanged();
+        partial void OnEWAVPermalinkChanging(string value);
+        partial void OnEWAVPermalinkChanged();
         partial void OnHeightChanging(double value);
         partial void OnHeightChanged();
         partial void OnIsNewCanvasChanging(bool value);
@@ -369,34 +369,34 @@ namespace Ewav
         }
         
         /// <summary>
-        /// Gets or sets the 'EwavLITEPermalink' value.
+        /// Gets or sets the 'EWAVLITEPermalink' value.
         /// </summary>
         [DataMember()]
-        public string EwavLITEPermalink
+        public string EWAVLITEPermalink
         {
             get
             {
-                return this._ewavLITEPermalink;
+                return this._ewavlitePermalink;
             }
             set
             {
-                if ((this._ewavLITEPermalink != value))
+                if ((this._ewavlitePermalink != value))
                 {
-                    this.OnEwavLITEPermalinkChanging(value);
-                    this.RaiseDataMemberChanging("EwavLITEPermalink");
-                    this.ValidateProperty("EwavLITEPermalink", value);
-                    this._ewavLITEPermalink = value;
-                    this.RaiseDataMemberChanged("EwavLITEPermalink");
-                    this.OnEwavLITEPermalinkChanged();
+                    this.OnEWAVLITEPermalinkChanging(value);
+                    this.RaiseDataMemberChanging("EWAVLITEPermalink");
+                    this.ValidateProperty("EWAVLITEPermalink", value);
+                    this._ewavlitePermalink = value;
+                    this.RaiseDataMemberChanged("EWAVLITEPermalink");
+                    this.OnEWAVLITEPermalinkChanged();
                 }
             }
         }
         
         /// <summary>
-        /// Gets or sets the 'EwavPermalink' value.
+        /// Gets or sets the 'EWAVPermalink' value.
         /// </summary>
         [DataMember()]
-        public string EwavPermalink
+        public string EWAVPermalink
         {
             get
             {
@@ -406,12 +406,12 @@ namespace Ewav
             {
                 if ((this._ewavPermalink != value))
                 {
-                    this.OnEwavPermalinkChanging(value);
-                    this.RaiseDataMemberChanging("EwavPermalink");
-                    this.ValidateProperty("EwavPermalink", value);
+                    this.OnEWAVPermalinkChanging(value);
+                    this.RaiseDataMemberChanging("EWAVPermalink");
+                    this.ValidateProperty("EWAVPermalink", value);
                     this._ewavPermalink = value;
-                    this.RaiseDataMemberChanged("EwavPermalink");
-                    this.OnEwavPermalinkChanged();
+                    this.RaiseDataMemberChanged("EWAVPermalink");
+                    this.OnEWAVPermalinkChanged();
                 }
             }
         }
@@ -612,7 +612,7 @@ namespace Ewav
     /// <summary>
     /// The 'OrganizationDto' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV")]
     public sealed partial class OrganizationDto : ComplexObject
     {
         
@@ -916,7 +916,7 @@ namespace Ewav
         }
     }
 }
-namespace Ewav.BAL
+namespace EWAV.BAL
 {
     using System;
     using System.Collections.Generic;
@@ -927,14 +927,14 @@ namespace Ewav.BAL
     using System.ServiceModel.DomainServices;
     using System.ServiceModel.DomainServices.Client;
     using System.ServiceModel.DomainServices.Client.ApplicationServices;
-    using Ewav.Web.EpiDashboard;
+    using EWAV.Web.EpiDashboard;
     
     
     /// <summary>
-    /// The 'EwavColumn' class.
+    /// The 'EWAVColumn' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.BAL")]
-    public sealed partial class EwavColumn : ComplexObject
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.BAL")]
+    public sealed partial class EWAVColumn : ComplexObject
     {
         
         private string _childVariableName;
@@ -977,9 +977,9 @@ namespace Ewav.BAL
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavColumn"/> class.
+        /// Initializes a new instance of the <see cref="EWAVColumn"/> class.
         /// </summary>
-        public EwavColumn()
+        public EWAVColumn()
         {
             this.OnCreated();
         }
@@ -1154,13 +1154,13 @@ namespace Ewav.BAL
     }
     
     /// <summary>
-    /// The 'EwavDatasourceDto' class.
+    /// The 'EWAVDatasourceDto' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.BAL")]
-    public sealed partial class EwavDatasourceDto : ComplexObject
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.BAL")]
+    public sealed partial class EWAVDatasourceDto : ComplexObject
     {
         
-        private List<EwavColumn> _allColumns;
+        private List<EWAVColumn> _allColumns;
         
         private string _dataBaseType;
         
@@ -1185,7 +1185,7 @@ namespace Ewav.BAL
         /// can be used for further object setup.
         /// </summary>
         partial void OnCreated();
-        partial void OnAllColumnsChanging(List<EwavColumn> value);
+        partial void OnAllColumnsChanging(List<EWAVColumn> value);
         partial void OnAllColumnsChanged();
         partial void OnDataBaseTypeChanging(string value);
         partial void OnDataBaseTypeChanged();
@@ -1208,9 +1208,9 @@ namespace Ewav.BAL
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavDatasourceDto"/> class.
+        /// Initializes a new instance of the <see cref="EWAVDatasourceDto"/> class.
         /// </summary>
-        public EwavDatasourceDto()
+        public EWAVDatasourceDto()
         {
             this.OnCreated();
         }
@@ -1220,7 +1220,7 @@ namespace Ewav.BAL
         /// </summary>
         [DataMember()]
         [Display(AutoGenerateField=false)]
-        public List<EwavColumn> AllColumns
+        public List<EWAVColumn> AllColumns
         {
             get
             {
@@ -1433,7 +1433,7 @@ namespace Ewav.BAL
         }
     }
 }
-namespace Ewav.DTO
+namespace EWAV.DTO
 {
     using System;
     using System.Collections.Generic;
@@ -1444,13 +1444,13 @@ namespace Ewav.DTO
     using System.ServiceModel.DomainServices;
     using System.ServiceModel.DomainServices.Client;
     using System.ServiceModel.DomainServices.Client.ApplicationServices;
-    using Ewav;
+    using EWAV;
     
     
     /// <summary>
     /// The 'CanvasShareStatusDto' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class CanvasShareStatusDto : ComplexObject
     {
         
@@ -1701,7 +1701,7 @@ namespace Ewav.DTO
     /// <summary>
     /// The 'Connection' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class Connection : ComplexObject
     {
         
@@ -1711,7 +1711,7 @@ namespace Ewav.DTO
         
         private DataBaseTypeEnum _databaseType;
         
-        private EwavDatabaseObjectType _dataType;
+        private EWAVDatabaseObjectType _dataType;
         
         private string _password;
         
@@ -1736,7 +1736,7 @@ namespace Ewav.DTO
         partial void OnDatabaseObjectChanged();
         partial void OnDatabaseTypeChanging(DataBaseTypeEnum value);
         partial void OnDatabaseTypeChanged();
-        partial void OnDataTypeChanging(EwavDatabaseObjectType value);
+        partial void OnDataTypeChanging(EWAVDatabaseObjectType value);
         partial void OnDataTypeChanged();
         partial void OnPasswordChanging(string value);
         partial void OnPasswordChanged();
@@ -1836,7 +1836,7 @@ namespace Ewav.DTO
         /// Gets or sets the 'DataType' value.
         /// </summary>
         [DataMember()]
-        public EwavDatabaseObjectType DataType
+        public EWAVDatabaseObjectType DataType
         {
             get
             {
@@ -1990,7 +1990,7 @@ namespace Ewav.DTO
     /// <summary>
     /// The 'DatasourceDto' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class DatasourceDto : ComplexObject
     {
         
@@ -2004,7 +2004,7 @@ namespace Ewav.DTO
         
         private string _datasourceServerName;
         
-        private EwavDatabaseObjectType _ewavDatabaseObjectType;
+        private EWAVDatabaseObjectType _ewavDatabaseObjectType;
         
         private bool _isActive;
         
@@ -2031,8 +2031,8 @@ namespace Ewav.DTO
         partial void OnDatasourceNameChanged();
         partial void OnDatasourceServerNameChanging(string value);
         partial void OnDatasourceServerNameChanged();
-        partial void OnEwavDatabaseObjectTypeChanging(EwavDatabaseObjectType value);
-        partial void OnEwavDatabaseObjectTypeChanged();
+        partial void OnEWAVDatabaseObjectTypeChanging(EWAVDatabaseObjectType value);
+        partial void OnEWAVDatabaseObjectTypeChanged();
         partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
         partial void OnIsEpiInfoFormChanging(bool value);
@@ -2176,10 +2176,10 @@ namespace Ewav.DTO
         }
         
         /// <summary>
-        /// Gets or sets the 'EwavDatabaseObjectType' value.
+        /// Gets or sets the 'EWAVDatabaseObjectType' value.
         /// </summary>
         [DataMember()]
-        public EwavDatabaseObjectType EwavDatabaseObjectType
+        public EWAVDatabaseObjectType EWAVDatabaseObjectType
         {
             get
             {
@@ -2189,12 +2189,12 @@ namespace Ewav.DTO
             {
                 if ((this._ewavDatabaseObjectType != value))
                 {
-                    this.OnEwavDatabaseObjectTypeChanging(value);
-                    this.RaiseDataMemberChanging("EwavDatabaseObjectType");
-                    this.ValidateProperty("EwavDatabaseObjectType", value);
+                    this.OnEWAVDatabaseObjectTypeChanging(value);
+                    this.RaiseDataMemberChanging("EWAVDatabaseObjectType");
+                    this.ValidateProperty("EWAVDatabaseObjectType", value);
                     this._ewavDatabaseObjectType = value;
-                    this.RaiseDataMemberChanged("EwavDatabaseObjectType");
-                    this.OnEwavDatabaseObjectTypeChanged();
+                    this.RaiseDataMemberChanged("EWAVDatabaseObjectType");
+                    this.OnEWAVDatabaseObjectTypeChanged();
                 }
             }
         }
@@ -2299,7 +2299,7 @@ namespace Ewav.DTO
     /// <summary>
     /// The 'DatasourceUserDto' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class DatasourceUserDto : ComplexObject
     {
         
@@ -2379,7 +2379,7 @@ namespace Ewav.DTO
         }
     }
     
-    public enum EwavDatabaseObjectType
+    public enum EWAVDatabaseObjectType
     {
         
         Table = 0,
@@ -2390,10 +2390,10 @@ namespace Ewav.DTO
     }
     
     /// <summary>
-    /// The 'EwavFrequencyControlDto' class.
+    /// The 'EWAVFrequencyControlDto' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
-    public sealed partial class EwavFrequencyControlDto : ComplexObject
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
+    public sealed partial class EWAVFrequencyControlDto : ComplexObject
     {
         
         private string _frequencyColumn;
@@ -2432,9 +2432,9 @@ namespace Ewav.DTO
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavFrequencyControlDto"/> class.
+        /// Initializes a new instance of the <see cref="EWAVFrequencyControlDto"/> class.
         /// </summary>
-        public EwavFrequencyControlDto()
+        public EWAVFrequencyControlDto()
         {
             this.OnCreated();
         }
@@ -2587,7 +2587,7 @@ namespace Ewav.DTO
     /// <summary>
     /// The 'EWEDatasourceDto' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class EWEDatasourceDto : ComplexObject
     {
         
@@ -2642,7 +2642,7 @@ namespace Ewav.DTO
     /// <summary>
     /// The 'PasswordRulesDTO' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class PasswordRulesDTO : ComplexObject
     {
         
@@ -3017,7 +3017,7 @@ namespace Ewav.DTO
     /// <summary>
     /// The 'PointDTO' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class PointDTO : ComplexObject
     {
         
@@ -3184,7 +3184,7 @@ namespace Ewav.DTO
     /// <summary>
     /// The 'PointDTOCollection' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class PointDTOCollection : ComplexObject
     {
         
@@ -3240,7 +3240,7 @@ namespace Ewav.DTO
     /// <summary>
     /// The 'StatCalc2x2' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class StatCalc2x2 : ComplexObject
     {
         
@@ -3911,7 +3911,7 @@ namespace Ewav.DTO
     /// <summary>
     /// The 'UserDTO' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class UserDTO : ComplexObject
     {
         
@@ -4424,7 +4424,7 @@ namespace Ewav.DTO
     /// <summary>
     /// The 'UserOrganizationDto' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.DTO")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.DTO")]
     public sealed partial class UserOrganizationDto : ComplexObject
     {
         
@@ -4591,7 +4591,7 @@ namespace Ewav.DTO
         }
     }
 }
-namespace Ewav.Web
+namespace EWAV.Web
 {
     using System;
     using System.Collections.Generic;
@@ -4602,17 +4602,17 @@ namespace Ewav.Web
     using System.ServiceModel.DomainServices;
     using System.ServiceModel.DomainServices.Client;
     using System.ServiceModel.DomainServices.Client.ApplicationServices;
-    using Ewav.Web.Services;
+    using EWAV.Web.Services;
     
     
     /// <summary>
     /// The 'Class1' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web")]
     public sealed partial class Class1 : ComplexObject
     {
         
-        private List<EwavDataFilterCondition> _dfc;
+        private List<EWAVDataFilterCondition> _dfc;
         
         #region Extensibility Method Definitions
 
@@ -4621,7 +4621,7 @@ namespace Ewav.Web
         /// can be used for further object setup.
         /// </summary>
         partial void OnCreated();
-        partial void OnDfcChanging(List<EwavDataFilterCondition> value);
+        partial void OnDfcChanging(List<EWAVDataFilterCondition> value);
         partial void OnDfcChanged();
 
         #endregion
@@ -4640,7 +4640,7 @@ namespace Ewav.Web
         /// </summary>
         [DataMember()]
         [Display(AutoGenerateField=false)]
-        public List<EwavDataFilterCondition> Dfc
+        public List<EWAVDataFilterCondition> Dfc
         {
             get
             {
@@ -4661,7 +4661,7 @@ namespace Ewav.Web
         }
     }
 }
-namespace Ewav.Web.EpiDashboard
+namespace EWAV.Web.EpiDashboard
 {
     using System;
     using System.Collections.Generic;
@@ -4672,8 +4672,8 @@ namespace Ewav.Web.EpiDashboard
     using System.ServiceModel.DomainServices;
     using System.ServiceModel.DomainServices.Client;
     using System.ServiceModel.DomainServices.Client.ApplicationServices;
-    using Ewav.BAL;
-    using Ewav.Web.Services;
+    using EWAV.BAL;
+    using EWAV.Web.Services;
     
     
     [Flags()]
@@ -4708,7 +4708,7 @@ namespace Ewav.Web.EpiDashboard
     /// <summary>
     /// The 'DescriptiveStatistics' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.EpiDashboard")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.EpiDashboard")]
     public sealed partial class DescriptiveStatistics : ComplexObject
     {
         
@@ -5517,10 +5517,10 @@ namespace Ewav.Web.EpiDashboard
     }
     
     /// <summary>
-    /// The 'EwavCombinedFrequencyGadgetParameters' class.
+    /// The 'EWAVCombinedFrequencyGadgetParameters' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.EpiDashboard")]
-    public sealed partial class EwavCombinedFrequencyGadgetParameters : ComplexObject
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.EpiDashboard")]
+    public sealed partial class EWAVCombinedFrequencyGadgetParameters : ComplexObject
     {
         
         private CombineModeTypes _combineMode;
@@ -5551,9 +5551,9 @@ namespace Ewav.Web.EpiDashboard
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavCombinedFrequencyGadgetParameters"/> class.
+        /// Initializes a new instance of the <see cref="EWAVCombinedFrequencyGadgetParameters"/> class.
         /// </summary>
-        public EwavCombinedFrequencyGadgetParameters()
+        public EWAVCombinedFrequencyGadgetParameters()
         {
             this.OnCreated();
         }
@@ -5658,7 +5658,7 @@ namespace Ewav.Web.EpiDashboard
     /// <summary>
     /// The 'GadgetParameters' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.EpiDashboard")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.EpiDashboard")]
     public sealed partial class GadgetParameters : ComplexObject
     {
         
@@ -5676,7 +5676,7 @@ namespace Ewav.Web.EpiDashboard
         
         private string _errorMessage;
         
-        private List<EwavDataFilterCondition> _gadgetFilters;
+        private List<EWAVDataFilterCondition> _gadgetFilters;
         
         private Dictionary<string, string> _inputVariableList;
         
@@ -5684,7 +5684,7 @@ namespace Ewav.Web.EpiDashboard
         
         private IEnumerable<string> _mainVariableNames;
         
-        private List<EwavColumn> _mapTipsColumnList;
+        private List<EWAVColumn> _mapTipsColumnList;
         
         private bool _shouldIncludeFullSummaryStatistics;
         
@@ -5727,7 +5727,7 @@ namespace Ewav.Web.EpiDashboard
         partial void OnDatasourceNameChanged();
         partial void OnErrorMessageChanging(string value);
         partial void OnErrorMessageChanged();
-        partial void OnGadgetFiltersChanging(List<EwavDataFilterCondition> value);
+        partial void OnGadgetFiltersChanging(List<EWAVDataFilterCondition> value);
         partial void OnGadgetFiltersChanged();
         partial void OnInputVariableListChanging(Dictionary<string, string> value);
         partial void OnInputVariableListChanged();
@@ -5735,7 +5735,7 @@ namespace Ewav.Web.EpiDashboard
         partial void OnMainVariableNameChanged();
         partial void OnMainVariableNamesChanging(IEnumerable<string> value);
         partial void OnMainVariableNamesChanged();
-        partial void OnMapTipsColumnListChanging(List<EwavColumn> value);
+        partial void OnMapTipsColumnListChanging(List<EWAVColumn> value);
         partial void OnMapTipsColumnListChanged();
         partial void OnShouldIncludeFullSummaryStatisticsChanging(bool value);
         partial void OnShouldIncludeFullSummaryStatisticsChanged();
@@ -5943,7 +5943,7 @@ namespace Ewav.Web.EpiDashboard
         /// </summary>
         [DataMember()]
         [Display(AutoGenerateField=false)]
-        public List<EwavDataFilterCondition> GadgetFilters
+        public List<EWAVDataFilterCondition> GadgetFilters
         {
             get
             {
@@ -6040,7 +6040,7 @@ namespace Ewav.Web.EpiDashboard
         /// </summary>
         [DataMember()]
         [Display(AutoGenerateField=false)]
-        public List<EwavColumn> MapTipsColumnList
+        public List<EWAVColumn> MapTipsColumnList
         {
             get
             {
@@ -6302,7 +6302,7 @@ namespace Ewav.Web.EpiDashboard
         }
     }
 }
-namespace Ewav.Web.EpiDashboard.Rules
+namespace EWAV.Web.EpiDashboard.Rules
 {
     using System;
     using System.Collections.Generic;
@@ -6450,7 +6450,7 @@ namespace Ewav.Web.EpiDashboard.Rules
         DetermineFieldsWithMissingInGroup = 30,
     }
 }
-namespace Ewav.Web.Services
+namespace EWAV.Web.Services
 {
     using System;
     using System.Collections.Generic;
@@ -6463,12 +6463,12 @@ namespace Ewav.Web.Services
     using System.ServiceModel.DomainServices.Client;
     using System.ServiceModel.DomainServices.Client.ApplicationServices;
     using System.ServiceModel.Web;
-    using Ewav;
-    using Ewav.BAL;
-    using Ewav.DTO;
-    using Ewav.Web;
-    using Ewav.Web.EpiDashboard;
-    using Ewav.Web.EpiDashboard.Rules;
+    using EWAV;
+    using EWAV.BAL;
+    using EWAV.DTO;
+    using EWAV.Web;
+    using EWAV.Web.EpiDashboard;
+    using EWAV.Web.EpiDashboard.Rules;
     
     
     /// <summary>
@@ -6492,7 +6492,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="AberrationDomainContext"/> class.
         /// </summary>
         public AberrationDomainContext() : 
-                this(new WebDomainClient<IAberrationDomainServiceContract>(new Uri("Ewav-Web-Services-AberrationDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IAberrationDomainServiceContract>(new Uri("EWAV-Web-Services-AberrationDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -6516,27 +6516,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="AberrationDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="AberrationDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -6549,7 +6549,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, Action<InvokeOperation<List<FrequencyResultData>>> callback, object userState)
+        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, Action<InvokeOperation<List<FrequencyResultData>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -6568,7 +6568,7 @@ namespace Ewav.Web.Services
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString)
+        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -6587,13 +6587,13 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EwavColumn>>> callback, object userState)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EWAVColumn>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, callback, userState)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, callback, userState)));
         }
         
         /// <summary>
@@ -6602,13 +6602,13 @@ namespace Ewav.Web.Services
         /// <param name="DataSourceName">The value for the 'DataSourceName' parameter of this action.</param>
         /// <param name="TableName">The value for the 'TableName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, null, null)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, null, null)));
         }
         
         /// <summary>
@@ -6646,7 +6646,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient7(EwavFrequencyControlDto gp, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient7(EWAVFrequencyControlDto gp, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -6659,7 +6659,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="gp">The value for the 'gp' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient7(EwavFrequencyControlDto gp)
+        public InvokeOperation PortClassToClient7(EWAVFrequencyControlDto gp)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -6674,7 +6674,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient77(EwavColumn gp, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient77(EWAVColumn gp, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -6687,7 +6687,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="gp">The value for the 'gp' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient77(EwavColumn gp)
+        public InvokeOperation PortClassToClient77(EWAVColumn gp)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -6730,7 +6730,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient79(EwavConnectionString aa, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient79(EWAVConnectionString aa, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("aa", aa);
@@ -6743,7 +6743,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="aa">The value for the 'aa' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient79(EwavConnectionString aa)
+        public InvokeOperation PortClassToClient79(EWAVConnectionString aa)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("aa", aa);
@@ -6780,7 +6780,7 @@ namespace Ewav.Web.Services
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/AberrationDomainService/GenerateFrequencyTableDomainServiceFau" +
                 "lt", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/AberrationDomainService/GenerateFrequencyTable", ReplyAction="http://tempuri.org/AberrationDomainService/GenerateFrequencyTableResponse")]
-            IAsyncResult BeginGenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGenerateFrequencyTable'.
@@ -6806,7 +6806,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetColumns'.</param>
             /// <returns>The 'List`1' returned from the 'GetColumns' operation.</returns>
-            List<EwavColumn> EndGetColumns(IAsyncResult result);
+            List<EWAVColumn> EndGetColumns(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'Getrule' operation.
@@ -6825,7 +6825,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'PortClassToClient4' operation.
@@ -6853,7 +6853,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/AberrationDomainService/PortClassToClient7DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/AberrationDomainService/PortClassToClient7", ReplyAction="http://tempuri.org/AberrationDomainService/PortClassToClient7Response")]
-            IAsyncResult BeginPortClassToClient7(EwavFrequencyControlDto gp, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient7(EWAVFrequencyControlDto gp, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient7'.
@@ -6870,7 +6870,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/AberrationDomainService/PortClassToClient77DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/AberrationDomainService/PortClassToClient77", ReplyAction="http://tempuri.org/AberrationDomainService/PortClassToClient77Response")]
-            IAsyncResult BeginPortClassToClient77(EwavColumn gp, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient77(EWAVColumn gp, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient77'.
@@ -6905,7 +6905,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/AberrationDomainService/PortClassToClient79DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/AberrationDomainService/PortClassToClient79", ReplyAction="http://tempuri.org/AberrationDomainService/PortClassToClient79Response")]
-            IAsyncResult BeginPortClassToClient79(EwavConnectionString aa, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient79(EWAVConnectionString aa, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient79'.
@@ -6919,7 +6919,7 @@ namespace Ewav.Web.Services
             
             public AberrationDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
@@ -6945,7 +6945,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="BinomialDomainContext"/> class.
         /// </summary>
         public BinomialDomainContext() : 
-                this(new WebDomainClient<IBinomialDomainServiceContract>(new Uri("Ewav-Web-Services-BinomialDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IBinomialDomainServiceContract>(new Uri("EWAV-Web-Services-BinomialDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -7053,7 +7053,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'BinomialStatCalcDTO' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class BinomialStatCalcDTO : ComplexObject
     {
         
@@ -7288,7 +7288,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'CrossTabResponseObjectDto' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class CrossTabResponseObjectDto : ComplexObject
     {
         
@@ -7390,7 +7390,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="DatasourceDomainContext"/> class.
         /// </summary>
         public DatasourceDomainContext() : 
-                this(new WebDomainClient<IDatasourceDomainServiceContract>(new Uri("Ewav-Web-Services-DatasourceDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IDatasourceDomainServiceContract>(new Uri("EWAV-Web-Services-DatasourceDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -7414,27 +7414,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="DatasourceDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="DatasourceDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -7444,12 +7444,12 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumnsForDatasource(string datasourceName, Action<InvokeOperation<List<EwavColumn>>> callback, object userState)
+        public InvokeOperation<List<EWAVColumn>> GetColumnsForDatasource(string datasourceName, Action<InvokeOperation<List<EWAVColumn>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("datasourceName", datasourceName);
             this.ValidateMethod("GetColumnsForDatasource", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumnsForDatasource", typeof(List<EwavColumn>), parameters, true, callback, userState)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumnsForDatasource", typeof(List<EWAVColumn>), parameters, true, callback, userState)));
         }
         
         /// <summary>
@@ -7457,12 +7457,12 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="datasourceName">The value for the 'datasourceName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumnsForDatasource(string datasourceName)
+        public InvokeOperation<List<EWAVColumn>> GetColumnsForDatasource(string datasourceName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("datasourceName", datasourceName);
             this.ValidateMethod("GetColumnsForDatasource", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumnsForDatasource", typeof(List<EwavColumn>), parameters, true, null, null)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumnsForDatasource", typeof(List<EWAVColumn>), parameters, true, null, null)));
         }
         
         /// <summary>
@@ -7472,12 +7472,12 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<IEnumerable<EwavDatasourceDto>> GetDatasourcesAsIEnumerble2(string userName, Action<InvokeOperation<IEnumerable<EwavDatasourceDto>>> callback, object userState)
+        public InvokeOperation<IEnumerable<EWAVDatasourceDto>> GetDatasourcesAsIEnumerble2(string userName, Action<InvokeOperation<IEnumerable<EWAVDatasourceDto>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("userName", userName);
             this.ValidateMethod("GetDatasourcesAsIEnumerble2", parameters);
-            return ((InvokeOperation<IEnumerable<EwavDatasourceDto>>)(this.InvokeOperation("GetDatasourcesAsIEnumerble2", typeof(IEnumerable<EwavDatasourceDto>), parameters, true, callback, userState)));
+            return ((InvokeOperation<IEnumerable<EWAVDatasourceDto>>)(this.InvokeOperation("GetDatasourcesAsIEnumerble2", typeof(IEnumerable<EWAVDatasourceDto>), parameters, true, callback, userState)));
         }
         
         /// <summary>
@@ -7485,12 +7485,12 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="userName">The value for the 'userName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<IEnumerable<EwavDatasourceDto>> GetDatasourcesAsIEnumerble2(string userName)
+        public InvokeOperation<IEnumerable<EWAVDatasourceDto>> GetDatasourcesAsIEnumerble2(string userName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("userName", userName);
             this.ValidateMethod("GetDatasourcesAsIEnumerble2", parameters);
-            return ((InvokeOperation<IEnumerable<EwavDatasourceDto>>)(this.InvokeOperation("GetDatasourcesAsIEnumerble2", typeof(IEnumerable<EwavDatasourceDto>), parameters, true, null, null)));
+            return ((InvokeOperation<IEnumerable<EWAVDatasourceDto>>)(this.InvokeOperation("GetDatasourcesAsIEnumerble2", typeof(IEnumerable<EWAVDatasourceDto>), parameters, true, null, null)));
         }
         
         /// <summary>
@@ -7503,7 +7503,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<string> GetRecordCount(List<EwavDataFilterCondition> filterList, List<EwavRule_Base> rules, string tableName, string dsName, Action<InvokeOperation<string>> callback, object userState)
+        public InvokeOperation<string> GetRecordCount(List<EWAVDataFilterCondition> filterList, List<EWAVRule_Base> rules, string tableName, string dsName, Action<InvokeOperation<string>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("filterList", filterList);
@@ -7522,7 +7522,7 @@ namespace Ewav.Web.Services
         /// <param name="tableName">The value for the 'tableName' parameter of this action.</param>
         /// <param name="dsName">The value for the 'dsName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<string> GetRecordCount(List<EwavDataFilterCondition> filterList, List<EwavRule_Base> rules, string tableName, string dsName)
+        public InvokeOperation<string> GetRecordCount(List<EWAVDataFilterCondition> filterList, List<EWAVRule_Base> rules, string tableName, string dsName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("filterList", filterList);
@@ -7543,7 +7543,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<string> GetRecordCountByString(List<EwavRule_Base> rules, string s, string tableName, string dsName, Action<InvokeOperation<string>> callback, object userState)
+        public InvokeOperation<string> GetRecordCountByString(List<EWAVRule_Base> rules, string s, string tableName, string dsName, Action<InvokeOperation<string>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("rules", rules);
@@ -7562,7 +7562,7 @@ namespace Ewav.Web.Services
         /// <param name="tableName">The value for the 'tableName' parameter of this action.</param>
         /// <param name="dsName">The value for the 'dsName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<string> GetRecordCountByString(List<EwavRule_Base> rules, string s, string tableName, string dsName)
+        public InvokeOperation<string> GetRecordCountByString(List<EWAVRule_Base> rules, string s, string tableName, string dsName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("rules", rules);
@@ -7580,7 +7580,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortToClient(EwavRuleType d, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortToClient(EWAVRuleType d, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("d", d);
@@ -7593,7 +7593,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="d">The value for the 'd' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortToClient(EwavRuleType d)
+        public InvokeOperation PortToClient(EWAVRuleType d)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("d", d);
@@ -7611,7 +7611,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<string> ReadFilterString(List<EwavDataFilterCondition> filterList, List<EwavRule_Base> rules, string tableName, string dsName, Action<InvokeOperation<string>> callback, object userState)
+        public InvokeOperation<string> ReadFilterString(List<EWAVDataFilterCondition> filterList, List<EWAVRule_Base> rules, string tableName, string dsName, Action<InvokeOperation<string>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("filterList", filterList);
@@ -7630,7 +7630,7 @@ namespace Ewav.Web.Services
         /// <param name="tableName">The value for the 'tableName' parameter of this action.</param>
         /// <param name="dsName">The value for the 'dsName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<string> ReadFilterString(List<EwavDataFilterCondition> filterList, List<EwavRule_Base> rules, string tableName, string dsName)
+        public InvokeOperation<string> ReadFilterString(List<EWAVDataFilterCondition> filterList, List<EWAVRule_Base> rules, string tableName, string dsName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("filterList", filterList);
@@ -7674,7 +7674,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetColumnsForDatasource'.</param>
             /// <returns>The 'List`1' returned from the 'GetColumnsForDatasource' operation.</returns>
-            List<EwavColumn> EndGetColumnsForDatasource(IAsyncResult result);
+            List<EWAVColumn> EndGetColumnsForDatasource(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'GetDatasourcesAsIEnumerble2' operation.
@@ -7693,7 +7693,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetDatasourcesAsIEnumerble2'.</param>
             /// <returns>The 'IEnumerable`1' returned from the 'GetDatasourcesAsIEnumerble2' operation.</returns>
-            IEnumerable<EwavDatasourceDto> EndGetDatasourcesAsIEnumerble2(IAsyncResult result);
+            IEnumerable<EWAVDatasourceDto> EndGetDatasourcesAsIEnumerble2(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'GetRecordCount' operation.
@@ -7707,7 +7707,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/DatasourceDomainService/GetRecordCountDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/DatasourceDomainService/GetRecordCount", ReplyAction="http://tempuri.org/DatasourceDomainService/GetRecordCountResponse")]
-            IAsyncResult BeginGetRecordCount(List<EwavDataFilterCondition> filterList, List<EwavRule_Base> rules, string tableName, string dsName, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGetRecordCount(List<EWAVDataFilterCondition> filterList, List<EWAVRule_Base> rules, string tableName, string dsName, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGetRecordCount'.
@@ -7729,7 +7729,7 @@ namespace Ewav.Web.Services
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/DatasourceDomainService/GetRecordCountByStringDomainServiceFau" +
                 "lt", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/DatasourceDomainService/GetRecordCountByString", ReplyAction="http://tempuri.org/DatasourceDomainService/GetRecordCountByStringResponse")]
-            IAsyncResult BeginGetRecordCountByString(List<EwavRule_Base> rules, string s, string tableName, string dsName, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGetRecordCountByString(List<EWAVRule_Base> rules, string s, string tableName, string dsName, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGetRecordCountByString'.
@@ -7755,7 +7755,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'PortToClient' operation.
@@ -7766,7 +7766,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/DatasourceDomainService/PortToClientDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/DatasourceDomainService/PortToClient", ReplyAction="http://tempuri.org/DatasourceDomainService/PortToClientResponse")]
-            IAsyncResult BeginPortToClient(EwavRuleType d, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortToClient(EWAVRuleType d, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortToClient'.
@@ -7786,7 +7786,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/DatasourceDomainService/ReadFilterStringDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/DatasourceDomainService/ReadFilterString", ReplyAction="http://tempuri.org/DatasourceDomainService/ReadFilterStringResponse")]
-            IAsyncResult BeginReadFilterString(List<EwavDataFilterCondition> filterList, List<EwavRule_Base> rules, string tableName, string dsName, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginReadFilterString(List<EWAVDataFilterCondition> filterList, List<EWAVRule_Base> rules, string tableName, string dsName, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginReadFilterString'.
@@ -7801,7 +7801,7 @@ namespace Ewav.Web.Services
             
             public DatasourceDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
@@ -7809,7 +7809,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'DatatableBag' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class DatatableBag : ComplexObject
     {
         
@@ -8084,7 +8084,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="DiagnosticsDomainContext"/> class.
         /// </summary>
         public DiagnosticsDomainContext() : 
-                this(new WebDomainClient<IDiagnosticsDomainServiceContract>(new Uri("Ewav-Web-Services-DiagnosticsDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IDiagnosticsDomainServiceContract>(new Uri("EWAV-Web-Services-DiagnosticsDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -8348,7 +8348,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'DictionaryDTO' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class DictionaryDTO : ComplexObject
     {
         
@@ -8451,7 +8451,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="EpiCurveDomainContext"/> class.
         /// </summary>
         public EpiCurveDomainContext() : 
-                this(new WebDomainClient<IEpiCurveDomainServiceContract>(new Uri("Ewav-Web-Services-EpiCurveDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IEpiCurveDomainServiceContract>(new Uri("EWAV-Web-Services-EpiCurveDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -8475,27 +8475,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="EpiCurveDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="EpiCurveDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -8506,13 +8506,13 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EwavColumn>>> callback, object userState)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EWAVColumn>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, callback, userState)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, callback, userState)));
         }
         
         /// <summary>
@@ -8521,13 +8521,13 @@ namespace Ewav.Web.Services
         /// <param name="DataSourceName">The value for the 'DataSourceName' parameter of this action.</param>
         /// <param name="TableName">The value for the 'TableName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, null, null)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, null, null)));
         }
         
         /// <summary>
@@ -8543,7 +8543,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<DatatableBag> GetEpiCurveData(GadgetParameters gadgetParameters, List<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, bool byEpiWeek, string dateVar, string caseStatusVar, Action<InvokeOperation<DatatableBag>> callback, object userState)
+        public InvokeOperation<DatatableBag> GetEpiCurveData(GadgetParameters gadgetParameters, List<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, bool byEpiWeek, string dateVar, string caseStatusVar, Action<InvokeOperation<DatatableBag>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -8568,7 +8568,7 @@ namespace Ewav.Web.Services
         /// <param name="dateVar">The value for the 'dateVar' parameter of this action.</param>
         /// <param name="caseStatusVar">The value for the 'caseStatusVar' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<DatatableBag> GetEpiCurveData(GadgetParameters gadgetParameters, List<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, bool byEpiWeek, string dateVar, string caseStatusVar)
+        public InvokeOperation<DatatableBag> GetEpiCurveData(GadgetParameters gadgetParameters, List<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, bool byEpiWeek, string dateVar, string caseStatusVar)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -8617,7 +8617,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient7(EwavFrequencyControlDto gp, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient7(EWAVFrequencyControlDto gp, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -8630,7 +8630,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="gp">The value for the 'gp' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient7(EwavFrequencyControlDto gp)
+        public InvokeOperation PortClassToClient7(EWAVFrequencyControlDto gp)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -8645,7 +8645,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient77(EwavColumn gp, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient77(EWAVColumn gp, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -8658,7 +8658,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="gp">The value for the 'gp' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient77(EwavColumn gp)
+        public InvokeOperation PortClassToClient77(EWAVColumn gp)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -8701,7 +8701,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient79(EwavConnectionString aa, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient79(EWAVConnectionString aa, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("aa", aa);
@@ -8714,7 +8714,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="aa">The value for the 'aa' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient79(EwavConnectionString aa)
+        public InvokeOperation PortClassToClient79(EWAVConnectionString aa)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("aa", aa);
@@ -8755,7 +8755,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetColumns'.</param>
             /// <returns>The 'List`1' returned from the 'GetColumns' operation.</returns>
-            List<EwavColumn> EndGetColumns(IAsyncResult result);
+            List<EWAVColumn> EndGetColumns(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'GetEpiCurveData' operation.
@@ -8772,7 +8772,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/EpiCurveDomainService/GetEpiCurveDataDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/EpiCurveDomainService/GetEpiCurveData", ReplyAction="http://tempuri.org/EpiCurveDomainService/GetEpiCurveDataResponse")]
-            IAsyncResult BeginGetEpiCurveData(GadgetParameters gadgetParameters, List<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, bool byEpiWeek, string dateVar, string caseStatusVar, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGetEpiCurveData(GadgetParameters gadgetParameters, List<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, bool byEpiWeek, string dateVar, string caseStatusVar, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGetEpiCurveData'.
@@ -8798,7 +8798,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'PortClassToClient4' operation.
@@ -8826,7 +8826,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/EpiCurveDomainService/PortClassToClient7DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/EpiCurveDomainService/PortClassToClient7", ReplyAction="http://tempuri.org/EpiCurveDomainService/PortClassToClient7Response")]
-            IAsyncResult BeginPortClassToClient7(EwavFrequencyControlDto gp, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient7(EWAVFrequencyControlDto gp, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient7'.
@@ -8843,7 +8843,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/EpiCurveDomainService/PortClassToClient77DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/EpiCurveDomainService/PortClassToClient77", ReplyAction="http://tempuri.org/EpiCurveDomainService/PortClassToClient77Response")]
-            IAsyncResult BeginPortClassToClient77(EwavColumn gp, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient77(EWAVColumn gp, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient77'.
@@ -8877,7 +8877,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/EpiCurveDomainService/PortClassToClient79DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/EpiCurveDomainService/PortClassToClient79", ReplyAction="http://tempuri.org/EpiCurveDomainService/PortClassToClient79Response")]
-            IAsyncResult BeginPortClassToClient79(EwavConnectionString aa, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient79(EWAVConnectionString aa, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient79'.
@@ -8891,16 +8891,16 @@ namespace Ewav.Web.Services
             
             public EpiCurveDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
     
     /// <summary>
-    /// The 'EwavConnectionString' class.
+    /// The 'EWAVConnectionString' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
-    public sealed partial class EwavConnectionString : ComplexObject
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
+    public sealed partial class EWAVConnectionString : ComplexObject
     {
         
         #region Extensibility Method Definitions
@@ -8915,19 +8915,19 @@ namespace Ewav.Web.Services
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavConnectionString"/> class.
+        /// Initializes a new instance of the <see cref="EWAVConnectionString"/> class.
         /// </summary>
-        public EwavConnectionString()
+        public EWAVConnectionString()
         {
             this.OnCreated();
         }
     }
     
     /// <summary>
-    /// The 'EwavDataFilterCondition' class.
+    /// The 'EWAVDataFilterCondition' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
-    public sealed partial class EwavDataFilterCondition : ComplexObject
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
+    public sealed partial class EWAVDataFilterCondition : ComplexObject
     {
         
         private MyString _fieldName;
@@ -8966,9 +8966,9 @@ namespace Ewav.Web.Services
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavDataFilterCondition"/> class.
+        /// Initializes a new instance of the <see cref="EWAVDataFilterCondition"/> class.
         /// </summary>
-        public EwavDataFilterCondition()
+        public EWAVDataFilterCondition()
         {
             this.OnCreated();
         }
@@ -9125,7 +9125,7 @@ namespace Ewav.Web.Services
     }
     
     /// <summary>
-    /// The 'EwavRule_Base' entity class.
+    /// The 'EWAVRule_Base' entity class.
     /// This entity is shared between the following contexts:
     /// The <see cref="AberrationDomainContext"/> context.
     /// The <see cref="LineListDomainContext"/> context.
@@ -9142,14 +9142,14 @@ namespace Ewav.Web.Services
     /// The <see cref="MapClusterDomainContext"/> context.
     /// The <see cref="CombinedFrequencyDomainContext"/> context.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
-    [KnownType(typeof(EwavRule_ConditionalAssign))]
-    [KnownType(typeof(EwavRule_ExpressionAssign))]
-    [KnownType(typeof(EwavRule_Format))]
-    [KnownType(typeof(EwavRule_GroupVariable))]
-    [KnownType(typeof(EwavRule_Recode))]
-    [KnownType(typeof(EwavRule_SimpleAssignment))]
-    public partial class EwavRule_Base : Entity
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
+    [KnownType(typeof(EWAVRule_ConditionalAssign))]
+    [KnownType(typeof(EWAVRule_ExpressionAssign))]
+    [KnownType(typeof(EWAVRule_Format))]
+    [KnownType(typeof(EWAVRule_GroupVariable))]
+    [KnownType(typeof(EWAVRule_Recode))]
+    [KnownType(typeof(EWAVRule_SimpleAssignment))]
+    public partial class EWAVRule_Base : Entity
     {
         
         private int _id;
@@ -9178,9 +9178,9 @@ namespace Ewav.Web.Services
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavRule_Base"/> class.
+        /// Initializes a new instance of the <see cref="EWAVRule_Base"/> class.
         /// </summary>
-        public EwavRule_Base()
+        public EWAVRule_Base()
         {
             this.OnCreated();
         }
@@ -9330,7 +9330,7 @@ namespace Ewav.Web.Services
     }
     
     /// <summary>
-    /// The 'EwavRule_ConditionalAssign' entity class.
+    /// The 'EWAVRule_ConditionalAssign' entity class.
     /// This entity is shared between the following contexts:
     /// The <see cref="AberrationDomainContext"/> context.
     /// The <see cref="LineListDomainContext"/> context.
@@ -9347,15 +9347,15 @@ namespace Ewav.Web.Services
     /// The <see cref="MapClusterDomainContext"/> context.
     /// The <see cref="CombinedFrequencyDomainContext"/> context.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
-    public sealed partial class EwavRule_ConditionalAssign : EwavRule_Base
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
+    public sealed partial class EWAVRule_ConditionalAssign : EWAVRule_Base
     {
         
         private string _assignValue;
         
         private cbxFieldTypeEnum _cbxFieldType;
         
-        private List<EwavDataFilterCondition> _conditionsList;
+        private List<EWAVDataFilterCondition> _conditionsList;
         
         private string _destinationColumnType;
         
@@ -9376,7 +9376,7 @@ namespace Ewav.Web.Services
         partial void OnAssignValueChanged();
         partial void OnCbxFieldTypeChanging(cbxFieldTypeEnum value);
         partial void OnCbxFieldTypeChanged();
-        partial void OnConditionsListChanging(List<EwavDataFilterCondition> value);
+        partial void OnConditionsListChanging(List<EWAVDataFilterCondition> value);
         partial void OnConditionsListChanged();
         partial void OnDestinationColumnTypeChanging(string value);
         partial void OnDestinationColumnTypeChanged();
@@ -9391,9 +9391,9 @@ namespace Ewav.Web.Services
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavRule_ConditionalAssign"/> class.
+        /// Initializes a new instance of the <see cref="EWAVRule_ConditionalAssign"/> class.
         /// </summary>
-        public EwavRule_ConditionalAssign()
+        public EWAVRule_ConditionalAssign()
         {
             this.OnCreated();
         }
@@ -9451,7 +9451,7 @@ namespace Ewav.Web.Services
         /// </summary>
         [DataMember()]
         [Display(AutoGenerateField=false)]
-        public List<EwavDataFilterCondition> ConditionsList
+        public List<EWAVDataFilterCondition> ConditionsList
         {
             get
             {
@@ -9570,7 +9570,7 @@ namespace Ewav.Web.Services
     }
     
     /// <summary>
-    /// The 'EwavRule_ExpressionAssign' entity class.
+    /// The 'EWAVRule_ExpressionAssign' entity class.
     /// This entity is shared between the following contexts:
     /// The <see cref="AberrationDomainContext"/> context.
     /// The <see cref="LineListDomainContext"/> context.
@@ -9587,8 +9587,8 @@ namespace Ewav.Web.Services
     /// The <see cref="MapClusterDomainContext"/> context.
     /// The <see cref="CombinedFrequencyDomainContext"/> context.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
-    public sealed partial class EwavRule_ExpressionAssign : EwavRule_Base
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
+    public sealed partial class EWAVRule_ExpressionAssign : EWAVRule_Base
     {
         
         private string _dataType;
@@ -9621,9 +9621,9 @@ namespace Ewav.Web.Services
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavRule_ExpressionAssign"/> class.
+        /// Initializes a new instance of the <see cref="EWAVRule_ExpressionAssign"/> class.
         /// </summary>
-        public EwavRule_ExpressionAssign()
+        public EWAVRule_ExpressionAssign()
         {
             this.OnCreated();
         }
@@ -9766,7 +9766,7 @@ namespace Ewav.Web.Services
     }
     
     /// <summary>
-    /// The 'EwavRule_Format' entity class.
+    /// The 'EWAVRule_Format' entity class.
     /// This entity is shared between the following contexts:
     /// The <see cref="AberrationDomainContext"/> context.
     /// The <see cref="LineListDomainContext"/> context.
@@ -9783,8 +9783,8 @@ namespace Ewav.Web.Services
     /// The <see cref="MapClusterDomainContext"/> context.
     /// The <see cref="CombinedFrequencyDomainContext"/> context.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
-    public sealed partial class EwavRule_Format : EwavRule_Base
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
+    public sealed partial class EWAVRule_Format : EWAVRule_Base
     {
         
         private string _cbxFieldName;
@@ -9819,9 +9819,9 @@ namespace Ewav.Web.Services
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavRule_Format"/> class.
+        /// Initializes a new instance of the <see cref="EWAVRule_Format"/> class.
         /// </summary>
-        public EwavRule_Format()
+        public EWAVRule_Format()
         {
             this.OnCreated();
         }
@@ -9948,7 +9948,7 @@ namespace Ewav.Web.Services
     }
     
     /// <summary>
-    /// The 'EwavRule_GroupVariable' entity class.
+    /// The 'EWAVRule_GroupVariable' entity class.
     /// This entity is shared between the following contexts:
     /// The <see cref="AberrationDomainContext"/> context.
     /// The <see cref="LineListDomainContext"/> context.
@@ -9965,8 +9965,8 @@ namespace Ewav.Web.Services
     /// The <see cref="MapClusterDomainContext"/> context.
     /// The <see cref="CombinedFrequencyDomainContext"/> context.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
-    public sealed partial class EwavRule_GroupVariable : EwavRule_Base
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
+    public sealed partial class EWAVRule_GroupVariable : EWAVRule_Base
     {
         
         private string _friendlyLabel;
@@ -9993,9 +9993,9 @@ namespace Ewav.Web.Services
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavRule_GroupVariable"/> class.
+        /// Initializes a new instance of the <see cref="EWAVRule_GroupVariable"/> class.
         /// </summary>
-        public EwavRule_GroupVariable()
+        public EWAVRule_GroupVariable()
         {
             this.OnCreated();
         }
@@ -10075,7 +10075,7 @@ namespace Ewav.Web.Services
     }
     
     /// <summary>
-    /// The 'EwavRule_Recode' entity class.
+    /// The 'EWAVRule_Recode' entity class.
     /// This entity is shared between the following contexts:
     /// The <see cref="AberrationDomainContext"/> context.
     /// The <see cref="LineListDomainContext"/> context.
@@ -10092,8 +10092,8 @@ namespace Ewav.Web.Services
     /// The <see cref="MapClusterDomainContext"/> context.
     /// The <see cref="CombinedFrequencyDomainContext"/> context.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
-    public sealed partial class EwavRule_Recode : EwavRule_Base
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
+    public sealed partial class EWAVRule_Recode : EWAVRule_Base
     {
         
         private bool _checkboxMaintainSortOrderIndicator;
@@ -10104,7 +10104,7 @@ namespace Ewav.Web.Services
         
         private string _friendlyrule;
         
-        private List<EwavRuleRecodeDataRow> _recodeTable;
+        private List<EWAVRuleRecodeDataRow> _recodeTable;
         
         private string _sourceColumnName;
         
@@ -10129,7 +10129,7 @@ namespace Ewav.Web.Services
         partial void OnDestinationFieldTypeChanged();
         partial void OnFriendlyruleChanging(string value);
         partial void OnFriendlyruleChanged();
-        partial void OnRecodeTableChanging(List<EwavRuleRecodeDataRow> value);
+        partial void OnRecodeTableChanging(List<EWAVRuleRecodeDataRow> value);
         partial void OnRecodeTableChanged();
         partial void OnSourceColumnNameChanging(string value);
         partial void OnSourceColumnNameChanged();
@@ -10146,9 +10146,9 @@ namespace Ewav.Web.Services
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavRule_Recode"/> class.
+        /// Initializes a new instance of the <see cref="EWAVRule_Recode"/> class.
         /// </summary>
-        public EwavRule_Recode()
+        public EWAVRule_Recode()
         {
             this.OnCreated();
         }
@@ -10254,7 +10254,7 @@ namespace Ewav.Web.Services
         /// </summary>
         [DataMember()]
         [Display(AutoGenerateField=false)]
-        public List<EwavRuleRecodeDataRow> RecodeTable
+        public List<EWAVRuleRecodeDataRow> RecodeTable
         {
             get
             {
@@ -10412,7 +10412,7 @@ namespace Ewav.Web.Services
     }
     
     /// <summary>
-    /// The 'EwavRule_SimpleAssignment' entity class.
+    /// The 'EWAVRule_SimpleAssignment' entity class.
     /// This entity is shared between the following contexts:
     /// The <see cref="AberrationDomainContext"/> context.
     /// The <see cref="LineListDomainContext"/> context.
@@ -10429,8 +10429,8 @@ namespace Ewav.Web.Services
     /// The <see cref="MapClusterDomainContext"/> context.
     /// The <see cref="CombinedFrequencyDomainContext"/> context.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
-    public sealed partial class EwavRule_SimpleAssignment : EwavRule_Base
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
+    public sealed partial class EWAVRule_SimpleAssignment : EWAVRule_Base
     {
         
         private SimpleAssignType _assignmentType;
@@ -10463,9 +10463,9 @@ namespace Ewav.Web.Services
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavRule_SimpleAssignment"/> class.
+        /// Initializes a new instance of the <see cref="EWAVRule_SimpleAssignment"/> class.
         /// </summary>
-        public EwavRule_SimpleAssignment()
+        public EWAVRule_SimpleAssignment()
         {
             this.OnCreated();
         }
@@ -10609,10 +10609,10 @@ namespace Ewav.Web.Services
     }
     
     /// <summary>
-    /// The 'EwavRuleRecodeDataRow' class.
+    /// The 'EWAVRuleRecodeDataRow' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
-    public sealed partial class EwavRuleRecodeDataRow : ComplexObject
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
+    public sealed partial class EWAVRuleRecodeDataRow : ComplexObject
     {
         
         private string _col1;
@@ -10639,9 +10639,9 @@ namespace Ewav.Web.Services
         
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="EwavRuleRecodeDataRow"/> class.
+        /// Initializes a new instance of the <see cref="EWAVRuleRecodeDataRow"/> class.
         /// </summary>
-        public EwavRuleRecodeDataRow()
+        public EWAVRuleRecodeDataRow()
         {
             this.OnCreated();
         }
@@ -10719,7 +10719,7 @@ namespace Ewav.Web.Services
         }
     }
     
-    public enum EwavRuleType
+    public enum EWAVRuleType
     {
         
         Recode = 0,
@@ -10738,7 +10738,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'FieldsList' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class FieldsList : ComplexObject
     {
         
@@ -10794,7 +10794,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'FrequencyAndCrossTable' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class FrequencyAndCrossTable : ComplexObject
     {
         
@@ -10897,7 +10897,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="FrequencyDomainContext"/> class.
         /// </summary>
         public FrequencyDomainContext() : 
-                this(new WebDomainClient<IFrequencyDomainServiceContract>(new Uri("Ewav-Web-Services-FrequencyDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IFrequencyDomainServiceContract>(new Uri("EWAV-Web-Services-FrequencyDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -10921,61 +10921,61 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="FrequencyDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="FrequencyDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
-        /// Invokes the 'PortClassToClient49491' method of the specified <see cref="EwavRule_Base"/> entity.
+        /// Invokes the 'PortClassToClient49491' method of the specified <see cref="EWAVRule_Base"/> entity.
         /// </summary>
-        /// <param name="gs">The <see cref="EwavRule_Base"/> entity instance.</param>
-        public void PortClassToClient49491(EwavRule_Base gs)
+        /// <param name="gs">The <see cref="EWAVRule_Base"/> entity instance.</param>
+        public void PortClassToClient49491(EWAVRule_Base gs)
         {
             gs.PortClassToClient49491();
         }
         
         /// <summary>
-        /// Invokes the 'PortClassToClient494914' method of the specified <see cref="EwavRule_ExpressionAssign"/> entity.
+        /// Invokes the 'PortClassToClient494914' method of the specified <see cref="EWAVRule_ExpressionAssign"/> entity.
         /// </summary>
-        /// <param name="xx">The <see cref="EwavRule_ExpressionAssign"/> entity instance.</param>
-        public void PortClassToClient494914(EwavRule_ExpressionAssign xx)
+        /// <param name="xx">The <see cref="EWAVRule_ExpressionAssign"/> entity instance.</param>
+        public void PortClassToClient494914(EWAVRule_ExpressionAssign xx)
         {
             xx.PortClassToClient494914();
         }
         
         /// <summary>
-        /// Invokes the 'PortClassToClient494911' method of the specified <see cref="EwavRule_Recode"/> entity.
+        /// Invokes the 'PortClassToClient494911' method of the specified <see cref="EWAVRule_Recode"/> entity.
         /// </summary>
-        /// <param name="gs">The <see cref="EwavRule_Recode"/> entity instance.</param>
-        public void PortClassToClient494911(EwavRule_Recode gs)
+        /// <param name="gs">The <see cref="EWAVRule_Recode"/> entity instance.</param>
+        public void PortClassToClient494911(EWAVRule_Recode gs)
         {
             gs.PortClassToClient494911();
         }
         
         /// <summary>
-        /// Invokes the 'PortClassToClient49491111' method of the specified <see cref="EwavRule_SimpleAssignment"/> entity.
+        /// Invokes the 'PortClassToClient49491111' method of the specified <see cref="EWAVRule_SimpleAssignment"/> entity.
         /// </summary>
-        /// <param name="gs">The <see cref="EwavRule_SimpleAssignment"/> entity instance.</param>
-        public void PortClassToClient49491111(EwavRule_SimpleAssignment gs)
+        /// <param name="gs">The <see cref="EWAVRule_SimpleAssignment"/> entity instance.</param>
+        public void PortClassToClient49491111(EWAVRule_SimpleAssignment gs)
         {
             gs.PortClassToClient49491111();
         }
@@ -10990,7 +10990,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, Action<InvokeOperation<List<FrequencyResultData>>> callback, object userState)
+        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, Action<InvokeOperation<List<FrequencyResultData>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -11009,7 +11009,7 @@ namespace Ewav.Web.Services
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString)
+        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -11056,13 +11056,13 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EwavColumn>>> callback, object userState)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EWAVColumn>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, callback, userState)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, callback, userState)));
         }
         
         /// <summary>
@@ -11071,13 +11071,13 @@ namespace Ewav.Web.Services
         /// <param name="DataSourceName">The value for the 'DataSourceName' parameter of this action.</param>
         /// <param name="TableName">The value for the 'TableName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, null, null)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, null, null)));
         }
         
         /// <summary>
@@ -11143,7 +11143,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient7(EwavFrequencyControlDto gp, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient7(EWAVFrequencyControlDto gp, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -11156,7 +11156,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="gp">The value for the 'gp' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient7(EwavFrequencyControlDto gp)
+        public InvokeOperation PortClassToClient7(EWAVFrequencyControlDto gp)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -11171,7 +11171,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient77(EwavColumn gp, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient77(EWAVColumn gp, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -11184,7 +11184,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="gp">The value for the 'gp' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient77(EwavColumn gp)
+        public InvokeOperation PortClassToClient77(EWAVColumn gp)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -11227,7 +11227,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient79(EwavConnectionString aa, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient79(EWAVConnectionString aa, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("aa", aa);
@@ -11240,7 +11240,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="aa">The value for the 'aa' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient79(EwavConnectionString aa)
+        public InvokeOperation PortClassToClient79(EWAVConnectionString aa)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("aa", aa);
@@ -11277,7 +11277,7 @@ namespace Ewav.Web.Services
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/FrequencyDomainService/GenerateFrequencyTableDomainServiceFaul" +
                 "t", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/FrequencyDomainService/GenerateFrequencyTable", ReplyAction="http://tempuri.org/FrequencyDomainService/GenerateFrequencyTableResponse")]
-            IAsyncResult BeginGenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGenerateFrequencyTable'.
@@ -11321,7 +11321,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetColumns'.</param>
             /// <returns>The 'List`1' returned from the 'GetColumns' operation.</returns>
-            List<EwavColumn> EndGetColumns(IAsyncResult result);
+            List<EWAVColumn> EndGetColumns(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'Getrule' operation.
@@ -11340,7 +11340,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'PortClassToClient4' operation.
@@ -11386,7 +11386,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/FrequencyDomainService/PortClassToClient7DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/FrequencyDomainService/PortClassToClient7", ReplyAction="http://tempuri.org/FrequencyDomainService/PortClassToClient7Response")]
-            IAsyncResult BeginPortClassToClient7(EwavFrequencyControlDto gp, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient7(EWAVFrequencyControlDto gp, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient7'.
@@ -11403,7 +11403,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/FrequencyDomainService/PortClassToClient77DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/FrequencyDomainService/PortClassToClient77", ReplyAction="http://tempuri.org/FrequencyDomainService/PortClassToClient77Response")]
-            IAsyncResult BeginPortClassToClient77(EwavColumn gp, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient77(EWAVColumn gp, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient77'.
@@ -11437,7 +11437,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/FrequencyDomainService/PortClassToClient79DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/FrequencyDomainService/PortClassToClient79", ReplyAction="http://tempuri.org/FrequencyDomainService/PortClassToClient79Response")]
-            IAsyncResult BeginPortClassToClient79(EwavConnectionString aa, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient79(EWAVConnectionString aa, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient79'.
@@ -11469,7 +11469,7 @@ namespace Ewav.Web.Services
             
             public FrequencyDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.Edit);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.Edit);
             }
         }
     }
@@ -11477,13 +11477,13 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'FrequencyResultData' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class FrequencyResultData : ComplexObject
     {
         
         private List<DescriptiveStatistics> _descriptiveStatisticsList;
         
-        private List<EwavFrequencyControlDto> _frequencyControlDtoList;
+        private List<EWAVFrequencyControlDto> _frequencyControlDtoList;
         
         #region Extensibility Method Definitions
 
@@ -11494,7 +11494,7 @@ namespace Ewav.Web.Services
         partial void OnCreated();
         partial void OnDescriptiveStatisticsListChanging(List<DescriptiveStatistics> value);
         partial void OnDescriptiveStatisticsListChanged();
-        partial void OnFrequencyControlDtoListChanging(List<EwavFrequencyControlDto> value);
+        partial void OnFrequencyControlDtoListChanging(List<EWAVFrequencyControlDto> value);
         partial void OnFrequencyControlDtoListChanged();
 
         #endregion
@@ -11538,7 +11538,7 @@ namespace Ewav.Web.Services
         /// </summary>
         [DataMember()]
         [Display(AutoGenerateField=false)]
-        public List<EwavFrequencyControlDto> FrequencyControlDtoList
+        public List<EWAVFrequencyControlDto> FrequencyControlDtoList
         {
             get
             {
@@ -11562,7 +11562,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'GridCells' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class GridCells : ComplexObject
     {
         
@@ -12340,7 +12340,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="LinearRegressionDomainContext"/> class.
         /// </summary>
         public LinearRegressionDomainContext() : 
-                this(new WebDomainClient<ILinearRegressionDomainServiceContract>(new Uri("Ewav-Web-Services-LinearRegressionDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<ILinearRegressionDomainServiceContract>(new Uri("EWAV-Web-Services-LinearRegressionDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -12364,27 +12364,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="LinearRegressionDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="LinearRegressionDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -12431,13 +12431,13 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EwavColumn>>> callback, object userState)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EWAVColumn>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, callback, userState)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, callback, userState)));
         }
         
         /// <summary>
@@ -12446,13 +12446,13 @@ namespace Ewav.Web.Services
         /// <param name="DataSourceName">The value for the 'DataSourceName' parameter of this action.</param>
         /// <param name="TableName">The value for the 'TableName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, null, null)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, null, null)));
         }
         
         /// <summary>
@@ -12467,7 +12467,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<LinRegressionResults> GetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, Action<InvokeOperation<LinRegressionResults>> callback, object userState)
+        public InvokeOperation<LinRegressionResults> GetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, Action<InvokeOperation<LinRegressionResults>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetOptions", gadgetOptions);
@@ -12490,7 +12490,7 @@ namespace Ewav.Web.Services
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<LinRegressionResults> GetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString)
+        public InvokeOperation<LinRegressionResults> GetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetOptions", gadgetOptions);
@@ -12584,7 +12584,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetColumns'.</param>
             /// <returns>The 'List`1' returned from the 'GetColumns' operation.</returns>
-            List<EwavColumn> EndGetColumns(IAsyncResult result);
+            List<EWAVColumn> EndGetColumns(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'GetRegressionResult' operation.
@@ -12601,7 +12601,7 @@ namespace Ewav.Web.Services
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/LinearRegressionDomainService/GetRegressionResultDomainService" +
                 "Fault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/LinearRegressionDomainService/GetRegressionResult", ReplyAction="http://tempuri.org/LinearRegressionDomainService/GetRegressionResultResponse")]
-            IAsyncResult BeginGetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGetRegressionResult'.
@@ -12627,7 +12627,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'PortThisToClient' operation.
@@ -12653,7 +12653,7 @@ namespace Ewav.Web.Services
             
             public LinearRegressionDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
@@ -12661,7 +12661,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'LinearRegressionResults' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class LinearRegressionResults : ComplexObject
     {
         
@@ -13054,7 +13054,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'LinearRegVariableRow' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class LinearRegVariableRow : ComplexObject
     {
         
@@ -13239,7 +13239,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="LineListDomainContext"/> class.
         /// </summary>
         public LineListDomainContext() : 
-                this(new WebDomainClient<ILineListDomainServiceContract>(new Uri("Ewav-Web-Services-LineListDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<ILineListDomainServiceContract>(new Uri("EWAV-Web-Services-LineListDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -13263,27 +13263,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="LineListDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="LineListDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -13296,7 +13296,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<DatatableBag>> GetLineList(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, Action<InvokeOperation<List<DatatableBag>>> callback, object userState)
+        public InvokeOperation<List<DatatableBag>> GetLineList(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, Action<InvokeOperation<List<DatatableBag>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -13315,7 +13315,7 @@ namespace Ewav.Web.Services
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<DatatableBag>> GetLineList(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString)
+        public InvokeOperation<List<DatatableBag>> GetLineList(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -13354,7 +13354,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/LineListDomainService/GetLineListDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/LineListDomainService/GetLineList", ReplyAction="http://tempuri.org/LineListDomainService/GetLineListResponse")]
-            IAsyncResult BeginGetLineList(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGetLineList(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGetLineList'.
@@ -13380,7 +13380,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
         }
         
         internal sealed class LineListDomainContextEntityContainer : EntityContainer
@@ -13388,7 +13388,7 @@ namespace Ewav.Web.Services
             
             public LineListDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
@@ -13396,7 +13396,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'LinRegressionResults' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class LinRegressionResults : ComplexObject
     {
         
@@ -13760,7 +13760,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'ListOfStringClass' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class ListOfStringClass : ComplexObject
     {
         
@@ -13833,7 +13833,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="LogisticRegressionDomainContext"/> class.
         /// </summary>
         public LogisticRegressionDomainContext() : 
-                this(new WebDomainClient<ILogisticRegressionDomainServiceContract>(new Uri("Ewav-Web-Services-LogisticRegressionDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<ILogisticRegressionDomainServiceContract>(new Uri("EWAV-Web-Services-LogisticRegressionDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -13857,27 +13857,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="LogisticRegressionDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="LogisticRegressionDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -13933,7 +13933,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<LogRegressionResults> GetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, string customFilter, Action<InvokeOperation<LogRegressionResults>> callback, object userState)
+        public InvokeOperation<LogRegressionResults> GetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, string customFilter, Action<InvokeOperation<LogRegressionResults>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetOptions", gadgetOptions);
@@ -13958,7 +13958,7 @@ namespace Ewav.Web.Services
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <param name="customFilter">The value for the 'customFilter' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<LogRegressionResults> GetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, string customFilter)
+        public InvokeOperation<LogRegressionResults> GetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, string customFilter)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetOptions", gadgetOptions);
@@ -14026,7 +14026,7 @@ namespace Ewav.Web.Services
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/LogisticRegressionDomainService/GetRegressionResultDomainServi" +
                 "ceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/LogisticRegressionDomainService/GetRegressionResult", ReplyAction="http://tempuri.org/LogisticRegressionDomainService/GetRegressionResultResponse")]
-            IAsyncResult BeginGetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, string customFilter, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGetRegressionResult(GadgetParameters gadgetOptions, IEnumerable<string> columnNames, List<DictionaryDTO> inputDtoList, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, string customFilter, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGetRegressionResult'.
@@ -14052,7 +14052,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
         }
         
         internal sealed class LogisticRegressionDomainContextEntityContainer : EntityContainer
@@ -14060,7 +14060,7 @@ namespace Ewav.Web.Services
             
             public LogisticRegressionDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
@@ -14068,7 +14068,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'LogRegressionResults' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class LogRegressionResults : ComplexObject
     {
         
@@ -14450,7 +14450,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="MeansDomainContext"/> class.
         /// </summary>
         public MeansDomainContext() : 
-                this(new WebDomainClient<IMeansDomainServiceContract>(new Uri("Ewav-Web-Services-MeansDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IMeansDomainServiceContract>(new Uri("EWAV-Web-Services-MeansDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -14474,27 +14474,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="MeansDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="MeansDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -14535,7 +14535,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<FrequencyAndCrossTable> GenerateCrossTableWithFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, Action<InvokeOperation<FrequencyAndCrossTable>> callback, object userState)
+        public InvokeOperation<FrequencyAndCrossTable> GenerateCrossTableWithFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, Action<InvokeOperation<FrequencyAndCrossTable>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -14554,7 +14554,7 @@ namespace Ewav.Web.Services
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<FrequencyAndCrossTable> GenerateCrossTableWithFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString)
+        public InvokeOperation<FrequencyAndCrossTable> GenerateCrossTableWithFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -14575,7 +14575,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, Action<InvokeOperation<List<FrequencyResultData>>> callback, object userState)
+        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, Action<InvokeOperation<List<FrequencyResultData>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -14594,7 +14594,7 @@ namespace Ewav.Web.Services
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString)
+        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -14613,13 +14613,13 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EwavColumn>>> callback, object userState)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EWAVColumn>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, callback, userState)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, callback, userState)));
         }
         
         /// <summary>
@@ -14628,13 +14628,13 @@ namespace Ewav.Web.Services
         /// <param name="DataSourceName">The value for the 'DataSourceName' parameter of this action.</param>
         /// <param name="TableName">The value for the 'TableName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, null, null)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, null, null)));
         }
         
         /// <summary>
@@ -14672,7 +14672,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient7(EwavFrequencyControlDto gp, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient7(EWAVFrequencyControlDto gp, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -14685,7 +14685,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="gp">The value for the 'gp' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient7(EwavFrequencyControlDto gp)
+        public InvokeOperation PortClassToClient7(EWAVFrequencyControlDto gp)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -14700,7 +14700,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient77(EwavColumn gp, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient77(EWAVColumn gp, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -14713,7 +14713,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="gp">The value for the 'gp' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient77(EwavColumn gp)
+        public InvokeOperation PortClassToClient77(EWAVColumn gp)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -14798,7 +14798,7 @@ namespace Ewav.Web.Services
                 "erviceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/MeansDomainService/GenerateCrossTableWithFrequencyTable", ReplyAction="http://tempuri.org/MeansDomainService/GenerateCrossTableWithFrequencyTableRespons" +
                 "e")]
-            IAsyncResult BeginGenerateCrossTableWithFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGenerateCrossTableWithFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGenerateCrossTableWithFrequencyTable'.
@@ -14819,7 +14819,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/MeansDomainService/GenerateFrequencyTableDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/MeansDomainService/GenerateFrequencyTable", ReplyAction="http://tempuri.org/MeansDomainService/GenerateFrequencyTableResponse")]
-            IAsyncResult BeginGenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGenerateFrequencyTable'.
@@ -14845,7 +14845,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetColumns'.</param>
             /// <returns>The 'List`1' returned from the 'GetColumns' operation.</returns>
-            List<EwavColumn> EndGetColumns(IAsyncResult result);
+            List<EWAVColumn> EndGetColumns(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'Getrule' operation.
@@ -14864,7 +14864,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'PortClassToClient4' operation.
@@ -14892,7 +14892,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/MeansDomainService/PortClassToClient7DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/MeansDomainService/PortClassToClient7", ReplyAction="http://tempuri.org/MeansDomainService/PortClassToClient7Response")]
-            IAsyncResult BeginPortClassToClient7(EwavFrequencyControlDto gp, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient7(EWAVFrequencyControlDto gp, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient7'.
@@ -14909,7 +14909,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/MeansDomainService/PortClassToClient77DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/MeansDomainService/PortClassToClient77", ReplyAction="http://tempuri.org/MeansDomainService/PortClassToClient77Response")]
-            IAsyncResult BeginPortClassToClient77(EwavColumn gp, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient77(EWAVColumn gp, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient77'.
@@ -14940,7 +14940,7 @@ namespace Ewav.Web.Services
             
             public MeansDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
@@ -14966,7 +14966,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="MxNDomainContext"/> class.
         /// </summary>
         public MxNDomainContext() : 
-                this(new WebDomainClient<IMxNDomainServiceContract>(new Uri("Ewav-Web-Services-MxNDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IMxNDomainServiceContract>(new Uri("EWAV-Web-Services-MxNDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -14990,27 +14990,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="MxNDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="MxNDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -15021,13 +15021,13 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EwavColumn>>> callback, object userState)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EWAVColumn>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, callback, userState)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, callback, userState)));
         }
         
         /// <summary>
@@ -15036,13 +15036,13 @@ namespace Ewav.Web.Services
         /// <param name="DataSourceName">The value for the 'DataSourceName' parameter of this action.</param>
         /// <param name="TableName">The value for the 'TableName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, null, null)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, null, null)));
         }
         
         /// <summary>
@@ -15054,7 +15054,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<TwoxTwoAndMxNResultsSet> SetupGadget(GadgetParameters clientGadgetOptions, List<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, Action<InvokeOperation<TwoxTwoAndMxNResultsSet>> callback, object userState)
+        public InvokeOperation<TwoxTwoAndMxNResultsSet> SetupGadget(GadgetParameters clientGadgetOptions, List<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, Action<InvokeOperation<TwoxTwoAndMxNResultsSet>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("clientGadgetOptions", clientGadgetOptions);
@@ -15071,7 +15071,7 @@ namespace Ewav.Web.Services
         /// <param name="ewavDataFilters">The value for the 'ewavDataFilters' parameter of this action.</param>
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<TwoxTwoAndMxNResultsSet> SetupGadget(GadgetParameters clientGadgetOptions, List<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules)
+        public InvokeOperation<TwoxTwoAndMxNResultsSet> SetupGadget(GadgetParameters clientGadgetOptions, List<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("clientGadgetOptions", clientGadgetOptions);
@@ -15114,7 +15114,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetColumns'.</param>
             /// <returns>The 'List`1' returned from the 'GetColumns' operation.</returns>
-            List<EwavColumn> EndGetColumns(IAsyncResult result);
+            List<EWAVColumn> EndGetColumns(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'Getrule' operation.
@@ -15133,7 +15133,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'SetupGadget' operation.
@@ -15146,7 +15146,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/MxNDomainService/SetupGadgetDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/MxNDomainService/SetupGadget", ReplyAction="http://tempuri.org/MxNDomainService/SetupGadgetResponse")]
-            IAsyncResult BeginSetupGadget(GadgetParameters clientGadgetOptions, List<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginSetupGadget(GadgetParameters clientGadgetOptions, List<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginSetupGadget'.
@@ -15161,7 +15161,7 @@ namespace Ewav.Web.Services
             
             public MxNDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
@@ -15169,7 +15169,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'MxNGridRow' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class MxNGridRow : ComplexObject
     {
         
@@ -15252,7 +15252,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'MxNGridSetupParameter' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class MxNGridSetupParameter : ComplexObject
     {
         
@@ -15363,7 +15363,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'MxNSetTextParameter' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class MxNSetTextParameter : ComplexObject
     {
         
@@ -15446,7 +15446,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'MySingleTableResults' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class MySingleTableResults : ComplexObject
     {
         
@@ -16145,7 +16145,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'MyString' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class MyString : ComplexObject
     {
         
@@ -16200,7 +16200,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'NumericDataValue' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class NumericDataValue : ComplexObject
     {
         
@@ -16301,7 +16301,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="OrganizationDomainContext"/> class.
         /// </summary>
         public OrganizationDomainContext() : 
-                this(new WebDomainClient<IOrganizationDomainServiceContract>(new Uri("Ewav-Web-Services-OrganizationDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IOrganizationDomainServiceContract>(new Uri("EWAV-Web-Services-OrganizationDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -16572,7 +16572,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'ScatterDataDTO' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class ScatterDataDTO : ComplexObject
     {
         
@@ -16733,7 +16733,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="ScatterDomainContext"/> class.
         /// </summary>
         public ScatterDomainContext() : 
-                this(new WebDomainClient<IScatterDomainServiceContract>(new Uri("Ewav-Web-Services-ScatterDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IScatterDomainServiceContract>(new Uri("EWAV-Web-Services-ScatterDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -16757,27 +16757,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="ScatterDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="ScatterDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -16790,7 +16790,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<ScatterDataDTO> GenerateTable(GadgetParameters gadgetOptions, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, Action<InvokeOperation<ScatterDataDTO>> callback, object userState)
+        public InvokeOperation<ScatterDataDTO> GenerateTable(GadgetParameters gadgetOptions, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, Action<InvokeOperation<ScatterDataDTO>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetOptions", gadgetOptions);
@@ -16809,7 +16809,7 @@ namespace Ewav.Web.Services
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<ScatterDataDTO> GenerateTable(GadgetParameters gadgetOptions, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString)
+        public InvokeOperation<ScatterDataDTO> GenerateTable(GadgetParameters gadgetOptions, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetOptions", gadgetOptions);
@@ -16828,13 +16828,13 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EwavColumn>>> callback, object userState)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EWAVColumn>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, callback, userState)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, callback, userState)));
         }
         
         /// <summary>
@@ -16843,13 +16843,13 @@ namespace Ewav.Web.Services
         /// <param name="DataSourceName">The value for the 'DataSourceName' parameter of this action.</param>
         /// <param name="TableName">The value for the 'TableName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, null, null)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, null, null)));
         }
         
         /// <summary>
@@ -16908,7 +16908,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/ScatterDomainService/GenerateTableDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/ScatterDomainService/GenerateTable", ReplyAction="http://tempuri.org/ScatterDomainService/GenerateTableResponse")]
-            IAsyncResult BeginGenerateTable(GadgetParameters gadgetOptions, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGenerateTable(GadgetParameters gadgetOptions, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGenerateTable'.
@@ -16934,7 +16934,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetColumns'.</param>
             /// <returns>The 'List`1' returned from the 'GetColumns' operation.</returns>
-            List<EwavColumn> EndGetColumns(IAsyncResult result);
+            List<EWAVColumn> EndGetColumns(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'Getrule' operation.
@@ -16953,7 +16953,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'PortThisToClient' operation.
@@ -16978,7 +16978,7 @@ namespace Ewav.Web.Services
             
             public ScatterDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
@@ -17004,7 +17004,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="StatCalcDomainContext"/> class.
         /// </summary>
         public StatCalcDomainContext() : 
-                this(new WebDomainClient<IStatCalcDomainServiceContract>(new Uri("Ewav-Web-Services-StatCalcDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IStatCalcDomainServiceContract>(new Uri("EWAV-Web-Services-StatCalcDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -17232,7 +17232,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient7(EwavFrequencyControlDto gp, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient7(EWAVFrequencyControlDto gp, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -17245,7 +17245,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="gp">The value for the 'gp' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient7(EwavFrequencyControlDto gp)
+        public InvokeOperation PortClassToClient7(EWAVFrequencyControlDto gp)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -17260,7 +17260,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient77(EwavColumn gp, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient77(EWAVColumn gp, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -17273,7 +17273,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="gp">The value for the 'gp' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient77(EwavColumn gp)
+        public InvokeOperation PortClassToClient77(EWAVColumn gp)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gp", gp);
@@ -17316,7 +17316,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient79(EwavConnectionString aa, Action<InvokeOperation> callback, object userState)
+        public InvokeOperation PortClassToClient79(EWAVConnectionString aa, Action<InvokeOperation> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("aa", aa);
@@ -17329,7 +17329,7 @@ namespace Ewav.Web.Services
         /// </summary>
         /// <param name="aa">The value for the 'aa' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation PortClassToClient79(EwavConnectionString aa)
+        public InvokeOperation PortClassToClient79(EWAVConnectionString aa)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("aa", aa);
@@ -17476,7 +17476,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/StatCalcDomainService/PortClassToClient7DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/StatCalcDomainService/PortClassToClient7", ReplyAction="http://tempuri.org/StatCalcDomainService/PortClassToClient7Response")]
-            IAsyncResult BeginPortClassToClient7(EwavFrequencyControlDto gp, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient7(EWAVFrequencyControlDto gp, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient7'.
@@ -17493,7 +17493,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/StatCalcDomainService/PortClassToClient77DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/StatCalcDomainService/PortClassToClient77", ReplyAction="http://tempuri.org/StatCalcDomainService/PortClassToClient77Response")]
-            IAsyncResult BeginPortClassToClient77(EwavColumn gp, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient77(EWAVColumn gp, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient77'.
@@ -17527,7 +17527,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/StatCalcDomainService/PortClassToClient79DomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/StatCalcDomainService/PortClassToClient79", ReplyAction="http://tempuri.org/StatCalcDomainService/PortClassToClient79Response")]
-            IAsyncResult BeginPortClassToClient79(EwavConnectionString aa, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginPortClassToClient79(EWAVConnectionString aa, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginPortClassToClient79'.
@@ -17548,7 +17548,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'StatCalcDTO' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class StatCalcDTO : ComplexObject
     {
         
@@ -17680,7 +17680,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="TwoByTwoDomainContext"/> class.
         /// </summary>
         public TwoByTwoDomainContext() : 
-                this(new WebDomainClient<ITwoByTwoDomainServiceContract>(new Uri("Ewav-Web-Services-TwoByTwoDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<ITwoByTwoDomainServiceContract>(new Uri("EWAV-Web-Services-TwoByTwoDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -17704,27 +17704,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="TwoByTwoDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="TwoByTwoDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -17735,13 +17735,13 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EwavColumn>>> callback, object userState)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName, Action<InvokeOperation<List<EWAVColumn>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, callback, userState)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, callback, userState)));
         }
         
         /// <summary>
@@ -17750,13 +17750,13 @@ namespace Ewav.Web.Services
         /// <param name="DataSourceName">The value for the 'DataSourceName' parameter of this action.</param>
         /// <param name="TableName">The value for the 'TableName' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<EwavColumn>> GetColumns(string DataSourceName, string TableName)
+        public InvokeOperation<List<EWAVColumn>> GetColumns(string DataSourceName, string TableName)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("DataSourceName", DataSourceName);
             parameters.Add("TableName", TableName);
             this.ValidateMethod("GetColumns", parameters);
-            return ((InvokeOperation<List<EwavColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EwavColumn>), parameters, true, null, null)));
+            return ((InvokeOperation<List<EWAVColumn>>)(this.InvokeOperation("GetColumns", typeof(List<EWAVColumn>), parameters, true, null, null)));
         }
         
         /// <summary>
@@ -17824,7 +17824,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<TwoxTwoAndMxNResultsSet> SetupGadget(GadgetParameters clientGadgetOptions, List<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, Action<InvokeOperation<TwoxTwoAndMxNResultsSet>> callback, object userState)
+        public InvokeOperation<TwoxTwoAndMxNResultsSet> SetupGadget(GadgetParameters clientGadgetOptions, List<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, Action<InvokeOperation<TwoxTwoAndMxNResultsSet>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("clientGadgetOptions", clientGadgetOptions);
@@ -17841,7 +17841,7 @@ namespace Ewav.Web.Services
         /// <param name="ewavDataFilters">The value for the 'ewavDataFilters' parameter of this action.</param>
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<TwoxTwoAndMxNResultsSet> SetupGadget(GadgetParameters clientGadgetOptions, List<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules)
+        public InvokeOperation<TwoxTwoAndMxNResultsSet> SetupGadget(GadgetParameters clientGadgetOptions, List<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("clientGadgetOptions", clientGadgetOptions);
@@ -17884,7 +17884,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetColumns'.</param>
             /// <returns>The 'List`1' returned from the 'GetColumns' operation.</returns>
-            List<EwavColumn> EndGetColumns(IAsyncResult result);
+            List<EWAVColumn> EndGetColumns(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'Getrule' operation.
@@ -17903,7 +17903,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'PortClassToClient4' operation.
@@ -17950,7 +17950,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/TwoByTwoDomainService/SetupGadgetDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/TwoByTwoDomainService/SetupGadget", ReplyAction="http://tempuri.org/TwoByTwoDomainService/SetupGadgetResponse")]
-            IAsyncResult BeginSetupGadget(GadgetParameters clientGadgetOptions, List<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginSetupGadget(GadgetParameters clientGadgetOptions, List<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginSetupGadget'.
@@ -17965,7 +17965,7 @@ namespace Ewav.Web.Services
             
             public TwoByTwoDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
@@ -17973,7 +17973,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'TwoxTwoAndMxNResultsSet' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class TwoxTwoAndMxNResultsSet : ComplexObject
     {
         
@@ -18600,7 +18600,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'TwoxTwoTableDTO' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class TwoxTwoTableDTO : ComplexObject
     {
         
@@ -18841,7 +18841,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="UserDomainContext"/> class.
         /// </summary>
         public UserDomainContext() : 
-                this(new WebDomainClient<IUserDomainServiceContract>(new Uri("Ewav-Web-Services-UserDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IUserDomainServiceContract>(new Uri("EWAV-Web-Services-UserDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -19205,25 +19205,25 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Asynchronously invokes the 'ReadUserNamesFromEwav' method of the DomainService.
+        /// Asynchronously invokes the 'ReadUserNamesFromEWAV' method of the DomainService.
         /// </summary>
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<IEnumerable<string>> ReadUserNamesFromEwav(Action<InvokeOperation<IEnumerable<string>>> callback, object userState)
+        public InvokeOperation<IEnumerable<string>> ReadUserNamesFromEWAV(Action<InvokeOperation<IEnumerable<string>>> callback, object userState)
         {
-            this.ValidateMethod("ReadUserNamesFromEwav", null);
-            return ((InvokeOperation<IEnumerable<string>>)(this.InvokeOperation("ReadUserNamesFromEwav", typeof(IEnumerable<string>), null, true, callback, userState)));
+            this.ValidateMethod("ReadUserNamesFromEWAV", null);
+            return ((InvokeOperation<IEnumerable<string>>)(this.InvokeOperation("ReadUserNamesFromEWAV", typeof(IEnumerable<string>), null, true, callback, userState)));
         }
         
         /// <summary>
-        /// Asynchronously invokes the 'ReadUserNamesFromEwav' method of the DomainService.
+        /// Asynchronously invokes the 'ReadUserNamesFromEWAV' method of the DomainService.
         /// </summary>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<IEnumerable<string>> ReadUserNamesFromEwav()
+        public InvokeOperation<IEnumerable<string>> ReadUserNamesFromEWAV()
         {
-            this.ValidateMethod("ReadUserNamesFromEwav", null);
-            return ((InvokeOperation<IEnumerable<string>>)(this.InvokeOperation("ReadUserNamesFromEwav", typeof(IEnumerable<string>), null, true, null, null)));
+            this.ValidateMethod("ReadUserNamesFromEWAV", null);
+            return ((InvokeOperation<IEnumerable<string>>)(this.InvokeOperation("ReadUserNamesFromEWAV", typeof(IEnumerable<string>), null, true, null, null)));
         }
         
         /// <summary>
@@ -19518,21 +19518,21 @@ namespace Ewav.Web.Services
             UserDTO EndReadUserByUserName(IAsyncResult result);
             
             /// <summary>
-            /// Asynchronously invokes the 'ReadUserNamesFromEwav' operation.
+            /// Asynchronously invokes the 'ReadUserNamesFromEWAV' operation.
             /// </summary>
             /// <param name="callback">Callback to invoke on completion.</param>
             /// <param name="asyncState">Optional state object.</param>
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
-            [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/UserDomainService/ReadUserNamesFromEwavDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
-            [OperationContract(AsyncPattern=true, Action="http://tempuri.org/UserDomainService/ReadUserNamesFromEwav", ReplyAction="http://tempuri.org/UserDomainService/ReadUserNamesFromEwavResponse")]
-            IAsyncResult BeginReadUserNamesFromEwav(AsyncCallback callback, object asyncState);
+            [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/UserDomainService/ReadUserNamesFromEWAVDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
+            [OperationContract(AsyncPattern=true, Action="http://tempuri.org/UserDomainService/ReadUserNamesFromEWAV", ReplyAction="http://tempuri.org/UserDomainService/ReadUserNamesFromEWAVResponse")]
+            IAsyncResult BeginReadUserNamesFromEWAV(AsyncCallback callback, object asyncState);
             
             /// <summary>
-            /// Completes the asynchronous operation begun by 'BeginReadUserNamesFromEwav'.
+            /// Completes the asynchronous operation begun by 'BeginReadUserNamesFromEWAV'.
             /// </summary>
-            /// <param name="result">The IAsyncResult returned from 'BeginReadUserNamesFromEwav'.</param>
-            /// <returns>The 'IEnumerable`1' returned from the 'ReadUserNamesFromEwav' operation.</returns>
-            IEnumerable<string> EndReadUserNamesFromEwav(IAsyncResult result);
+            /// <param name="result">The IAsyncResult returned from 'BeginReadUserNamesFromEWAV'.</param>
+            /// <returns>The 'IEnumerable`1' returned from the 'ReadUserNamesFromEWAV' operation.</returns>
+            IEnumerable<string> EndReadUserNamesFromEWAV(IAsyncResult result);
             
             /// <summary>
             /// Asynchronously invokes the 'RemoveUser' operation.
@@ -19583,7 +19583,7 @@ namespace Ewav.Web.Services
     /// <summary>
     /// The 'VariableRow' class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services")]
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services")]
     public sealed partial class VariableRow : ComplexObject
     {
         
@@ -19852,7 +19852,7 @@ namespace Ewav.Web.Services
         /// Initializes a new instance of the <see cref="XYChartDomainContext"/> class.
         /// </summary>
         public XYChartDomainContext() : 
-                this(new WebDomainClient<IXYChartDomainServiceContract>(new Uri("Ewav-Web-Services-XYChartDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IXYChartDomainServiceContract>(new Uri("EWAV-Web-Services-XYChartDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -19876,27 +19876,27 @@ namespace Ewav.Web.Services
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="XYChartDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="XYChartDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -19909,7 +19909,7 @@ namespace Ewav.Web.Services
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, Action<InvokeOperation<List<FrequencyResultData>>> callback, object userState)
+        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, Action<InvokeOperation<List<FrequencyResultData>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -19928,7 +19928,7 @@ namespace Ewav.Web.Services
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString)
+        public InvokeOperation<List<FrequencyResultData>> GenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -19967,7 +19967,7 @@ namespace Ewav.Web.Services
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/XYChartDomainService/GenerateFrequencyTableDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/XYChartDomainService/GenerateFrequencyTable", ReplyAction="http://tempuri.org/XYChartDomainService/GenerateFrequencyTableResponse")]
-            IAsyncResult BeginGenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGenerateFrequencyTable(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGenerateFrequencyTable'.
@@ -19993,7 +19993,7 @@ namespace Ewav.Web.Services
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
         }
         
         internal sealed class XYChartDomainContextEntityContainer : EntityContainer
@@ -20001,12 +20001,12 @@ namespace Ewav.Web.Services
             
             public XYChartDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
 }
-namespace Ewav.Web.Services.AdminDatasourcesDomainService
+namespace EWAV.Web.Services.AdminDatasourcesDomainService
 {
     using System;
     using System.Collections.Generic;
@@ -20017,7 +20017,7 @@ namespace Ewav.Web.Services.AdminDatasourcesDomainService
     using System.ServiceModel.DomainServices;
     using System.ServiceModel.DomainServices.Client;
     using System.ServiceModel.DomainServices.Client.ApplicationServices;
-    using Ewav.DTO;
+    using EWAV.DTO;
     
     
     /// <summary>
@@ -20041,7 +20041,7 @@ namespace Ewav.Web.Services.AdminDatasourcesDomainService
         /// Initializes a new instance of the <see cref="AdminDatasourcesDomainContext"/> class.
         /// </summary>
         public AdminDatasourcesDomainContext() : 
-                this(new WebDomainClient<IAdminDatasourcesDomainServiceContract>(new Uri("Ewav-Web-Services-AdminDatasourcesDomainService-AdminDatasourcesDomainService.svc" +
+                this(new WebDomainClient<IAdminDatasourcesDomainServiceContract>(new Uri("EWAV-Web-Services-AdminDatasourcesDomainService-AdminDatasourcesDomainService.svc" +
                                 "", UriKind.Relative)))
         {
         }
@@ -20571,7 +20571,7 @@ namespace Ewav.Web.Services.AdminDatasourcesDomainService
         }
     }
 }
-namespace Ewav.Web.Services.AuthenticationDomainService
+namespace EWAV.Web.Services.AuthenticationDomainService
 {
     using System;
     using System.Collections.Generic;
@@ -20607,7 +20607,7 @@ namespace Ewav.Web.Services.AuthenticationDomainService
         /// Initializes a new instance of the <see cref="AuthenticationDomainContext"/> class.
         /// </summary>
         public AuthenticationDomainContext() : 
-                this(new WebDomainClient<IAuthenticationDomainServiceContract>(new Uri("Ewav-Web-Services-AuthenticationDomainService-AuthenticationDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IAuthenticationDomainServiceContract>(new Uri("EWAV-Web-Services-AuthenticationDomainService-AuthenticationDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -20784,7 +20784,7 @@ namespace Ewav.Web.Services.AuthenticationDomainService
     /// <summary>
     /// The 'User' entity class.
     /// </summary>
-    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/Ewav.Web.Services.AuthenticationDomainSer" +
+    [DataContract(Namespace="http://schemas.datacontract.org/2004/07/EWAV.Web.Services.AuthenticationDomainSer" +
         "vice")]
     public sealed partial class User : Entity, global::System.Security.Principal.IIdentity, global::System.Security.Principal.IPrincipal
     {
@@ -20937,7 +20937,7 @@ namespace Ewav.Web.Services.AuthenticationDomainService
         }
     }
 }
-namespace Ewav.Web.Services.CanvasDomainService
+namespace EWAV.Web.Services.CanvasDomainService
 {
     using System;
     using System.Collections.Generic;
@@ -20948,9 +20948,9 @@ namespace Ewav.Web.Services.CanvasDomainService
     using System.ServiceModel.DomainServices;
     using System.ServiceModel.DomainServices.Client;
     using System.ServiceModel.DomainServices.Client.ApplicationServices;
-    using Ewav;
-    using Ewav.DTO;
-    using Ewav.Web.Services;
+    using EWAV;
+    using EWAV.DTO;
+    using EWAV.Web.Services;
     
     
     /// <summary>
@@ -20974,7 +20974,7 @@ namespace Ewav.Web.Services.CanvasDomainService
         /// Initializes a new instance of the <see cref="CanvasDomainContext"/> class.
         /// </summary>
         public CanvasDomainContext() : 
-                this(new WebDomainClient<ICanvasDomainServiceContract>(new Uri("Ewav-Web-Services-CanvasDomainService-CanvasDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<ICanvasDomainServiceContract>(new Uri("EWAV-Web-Services-CanvasDomainService-CanvasDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -21596,7 +21596,7 @@ namespace Ewav.Web.Services.CanvasDomainService
         }
     }
 }
-namespace Ewav.Web.Services.CombinedFrequencyDomainService
+namespace EWAV.Web.Services.CombinedFrequencyDomainService
 {
     using System;
     using System.Collections.Generic;
@@ -21608,8 +21608,8 @@ namespace Ewav.Web.Services.CombinedFrequencyDomainService
     using System.ServiceModel.DomainServices.Client;
     using System.ServiceModel.DomainServices.Client.ApplicationServices;
     using System.ServiceModel.Web;
-    using Ewav.Web.EpiDashboard;
-    using Ewav.Web.Services;
+    using EWAV.Web.EpiDashboard;
+    using EWAV.Web.Services;
     
     
     /// <summary>
@@ -21633,7 +21633,7 @@ namespace Ewav.Web.Services.CombinedFrequencyDomainService
         /// Initializes a new instance of the <see cref="CombinedFrequencyDomainContext"/> class.
         /// </summary>
         public CombinedFrequencyDomainContext() : 
-                this(new WebDomainClient<ICombinedFrequencyDomainServiceContract>(new Uri("Ewav-Web-Services-CombinedFrequencyDomainService-CombinedFrequencyDomainService.s" +
+                this(new WebDomainClient<ICombinedFrequencyDomainServiceContract>(new Uri("EWAV-Web-Services-CombinedFrequencyDomainService-CombinedFrequencyDomainService.s" +
                                 "vc", UriKind.Relative)))
         {
         }
@@ -21658,27 +21658,27 @@ namespace Ewav.Web.Services.CombinedFrequencyDomainService
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="CombinedFrequencyDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="CombinedFrequencyDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -21693,7 +21693,7 @@ namespace Ewav.Web.Services.CombinedFrequencyDomainService
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<DatatableBag> GenerateCombinedFrequency(EwavCombinedFrequencyGadgetParameters combinedParameters, string groupVar, GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, Action<InvokeOperation<DatatableBag>> callback, object userState)
+        public InvokeOperation<DatatableBag> GenerateCombinedFrequency(EWAVCombinedFrequencyGadgetParameters combinedParameters, string groupVar, GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, Action<InvokeOperation<DatatableBag>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("combinedParameters", combinedParameters);
@@ -21716,7 +21716,7 @@ namespace Ewav.Web.Services.CombinedFrequencyDomainService
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<DatatableBag> GenerateCombinedFrequency(EwavCombinedFrequencyGadgetParameters combinedParameters, string groupVar, GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString)
+        public InvokeOperation<DatatableBag> GenerateCombinedFrequency(EWAVCombinedFrequencyGadgetParameters combinedParameters, string groupVar, GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("combinedParameters", combinedParameters);
@@ -21761,7 +21761,7 @@ namespace Ewav.Web.Services.CombinedFrequencyDomainService
                 "ServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/CombinedFrequencyDomainService/GenerateCombinedFrequency", ReplyAction="http://tempuri.org/CombinedFrequencyDomainService/GenerateCombinedFrequencyRespon" +
                 "se")]
-            IAsyncResult BeginGenerateCombinedFrequency(EwavCombinedFrequencyGadgetParameters combinedParameters, string groupVar, GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGenerateCombinedFrequency(EWAVCombinedFrequencyGadgetParameters combinedParameters, string groupVar, GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGenerateCombinedFrequency'.
@@ -21787,7 +21787,7 @@ namespace Ewav.Web.Services.CombinedFrequencyDomainService
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
         }
         
         internal sealed class CombinedFrequencyDomainContextEntityContainer : EntityContainer
@@ -21795,12 +21795,12 @@ namespace Ewav.Web.Services.CombinedFrequencyDomainService
             
             public CombinedFrequencyDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
 }
-namespace Ewav.Web.Services.ErrorDomainService
+namespace EWAV.Web.Services.ErrorDomainService
 {
     using System;
     using System.Collections.Generic;
@@ -21834,7 +21834,7 @@ namespace Ewav.Web.Services.ErrorDomainService
         /// Initializes a new instance of the <see cref="ErrorDomainContext"/> class.
         /// </summary>
         public ErrorDomainContext() : 
-                this(new WebDomainClient<IErrorDomainServiceContract>(new Uri("Ewav-Web-Services-ErrorDomainService-ErrorDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IErrorDomainServiceContract>(new Uri("EWAV-Web-Services-ErrorDomainService-ErrorDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -21929,7 +21929,7 @@ namespace Ewav.Web.Services.ErrorDomainService
         }
     }
 }
-namespace Ewav.Web.Services.MapCluster
+namespace EWAV.Web.Services.MapCluster
 {
     using System;
     using System.Collections.Generic;
@@ -21941,9 +21941,9 @@ namespace Ewav.Web.Services.MapCluster
     using System.ServiceModel.DomainServices.Client;
     using System.ServiceModel.DomainServices.Client.ApplicationServices;
     using System.ServiceModel.Web;
-    using Ewav.DTO;
-    using Ewav.Web.EpiDashboard;
-    using Ewav.Web.Services;
+    using EWAV.DTO;
+    using EWAV.Web.EpiDashboard;
+    using EWAV.Web.Services;
     
     
     /// <summary>
@@ -21967,7 +21967,7 @@ namespace Ewav.Web.Services.MapCluster
         /// Initializes a new instance of the <see cref="MapClusterDomainContext"/> class.
         /// </summary>
         public MapClusterDomainContext() : 
-                this(new WebDomainClient<IMapClusterDomainServiceContract>(new Uri("Ewav-Web-Services-MapCluster-MapClusterDomainService.svc", UriKind.Relative)))
+                this(new WebDomainClient<IMapClusterDomainServiceContract>(new Uri("EWAV-Web-Services-MapCluster-MapClusterDomainService.svc", UriKind.Relative)))
         {
         }
         
@@ -21991,27 +21991,27 @@ namespace Ewav.Web.Services.MapCluster
         }
         
         /// <summary>
-        /// Gets the set of <see cref="EwavRule_Base"/> entity instances that have been loaded into this <see cref="MapClusterDomainContext"/> instance.
+        /// Gets the set of <see cref="EWAVRule_Base"/> entity instances that have been loaded into this <see cref="MapClusterDomainContext"/> instance.
         /// </summary>
-        public EntitySet<EwavRule_Base> EwavRule_Bases
+        public EntitySet<EWAVRule_Base> EWAVRule_Bases
         {
             get
             {
-                return base.EntityContainer.GetEntitySet<EwavRule_Base>();
+                return base.EntityContainer.GetEntitySet<EWAVRule_Base>();
             }
         }
         
         /// <summary>
-        /// Gets an EntityQuery instance that can be used to load <see cref="EwavRule_Base"/> entity instances using the 'Getrule' query.
+        /// Gets an EntityQuery instance that can be used to load <see cref="EWAVRule_Base"/> entity instances using the 'Getrule' query.
         /// </summary>
         /// <param name="id">The value for the 'id' parameter of the query.</param>
-        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EwavRule_Base"/> entity instances.</returns>
-        public EntityQuery<EwavRule_Base> GetruleQuery(int id)
+        /// <returns>An EntityQuery that can be loaded to retrieve <see cref="EWAVRule_Base"/> entity instances.</returns>
+        public EntityQuery<EWAVRule_Base> GetruleQuery(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("id", id);
             this.ValidateMethod("GetruleQuery", parameters);
-            return base.CreateQuery<EwavRule_Base>("Getrule", parameters, false, false);
+            return base.CreateQuery<EWAVRule_Base>("Getrule", parameters, false, false);
         }
         
         /// <summary>
@@ -22024,7 +22024,7 @@ namespace Ewav.Web.Services.MapCluster
         /// <param name="callback">Callback to invoke when the operation completes.</param>
         /// <param name="userState">Value to pass to the callback.  It can be <c>null</c>.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<PointDTOCollection>> GetMapValues(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, Action<InvokeOperation<List<PointDTOCollection>>> callback, object userState)
+        public InvokeOperation<List<PointDTOCollection>> GetMapValues(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, Action<InvokeOperation<List<PointDTOCollection>>> callback, object userState)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -22043,7 +22043,7 @@ namespace Ewav.Web.Services.MapCluster
         /// <param name="rules">The value for the 'rules' parameter of this action.</param>
         /// <param name="filterString">The value for the 'filterString' parameter of this action.</param>
         /// <returns>An operation instance that can be used to manage the asynchronous request.</returns>
-        public InvokeOperation<List<PointDTOCollection>> GetMapValues(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString)
+        public InvokeOperation<List<PointDTOCollection>> GetMapValues(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("gadgetParameters", gadgetParameters);
@@ -22082,7 +22082,7 @@ namespace Ewav.Web.Services.MapCluster
             /// <returns>An IAsyncResult that can be used to monitor the request.</returns>
             [FaultContract(typeof(DomainServiceFault), Action="http://tempuri.org/MapClusterDomainService/GetMapValuesDomainServiceFault", Name="DomainServiceFault", Namespace="DomainServices")]
             [OperationContract(AsyncPattern=true, Action="http://tempuri.org/MapClusterDomainService/GetMapValues", ReplyAction="http://tempuri.org/MapClusterDomainService/GetMapValuesResponse")]
-            IAsyncResult BeginGetMapValues(GadgetParameters gadgetParameters, IEnumerable<EwavDataFilterCondition> ewavDataFilters, List<EwavRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
+            IAsyncResult BeginGetMapValues(GadgetParameters gadgetParameters, IEnumerable<EWAVDataFilterCondition> ewavDataFilters, List<EWAVRule_Base> rules, string filterString, AsyncCallback callback, object asyncState);
             
             /// <summary>
             /// Completes the asynchronous operation begun by 'BeginGetMapValues'.
@@ -22108,7 +22108,7 @@ namespace Ewav.Web.Services.MapCluster
             /// </summary>
             /// <param name="result">The IAsyncResult returned from 'BeginGetrule'.</param>
             /// <returns>The 'QueryResult' returned from the 'Getrule' operation.</returns>
-            QueryResult<EwavRule_Base> EndGetrule(IAsyncResult result);
+            QueryResult<EWAVRule_Base> EndGetrule(IAsyncResult result);
         }
         
         internal sealed class MapClusterDomainContextEntityContainer : EntityContainer
@@ -22116,7 +22116,7 @@ namespace Ewav.Web.Services.MapCluster
             
             public MapClusterDomainContextEntityContainer()
             {
-                this.CreateEntitySet<EwavRule_Base>(EntitySetOperations.None);
+                this.CreateEntitySet<EWAVRule_Base>(EntitySetOperations.None);
             }
         }
     }
@@ -22131,7 +22131,7 @@ namespace EWAVD3
     using System.ServiceModel.DomainServices;
     using System.ServiceModel.DomainServices.Client;
     using System.ServiceModel.DomainServices.Client.ApplicationServices;
-    using Ewav.Web.Services.AuthenticationDomainService;
+    using EWAV.Web.Services.AuthenticationDomainService;
     
     
     /// <summary>

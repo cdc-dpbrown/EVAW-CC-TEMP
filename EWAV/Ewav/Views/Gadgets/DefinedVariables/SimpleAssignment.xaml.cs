@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using EWAV.BAL;
 using EWAV.ViewModels;
 using EWAV.Web.EpiDashboard;
 using EWAV.Web.EpiDashboard.Rules;
-using EWAV.Views.Gadgets.DefinedVariables;
+using EWAVD3.Views.Gadgets.DefinedVariables;
 using EWAV.Web.Services;
 //Serialize Method is written in Extensions.cs
 namespace EWAV

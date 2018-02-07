@@ -1,25 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using EWAV.Web.EpiDashboard;
 using EWAV.BAL;
 using EWAV.ViewModels;
 using EWAV.Web.Services;
-using EWAV.ExtensionMethods;
-using CommonLibrary;
-using System.Windows.Media.Imaging;
 using System.Text;
-using EWAV.Views.Gadgets;
-//Serialize Method is written in Extensions.cs
-//CreateFromXml is written in ApplicationViewModel.cs
+
 namespace EWAV
 {
     public partial class ConditionalAssign : ChildWindow, IEWAVDashboardRule

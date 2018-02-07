@@ -1,6 +1,6 @@
-﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Ewav" EntryPointType="Ewav.App" RuntimeVersion="5.0.61118.0">
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="EWAVD3" EntryPointType="Ewav.App" RuntimeVersion="5.0.61118.0">
   <Deployment.Parts>
-    <AssemblyPart x:Name="Ewav" Source="Ewav.dll" />
+    <AssemblyPart x:Name="EWAVD3" Source="EWAVD3.dll" />
     <AssemblyPart x:Name="CommonLibrary" Source="CommonLibrary.dll" />
     <AssemblyPart x:Name="ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical" Source="ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical.dll" />
     <AssemblyPart x:Name="ComponentArt.Silverlight.DataVisualization.Charting" Source="ComponentArt.Silverlight.DataVisualization.Charting.dll" />
@@ -14,9 +14,9 @@
     <AssemblyPart x:Name="ESRI.ArcGIS.Client.Printing" Source="ESRI.ArcGIS.Client.Printing.dll" />
     <AssemblyPart x:Name="ESRI.ArcGIS.Client.Toolkit.DataSources" Source="ESRI.ArcGIS.Client.Toolkit.DataSources.dll" />
     <AssemblyPart x:Name="ESRI.ArcGIS.Client.Toolkit" Source="ESRI.ArcGIS.Client.Toolkit.dll" />
-    <AssemblyPart x:Name="Ewav.ContextMenu.Components" Source="Ewav.ContextMenu.Components.dll" />
-    <AssemblyPart x:Name="Ewav.ContextMenu" Source="Ewav.ContextMenu.dll" />
-    <AssemblyPart x:Name="Ewav.ContextMenu.Menu" Source="Ewav.ContextMenu.Menu.dll" />
+    <AssemblyPart x:Name="EWAV.ContextMenu.Components" Source="EWAV.ContextMenu.Components.dll" />
+    <AssemblyPart x:Name="EWAV.ContextMenu" Source="EWAV.ContextMenu.dll" />
+    <AssemblyPart x:Name="EWAV.ContextMenu.Menu" Source="EWAV.ContextMenu.Menu.dll" />
     <AssemblyPart x:Name="FJ.Core" Source="FJ.Core.dll" />
     <AssemblyPart x:Name="Microsoft.Expression.Interactions" Source="Microsoft.Expression.Interactions.dll" />
     <AssemblyPart x:Name="mscorlib" Source="mscorlib.dll" />

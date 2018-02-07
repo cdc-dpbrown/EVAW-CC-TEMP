@@ -10,7 +10,6 @@ using EWAV.Client.Application;
 using System.Linq;
 using System.Collections.Generic;
 
-
 using EWAV.Common;
 using EWAV.DTO;
 using EWAV.ViewModels;
@@ -23,33 +22,26 @@ namespace EWAV
     public partial class AppMenuView : UserControl
     {
         public ApplicationViewModel applicationViewModel = ApplicationViewModel.Instance;
-        //OpenDash od = null;
         DeleteDash dd = null;
         SaveDash savedash = null;
         SetDatasource setDb = null;
         AppMenuViewModel appMenuViewModel = null;
 
-        WebContext webCtx;
+        EWAVD3.WebContext webCtx;
 
         public AppMenuView()
         {
             this.InitializeComponent();
-
             this.Loaded += new System.Windows.RoutedEventHandler(AppMenuView_Loaded);
-
-            webCtx = new WebContext();
-            //    EWAV.App.ApplicationLifetimeObjects.Add(webCtx);
+            webCtx = new EWAVD3.WebContext();
         }
 
         void AppMenuView_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
             try
             {
-
                 applicationViewModel.AppMenuView = this;
-
                 DatasourceWatcher.Instance.DatasourceWatcherEvent += new EventHandler(datasourceWatcherEvent_DatasourceWatcherEvent);
-
                 DatasourceWatcher.Instance.RefreshEvent += new EventHandler(datasourceWatcher_RefreshEvent);
 
                 if (applicationViewModel.DemoMode)
@@ -61,14 +53,10 @@ namespace EWAV
                     AppNameText.Text = "Epi Info Cloud Data Analytics ";
                 }
 
-
                 AppMenuViewModel appMenuViewModel = (AppMenuViewModel)this.DataContext;
-                //appMenuViewModel.DatasourcesLoadedEvent +=
-                //    new EventHandler<SimpleMvvmToolkit.NotificationEventArgs<Exception>>(appMenuViewModel_DatasourcesLoadedEvent);    
 
                 applicationViewModel.GadgetsReloaded += new EventHandler(applicationViewModel_GadgetsReloaded);
 
-                //applicationViewModel.FilteredRecordCountUpdatedEvent -= new Client.Application.FilteredRecordcountUpdatedEventHandler(applicationViewModel_FilteredRecordCountUpdatedEvent);
                 applicationViewModel.ApplyDataFilterEvent -= new Client.Application.ApplyFilterEventHandler(applicationViewModel_ApplyDataFilterEvent);
                 applicationViewModel.ReadFilterStringEvent -= new Client.Application.ReadFilterStringEventHandler(applicationViewModel_ReadFilterStringEvent);
                 applicationViewModel.DefinedVariableAddedEvent -= new Client.Application.DefinedVariableAddedEventHandler(applicationViewModel_DefinedVariableAddedEvent);
@@ -78,7 +66,6 @@ namespace EWAV
 
                 appMenuViewModel.ErrorNotice -= new EventHandler<SimpleMvvmToolkit.NotificationEventArgs<Exception>>(appMenuViewModel_ErrorNotice);
 
-                //applicationViewModel.FilteredRecordCountUpdatedEvent += new Client.Application.FilteredRecordcountUpdatedEventHandler(applicationViewModel_FilteredRecordCountUpdatedEvent);
                 applicationViewModel.ApplyDataFilterEvent += new Client.Application.ApplyFilterEventHandler(applicationViewModel_ApplyDataFilterEvent);
                 applicationViewModel.ReadFilterStringEvent += new Client.Application.ReadFilterStringEventHandler(applicationViewModel_ReadFilterStringEvent);
                 applicationViewModel.DefinedVariableAddedEvent += new Client.Application.DefinedVariableAddedEventHandler(applicationViewModel_DefinedVariableAddedEvent);
@@ -89,8 +76,6 @@ namespace EWAV
                 applicationViewModel.DatasourceChangedEvent += ApplicationViewModel_DatasourceChangedEvent;
 
                 appMenuViewModel.ErrorNotice += new EventHandler<SimpleMvvmToolkit.NotificationEventArgs<Exception>>(appMenuViewModel_ErrorNotice);
-
-                //cboDatasoures.SelectionChanged += new SelectionChangedEventHandler(cboDatasoures_SelectionChanged);
 
                 SetDatasourceDisplayText();
 
@@ -136,8 +121,6 @@ namespace EWAV
         {
             AppMenuViewModel datasourceWatcher_AppMenuViewModel = ((DatasourceWatcher)sender).appMenuViewModel;
 
-            //    AppMenuViewModel datasourceWatcher_AppMenuViewModel = (AppMenuViewModel)sender;
-
             if (datasourceWatcher_AppMenuViewModel.RecordCountString != null &&
                 datasourceWatcher_AppMenuViewModel.RecordCountString.Length > 0)
             {
@@ -161,13 +144,10 @@ namespace EWAV
         /// <param name="e">The <see cref="SimpleMvvmToolkit.NotificationEventArgs&lt;System.Exception&gt;" /> instance containing the event data.</param>
         private void datasourceWatcher_RecordcountRecievedEvent(object sender, NotificationEventArgs<Exception> e)
         {
-
-
         }
 
         void applicationViewModel_GadgetsReloaded(object sender, EventArgs e)
         {
-            //       this.tbRecordCount.Text = "Records: " + DatasourceWatcher.Instance.CurrentApplicationRecordCount + " of " + DatasourceWatcher.Instance.CurrentDatasourceRecordCount;
         }
 
         void datasourceWatcherEvent_DatasourceWatcherEvent(object sender, EventArgs e)
@@ -181,7 +161,6 @@ namespace EWAV
             {
                 brdrRefresh.Visibility = System.Windows.Visibility.Visible;
                 Fader.Begin();
-                //        this.tbRecordCount.Text = "Records: " + DatasourceWatcher.Instance.CurrentApplicationRecordCount + " of " + DatasourceWatcher.Instance.CurrentDatasourceRecordCount;
             }
             else
             {
@@ -203,14 +182,9 @@ namespace EWAV
             if (ApplicationViewModel.Instance.AuthenticationMode.ToString().ToLower() == "windows")
             {
                 Membership.MembershipManager mm = new Membership.MembershipManager();
-                // Authenticate this user aganist the EWAV database.  If authenticated,  load the user
                 ApplicationViewModel.Instance.CurrentUserDomain =
-                    WebContext.Current.Authentication.User.Identity.Name.Split('\\')[0].ToString();
-                //ApplicationViewModel.Instance.LoggedInUser.UserDto.UserName =
-                //    WebContext.Current.Authentication.User.Identity.Name.Split('\\')[1].ToString();
-
-                //mm.AuthenticateAndLoadUser(WebContext.Current.Authentication.User.Identity.Name.Split('\\')[1].ToString());
-                mm.AuthenticateAndLoadUser(WebContext.Current.Authentication.User.Identity.Name);
+                    EWAVD3.WebContext.Current.Authentication.User.Identity.Name.Split('\\')[0].ToString();
+                mm.AuthenticateAndLoadUser(EWAVD3.WebContext.Current.Authentication.User.Identity.Name);
                 mm.UserAuthenticatedFromEWAV += new EventHandler(mm_UserAuthenticated);
                 mm.UserNotAuthenticatedFromEWAV += new EventHandler(mm_UserNotAuthenticatedFromEWAV);
                 mm.UserLoadedWithNoDatasource += new EventHandler(mm_UserLoadedWithNoDatasource);
@@ -225,8 +199,6 @@ namespace EWAV
         void mm_UserLoadedWithNoDatasource(object sender, EventArgs e)
         {
             NoDSAssignedErrorMsg();
-            //ErrorWindow Err = new ErrorWindow("You do not have access to any datasource.", "");
-            //Err.Show();
         }
 
         private static void NoDSAssignedErrorMsg()
@@ -246,7 +218,6 @@ namespace EWAV
 
         void mm_UserNotAuthenticatedFromEWAV(object sender, EventArgs e)
         {
-            //string s = sender.ToString();
             HtmlPage.Window.Navigate(new Uri(string.Format("Error.aspx?AdminEmail={0}", sender.ToString()), UriKind.Relative));
         }
 
@@ -263,13 +234,8 @@ namespace EWAV
                 if (ApplicationViewModel.Instance.AuthenticationMode.ToString().ToLower() == "windows")
                 {
                     webCtx.Authentication = new System.ServiceModel.DomainServices.Client.ApplicationServices.WindowsAuthentication();
-                    WebContext.Current.Authentication.LoadUser(OnLoadUser_Completed, null);
+                    EWAVD3.WebContext.Current.Authentication.LoadUser(OnLoadUser_Completed, null);
                 }
-                else
-                {
-                    //  webCtx.Authentication = new System.ServiceModel.DomainServices.Client.ApplicationServices.FormsAuthentication();
-                }
-                //             ReadDatasources();
             }
         }
 
@@ -321,7 +287,6 @@ namespace EWAV
             {
                 ChildWindow window = new ErrorWindow(e.Data);
                 window.Show();
-                //return;
             }
         }
 

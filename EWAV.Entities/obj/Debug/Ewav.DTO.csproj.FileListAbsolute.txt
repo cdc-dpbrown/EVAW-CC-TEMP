@@ -11,3 +11,16 @@ C:\TFSCode\EWAV\Ewav.Entities\bin\Debug\System.Xml.Linq.dll
 C:\TFSCode\EWAV\Ewav.Entities\obj\Debug\Ewav.DTO.csprojResolveAssemblyReference.cache
 C:\TFSCode\EWAV\Ewav.Entities\obj\Debug\Ewav.DTO.dll
 C:\TFSCode\EWAV\Ewav.Entities\obj\Debug\Ewav.DTO.pdb
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\EWAV.DTO.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\EWAV.DTO.pdb
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\System.Configuration.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\System.Data.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\System.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\System.Drawing.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\System.Runtime.Serialization.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\System.Windows.Forms.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\System.Xml.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\System.Xml.Linq.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\obj\Debug\EWAV.DTO.csprojResolveAssemblyReference.cache
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\obj\Debug\EWAV.DTO.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\obj\Debug\EWAV.DTO.pdb

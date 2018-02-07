@@ -15,10 +15,7 @@ namespace EWAV
 {
     public partial class App : Application
     {
-        //ReadWebConfigDomainContext ctx = null;
-        WebContext webCtx = null;
-
-
+        EWAVD3.WebContext webCtx = null;
 
         public App()
         {
@@ -26,15 +23,10 @@ namespace EWAV
             this.UnhandledException += this.Application_UnhandledException;
 
             InitializeComponent();
-
-
-
         }
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-
-
             ApplicationViewModel.Instance.AuthenticationMode = e.InitParams["AuthenticationMode"].ToString();
             ApplicationViewModel.Instance.KeyForUserPasswordSalt = e.InitParams["KeyForUserPasswordSalt"].ToString();
             ApplicationViewModel.Instance.KeyForBingMaps = e.InitParams["KeyForBingMaps"].ToString();
@@ -45,20 +37,11 @@ namespace EWAV
             ApplicationViewModel.Instance.DemoModeUser = e.InitParams["DemoModeUser"].ToString();
             ApplicationViewModel.Instance.DemoModePassword = e.InitParams["DemoModePassword"].ToString();
 
-
-            //String fullversion = e.InitParams["AssemblyFullName"].ToString().Split(',')[1];
-            //String version = fullversion.Split('=')[1];
-
-
-            //ApplicationViewModel.Instance.ServerAssemblyVersion = version;
-
             Assembly assembly = Assembly.GetExecutingAssembly();
             string fullversion = assembly.FullName.Split(',')[1];
             string version = fullversion.Split('=')[1];
 
-
             ApplicationViewModel.Instance.ClientAssemblyVersion = version;
-
 
             Uri uri = HtmlPage.Document.DocumentUri;
 
@@ -100,31 +83,15 @@ namespace EWAV
             }
 
             HtmlDocument htd = HtmlPage.Document;
-            //if (htd.QueryString.ContainsKey("test"))
-            //{
 
-            //    Diagnostics diag = new Diagnostics();
-
-            //    RootVisual = diag;    
-
-
-            //}
-            //else
-            //{
             DashboardMainPage dmp = new DashboardMainPage();
 
             this.RootVisual = dmp;
-
-            //  FullScreen support 
 
             dmp.FullScreenButton.Click += delegate (Object s, RoutedEventArgs args)
             {
                 this.Host.Content.IsFullScreen = !this.Host.Content.IsFullScreen;
             };
-
-
-            //}
-
         }
 
 
@@ -143,23 +110,5 @@ namespace EWAV
                 errorWin.Show();
             }
         }
-
-        //private void OnLoadUser_Completed(LoadUserOperation operation)
-        //{
-
-
-
-        //    if (ApplicationViewModel.Instance.AuthenticationMode.ToString().ToLower() == "windows")
-        //    {
-        //        Membership.MembershipManager mm = new Membership.MembershipManager();
-        //        // Authenticate this user aganist the EWAV database.  If authenticated,  load the user 
-        //        mm.AuthenticateAndLoadUser(WebContext.Current.Authentication.User.Identity.Name.Split('\\')[1].ToString());
-
-
-        //    }
-
-        //}
-
-
     }
 }
