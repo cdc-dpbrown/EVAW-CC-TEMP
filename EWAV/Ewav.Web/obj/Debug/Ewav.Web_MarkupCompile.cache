@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\_CODE\EVAW-CC-TEMP\Ewav\Ewav.Web\obj\Debug\
+C:\_CODE\EVAW-CC-TEMP\EWAV\Ewav.Web\obj\Debug\
 EWAV.Web
 none
 false
@@ -13,7 +13,7 @@ TRACE;DEBUG
 2-464840535
 85-2143518954
 134-1591099066
-64365240310
+64-1046960615
 EpiDashboard\SimpleDataGrid.xaml;EpiDashboard\WaitCursor.xaml;
 
 False

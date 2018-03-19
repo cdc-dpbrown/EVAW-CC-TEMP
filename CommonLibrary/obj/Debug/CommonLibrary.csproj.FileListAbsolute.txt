@@ -16,3 +16,5 @@ C:\_CODE\EVAW-CC-TEMP\CommonLibrary\obj\Debug\CommonLibrary.SharedStrings.resour
 C:\_CODE\EVAW-CC-TEMP\CommonLibrary\obj\Debug\CommonLibrary.csproj.GenerateResource.Cache
 C:\_CODE\EVAW-CC-TEMP\CommonLibrary\obj\Debug\CommonLibrary.dll
 C:\_CODE\EVAW-CC-TEMP\CommonLibrary\obj\Debug\CommonLibrary.pdb
+C:\_CODE\EVAW-CC-TEMP\CommonLibrary\Bin\Debug\CommonLibrary.dll.CodeAnalysisLog.xml
+C:\_CODE\EVAW-CC-TEMP\CommonLibrary\Bin\Debug\CommonLibrary.dll.lastcodeanalysissucceeded

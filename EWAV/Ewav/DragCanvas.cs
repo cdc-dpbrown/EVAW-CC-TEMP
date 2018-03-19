@@ -368,16 +368,11 @@ namespace EWAV
             uc.MouseMove -= element_MouseMove;
             uc.MouseLeftButtonUp -= element_MouseLeftButtonUp;
             uc.MouseRightButtonDown -= element_MouseRightButtonDown;
-
-            //         cEventHelper.RemoveAllEventHandlers(uc);    
-
-            // Un-wire data context    
             uc.DataContext = null;
 
             this.Children.Remove(uc);
 
             ApplicationViewModel.Instance.Gadgets.Remove(uc);
-            // This *should* be bye-bye    
             uc = null;
         }
 
@@ -623,207 +618,41 @@ namespace EWAV
 
         public string CaptureSnapshot()
         {
+            // dpb 
 
-            try
-            {
+            //try
+            //{
+            //    ScaleTransform scaleTransform = new ScaleTransform();
 
+            //    WriteableBitmap bitmap = new WriteableBitmap(
+            //        (int)this.ActualWidth ,
+            //        (int)this.ActualHeight );    
 
-                ScaleTransform scaleTransform = new ScaleTransform();
+            //    this.RenderTransform = scaleTransform;
 
+            //    bitmap.Render(this, new ScaleTransform());
 
-         
-                // create a WriteableBitmap
-                WriteableBitmap bitmap = new WriteableBitmap(
-                    (int)this.ActualWidth ,
-                    (int)this.ActualHeight );    
+            //    bitmap.Invalidate();
 
+            //    Stream streamJPEG = new MemoryStream();
+            //    JPGUtil.EncodeJpg(bitmap, streamJPEG);
 
-         
+            //    byte[] m_Bytes = StreamHelper.GetAllBytes(streamJPEG);
+            //    string string64 = Convert.ToBase64String(m_Bytes);
+            //    byte[] out_Bytes = Convert.FromBase64String(string64);
 
+            //    MemoryStream outStreamJPEG = new MemoryStream(out_Bytes);
 
-                this.RenderTransform = scaleTransform;
+            //    return string64;
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new Exception("Error on capture " + ex.Message);
+            //}
 
-                // render the visual element to the WriteableBitmap
-                bitmap.Render(this, new ScaleTransform());
-
-                // request an redraw of the bitmap
-                bitmap.Invalidate();
-
-                     
-                Stream streamJPEG = new MemoryStream();
-                JPGUtil.EncodeJpg(bitmap, streamJPEG);
-
-            
-
-                // concert stream1 of the new jpeg     
-                byte[] m_Bytes = StreamHelper.GetAllBytes(streamJPEG);
-
-                // to str        
-                string string64 = Convert.ToBase64String(m_Bytes);
-
-
-                // to jpeg         
-                byte[] out_Bytes = Convert.FromBase64String(string64);
-
-
-                MemoryStream outStreamJPEG = new MemoryStream(out_Bytes);
-
-                //        outStreamJPEG.Write(out_Bytes, 0, out_Bytes.Length);    
-
-                // Create an instance of the open file dialog box.
-                //SaveFileDialog dialog = new SaveFileDialog();
-
-
-                //// prompt for a location to save it
-                //if (dialog.ShowDialog() == true)
-                //{ 
-                //    // the "using" block ensures the stream is cleaned up when we are finished
-                //    using (Stream stream = dialog.OpenFile())
-                //    {
-                //        // encode the stream
-                //        //    JPGUtil.EncodeJpg(bitmap, stream);    
-
-
-                //        outStreamJPEG.Write(out_Bytes, 0, out_Bytes.Length);    
-
-
-
-                //    }
-                //}
-
-
-
-
-                //// convert stream to string
-                //StreamReader reader = new StreamReader(streamJPEG);
-                //string text = reader.ReadToEnd();
-
-
-
-                return string64;
-
-
-
-
-            }
-            catch (Exception ex)
-            {
-
-
-                throw new Exception("Error on capture " + ex.Message);
-
-            }
-
-
-
+            return string.Empty;
         }
 
-        //public string CaptureSnapshot2()
-        //{
-
-        //    try
-        //    {
-
-
-        //        // create a WriteableBitmap
-        //        WriteableBitmap bitmap = new WriteableBitmap(
-        //            (int)this.ActualWidth,
-        //            (int)this.ActualHeight);
-
-
-
-        //        int width = 500;  // (int)this.ActualWidth;
-        //        int height = 500;  //  (int)this.ActualHeight;
-
-
-        //        var pixels = new TrackingEnumerable<int>(width * height, (int)0x00ff00 | (0xff << 24));
-
-
-
-        //        // render the visual element to the WriteableBitmap
-        //        bitmap.Render(this, new ScaleTransform());
-
-        //        // request an redraw of the bitmap
-        //        bitmap.Invalidate();
-
-
-        //        Stream streamPng = new MemoryStream();
-
-        //        MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
-
-
-      
-
-
-        //        var contents = PngEncoder.Encode(width, height, pixels);
-        //        foreach (var b in contents)
-        //        {
-        //            streamPng.WriteByte(b);
-        //        }
-
-
-        //        // concert stream1 of the new jpeg     
-        //        byte[] m_Bytes = StreamHelper.GetAllBytes(streamPng);
-
-        //        // to str        
-        //        string string64 = Convert.ToBase64String(m_Bytes);
-
-
-        //        // to jpeg         
-        //        byte[] out_Bytes = Convert.FromBase64String(string64);
-
-
-        //        MemoryStream outStreamJPEG = new MemoryStream(out_Bytes);
-
-        //        //        outStreamJPEG.Write(out_Bytes, 0, out_Bytes.Length);    
-
-        //        // Create an instance of the open file dialog box.
-        //        //SaveFileDialog dialog = new SaveFileDialog();
-
-
-        //        //// prompt for a location to save it
-        //        //if (dialog.ShowDialog() == true)
-        //        //{ 
-        //        //    // the "using" block ensures the stream is cleaned up when we are finished
-        //        //    using (Stream stream = dialog.OpenFile())
-        //        //    {
-        //        //        // encode the stream
-        //        //        //    JPGUtil.EncodeJpg(bitmap, stream);    
-
-
-        //        //        outStreamJPEG.Write(out_Bytes, 0, out_Bytes.Length);    
-
-
-
-        //        //    }
-        //        //}
-
-
-
-
-        //        //// convert stream to string
-        //        //StreamReader reader = new StreamReader(streamJPEG);
-        //        //string text = reader.ReadToEnd();
-
-
-
-        //        return string64;
-
-
-
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-
-        //        throw new Exception("Error on capture " + ex.Message);
-
-        //    }
-
-
-
-        //}
         #region Helper Methods
 
         /// <summary>

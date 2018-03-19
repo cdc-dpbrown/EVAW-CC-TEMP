@@ -54,7 +54,7 @@ C:\TFSCode\EWAV\EwavLite\obj\Debug\EwavLite.pdb
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EwavLite.dll.config
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EwavLite.dll
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EwavLite.pdb
-C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\Ewav.Clients.Common.dll
+C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EWAV.Clients.Common.dll
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EWAV.Web.dll
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EWAV.DTO.dll
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EWAV.BAL.dll
@@ -74,7 +74,7 @@ C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\Epi.ImportExport.dll
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\Epi.Windows.Globalization.dll
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\Mono.Security.dll
-C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\Ewav.Clients.Common.pdb
+C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EWAV.Clients.Common.pdb
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EWAV.Web.pdb
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EWAV.DTO.pdb
 C:\_CODE\EVAW-CC-TEMP\EwavLite\bin\EWAV.BAL.pdb

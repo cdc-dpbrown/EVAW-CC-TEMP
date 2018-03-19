@@ -10,10 +10,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Xml.Linq;
 using CommonLibrary;
-using ComponentArt.Silverlight.DataVisualization;
-using ComponentArt.Silverlight.DataVisualization.Charting;
-using ComponentArt.Silverlight.DataVisualization.Common;
-using ComponentArt.Silverlight.Export.PDF;
 using EWAV.Web.EpiDashboard;
 using EWAV.BAL;
 using EWAV.ClientCommon;
@@ -45,7 +41,7 @@ namespace EWAV
         private object objXAxisStart;
         private object objXAxisEnd;
         DatatableBag databag;
-        DashboardPanel dbp;
+        // dpb DashboardPanel dbp;
         XYChartViewModel xyChartViewModel;
         List<string> dateColumnNames = new List<string>();
         List<string> numericColumnNames = new List<string>();
@@ -53,18 +49,18 @@ namespace EWAV
         ClientCommon.Common cmnClass;
         List<EWAVColumn> primaryListColumns = null, stratListColumns = null;
         List<ColumnDataType> columnDataType_primary, columnDataType_numeric;
-        XYChart XYChartControlChart;
-        PieChart PieChart;
+        // dpb XYChart XYChartControlChart;
+        // dpb PieChart PieChart;
         string ErrMessage = "";
         int Index1 = -1, Index2 = -1, Index3 = -1, Index4 = -1, Index5 = -1;
         EWAVColumn Col1, Col2, Col3, Col4, Col5;
         private bool chartDataLoaded = false;
         SetLabelsViewModel viewModel = null;
-        BarSeries XYChartControlSeries = null;
+        // dpb BarSeries XYChartControlSeries = null;
         private bool loadingDropDowns = false;
 
         public XYControlChartTypes chartTypeEnum;
-        CompositeSeries compositeSeries = null;
+        // dpb CompositeSeries compositeSeries = null;
         //double recordCount = 0.0;
 
         private long recordCount;
@@ -143,10 +139,7 @@ namespace EWAV
         private delegate bool CheckForCancellationDelegate();
         private delegate void RenderFinishWithErrorDelegate(string errorMessage);
         private delegate void RenderFinishWithWarningDelegate(string errorMessage);
-        // private delegate void RenderFinishEpiCurveDelegate(DataTable data, List<List<StringDataValue>> dataValues);
         private delegate void RenderFinishSingleChartDelegate(List<List<StringDataValue>> stratifiedValues);
-        //private delegate void RenderFinishScatterChartDelegate(List<NumericDataValue> dataValues, StatisticsRepository.LinearRegression.LinearRegressionResults results, NumericDataValue maxValue, NumericDataValue minValue);
-        //private delegate void RenderFinishStackedChartDelegate(List<List<StringDataValue>> dataValues, DataTable data);
         private delegate void SimpleCallback();
 
         public List<ColumnDataType> GetPrimaryFieldColumnDataType
@@ -190,13 +183,9 @@ namespace EWAV
             string yAxisFieldScatter = string.Empty;
             string chartType = string.Empty;
             string chartSize = "Medium";
-            //string xAxisRotation = "90";
-
-
 
             if (cbxChartSize.SelectedIndex >= 0)
             {
-
                 chartSize = cbxChartSize.SelectedValue.ToString();
             }
 
@@ -237,7 +226,7 @@ namespace EWAV
                 new XAttribute("gadgetType", "EWAV.XYChartControl"),
                 new XElement("chartType", chartType),
                 new XElement("chartSize", chartSize),
-                   new XElement("chartTitle", dbp == null ? "" : dbp.Title.ToString()),
+// dpb                    new XElement("chartTitle", dbp == null ? "" : dbp.Title.ToString()),
                 new XElement("chartLegendTitle", LegendTitle),
                 new XElement("columnAggregateFunction", columnAggregateFunction),
                 new XElement("caseStatusVariable", caseStatusField),
@@ -251,7 +240,7 @@ namespace EWAV
                 new XElement("xAxisLabel", textBlockX == null ? "" : textBlockX.Text),
 
                 new XElement("gadgetName", viewModel.GadgetName),
-                new XElement("gadgetDescription", Convert.ToBase64String(System.Text.ASCIIEncoding.Unicode.GetBytes(viewModel.GadgetDescription))),
+// dpb                 new XElement("gadgetDescription", Convert.ToBase64String(System.Text.ASCIIEncoding.Unicode.GetBytes(viewModel.GadgetDescription))),
                 new XElement("colorPalette", viewModel.CollorPallet),
                 new XElement("useDiffColors", viewModel.UseDifferentBarColors),
                 new XElement("spacesBetweenBars", viewModel.SpacesBetweenBars),
@@ -266,16 +255,8 @@ namespace EWAV
             {
                 this.GadgetFilters.Serialize(element);
             }
-            //element.Attributes.Append(locationY);
-            //element.Attributes.Append(locationX);
-            //element.Attributes.Append(collapsed);
-            //element.Attributes.Append(type);
-
-            //return element;
             return element;
         }
-
-
 
         public class StringDataValue
         {
@@ -303,7 +284,6 @@ namespace EWAV
         }
 
         private string chartName;
-
         public string ChartName
         {
             get
@@ -345,8 +325,6 @@ namespace EWAV
             ComboBoxItems.Add("Large");
             cbxChartSize.ItemsSource = ComboBoxItems;
             cbxChartSize.SelectedIndex = 0;
-            //this.tbChartName.Text = this.ChartName.FromCamelCase();
-            //this.InitializeXYControl();
         }
 
         ScaleTransform scaleTransform;
@@ -354,7 +332,6 @@ namespace EWAV
         void XYChartControl_Loaded(object sender, RoutedEventArgs e)
         {
             InitializeXYControl();
-            //DoChart();
             this.EnableDisableButton();
             ShowAppropriateChart();
         }
@@ -424,7 +401,6 @@ namespace EWAV
 
         void applicationViewModel_PreColumnChangedEvent(object o)
         {
-            //throw new NotImplementedException();
             SaveColumnValues();
         }
 
@@ -439,10 +415,6 @@ namespace EWAV
 
         void applicationViewModel_DefinedVariableInUseDeletedEvent(object o)
         {
-            //throw new NotImplementedException();
-            //if ((FieldSelectedCol1 != null || Col2 != null ||  CrossTabSelectedCol3 != null) 
-            //    || (StrataSelectedCol4 != null || Col5 != null))
-            //{
             if (IsDFUsedInThisGadget())
             {
                 ResetGadget();
@@ -482,7 +454,6 @@ namespace EWAV
 
         void applicationViewModel_DefinedVariableAddedEvent(object o)
         {
-            //throw new NotImplementedException();
             SearchIndex();
             LoadingDropDowns = true;
             FillDropDowns();
@@ -529,7 +500,6 @@ namespace EWAV
             Col5 = (EWAVColumn)cbxColumnYAxisField.SelectedItem;
         }
 
-
         void xyChartViewModel_ErrorNotice(object sender, SimpleMvvmToolkit.NotificationEventArgs<Exception> e)
         {
             RenderFinishWithError(e.Data.Message);
@@ -560,48 +530,21 @@ namespace EWAV
 
         void FillDropDowns()
         {
-            //IEnumerable<EWAVColumn> CBXFieldCols = from cols in this.applicationViewModel.EWAVSelectedDatasource.AllColumns    //  eCrvViewModel.Columns
-            //                                       where columnDataType.Contains(cols.SqlDataTypeAsString)
-            //                                       orderby cols.Name
-            //                                       select cols;
-            //List<EWAVColumn> colsList = CBXFieldCols.ToList();
-            //colsList.Insert(0, new EWAVColumn() { Name = " ", Index = -1, NoCamelName = " " });
             primaryListColumns = cmnClass.GetItemsSource(GetPrimaryFieldColumnDataType);
             this.cbxSingleField.ItemsSource = primaryListColumns;
             this.cbxSingleField.SelectedValue = "Index";
-            //this.cbxSingleField.DisplayMemberPath = "NoCamelName";
             this.cbxSingleField.DisplayMemberPath = "Name";
             this.cbxSingleField.SelectedIndex = Index1;
 
             this.cbxColumnXAxisField.ItemsSource = primaryListColumns;
             this.cbxColumnXAxisField.SelectedValue = "Index";
-            //this.cbxColumnXAxisField.DisplayMemberPath = "NoCamelName";
             this.cbxColumnXAxisField.DisplayMemberPath = "Name";
             this.cbxColumnXAxisField.SelectedIndex = Index4;
 
-            //foreach (var item in primaryListColumns)
-            //{
-            //    this.dateColumnNames.Add(item.Name);
-            //}
-
             stratListColumns = cmnClass.GetItemsSource(GetNumericFieldColumnDataType);
-
-            //colsList.Insert(0, new EWAVColumn() { Name = " ", Index = -1 });
-            //stratListColumns.Add(ColumnDataType.Numeric);
-            //columnDataType.Add(ColumnDataType.Boolean);
-            //columnDataType.Add(ColumnDataType.Text);
-
-            //CBXFieldCols = from cols in this.applicationViewModel.EWAVSelectedDatasource.AllColumns
-            //               where columnDataType.Contains(cols.SqlDataTypeAsString)
-            //               orderby cols.Name
-            //               select cols;
-            //List<EWAVColumn> CaseStatusField = CBXFieldCols.ToList();
-
-            //CaseStatusField.Insert(0, new EWAVColumn() { Name = " ", Index = -1, NoCamelName = " " });
 
             this.cbxWeightField.ItemsSource = stratListColumns;
             this.cbxWeightField.SelectedValue = "Index";
-            //this.cbxWeightField.DisplayMemberPath = "NoCamelName";
             this.cbxWeightField.DisplayMemberPath = "Name";
             this.cbxWeightField.SelectedIndex = Index2;
 
@@ -609,7 +552,6 @@ namespace EWAV
 
             this.cbxStrataField.ItemsSource = primaryListColumns;
             this.cbxStrataField.SelectedValue = "Index";
-            //this.cbxStrataField.DisplayMemberPath = "NoCamelName";
             this.cbxStrataField.DisplayMemberPath = "Name";
             this.cbxStrataField.SelectedIndex = Index3;
 
@@ -617,20 +559,8 @@ namespace EWAV
 
             this.cbxColumnYAxisField.ItemsSource = primaryListColumns;
             this.cbxColumnYAxisField.SelectedValue = "Index";
-            //this.cbxColumnYAxisField.DisplayMemberPath = "NoCamelName";
             this.cbxColumnYAxisField.DisplayMemberPath = "Name";
             this.cbxColumnYAxisField.SelectedIndex = Index5;
-            //ewc = new EWAVColumn();
-            //ewc.Name = " ";
-            //dateFields.Insert(0, ewc);
-            //CaseStatusField.Insert(0, new EWAVColumn() { Name = " ", Index = -1 });
-            //cbxCaseStatusField.ItemsSource = CaseStatusField;
-            //cbxCaseStatusField.SelectedValue = "Index";
-            //cbxCaseStatusField.DisplayMemberPath = "Name";
-            //foreach (var item in stratListColumns)
-            //{
-            //    this.numericColumnNames.Add(item.Name);
-            //}
         }
 
         bool ValidateComboBoxes()
@@ -699,124 +629,96 @@ namespace EWAV
 
             this.xwindow.Unloaded -= new RoutedEventHandler(window_Unloaded);
             this.xwindow.Unloaded += new RoutedEventHandler(window_Unloaded);
-            //if (this.textBlockX != null && this.textBlockY != null)
-            //{
-            //    this.xwindow.txtboxXaxis.Text = this.textBlockX.Text;
-            //    this.xwindow.txtboxYaxis.Text = this.textBlockY.Text;
-            //}
 
-            this.xwindow.txtbxChrtTitle.Text = dbp.Title == null ? "" : dbp.Title.ToString();
-
-
+            // dpb             this.xwindow.txtbxChrtTitle.Text = dbp.Title == null ? "" : dbp.Title.ToString();
+            
             this.xwindow.Show();
-
-
-
         }
 
         private void LoadViewModel()
         {
-            //if (viewModel == null)
+            // dpb 
+
+            //viewModel = new SetLabelsViewModel();
+            //viewModel.GadgetName = tbChartName.Text;
+            //viewModel.GadgetDescription = tbGadgetDescription.Text;
+
+            //if (XYChartControlChart != null)
             //{
+            //    viewModel.ShowLegend = this.XYChartControlChart.LegendVisible;
+            //    viewModel.Width = this.XYChartControlChart.Width;
+            //    viewModel.Height = this.XYChartControlChart.Height;
+            //    viewModel.CollorPallet = this.XYChartControlChart.Palette.PaletteName.ToString();
+            //    viewModel.UseDifferentBarColors = this.XYChartControlChart.UseDifferentBarColors;
+            //    viewModel.XaxisLabel = this.textBlockX.Text;
+            //    viewModel.YaxisLabel = this.textBlockY.Text;
+            //    if (XYChartControlSeries != null)
+            //    {
+            //        switch (XYChartControlSeries.RelativePointSpace.ToString().Substring(0, 3).Replace(',','.'))
+            //        {
+            //            case "0.1":
+            //                viewModel.SpacesBetweenBars = "Small";
+            //                break;
+            //            case "0.4":
+            //                viewModel.SpacesBetweenBars = "Medium";
+            //                break;
+            //            case "0.8":
+            //                viewModel.SpacesBetweenBars = "Large";
+            //                break;
+            //            default:
+            //                viewModel.SpacesBetweenBars = "None";
+            //                break;
+            //        }
+            //    }
 
+            //    switch (this.XYChartControlChart.LegendDock)
+            //    {
+            //        case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom:
+            //            viewModel.LegendPostion = "Bottom";
+            //            break;
+            //        case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left:
+            //            viewModel.LegendPostion = "Left";
+            //            break;
+            //        case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right:
+            //            viewModel.LegendPostion = "Right";
+            //            break;
 
-            viewModel = new SetLabelsViewModel();
-            viewModel.GadgetName = tbChartName.Text;
-            viewModel.GadgetDescription = tbGadgetDescription.Text;
-
-            if (XYChartControlChart != null)
-            {
-                viewModel.ShowLegend = this.XYChartControlChart.LegendVisible;
-                viewModel.Width = this.XYChartControlChart.Width;
-                viewModel.Height = this.XYChartControlChart.Height;
-                viewModel.CollorPallet = this.XYChartControlChart.Palette.PaletteName.ToString();
-                viewModel.UseDifferentBarColors = this.XYChartControlChart.UseDifferentBarColors;
-                viewModel.XaxisLabel = this.textBlockX.Text;
-                viewModel.YaxisLabel = this.textBlockY.Text;
-                if (XYChartControlSeries != null)
-                {
-                    switch (XYChartControlSeries.RelativePointSpace.ToString().Substring(0, 3).Replace(',','.'))
-                    {
-                        case "0.1":
-                            viewModel.SpacesBetweenBars = "Small";
-                            break;
-                        case "0.4":
-                            viewModel.SpacesBetweenBars = "Medium";
-                            break;
-                        case "0.8":
-                            viewModel.SpacesBetweenBars = "Large";
-                            break;
-                        default:
-                            viewModel.SpacesBetweenBars = "None";
-                            break;
-                    }
-                }
-
-                switch (this.XYChartControlChart.LegendDock)
-                {
-                    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom:
-                        viewModel.LegendPostion = "Bottom";
-                        break;
-                    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left:
-                        viewModel.LegendPostion = "Left";
-                        break;
-                    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right:
-                        viewModel.LegendPostion = "Right";
-                        break;
-
-                    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top:
-                        viewModel.LegendPostion = "Top";
-                        break;
-                    default:
-                        viewModel.LegendPostion = "Top";
-                        break;
-                }
-            }
-            else
-            {
-                viewModel.ShowLegend = this.PieChart.LegendVisible;
-                viewModel.Width = this.PieChart.Width;
-                viewModel.Height = this.PieChart.Height;
-                viewModel.CollorPallet = this.PieChart.Palette.PaletteName.ToString();
-
-
-                switch (this.PieChart.LegendDock)
-                {
-                    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom:
-                        viewModel.LegendPostion = "Bottom";
-                        break;
-                    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left:
-                        viewModel.LegendPostion = "Left";
-                        break;
-                    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right:
-                        viewModel.LegendPostion = "Right";
-                        break;
-
-                    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top:
-                        viewModel.LegendPostion = "Top";
-                        break;
-                    default:
-                        viewModel.LegendPostion = "Top";
-                        break;
-                }
-            }
-
-
-
-
-
-            //switch (ChartName.ToLower())
-            //{
-            //    case "column":
-            //    case "bar":
-            //    case "pareto":
-            //        viewModel.UseDifferentBarColors = this.XYChartControlChart.UseDifferentBarColors;
-            //        break;
-            //    default:
-            //        viewModel.UseDifferentBarColors = false;
-            //        break;
+            //        case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top:
+            //            viewModel.LegendPostion = "Top";
+            //            break;
+            //        default:
+            //            viewModel.LegendPostion = "Top";
+            //            break;
+            //    }
             //}
-            // }
+            //else
+            //{
+            //    viewModel.ShowLegend = this.PieChart.LegendVisible;
+            //    viewModel.Width = this.PieChart.Width;
+            //    viewModel.Height = this.PieChart.Height;
+            //    viewModel.CollorPallet = this.PieChart.Palette.PaletteName.ToString();
+
+
+            //    switch (this.PieChart.LegendDock)
+            //    {
+            //        case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom:
+            //            viewModel.LegendPostion = "Bottom";
+            //            break;
+            //        case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left:
+            //            viewModel.LegendPostion = "Left";
+            //            break;
+            //        case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right:
+            //            viewModel.LegendPostion = "Right";
+            //            break;
+
+            //        case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top:
+            //            viewModel.LegendPostion = "Top";
+            //            break;
+            //        default:
+            //            viewModel.LegendPostion = "Top";
+            //            break;
+            //    }
+            //}
         }
 
         public void SetChartTitle(string chartTitle)
@@ -848,131 +750,125 @@ namespace EWAV
                 this.textBlockY.Text = viewModel.YaxisLabel;
             }
 
-            this.dbp.Title = viewModel.ChartTitle;
+            // dpb this.dbp.Title = viewModel.ChartTitle;
             LoadChart(viewModel);
         }
 
         private void LoadChart(SetLabelsViewModel viewModel)
         {
-            this.tbChartName.Text = viewModel.GadgetName;
-            this.tbGadgetDescription.Text = viewModel.GadgetDescription;
+            // dpb 
 
-            if (XYChartControlChart != null)
-            {
-                //this.XYChartControlChart.LegendVisible = false;
-                this.XYChartControlChart.Width = viewModel.Width;
-                this.XYChartControlChart.Height = viewModel.Height;
+            //this.tbChartName.Text = viewModel.GadgetName;
+            //this.tbGadgetDescription.Text = viewModel.GadgetDescription;
+
+            //if (XYChartControlChart != null)
+            //{
+            //    //this.XYChartControlChart.LegendVisible = false;
+            //    this.XYChartControlChart.Width = viewModel.Width;
+            //    this.XYChartControlChart.Height = viewModel.Height;
                 
-                foreach (var item in compositeSeries.SubSeries)
-                {
-                    if (item != null && viewModel.SpacesBetweenBars != null)
-                    {
-                        switch (viewModel.SpacesBetweenBars.ToLower())
-                        {
-                            case "small":
-                                item.RelativePointSpace = 0.1;
-                                break;
-                            case "medium":
-                                item.RelativePointSpace = 0.4;
-                                break;
-                            case "large":
-                                item.RelativePointSpace = 0.8;
-                                break;
-                            default:
-                                item.RelativePointSpace = -0.1;
-                                break;
-                        }
-                    }
-                }
+            //    foreach (var item in compositeSeries.SubSeries)
+            //    {
+            //        if (item != null && viewModel.SpacesBetweenBars != null)
+            //        {
+            //            switch (viewModel.SpacesBetweenBars.ToLower())
+            //            {
+            //                case "small":
+            //                    item.RelativePointSpace = 0.1;
+            //                    break;
+            //                case "medium":
+            //                    item.RelativePointSpace = 0.4;
+            //                    break;
+            //                case "large":
+            //                    item.RelativePointSpace = 0.8;
+            //                    break;
+            //                default:
+            //                    item.RelativePointSpace = -0.1;
+            //                    break;
+            //            }
+            //        }
+            //    }
                 
 
-                switch (ChartName.ToLower())
-                {
-                    case "column":
-                    case "bar":
-                    case "pareto":
-                        if (compositeSeries.SubSeries.Count <= 1)
-                        {
-                            this.XYChartControlChart.UseDifferentBarColors = viewModel.UseDifferentBarColors;
-                        }
+            //    switch (ChartName.ToLower())
+            //    {
+            //        case "column":
+            //        case "bar":
+            //        case "pareto":
+            //            if (compositeSeries.SubSeries.Count <= 1)
+            //            {
+            //                this.XYChartControlChart.UseDifferentBarColors = viewModel.UseDifferentBarColors;
+            //            }
 
-                        break;
-                    default:
-                        this.XYChartControlChart.UseDifferentBarColors = false;
-                        break;
-                }
+            //            break;
+            //        default:
+            //            this.XYChartControlChart.UseDifferentBarColors = false;
+            //            break;
+            //    }
 
-                //this.XYChartControlChart.Legend.Visibility = System.Windows.Visibility.Collapsed;
-                this.XYChartControlChart.LegendVisible = viewModel.ShowLegend;
+            //    //this.XYChartControlChart.Legend.Visibility = System.Windows.Visibility.Collapsed;
+            //    this.XYChartControlChart.LegendVisible = viewModel.ShowLegend;
                 
-                switch (viewModel.LegendPostion.ToLower())
-                {
-                    case "left":
-                        this.XYChartControlChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left;
-                        break;
-                    case "right":
-                        this.XYChartControlChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right;
-                        break;
-                    case "bottom":
-                        this.XYChartControlChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom;
-                        break;
-                    default:
-                        this.XYChartControlChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top;
-                        break;
-                }
-                this.XYChartControlChart.Legend.Orientation = ComponentArt.Silverlight.DataVisualization.Common.LegendItemOrientation.Vertical;
-                this.XYChartControlChart.Palette = Palette.GetPalette(viewModel.CollorPallet);
-            }
-            else
-            {
-                //this.PieChart.LegendVisible = false;
-                this.PieChart.Width = viewModel.Width;
-                this.PieChart.Height = viewModel.Height;
+            //    switch (viewModel.LegendPostion.ToLower())
+            //    {
+            //        case "left":
+            //            this.XYChartControlChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left;
+            //            break;
+            //        case "right":
+            //            this.XYChartControlChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right;
+            //            break;
+            //        case "bottom":
+            //            this.XYChartControlChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom;
+            //            break;
+            //        default:
+            //            this.XYChartControlChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top;
+            //            break;
+            //    }
+            //    this.XYChartControlChart.Legend.Orientation = ComponentArt.Silverlight.DataVisualization.Common.LegendItemOrientation.Vertical;
+            //    this.XYChartControlChart.Palette = Palette.GetPalette(viewModel.CollorPallet);
+            //}
+            //else
+            //{
+            //    //this.PieChart.LegendVisible = false;
+            //    this.PieChart.Width = viewModel.Width;
+            //    this.PieChart.Height = viewModel.Height;
 
-                switch (viewModel.LegendPostion.ToLower())
-                {
-                    case "left":
-                        this.PieChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left;
-                        break;
-                    case "right":
-                        this.PieChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right;
-                        break;
-                    case "bottom":
-                        this.PieChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom;
-                        break;
-                    default:
-                        this.PieChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top;
-                        break;
-                }
+            //    switch (viewModel.LegendPostion.ToLower())
+            //    {
+            //        case "left":
+            //            this.PieChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left;
+            //            break;
+            //        case "right":
+            //            this.PieChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right;
+            //            break;
+            //        case "bottom":
+            //            this.PieChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom;
+            //            break;
+            //        default:
+            //            this.PieChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top;
+            //            break;
+            //    }
 
-                //this.PieChart.Legend.Visibility = System.Windows.Visibility.Collapsed;
-                this.PieChart.LegendVisible = viewModel.ShowLegend;
+            //    //this.PieChart.Legend.Visibility = System.Windows.Visibility.Collapsed;
+            //    this.PieChart.LegendVisible = viewModel.ShowLegend;
 
-                this.PieChart.Legend.Orientation = ComponentArt.Silverlight.DataVisualization.Common.LegendItemOrientation.Vertical;
-                //this.PieChart.Legend.Visibility = System.Windows.Visibility.Visible;
-                this.PieChart.Palette = Palette.GetPalette(viewModel.CollorPallet);
-            }
+            //    this.PieChart.Legend.Orientation = ComponentArt.Silverlight.DataVisualization.Common.LegendItemOrientation.Vertical;
+            //    //this.PieChart.Legend.Visibility = System.Windows.Visibility.Visible;
+            //    this.PieChart.Palette = Palette.GetPalette(viewModel.CollorPallet);
+            //}
         }
 
         public void SaveAsImage()
         {
-            ExportToPDF etp = new ExportToPDF();
-            // XYChart currentChart = (XYChart)dp.Content;// (XYChart)pnlChartContainer.Children[0];//
-            DashboardPanel currentChart = this.dbp;
-            etp.SavePNG(currentChart, 100);
+            // dpb 
+
+            //ExportToPDF etp = new ExportToPDF();
+            //DashboardPanel currentChart = this.dbp;
+            //etp.SavePNG(currentChart, 100);
         }
 
         private void ResetComboboxes()
         {
-            this.loadingCombos = true;
-
-            //if (cbxCaseStatusField.Items.Count > 0)
-            //    cbxCaseStatusField.SelectedIndex = -1;
-            //if (cbxDateField.Items.Count > 0)
-            //    cbxDateField.SelectedIndex = -1;
-            //if (cbxSingleField.Items.Count > 0)
-            //    cbxSingleField.SelectedIndex = -1;
-
             this.loadingCombos = false;
         }
 
@@ -990,14 +886,6 @@ namespace EWAV
                 Canvas.SetLeft(this, 0);
             }
         }
-
-        /// <summary>
-        /// Sends the gadget to the back of the canvas
-        /// </summary>
-        //private void SendToBack()
-        //{
-        //    Canvas.SetZIndex(this, -1);
-        //}
 
         private void RenderFinish()
         {
@@ -1035,55 +923,16 @@ namespace EWAV
                 case XYControlChartTypes.Bar:
                 case XYControlChartTypes.Column:
                 case XYControlChartTypes.Pareto:
-                    this.XYChartControlChart.Width = Defaults.CHART_WIDTH; // 800.0;
-                    this.XYChartControlChart.Height = Defaults.CHART_HEGHT; // 500.0;
+                    // dpb this.XYChartControlChart.Width = Defaults.CHART_WIDTH; // 800.0;
+                    // dpb this.XYChartControlChart.Height = Defaults.CHART_HEGHT; // 500.0;
                     break;
                 case XYControlChartTypes.Pie:
-                    this.PieChart.Width = Defaults.CHART_WIDTH; //800.0;
-                    this.PieChart.Height = Defaults.CHART_HEGHT; //500.0;
+                    // dpb this.PieChart.Width = Defaults.CHART_WIDTH; //800.0;
+                    // dpb this.PieChart.Height = Defaults.CHART_HEGHT; //500.0;
                     break;
                 default:
                     break;
             }
-
-
-            //switch (this.chartTypeEnum)
-            //{
-            //    case XYControlChartTypes.StackedColumn:
-            //    case XYControlChartTypes.Line:
-            //    case XYControlChartTypes.Column:
-            //    case XYControlChartTypes.Bar:
-            //    case XYControlChartTypes.Pareto:
-            //        switch (chartSize)
-            //        {
-            //            case "Medium":
-            //                this.XYChartControlChart.Height = this.XYChartControlChart.Height * 1.15 + 100;
-            //                this.XYChartControlChart.Width = this.XYChartControlChart.Width * 1.15 + 100;
-            //                break;
-            //            case "Large":
-            //                this.XYChartControlChart.Height = this.XYChartControlChart.Height * 1.3 + 100;
-            //                this.XYChartControlChart.Width = this.XYChartControlChart.Width * 1.3 + 100;
-
-            //                break;
-            //        }
-            //        break;
-            //    case XYControlChartTypes.Pie:
-            //        switch (chartSize)
-            //        {
-            //            case "Medium":
-
-            //                this.PieChart.Height = this.PieChart.Height * 1.15 + 100;
-            //                this.PieChart.Width = this.PieChart.Width * 1.15 + 100;
-            //                break;
-            //            case "Large":
-            //                this.PieChart.Height = this.PieChart.Height * 1.3 + 100;
-            //                this.PieChart.Width = this.PieChart.Width * 1.3 + 100;
-            //                break;
-            //        }
-            //        break;
-            //    default:
-            //        throw new Exception(string.Format("Unhandled chart type {0}", chartTypeEnum.ToString()));
-            //}
 
             if (viewModel != null)
             {
@@ -1098,13 +947,8 @@ namespace EWAV
             ResizeButton.Template = (ControlTemplate)Application.Current.Resources["resizebtn"];
             this.pnlChartContainer.Visibility = System.Windows.Visibility.Visible;
 
-            //pnlStatus.Background = Brushes.Gold;
-            //pnlStatusTop.Background = Brushes.Goldenrod;
-
             this.pnlStatus.Visibility = System.Windows.Visibility.Visible;
             this.txtStatus.Text = errorMessage;
-
-
 
             this.CheckAndSetPosition();
         }
@@ -1115,20 +959,13 @@ namespace EWAV
             spContent.Visibility = System.Windows.Visibility.Visible;
             ResizeButton.Template = (ControlTemplate)Application.Current.Resources["resizebtn"];
             this.pnlChartContainer.Visibility = System.Windows.Visibility.Collapsed;
-
-            //pnlStatus.Background = Brushes.Tomato;
-            //pnlStatusTop.Background = Brushes.Red;
-
             this.pnlStatus.Visibility = System.Windows.Visibility.Visible;
-
             this.txtStatus.Text = errorMessage;
-
             this.CheckAndSetPosition();
         }
 
         private void RequestUpdateStatusMessage(string statusMessage)
         {
-            //this.Dispatcher.BeginInvoke(new SetStatusDelegate(SetStatusMessage), statusMessage);
             this.SetStatusMessage(statusMessage);
         }
 
@@ -1138,468 +975,381 @@ namespace EWAV
             this.txtStatus.Text = statusMessage;
         }
 
-
-
         private void GenerateXYChartControl()
         {
-            this.dbp = new DashboardPanel();
-            //dp.Title = "My Chart Title";
-            this.dbp.Theme = Defaults.THEME;// "ArcticWhite";
-            this.dbp.Style = this.Resources["DashboardPanelStyle1"] as Style;
+            // dpb 
 
-            List<FrequencyResultData> frd = ((XYChartViewModel)this.DataContext).FrequencyTable;
-            this.PieChart = new PieChart();
-            if (this.chartTypeEnum == XYControlChartTypes.Pie)
-            {
-                this.PieChart.Name = "PieChart";
-                this.PieChart.XPath = "IndependantValue";
-                this.PieChart.ChartKind = PieChartKind.Pie2D;
-                this.PieChart.Palette = Palette.GetPalette(Defaults.COLOR_PALETTE);
-                this.PieChart.GlareCoverVisible = false;
-                this.PieChart.MinWidth = Defaults.MIN_CHART_WIDTH; //700;
-                this.PieChart.MaxWidth = Defaults.MAX_CHART_WIDTH; // 2000;
-                //this.PieChart.Height = 500;
-                //this.PieChart.Width = 1000;
-                this.PieChart.LegendVisible = Defaults.SHOW_CHART_LEGEND; // false;
-            }
-            else
-            {
-                this.XYChartControlChart = new XYChart
-                {
-                    RenderTransform = scaleTransform,
-                    MinWidth = Defaults.MIN_CHART_WIDTH, //800,
-                    MaxWidth = Defaults.MAX_CHART_WIDTH, //2000,
-                    //Height = 400,
-                    //Width = 1000,
-                    HighlightDataPointOnHover = true,
-                    XPath = "IndependentValue",
-                    SelectionVisualHint = ComponentArt.Silverlight.DataVisualization.Charting.SelectionVisualHint.InvertedColor,
-                    Theme = Defaults.THEME, //"ArcticWhite",
-                    Palette = Palette.GetPalette(Defaults.COLOR_PALETTE), // "VibrantC")     
-                    EnableAnimation = true,
-                    AnimationDuration = new TimeSpan(0, 0, 0, 4),
-                    EnableDataPointPopup = true,
-                    LegendVisible = Defaults.SHOW_CHART_LEGEND,
-                    //LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right,
-                    CoordinatesPaddingPercentage = new Thickness(5, 5, 0, 0),
-                    DefaultAxisAnnotationsVisible = true,
-                    DefaultGridLinesVisible = true,
-                    GlareCoverVisible = false,
-                    AnimationOnLoad = false,
-                    DefaultStripesVisible = true,
-                    //UseDifferentBarColors = true
-                    //Orientation = Orientation.Horizontal
-                    //ThemeVariant = ThemeVariant.Standard// new ThemeVariant()    // Standard  
-                };
-            }
+            //this.dbp = new DashboardPanel();
+            //this.dbp.Theme = Defaults.THEME;// "ArcticWhite";
+            //this.dbp.Style = this.Resources["DashboardPanelStyle1"] as Style;
 
-            //Legend ChartLegend = new Legend()
+            //List<FrequencyResultData> frd = ((XYChartViewModel)this.DataContext).FrequencyTable;
+            //this.PieChart = new PieChart();
+            //if (this.chartTypeEnum == XYControlChartTypes.Pie)
             //{
-            //    // CornerRadius = new CornerRadius(10),
-            //    BorderBrush = new SolidColorBrush(Color.FromArgb(255, 192, 207, 226)), //   "#FFc0cfe2", 
-            //    //Margin = new Thickness(30, 0, 10, 0),
-            //    FontFamily = new FontFamily("Segoe UI")
+            //    this.PieChart.Name = "PieChart";
+            //    this.PieChart.XPath = "IndependantValue";
+            //    this.PieChart.ChartKind = PieChartKind.Pie2D;
+            //    this.PieChart.Palette = Palette.GetPalette(Defaults.COLOR_PALETTE);
+            //    this.PieChart.GlareCoverVisible = false;
+            //    this.PieChart.MinWidth = Defaults.MIN_CHART_WIDTH; //700;
+            //    this.PieChart.MaxWidth = Defaults.MAX_CHART_WIDTH; // 2000;
+            //    this.PieChart.LegendVisible = Defaults.SHOW_CHART_LEGEND; // false;
+            //}
+            //else
+            //{
+            //    this.XYChartControlChart = new XYChart
+            //    {
+            //        RenderTransform = scaleTransform,
+            //        MinWidth = Defaults.MIN_CHART_WIDTH, //800,
+            //        MaxWidth = Defaults.MAX_CHART_WIDTH, //2000,
+            //        HighlightDataPointOnHover = true,
+            //        XPath = "IndependentValue",
+            //        SelectionVisualHint = ComponentArt.Silverlight.DataVisualization.Charting.SelectionVisualHint.InvertedColor,
+            //        Theme = Defaults.THEME, //"ArcticWhite",
+            //        Palette = Palette.GetPalette(Defaults.COLOR_PALETTE), // "VibrantC")     
+            //        EnableAnimation = true,
+            //        AnimationDuration = new TimeSpan(0, 0, 0, 4),
+            //        EnableDataPointPopup = true,
+            //        LegendVisible = Defaults.SHOW_CHART_LEGEND,
+            //        CoordinatesPaddingPercentage = new Thickness(5, 5, 0, 0),
+            //        DefaultAxisAnnotationsVisible = true,
+            //        DefaultGridLinesVisible = true,
+            //        GlareCoverVisible = false,
+            //        AnimationOnLoad = false,
+            //        DefaultStripesVisible = true,
+            //    };
+            //}
 
+            //AxisCoordinates XaxisCoordinates = new AxisCoordinates()
+            //{
+            //    Margin = new Thickness(0, 5, 0, 0),
+            //    LabelGap = 1.0//,
             //};
 
-            AxisCoordinates XaxisCoordinates = new AxisCoordinates()
-            {
-
-                //  AxisId = "XAxis",
-                //  Angle = 70,
-                Margin = new Thickness(0, 5, 0, 0),
-                //FontSize = 8.5,
-                LabelGap = 1.0//,
-                //  Coordinates = new NumericCoordinates()     //      DateTimeCoordinates()
-
-            };
-
-            ChartLabel chartLabel = new ChartLabel()
-            {
-                //Orientation = ChartLabelOrientation.Vertical
-            };
-
-            compositeSeries = new CompositeSeries()
-            {
-                // CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.SideBySide
-            };
-
-            PieSeries pieSeries = new PieSeries();
-
-            ChartLabel ychartlabel = new ChartLabel();
-
-            switch (this.chartTypeEnum)
-            {
-                case XYControlChartTypes.StackedColumn:
-                    this.XYChartControlChart.Orientation = Orientation.Vertical;
-                    chartLabel.Orientation = ChartLabelOrientation.Horizontal;
-                    this.ChartName = "StackedColumn";
-                    this.textBlockX = new TextBlock()
-                    {
-                        Text = ((EWAVColumn)this.cbxColumnXAxisField.SelectedItem).Name,
-                        //Width = 402,
-                        TextAlignment = System.Windows.TextAlignment.Center,
-                        Padding = new Thickness(0, 10, 0, 10),
-                        Margin = new Thickness(20, 0, 0, 0)
-                    };
-
-                    XaxisCoordinates.Angle = 70.0;
-                    ychartlabel.Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Vertical;
-                    if (((ComboBoxItem)this.cbxColumnAggregateFunc.SelectedItem).Content.ToString() == "Count")
-                    {
-                        compositeSeries.CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.Stacked;
-                    }
-                    else
-                    {
-                        compositeSeries.CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.Stacked100;
-                    }
-
-                    break;
-                case XYControlChartTypes.Column:
-                    this.ChartName = "Column";
-                    this.XYChartControlChart.Orientation = Orientation.Vertical;
-                    chartLabel.Orientation = ChartLabelOrientation.Horizontal;
-                    this.textBlockX = new TextBlock()
-                    {
-                        Text = ((EWAVColumn)this.cbxSingleField.SelectedItem).Name,
-                        //Width = 402,
-                        TextAlignment = System.Windows.TextAlignment.Center,
-                        Padding = new Thickness(0, 10, 0, 10),
-                        Margin = new Thickness(20, 0, 0, 0)
-                    };
-
-                    ychartlabel.Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Vertical;
-                    XaxisCoordinates.Angle = 70.0;
-
-                    compositeSeries.CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.SideBySide;
-
-                    break;
-                case XYControlChartTypes.Line:
-                    this.XYChartControlChart.Orientation = Orientation.Vertical;
-                    this.ChartName = "Line";
-                    chartLabel.Orientation = ChartLabelOrientation.Horizontal;
-                    this.textBlockX = new TextBlock()
-                    {
-                        Text = ((EWAVColumn)this.cbxSingleField.SelectedItem).Name,
-                        //Width = 402,
-                        TextAlignment = System.Windows.TextAlignment.Center,
-                        Padding = new Thickness(0, 10, 0, 10),
-                        Margin = new Thickness(20, 0, 0, 0)
-                    };
-                    ychartlabel.Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Vertical;
-                    XaxisCoordinates.Angle = 70.0;
-                    break;
-                case XYControlChartTypes.Bar:
-                    this.ChartName = "Bar";
-                    this.XYChartControlChart.Orientation = Orientation.Horizontal;
-                    chartLabel.Orientation = ChartLabelOrientation.Vertical;
-                    this.textBlockX = new TextBlock()
-                    {
-                        Text = ((EWAVColumn)this.cbxSingleField.SelectedItem).Name,
-                        //Width = 402,
-                        TextAlignment = System.Windows.TextAlignment.Center,
-                        //  Padding = new Thickness(0, 10, 0, 10),
-                        // Margin = new Thickness(20, 0, 0, 0)
-                    };
-                    ychartlabel.Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Horizontal;
-                    compositeSeries.CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.SideBySide;
-                    break;
-                case XYControlChartTypes.Pareto:
-                    this.ChartName = "Pareto";
-                    this.XYChartControlChart.Orientation = Orientation.Vertical;
-                    chartLabel.Orientation = ChartLabelOrientation.Horizontal;
-                    this.textBlockX = new TextBlock()
-                    {
-                        Text = ((EWAVColumn)this.cbxSingleField.SelectedItem).Name,
-                        //Width = 402,
-                        TextAlignment = System.Windows.TextAlignment.Center,
-                        Padding = new Thickness(0, 10, 0, 10),
-                        Margin = new Thickness(20, 0, 0, 0)
-                    };
-
-                    ychartlabel.Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Vertical;
-
-                    XaxisCoordinates.Angle = 70.0;
-
-                    compositeSeries.CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.SideBySide;
-
-                    break;
-                default:
-                    break;
-            }
-
-            chartLabel.Child = this.textBlockX;
-
-            this.textBlockY = new TextBlock()
-            {
-                Text = "Count",
-                //Width = 402,
-                VerticalAlignment = System.Windows.VerticalAlignment.Bottom,
-                TextAlignment = System.Windows.TextAlignment.Center,
-
-            };
-
-
-            if (XAxisLabel != "")
-                textBlockX.Text = XAxisLabel;
-            if (YAxisLabel != "")
-                textBlockY.Text = YAxisLabel;
-            if (dbp != null)
-                dbp.Title = ChartTitle;
-
-
-
-            if (this.chartTypeEnum == XYControlChartTypes.Pie)
-            {
-            }
-            else
-            {
-                this.XYChartControlChart.XAxisArea.Add(XaxisCoordinates);  //   axisCoordinates);
-                this.XYChartControlChart.XAxisArea.Add(chartLabel);
-
-                this.XYChartControlChart.YAxisArea.Add(new AxisCoordinates());
-
-                ychartlabel.Child = this.textBlockY;
-
-                this.XYChartControlChart.YAxisArea.Add(ychartlabel);
-            }
-            //  AxisCoordinates
-
-            //string seriesTrackerText = "";
-            //int seriesCounter = 0;
-
-            //List<MyString> chartColsList = dtb.ColumnNameList.GetRange(1, dtb.ColumnNameList.Count - 1);
-
-            string XYChartControlSeriesId, pieSeriesID;
-            int sId = 0;
-            double max = 0;
-
-            foreach (FrequencyResultData frData in frd)
-            {
-                List<ChartDataValue> chartDataValuesList = new List<ChartDataValue>();
-
-                List<EWAVFrequencyControlDto> fcDtoList = frData.FrequencyControlDtoList;
-
-                if (fcDtoList.Count < 1)
-                {
-                    this.RenderFinishWithError(SharedStrings.NO_RECORDS_SELECTED);
-
-                    return;
-                }
-
-                if (fcDtoList[0].NameOfDtoList.Contains("Missing"))
-                {
-                    continue;
-                }
-
-                XYChartControlSeriesId = fcDtoList[0].NameOfDtoList;
-                pieSeriesID = string.Format("S{0}", sId);
-                sId++;
-                double total = 0;
-                double runningPercent = 0;
-
-
-                foreach (EWAVFrequencyControlDto fcd in fcDtoList)
-                {
-                    if (this.chartTypeEnum == XYControlChartTypes.Pareto)
-                    {
-                        max = max + fcd.FrequencyColumn.SafeParsetoDou();
-                    }
-                    total += Convert.ToDouble(fcd.FrequencyColumn);
-                }
-
-
-                foreach (EWAVFrequencyControlDto fcd in fcDtoList)
-                {
-                    ChartDataValue data;
-                    if (this.chartTypeEnum == XYControlChartTypes.Pie)
-                    {
-                        data = new ChartDataValue()
-                        {
-                            Format = "",
-                            IndependentValue = string.Format("{0} - {1}", XYChartControlSeriesId, fcd.FreqVariable),
-                            DependentValue = fcd.FrequencyColumn
-                        };
-                        //pieSeries.Label = data.IndependentValue;
-                    }
-                    else
-                    {
-                        data = new ChartDataValue()
-                        {
-                            Format = "",
-                            IndependentValue = fcd.FreqVariable.ToString(),
-                            DependentValue = fcd.FrequencyColumn
-                        };
-                    }
-
-                    if (this.chartTypeEnum == XYControlChartTypes.Pareto)
-                    {
-                        // double 
-                        data.currentMeanValue = (((data.DependentValue.SafeParsetoDou() / max) * 100) + runningPercent).ToString();
-                        runningPercent = data.currentMeanValue.SafeParsetoDou();
-                    }
-
-                    if (data.DependentValue.Length == 0)
-                    {
-                        data.DependentValue = "0";
-                    }
-                    chartDataValuesList.Add(data);
-                }
-
-                switch (this.chartTypeEnum)
-                {
-                    case XYControlChartTypes.Pie:
-                        pieSeries = new PieSeries();
-                        //pieSeries.Id = pieSeriesID; //XYChartControlSeriesId;
-                        pieSeries.Id = "S0";
-                        pieSeries.YPath = "DependentValue";
-                        pieSeries.XPath = "IndependentValue";
-                        pieSeries.Texture = TextureKind.BrushedMetal;
-                        pieSeries.DataSource = chartDataValuesList;
-                        pieSeries.EnableDataPointPopup = true;
-                        pieSeries.DataPointPopup = this.Resources["CustomDataPointPopup"] as DataPointPopup;
-                        pieSeries.ShowPointAnnotations = true;
-                        DataPointAnnotation dpa = new DataPointAnnotation();
-                        dpa.RelativeX = 0.8;
-                        dpa.RelativeY = 0.5;
-                        dpa.RelativeRadialOffset = 0.3;
-                        dpa.HorizontalOffset = 5;
-                        dpa.Template = this.Resources["cdpa"] as DataTemplate;
-
-                        dpa.LineStroke = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
-
-                       // pieSeries.DataPointAnnotations.Add(dpa);
-
-                        this.PieChart.PieChartMainArea.Add(pieSeries);
-
-                        pieSeries.ShowPointAnnotations = true;
-                        //this.PieChart.LegendVisible = true;
-
-                        break;
-                    case XYControlChartTypes.Line:
-                        LineSeries XYChartControlLineSeries = new LineSeries();
-                        //  LineSeries XYChartControlSeries = new LineSeries();
-
-                        XYChartControlLineSeries.Id = XYChartControlSeriesId;
-                        XYChartControlLineSeries.YPath = "DependentValue";
-                        XYChartControlLineSeries.XPath = "IndependentValue";
-                        XYChartControlLineSeries.Texture = TextureKind.BrushedMetal;
-                        XYChartControlLineSeries.DataSource = chartDataValuesList;
-                        //  XYChartControlChart.XYChartMainArea.Add(XYChartControlSeries);
-
-                        //this.XYChartControlChart.Width = (chartDataValuesList.Count * 30) + 250;
-                        compositeSeries.SubSeries.Add(XYChartControlLineSeries);
-
-                        break;
-                    case XYControlChartTypes.Pareto:
-                        XYChartControlSeries = new BarSeries();
-                        //  LineSeries XYChartControlSeries = new LineSeries();
-
-                        XYChartControlSeries.Id = XYChartControlSeriesId;
-                        XYChartControlSeries.YPath = "DependentValue";
-                        XYChartControlSeries.XPath = "IndependentValue";
-                        XYChartControlSeries.Texture = TextureKind.BrushedMetal;
-
-                        XYChartControlSeries.DataSource = chartDataValuesList;
-
-                        AxisCoordinates Y2AxisCoordinates = new AxisCoordinates()
-                        {
-                            AxisId = "PercentAxis",
-                            Coordinates = new NumericCoordinates()
-                            {
-                                From = 0,
-                                To = 100,
-                                Step = 10
-                            },
-                        };
-
-                        AxisCoordinates YAxisCoordinates = new AxisCoordinates();
-
-                        LineSeries lineSeries = new LineSeries();
-
-                        if (this.chartTypeEnum == XYControlChartTypes.Pareto)
-                        {
-                            lineSeries.Id = "pLineSeries";
-                            lineSeries.YAxisId = "PercentAxis";
-                            lineSeries.Label = "Accumulated %";
-                            lineSeries.YPath = "CurrentMeanValue";
-                            lineSeries.XPath = "IndependentValue";
-                            lineSeries.Texture = TextureKind.BrushedMetal;
-                            lineSeries.MarkerVisible = false;
-                            lineSeries.DashStyle = LineDashStyle.Dash;
-
-                            lineSeries.DataSource = chartDataValuesList;
-                            // lineSeries.DataPointPopup = Resources["CustomDataPointPopupPareto"] as DataPointPopup;
-                            this.XYChartControlChart.Y2AxisArea.Add(Y2AxisCoordinates);
-                        }
-
-                        //this.XYChartControlChart.Width = (chartDataValuesList.Count * 30) + 250;  // 25;
-                        //this.XYChartControlChart.MaxHeight = 800;
-                        //this.XYChartControlChart.MinWidth = 600;
-                        compositeSeries.SubSeries.Add(XYChartControlSeries);
-                        compositeSeries.SubSeries.Add(lineSeries);
-
-                        break;
-                    default:
-                        XYChartControlSeries = new BarSeries();
-                        //  LineSeries XYChartControlSeries = new LineSeries();
-
-                        XYChartControlSeries.Id = XYChartControlSeriesId;
-                        XYChartControlSeries.YPath = "DependentValue";
-                        XYChartControlSeries.XPath = "IndependentValue";
-                        XYChartControlSeries.Texture = TextureKind.BrushedMetal;
-                        //  XYChartControlSeries.YAxisId = 
-                        XYChartControlSeries.DataSource = chartDataValuesList;
-                        //  XYChartControlChart.XYChartMainArea.Add(XYChartControlSeries);    
-
-                        //if (this.chartTypeEnum == XYControlChartTypes.Bar)
-                        //{
-                        //    //this.XYChartControlChart.Width = 1000;
-                        //    this.XYChartControlChart.MaxWidth = 800;
-                        //    this.XYChartControlChart.Height = (chartDataValuesList.Count * 30) + 150;
-                        //    this.XYChartControlChart.MinHeight = 400;
-                        //}
-                        //else
-                        //{
-                        //    this.XYChartControlChart.Width = (chartDataValuesList.Count * 30) + 150;
-                        //}
-
-                        compositeSeries.SubSeries.Add(XYChartControlSeries);
-
-                        break;
-                }
-                //string datatemplate = "<DataTemplate> <TextBlock TextAlignment=\"Center\" Text=\"YES\" /> </DataTemplate>";
-                //DataTemplate template = (DataTemplate)XamlReader.Load(datatemplate);
-                //DataPointPopup dpp = new DataPointPopup();
-                //dpp.IndexTemplate = template;
-                //PieChart.DataPointPopup = dpp;
-                RecordCount += Convert.ToInt64(total);
-            }
-
-
-            if (this.chartTypeEnum == XYControlChartTypes.Pie)
-            {
-                this.PieChart.EnableDataPointPopup = true;
-                this.PieChart.DataPointPopup = this.Resources["CustomDataPointPopup"] as DataPointPopup;
-                this.pnlChartContainer.Children.Clear();
-                this.dbp.Content = this.PieChart;
-            }
-            else
-            {
-                this.XYChartControlChart.XYChartMainArea.Add(compositeSeries);
-
-                this.pnlChartContainer.Children.Clear();
-                //if (frd.Count > 1)
-                //{
-                //    XYChartControlChart.Legend = ChartLegend;
-                //}
-
-                this.dbp.Content = this.XYChartControlChart;
-                //pnlChartContainer.Children.Add(dbp);
-            }
-            this.pnlChartContainer.Children.Add(this.dbp);
-            this.tbChartName.Text = this.ChartName.FromCamelCase();
-            this.RenderFinish();
+            //ChartLabel chartLabel = new ChartLabel()
+            //{
+            //};
+
+            //compositeSeries = new CompositeSeries()
+            //{
+            //};
+
+            //PieSeries pieSeries = new PieSeries();
+
+            //ChartLabel ychartlabel = new ChartLabel();
+
+            //switch (this.chartTypeEnum)
+            //{
+            //    case XYControlChartTypes.StackedColumn:
+            //        this.XYChartControlChart.Orientation = Orientation.Vertical;
+            //        chartLabel.Orientation = ChartLabelOrientation.Horizontal;
+            //        this.ChartName = "StackedColumn";
+            //        this.textBlockX = new TextBlock()
+            //        {
+            //            Text = ((EWAVColumn)this.cbxColumnXAxisField.SelectedItem).Name,
+            //            TextAlignment = System.Windows.TextAlignment.Center,
+            //            Padding = new Thickness(0, 10, 0, 10),
+            //            Margin = new Thickness(20, 0, 0, 0)
+            //        };
+
+            //        XaxisCoordinates.Angle = 70.0;
+            //        ychartlabel.Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Vertical;
+            //        if (((ComboBoxItem)this.cbxColumnAggregateFunc.SelectedItem).Content.ToString() == "Count")
+            //        {
+            //            compositeSeries.CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.Stacked;
+            //        }
+            //        else
+            //        {
+            //            compositeSeries.CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.Stacked100;
+            //        }
+
+            //        break;
+            //    case XYControlChartTypes.Column:
+            //        this.ChartName = "Column";
+            //        this.XYChartControlChart.Orientation = Orientation.Vertical;
+            //        chartLabel.Orientation = ChartLabelOrientation.Horizontal;
+            //        this.textBlockX = new TextBlock()
+            //        {
+            //            Text = ((EWAVColumn)this.cbxSingleField.SelectedItem).Name,
+            //            TextAlignment = System.Windows.TextAlignment.Center,
+            //            Padding = new Thickness(0, 10, 0, 10),
+            //            Margin = new Thickness(20, 0, 0, 0)
+            //        };
+
+            //        ychartlabel.Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Vertical;
+            //        XaxisCoordinates.Angle = 70.0;
+
+            //        compositeSeries.CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.SideBySide;
+
+            //        break;
+            //    case XYControlChartTypes.Line:
+            //        this.XYChartControlChart.Orientation = Orientation.Vertical;
+            //        this.ChartName = "Line";
+            //        chartLabel.Orientation = ChartLabelOrientation.Horizontal;
+            //        this.textBlockX = new TextBlock()
+            //        {
+            //            Text = ((EWAVColumn)this.cbxSingleField.SelectedItem).Name,
+            //            TextAlignment = System.Windows.TextAlignment.Center,
+            //            Padding = new Thickness(0, 10, 0, 10),
+            //            Margin = new Thickness(20, 0, 0, 0)
+            //        };
+            //        ychartlabel.Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Vertical;
+            //        XaxisCoordinates.Angle = 70.0;
+            //        break;
+            //    case XYControlChartTypes.Bar:
+            //        this.ChartName = "Bar";
+            //        this.XYChartControlChart.Orientation = Orientation.Horizontal;
+            //        chartLabel.Orientation = ChartLabelOrientation.Vertical;
+            //        this.textBlockX = new TextBlock()
+            //        {
+            //            Text = ((EWAVColumn)this.cbxSingleField.SelectedItem).Name,
+            //            TextAlignment = System.Windows.TextAlignment.Center,
+            //        };
+            //        ychartlabel.Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Horizontal;
+            //        compositeSeries.CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.SideBySide;
+            //        break;
+            //    case XYControlChartTypes.Pareto:
+            //        this.ChartName = "Pareto";
+            //        this.XYChartControlChart.Orientation = Orientation.Vertical;
+            //        chartLabel.Orientation = ChartLabelOrientation.Horizontal;
+            //        this.textBlockX = new TextBlock()
+            //        {
+            //            Text = ((EWAVColumn)this.cbxSingleField.SelectedItem).Name,
+            //            //Width = 402,
+            //            TextAlignment = System.Windows.TextAlignment.Center,
+            //            Padding = new Thickness(0, 10, 0, 10),
+            //            Margin = new Thickness(20, 0, 0, 0)
+            //        };
+
+            //        ychartlabel.Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Vertical;
+
+            //        XaxisCoordinates.Angle = 70.0;
+
+            //        compositeSeries.CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.SideBySide;
+
+            //        break;
+            //    default:
+            //        break;
+            //}
+
+            //chartLabel.Child = this.textBlockX;
+
+            //this.textBlockY = new TextBlock()
+            //{
+            //    Text = "Count",
+            //    VerticalAlignment = System.Windows.VerticalAlignment.Bottom,
+            //    TextAlignment = System.Windows.TextAlignment.Center,
+            //};
+
+            //if (XAxisLabel != "")
+            //    textBlockX.Text = XAxisLabel;
+            //if (YAxisLabel != "")
+            //    textBlockY.Text = YAxisLabel;
+            //if (dbp != null)
+            //    dbp.Title = ChartTitle;
+
+            //if (this.chartTypeEnum == XYControlChartTypes.Pie)
+            //{
+            //}
+            //else
+            //{
+            //    this.XYChartControlChart.XAxisArea.Add(XaxisCoordinates);  //   axisCoordinates);
+            //    this.XYChartControlChart.XAxisArea.Add(chartLabel);
+
+            //    this.XYChartControlChart.YAxisArea.Add(new AxisCoordinates());
+
+            //    ychartlabel.Child = this.textBlockY;
+
+            //    this.XYChartControlChart.YAxisArea.Add(ychartlabel);
+            //}
+
+            //string XYChartControlSeriesId, pieSeriesID;
+            //int sId = 0;
+            //double max = 0;
+
+            //foreach (FrequencyResultData frData in frd)
+            //{
+            //    List<ChartDataValue> chartDataValuesList = new List<ChartDataValue>();
+
+            //    List<EWAVFrequencyControlDto> fcDtoList = frData.FrequencyControlDtoList;
+
+            //    if (fcDtoList.Count < 1)
+            //    {
+            //        this.RenderFinishWithError(SharedStrings.NO_RECORDS_SELECTED);
+
+            //        return;
+            //    }
+
+            //    if (fcDtoList[0].NameOfDtoList.Contains("Missing"))
+            //    {
+            //        continue;
+            //    }
+
+            //    XYChartControlSeriesId = fcDtoList[0].NameOfDtoList;
+            //    pieSeriesID = string.Format("S{0}", sId);
+            //    sId++;
+            //    double total = 0;
+            //    double runningPercent = 0;
+
+            //    foreach (EWAVFrequencyControlDto fcd in fcDtoList)
+            //    {
+            //        if (this.chartTypeEnum == XYControlChartTypes.Pareto)
+            //        {
+            //            max = max + fcd.FrequencyColumn.SafeParsetoDou();
+            //        }
+            //        total += Convert.ToDouble(fcd.FrequencyColumn);
+            //    }
+
+            //    foreach (EWAVFrequencyControlDto fcd in fcDtoList)
+            //    {
+            //        ChartDataValue data;
+            //        if (this.chartTypeEnum == XYControlChartTypes.Pie)
+            //        {
+            //            data = new ChartDataValue()
+            //            {
+            //                Format = "",
+            //                IndependentValue = string.Format("{0} - {1}", XYChartControlSeriesId, fcd.FreqVariable),
+            //                DependentValue = fcd.FrequencyColumn
+            //            };
+            //        }
+            //        else
+            //        {
+            //            data = new ChartDataValue()
+            //            {
+            //                Format = "",
+            //                IndependentValue = fcd.FreqVariable.ToString(),
+            //                DependentValue = fcd.FrequencyColumn
+            //            };
+            //        }
+
+            //        if (this.chartTypeEnum == XYControlChartTypes.Pareto)
+            //        {
+            //            data.currentMeanValue = (((data.DependentValue.SafeParsetoDou() / max) * 100) + runningPercent).ToString();
+            //            runningPercent = data.currentMeanValue.SafeParsetoDou();
+            //        }
+
+            //        if (data.DependentValue.Length == 0)
+            //        {
+            //            data.DependentValue = "0";
+            //        }
+            //        chartDataValuesList.Add(data);
+            //    }
+
+            //    switch (this.chartTypeEnum)
+            //    {
+            //        case XYControlChartTypes.Pie:
+            //            pieSeries = new PieSeries();
+            //            pieSeries.Id = "S0";
+            //            pieSeries.YPath = "DependentValue";
+            //            pieSeries.XPath = "IndependentValue";
+            //            pieSeries.Texture = TextureKind.BrushedMetal;
+            //            pieSeries.DataSource = chartDataValuesList;
+            //            pieSeries.EnableDataPointPopup = true;
+            //            pieSeries.DataPointPopup = this.Resources["CustomDataPointPopup"] as DataPointPopup;
+            //            pieSeries.ShowPointAnnotations = true;
+            //            DataPointAnnotation dpa = new DataPointAnnotation();
+            //            dpa.RelativeX = 0.8;
+            //            dpa.RelativeY = 0.5;
+            //            dpa.RelativeRadialOffset = 0.3;
+            //            dpa.HorizontalOffset = 5;
+            //            dpa.Template = this.Resources["cdpa"] as DataTemplate;
+
+            //            dpa.LineStroke = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+
+            //            this.PieChart.PieChartMainArea.Add(pieSeries);
+
+            //            pieSeries.ShowPointAnnotations = true;
+
+            //            break;
+            //        case XYControlChartTypes.Line:
+            //            LineSeries XYChartControlLineSeries = new LineSeries();
+
+            //            XYChartControlLineSeries.Id = XYChartControlSeriesId;
+            //            XYChartControlLineSeries.YPath = "DependentValue";
+            //            XYChartControlLineSeries.XPath = "IndependentValue";
+            //            XYChartControlLineSeries.Texture = TextureKind.BrushedMetal;
+            //            XYChartControlLineSeries.DataSource = chartDataValuesList;
+            //            compositeSeries.SubSeries.Add(XYChartControlLineSeries);
+
+            //            break;
+            //        case XYControlChartTypes.Pareto:
+            //            XYChartControlSeries = new BarSeries();
+
+            //            XYChartControlSeries.Id = XYChartControlSeriesId;
+            //            XYChartControlSeries.YPath = "DependentValue";
+            //            XYChartControlSeries.XPath = "IndependentValue";
+            //            XYChartControlSeries.Texture = TextureKind.BrushedMetal;
+
+            //            XYChartControlSeries.DataSource = chartDataValuesList;
+
+            //            AxisCoordinates Y2AxisCoordinates = new AxisCoordinates()
+            //            {
+            //                AxisId = "PercentAxis",
+            //                Coordinates = new NumericCoordinates()
+            //                {
+            //                    From = 0,
+            //                    To = 100,
+            //                    Step = 10
+            //                },
+            //            };
+
+            //            AxisCoordinates YAxisCoordinates = new AxisCoordinates();
+
+            //            LineSeries lineSeries = new LineSeries();
+
+            //            if (this.chartTypeEnum == XYControlChartTypes.Pareto)
+            //            {
+            //                lineSeries.Id = "pLineSeries";
+            //                lineSeries.YAxisId = "PercentAxis";
+            //                lineSeries.Label = "Accumulated %";
+            //                lineSeries.YPath = "CurrentMeanValue";
+            //                lineSeries.XPath = "IndependentValue";
+            //                lineSeries.Texture = TextureKind.BrushedMetal;
+            //                lineSeries.MarkerVisible = false;
+            //                lineSeries.DashStyle = LineDashStyle.Dash;
+
+            //                lineSeries.DataSource = chartDataValuesList;
+            //                this.XYChartControlChart.Y2AxisArea.Add(Y2AxisCoordinates);
+            //            }
+
+            //            compositeSeries.SubSeries.Add(XYChartControlSeries);
+            //            compositeSeries.SubSeries.Add(lineSeries);
+
+            //            break;
+            //        default:
+            //            XYChartControlSeries = new BarSeries();
+            //            XYChartControlSeries.Id = XYChartControlSeriesId;
+            //            XYChartControlSeries.YPath = "DependentValue";
+            //            XYChartControlSeries.XPath = "IndependentValue";
+            //            XYChartControlSeries.Texture = TextureKind.BrushedMetal;
+            //            XYChartControlSeries.DataSource = chartDataValuesList;
+
+            //            compositeSeries.SubSeries.Add(XYChartControlSeries);
+
+            //            break;
+            //    }
+
+            //    RecordCount += Convert.ToInt64(total);
+            //}
+
+
+            //if (this.chartTypeEnum == XYControlChartTypes.Pie)
+            //{
+            //    this.PieChart.EnableDataPointPopup = true;
+            //    this.PieChart.DataPointPopup = this.Resources["CustomDataPointPopup"] as DataPointPopup;
+            //    this.pnlChartContainer.Children.Clear();
+            //    this.dbp.Content = this.PieChart;
+            //}
+            //else
+            //{
+            //    this.XYChartControlChart.XYChartMainArea.Add(compositeSeries);
+            //    this.pnlChartContainer.Children.Clear();
+            //    this.dbp.Content = this.XYChartControlChart;
+            //}
+            //this.pnlChartContainer.Children.Add(this.dbp);
+            //this.tbChartName.Text = this.ChartName.FromCamelCase();
+            //this.RenderFinish();
         }
 
 
@@ -2055,8 +1805,7 @@ namespace EWAV
                         if (!string.IsNullOrEmpty(child.Value.ToString()))
                         {
                             byte[] encodedDataAsBytes = System.Convert.FromBase64String(child.Value.ToString());
-                            viewModel.GadgetDescription =
-                               System.Text.ASCIIEncoding.Unicode.GetString(encodedDataAsBytes);
+                            // dpb viewModel.GadgetDescription = System.Text.ASCIIEncoding.Unicode.GetString(encodedDataAsBytes);
                         }
                         else
                         {
@@ -2190,10 +1939,7 @@ namespace EWAV
             ShowAppropriateChart();
             DoChart();
             cmnClass.AddControlToCanvas(this, mouseVerticalPosition, mouseHorizontalPosition, applicationViewModel.LayoutRoot);
-            //CollapseExpandConfigPanel();
         }
-
-
 
         public XYControlChartTypes GetChartTypeEnum()
         {
@@ -2204,19 +1950,11 @@ namespace EWAV
 
         void IEWAVGadget.Reload()
         {
-
-
             DoChart();
-
-
-
         }
 
         private void HeaderButton_Click(object sender, RoutedEventArgs e)
         {
-            //SetLabels sl = new SetLabels();
-            //sl.GadgetName = this.ChartName;
-            //sl.Show();
             SetChartLabels();
         }
 
@@ -2246,9 +1984,6 @@ namespace EWAV
                 DoChart();
             }
         }
-
-
-        
     }
 }
 
@@ -2256,9 +1991,6 @@ namespace EWAV.Web.Services
 {
     public partial class XYChartDomainContext
     {
-        //This is the place to set RIA Services query timeout. 
-        //TimeSpan(0, 5, 0) means five minutes vs the 
-        //default 60 sec
         partial void OnCreated()
         {
             if (!DesignerProperties.GetIsInDesignMode(Application.Current.RootVisual))

@@ -52,3 +52,5 @@ C:\_CODE\EVAW-CC-TEMP\Ewav.BAL\bin\Debug\EWAV.Security.pdb
 C:\_CODE\EVAW-CC-TEMP\Ewav.BAL\obj\Debug\EWAV.BAL.csprojResolveAssemblyReference.cache
 C:\_CODE\EVAW-CC-TEMP\Ewav.BAL\obj\Debug\EWAV.BAL.dll
 C:\_CODE\EVAW-CC-TEMP\Ewav.BAL\obj\Debug\EWAV.BAL.pdb
+C:\_CODE\EVAW-CC-TEMP\Ewav.BAL\bin\Debug\EWAV.BAL.dll.CodeAnalysisLog.xml
+C:\_CODE\EVAW-CC-TEMP\Ewav.BAL\bin\Debug\EWAV.BAL.dll.lastcodeanalysissucceeded

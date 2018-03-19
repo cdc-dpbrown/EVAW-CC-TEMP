@@ -10,9 +10,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Xml.Linq;
-using ComponentArt.Silverlight.DataVisualization.Charting;
-using ComponentArt.Silverlight.DataVisualization.Common;
-using ComponentArt.Silverlight.Export.PDF;
 using EWAV.Web.EpiDashboard;
 using EWAV.BAL;
 using EWAV.Client.Application;
@@ -20,7 +17,6 @@ using EWAV.ViewModels;
 using EWAV.Web.Services;
 using EWAV.ExtensionMethods;
 using CommonLibrary;
-using ComponentArt.Silverlight.DataVisualization;
 
 namespace EWAV
 {
@@ -43,21 +39,15 @@ namespace EWAV
         private int Index1 = -1, Index2 = -1;
         EWAVColumn Col1, Col2;
         DatatableBag databag;
-        DashboardPanel dp = new DashboardPanel();
+
         SetLabels setLabels;
         SetLabelsViewModel viewModel = null;
         ClientCommon.Common CommonClass = new ClientCommon.Common();
         string xAxisVarName, yAxisVarName;
-        //EpiCurveViewModel eCrvViewModel;
         ScatterViewModel sctrViewModel;
         List<string> dateColumnNames = new List<string>();
         List<string> numericColumnNames = new List<string>();
         List<List<StringDataValue>> dataValues = new List<List<StringDataValue>>();
-
-
-        XYChart chart = null;
-        MarkerSeries mseries = null;
-        LineSeries regression = null;
 
         public event GadgetClosingHandler GadgetClosing;
         public event GadgetProcessingFinishedHandler GadgetProcessingFinished;
@@ -69,10 +59,9 @@ namespace EWAV
         private delegate bool CheckForCancellationDelegate();
         private delegate void RenderFinishWithErrorDelegate(string errorMessage);
         private delegate void RenderFinishWithWarningDelegate(string errorMessage);
-        // private delegate void RenderFinishEpiCurveDelegate(DataTable data, List<List<StringDataValue>> dataValues);
+
         private delegate void RenderFinishSingleChartDelegate(List<List<StringDataValue>> stratifiedValues);
-        //private delegate void RenderFinishScatterChartDelegate(List<NumericDataValue> dataValues, StatisticsRepository.LinearRegression.LinearRegressionResults results, NumericDataValue maxValue, NumericDataValue minValue);
-        //private delegate void RenderFinishStackedChartDelegate(List<List<StringDataValue>> dataValues, DataTable data);
+
         private delegate void SimpleCallback();
 
         private long recordCount;
@@ -92,12 +81,6 @@ namespace EWAV
             public string StratificationValue { get; set; }
             public double CurrentMeanValue { get; set; }
         }
-
-        //public class NumericDataValue
-        //{
-        //    public decimal DependentValue { get; set; }
-        //    public decimal IndependentValue { get; set; }
-        //}
 
         public class TypeStringTuple
         {
@@ -141,23 +124,11 @@ namespace EWAV
             this.Loaded += new RoutedEventHandler(Scatter_Loaded);
 
             FillDropDowns();
-            //InitializeControl();
         }
 
         void Scatter_Loaded(object sender, RoutedEventArgs e)
         {
-
-
             InitializeControl();
-            //this.gadgetExpander.IsExpanded = false;     
-
-            //if (YAxisLabel != null)
-            //    textBlockY.Text = YAxisLabel;
-            //if (XAxisLabel != null)
-            //    textBlockX.Text = XAxisLabel;
-            //if (dp != null && ChartTitle != null)
-            //    dp.Title = ChartTitle;
-
         }
 
         private void InitializeControl()
@@ -168,10 +139,8 @@ namespace EWAV
             {
                 DatatableBag eCrvData = new DatatableBag();
                 sctrViewModel = (ScatterViewModel)this.DataContext;
-                //sctrViewModel.ColumnsLoadedEvent += new EventHandler<SimpleMvvmToolkit.NotificationEventArgs<Exception>>(sctrViewModel_ColumnsLoadedEvent);
                 sctrViewModel.RegressTableLoadedEvent += new EventHandler<SimpleMvvmToolkit.NotificationEventArgs<Exception>>(sctrViewModel_RegressResultsLoadedEvent);
                 applicationViewModel.ConnectionStringReadyEvent += new ConnectionStringReadyEventHandler(applicationViewModel_ConnectionStringLoadedEvent);
-                //sctrViewModel.GetColumns("NEDS", "vwExternalData");
                 applicationViewModel.ApplyDataFilterEvent += new ApplyFilterEventHandler(applicationViewModel_ApplyDataFilterEvent);
                 applicationViewModel.DefinedVariableAddedEvent += new DefinedVariableAddedEventHandler(applicationViewModel_DefinedVariableAddedEvent);
                 applicationViewModel.DefinedVariableInUseDeletedEvent += new DefinedVariableInUseDeletedEventHandler(applicationViewModel_DefinedVariableInUseDeletedEvent);
@@ -200,7 +169,6 @@ namespace EWAV
         private void UnloadGadget()
         {
             applicationViewModel.ConnectionStringReadyEvent -= new ConnectionStringReadyEventHandler(applicationViewModel_ConnectionStringLoadedEvent);
-            //sctrViewModel.GetColumns("NEDS", "vwExternalData");
             applicationViewModel.ApplyDataFilterEvent -= new ApplyFilterEventHandler(applicationViewModel_ApplyDataFilterEvent);
             applicationViewModel.DefinedVariableAddedEvent -= new DefinedVariableAddedEventHandler(applicationViewModel_DefinedVariableAddedEvent);
             applicationViewModel.DefinedVariableInUseDeletedEvent -= new DefinedVariableInUseDeletedEventHandler(applicationViewModel_DefinedVariableInUseDeletedEvent);
@@ -268,15 +236,12 @@ namespace EWAV
             Col2 = (EWAVColumn)cbxScatterYAxisField.SelectedItem;
         }
 
-
-
         void sctrViewModel_ErrorNotice(object sender, SimpleMvvmToolkit.NotificationEventArgs<Exception> e)
         {
             if (e.Data.Message.Length > 0)
             {
                 ChildWindow window = new ErrorWindow(e.Data);
                 window.Show();
-                //return;
             }
             RenderFinishWithError(e.Data.Message);
             this.SetGadgetToFinishedState();
@@ -300,24 +265,12 @@ namespace EWAV
                 byEpiWeek = bool.Parse(gadgetOptions.InputVariableList["isdatecolumnnumeric"]);
             }
             sctrViewModel = (ScatterViewModel)this.DataContext;
-            //eCrvViewModel.GetEpiCurve(gadgetOptions, byEpiWeek, gadgetOptions.MainVariableName, gadgetOptions.CrosstabVariableName);
-            //eCrvViewModel.
-            //epiCurveWorker_DoWork(dtb, gadgetOptions);
-            //if (Index1 > 0 && Index2 > 0)
-            //{
-
-
 
             xAxisVarName = gadgetOptions.MainVariableName;
             yAxisVarName = gadgetOptions.CrosstabVariableName;
 
-            //List<MyString> columnNames = new List<MyString>();
-            //columnNames.Add(new MyString().VarNamexAxisVar);
-            //columnNames.Add(yAxisVar);
             gadgetOptions.UseAdvancedDataFilter = applicationViewModel.UseAdvancedFilter;
             sctrViewModel.GenerateTable(gadgetOptions);
-            //}
-
         }
 
         void applicationViewModel_ApplyDataFilterEvent(object o)
@@ -371,17 +324,8 @@ namespace EWAV
         /// </summary>
         void FillDropDowns()//object sender, SimpleMvvmToolkit.NotificationEventArgs<Exception> e)
         {
-            //List<EWAVColumn> SourceColumns =
-            //    applicationViewModel.EWAVSelectedDatasource.AllColumns;
-
-            //IEnumerable<EWAVColumn> CBXFieldCols = from cols in SourceColumns
-            //                                       where GetFieldNumericDataType.Contains(cols.SqlDataTypeAsString)
-            //                                       orderby cols.Name
-            //                                       select cols;
-
             List<EWAVColumn> colsList = CommonClass.GetItemsSource(GetFieldNumericDataType); ;  // CBXFieldCols.ToList();
 
-            //colsList.Insert(0, new EWAVColumn() { Name = " ", Index = -1 });
             cbxScatterXAxisField.ItemsSource = colsList;
             cbxScatterXAxisField.SelectedValue = "Index";
             cbxScatterXAxisField.DisplayMemberPath = "Name";
@@ -392,21 +336,6 @@ namespace EWAV
                 dateColumnNames.Add(item.Name);
             }
 
-            //columnDataType.Clear();
-
-            //columnDataType.Add(ColumnDataType.Numeric);
-            //columnDataType.Add(ColumnDataType.Boolean);
-            //columnDataType.Add(ColumnDataType.Text);
-
-            //CBXFieldCols = from cols in SourceColumns
-            //               where GetFieldNumericDataType.Contains(cols.SqlDataTypeAsString)
-            //               orderby cols.Name
-            //               select cols;
-            //List<EWAVColumn> CaseStatusField = CBXFieldCols.ToList();
-            //ewc = new EWAVColumn();
-            //ewc.Name = " ";
-            //dateFields.Insert(0, ewc);
-            //CaseStatusField.Insert(0, new EWAVColumn() { Name = " ", Index = -1 });
             cbxScatterYAxisField.ItemsSource = colsList; // CaseStatusField;
             cbxScatterYAxisField.SelectedValue = "Index";
             cbxScatterYAxisField.DisplayMemberPath = "Name";
@@ -424,8 +353,6 @@ namespace EWAV
         /// </summary>
         public void SetChartLabels()
         {
-
-
             LoadViewModel();
             setLabels = new SetLabels(MyControlName, viewModel);// { DataContext = this.DataContext };
 
@@ -434,17 +361,11 @@ namespace EWAV
             setLabels.Closed -= new EventHandler(setLabels_Closed);
             setLabels.Closed += new EventHandler(setLabels_Closed);
 
-
-
             setLabels.txtboxXaxis.Text = this.textBlockX.Text;
             setLabels.txtboxYaxis.Text = textBlockY.Text;
-            setLabels.txtbxChrtTitle.Text = dp.Title == null ? "" : dp.Title.ToString();
-
+// dpb            setLabels.txtbxChrtTitle.Text = dp.Title == null ? "" : dp.Title.ToString();
 
             setLabels.Show();
-
-
-
         }
 
         private void LoadViewModel()
@@ -452,9 +373,9 @@ namespace EWAV
             viewModel = new SetLabelsViewModel();
             viewModel.GadgetName = tbChartName.Text;
             viewModel.GadgetDescription = tbGadgetDescription.Text;
-            viewModel.Width = chart.Width;
-            viewModel.Height = chart.Height;
-            viewModel.CollorPallet = this.chart.Palette.PaletteName.ToString();
+            // dpb viewModel.Width = chart.Width;
+            // dpb viewModel.Height = chart.Height;
+            // dpb viewModel.CollorPallet = this.chart.Palette.PaletteName.ToString();
 
         }
 
@@ -474,12 +395,7 @@ namespace EWAV
         /// <param name="e"></param>
         void window_Loaded(object sender, RoutedEventArgs e)
         {
-            //window.txtboxXaxis.Text = textBlockX.Text;
-            //window.txtboxYaxis.Text = textBlockY.Text;
-            //if (dp.Title != null)
-            //{
-            //    window.txtbxChrtTitle.Text = (string)dp.Title;
-            //}
+
         }
 
         /// <summary>
@@ -494,8 +410,6 @@ namespace EWAV
 
         }
 
-
-
         /// <summary>
         /// Sets the value for labels
         /// </summary>
@@ -503,11 +417,11 @@ namespace EWAV
         {
             viewModel = (SetLabelsViewModel)this.setLabels.DataContext;
 
-            if (textBlockX != null && textBlockY != null && dp != null)
+            // dpb if (textBlockX != null && textBlockY != null && dp != null)
             {
                 XAxisLabel = textBlockX.Text = setLabels.txtboxXaxis.Text;
                 YAxisLabel = textBlockY.Text = setLabels.txtboxYaxis.Text;
-                dp.Title = setLabels.txtbxChrtTitle.Text;
+                // dpb                 dp.Title = setLabels.txtbxChrtTitle.Text;
                 LoadChart(viewModel);
             }
         }
@@ -516,10 +430,9 @@ namespace EWAV
         {
             this.tbChartName.Text = viewModel.GadgetName;
             this.tbGadgetDescription.Text = viewModel.GadgetDescription;
-            this.chart.Width = viewModel.Width;
-            this.chart.Height = viewModel.Height;
-            this.chart.Palette = Palette.GetPalette(viewModel.CollorPallet);
-
+            // dpb this.chart.Width = viewModel.Width;
+            // dpb this.chart.Height = viewModel.Height;
+            // dpb this.chart.Palette = Palette.GetPalette(viewModel.CollorPallet);
         }
 
         /// <summary>
@@ -527,10 +440,10 @@ namespace EWAV
         /// </summary>
         public void SaveAsImage()
         {
-            ExportToPDF etp = new ExportToPDF();
-            // XYChart currentChart = (XYChart)dp.Content;// (XYChart)pnlChartContainer.Children[0];//
-            DashboardPanel currentChart = dp;
-            etp.SavePNG(currentChart, 200);
+            // dpb ExportToPDF etp = new ExportToPDF();
+
+            // dpb DashboardPanel currentChart = dp;
+            // dpb etp.SavePNG(currentChart, 200);
         }
 
 
@@ -648,9 +561,6 @@ namespace EWAV
             ResizeButton.Template = (ControlTemplate)Application.Current.Resources["resizebtn"];
             pnlChartContainer.Visibility = System.Windows.Visibility.Visible;
 
-            //pnlStatus.Background = Brushes.Gold;
-            //pnlStatusTop.Background = Brushes.Goldenrod;
-
             pnlStatus.Visibility = System.Windows.Visibility.Visible;
             txtStatus.Text = errorMessage;
 
@@ -669,12 +579,7 @@ namespace EWAV
             spContent.Visibility = System.Windows.Visibility.Visible;
             ResizeButton.Template = (ControlTemplate)Application.Current.Resources["resizebtn"];
             pnlChartContainer.Visibility = System.Windows.Visibility.Collapsed;
-
-            //pnlStatus.Background = Brushes.Tomato;
-            //pnlStatusTop.Background = Brushes.Red;
-
             pnlStatus.Visibility = System.Windows.Visibility.Visible;
-
             txtStatus.Text = errorMessage;
 
             CheckAndSetPosition();
@@ -686,7 +591,6 @@ namespace EWAV
         /// <param name="statusMessage"></param>
         private void RequestUpdateStatusMessage(string statusMessage)
         {
-            //this.Dispatcher.BeginInvoke(new SetStatusDelegate(SetStatusMessage), statusMessage);
             SetStatusMessage(statusMessage);
         }
 
@@ -702,14 +606,7 @@ namespace EWAV
 
         private bool IsCancelled()
         {
-            //if (worker != null && worker.WorkerSupportsCancellation && worker.CancellationPending)
-            //{
-            //    return true;
-            //}
-            //else
-            //{
             return false;
-            //}
         }
 
 
@@ -1204,16 +1101,13 @@ namespace EWAV
         /// <param name="e"></param>
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
-            //Serialize(new XDocument());
-
             XAxisLabel = "";
             YAxisLabel = "";
             ChartTitle = "";
             RecordCount = 0;
-            //  if (dp != null)
-            dp.Title = "";
+
+            // dpb dp.Title = "";
             DoScatter();
-            //sctrViewModel.GenerateTable(
         }
 
         /// <summary>
@@ -1318,15 +1212,9 @@ namespace EWAV
 
         public void CreateFromXml(XElement element)
         {
-
-
-
             try
             {
-
                 LoadingCanvas = true;
-
-                //InitializeControl();
 
                 viewModel = new SetLabelsViewModel();
                 viewModel.GadgetName = MyUIName.ToString();
@@ -1375,19 +1263,12 @@ namespace EWAV
                             textBlockY.Text = YAxisLabel = child.Value;
                             //      textBlockY.Text = child.Value;
                             break;
-                        //case "xaxisstartvalue":
-                        //    txtXAxisStartValue.Text = child.InnerText;
-                        //    break;
-                        //case "xaxisendvalue":
-                        //    txtXAxisEndValue.Text = child.InnerText;
-                        //    break;
                         case "gadgetname":
                             viewModel.GadgetName = child.Value.ToString();
                             break;
                         case "gadgetdescription":
                             byte[] encodedDataAsBytes = System.Convert.FromBase64String(child.Value.ToString());
-                            viewModel.GadgetDescription =
-                               System.Text.ASCIIEncoding.Unicode.GetString(encodedDataAsBytes);
+                            // dpb viewModel.GadgetDescription = System.Text.ASCIIEncoding.Unicode.GetString(encodedDataAsBytes);
                             break;
                         case "colorpalette":
                             viewModel.CollorPallet = child.Value.ToString();
@@ -1454,11 +1335,9 @@ namespace EWAV
                     switch (attribute.Name.ToString().ToLower())
                     {
                         case "top":
-                            //mouseVerticalPosition = double.Parse(element.Attribute("top").Value.ToString(), System.Globalization.CultureInfo.InvariantCulture);
                             double.TryParse(element.Attribute("top").Value.ToString(), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.CurrentCulture, out mouseVerticalPosition);
                             break;
                         case "left":
-                            //mouseHorizontalPosition = double.Parse(element.Attribute("left").Value.ToString(), System.Globalization.CultureInfo.InvariantCulture);
                             double.TryParse(element.Attribute("left").Value.ToString(), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.CurrentCulture, out mouseHorizontalPosition);
                             break;
                     }
@@ -1472,15 +1351,8 @@ namespace EWAV
             }
             catch (Exception ex)
             {
-
-
-
                 throw new Exception(ex.Message);
-
-
-
             }
-
         }
 
         public bool LoadingCanvas { get; set; }
@@ -1490,30 +1362,18 @@ namespace EWAV
 
         public ClientCommon.XYControlChartTypes GetChartTypeEnum()
         {
-
-
             return ClientCommon.XYControlChartTypes.Ignore;
-
-
         }
-
 
         public void Reload()
         {
-
-
-
-
             XAxisLabel = "";
             YAxisLabel = "";
             ChartTitle = "";
 
-
             //  if (dp != null)
-            dp.Title = "";
+            // dpb dp.Title = "";
             DoScatter();
-
-
         }
 
         private void HeaderButton_Click(object sender, RoutedEventArgs e)

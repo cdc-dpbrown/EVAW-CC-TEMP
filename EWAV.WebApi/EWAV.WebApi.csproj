@@ -39,6 +39,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -252,10 +253,6 @@
     <ProjectReference Include="..\Ewav.Security\EWAV.Security.csproj">
       <Project>{7143E4D6-1CE6-4F7E-B6BE-4CB70BF51E4F}</Project>
       <Name>EWAV.Security</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ewav\Ewav.Web\EWAV.Web.csproj">
-      <Project>{2B546B07-1B3B-4A89-8622-E7FC005049A9}</Project>
-      <Name>EWAV.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

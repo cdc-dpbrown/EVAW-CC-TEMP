@@ -12,14 +12,11 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 using CommonLibrary;
-using ComponentArt.Silverlight.DataVisualization.Charting;
-using ComponentArt.Silverlight.DataVisualization.Common;
 using EWAV.Web.EpiDashboard;
 using EWAV.BAL;
 using EWAV.ViewModels;
 using EWAV.ExtensionMethods;
 using EWAV.Web.Services;
-using ComponentArt.Silverlight.DataVisualization;
 using EWAV.Common;
 
 namespace EWAV
@@ -69,8 +66,6 @@ namespace EWAV
         AberrationViewModel aberrationViewModel;
         int Index1 = -1, Index2 = -1, Index3 = -1;
         EWAVColumn Col1, Col2;
-        //List<EWAVColumn> SelectedColsCollection;
-        XYChart chart = null;
         public List<EWAVDataFilterCondition> GadgetFilters { get; set; }
         #region Delegates
 
@@ -1095,221 +1090,149 @@ namespace EWAV
 
         private void SetGraph(string strataValue, List<SimpleDataValue> actualValues, List<SimpleDataValue> trendValues, List<SimpleDataValue> aberrationValues, List<DataGridRow> aberrationDetails)
         {
-            chart = new XYChart();
-            chart.Is3D = false;
-            chart.XPath = "IndependentValue";
-            chart.DefaultStripesVisible = true;
-            chart.HighlightDataPointOnHover = true;
-            chart.Theme = Defaults.THEME; // "ArcticWhite";
-            chart.GlareCoverVisible = true;
-            chart.SelectionVisualHint = SelectionVisualHint.InvertedColor;
-            chart.Width = Defaults.CHART_WIDTH; // 800.0;
-            chart.Height = Defaults.CHART_HEGHT; // 400.0;
-            chart.EnableDataPointPopup = false;
-            chart.EnableAnimation = true;
-            chart.AnimationDuration = new TimeSpan(0, 0, 0, 4);
-            chart.AnimationOnLoad = false;
-            chart.Palette = Palette.GetPalette(Defaults.COLOR_PALETTE);
-            chart.Legend = new ComponentArt.Silverlight.DataVisualization.Common.Legend();
-            chart.LegendVisible = Defaults.SHOW_CHART_LEGEND;
-            chart.Legend.Margin = new Thickness(30.0, 0.0, 10.0, 0.0);
-            // chart.Legend.CornerRadius = new CornerRadius(10.0);
-            chart.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 192, 207, 226)); //   "#FFc0cfe2", 
+            //chart = new XYChart();
+            //chart.Is3D = false;
+            //chart.XPath = "IndependentValue";
+            //chart.DefaultStripesVisible = true;
+            //chart.HighlightDataPointOnHover = true;
+            //chart.Theme = Defaults.THEME; // "ArcticWhite";
+            //chart.GlareCoverVisible = true;
+            //chart.SelectionVisualHint = SelectionVisualHint.InvertedColor;
+            //chart.Width = Defaults.CHART_WIDTH; // 800.0;
+            //chart.Height = Defaults.CHART_HEGHT; // 400.0;
+            //chart.EnableDataPointPopup = false;
+            //chart.EnableAnimation = true;
+            //chart.AnimationDuration = new TimeSpan(0, 0, 0, 4);
+            //chart.AnimationOnLoad = false;
+            //chart.Palette = Palette.GetPalette(Defaults.COLOR_PALETTE);
+            //chart.Legend = new ComponentArt.Silverlight.DataVisualization.Common.Legend();
+            //chart.LegendVisible = Defaults.SHOW_CHART_LEGEND;
+            //chart.Legend.Margin = new Thickness(30.0, 0.0, 10.0, 0.0);
 
-            var xAxisCoords = new AxisCoordinates();
-            xAxisCoords.Angle = 70.0;
-            xAxisCoords.LabelGap = 1.5;
-            xAxisCoords.Margin = new Thickness(0, 5, 0, 0);
-            xAxisCoords.MaximumAnnotationLevel = 1;
-            xAxisCoords.LabelMargin = 5.0;
+            //chart.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 192, 207, 226)); //   "#FFc0cfe2", 
 
-            //xAxisCoords.LabelValueConverter = ;
+            //var xAxisCoords = new AxisCoordinates();
+            //xAxisCoords.Angle = 70.0;
+            //xAxisCoords.LabelGap = 1.5;
+            //xAxisCoords.Margin = new Thickness(0, 5, 0, 0);
+            //xAxisCoords.MaximumAnnotationLevel = 1;
+            //xAxisCoords.LabelMargin = 5.0;
 
-            xAxisCoords.FormattingString = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern; //"M/d/yyyy";
+            //xAxisCoords.FormattingString = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern; //"M/d/yyyy";
 
-            //var datapoint = new DataPoint();
+            //ChartLabel chrtLabel = new ChartLabel();
+            //chrtLabel.Orientation = ChartLabelOrientation.Horizontal;
 
-            //var xAxisLabel = new AxisLabels();
+            //TextBlock tb = new TextBlock();
+            //tb.Width = 402.0;
+            //tb.TextAlignment = TextAlignment.Center;
+            //tb.Padding = new Thickness(0.0, 10.0, 0.0, 10.0);
+            //tb.Margin = new Thickness(0.0, 40.0, 0.0, 0.0);
+            //chrtLabel.Child = tb;
 
-            ChartLabel chrtLabel = new ChartLabel();
-            chrtLabel.Orientation = ChartLabelOrientation.Horizontal;
+            //chart.XAxisArea.Add(xAxisCoords);
+            //chart.XAxisArea.Add(chrtLabel);
 
-            TextBlock tb = new TextBlock();
-            tb.Width = 402.0;
-            tb.TextAlignment = TextAlignment.Center;
-            tb.Padding = new Thickness(0.0, 10.0, 0.0, 10.0);
-            tb.Margin = new Thickness(0.0, 40.0, 0.0, 0.0);
-            chrtLabel.Child = tb;
+            //chart.CoordinatesPaddingPercentage = new Thickness(0, 5, 0, 0);
 
-            chart.XAxisArea.Add(xAxisCoords);
-            chart.XAxisArea.Add(chrtLabel);
+            //var yAxisCoords = new AxisCoordinates();
 
-            chart.CoordinatesPaddingPercentage = new Thickness(0, 5, 0, 0);
+            //chrtLabel = new ChartLabel();
+            //chrtLabel.Orientation = ChartLabelOrientation.Vertical;
 
-            var yAxisCoords = new AxisCoordinates();
+            //tb = new TextBlock();
+            //tb.Padding = new Thickness(40.0, 0.0, 0.0, 20.0);
+            //tb.TextAlignment = TextAlignment.Center;
+            //tb.Height = 36.0;
+            //tb.Margin = new Thickness(-40.0, 0.0, -32.0, -91.0);
+            //tb.VerticalAlignment = System.Windows.VerticalAlignment.Bottom;
 
-            chrtLabel = new ChartLabel();
-            chrtLabel.Orientation = ChartLabelOrientation.Vertical;
+            //chrtLabel.Child = tb;
 
-            tb = new TextBlock();
-            tb.Padding = new Thickness(40.0, 0.0, 0.0, 20.0);
-            tb.TextAlignment = TextAlignment.Center;
-            tb.Height = 36.0;
-            tb.Margin = new Thickness(-40.0, 0.0, -32.0, -91.0);
-            tb.VerticalAlignment = System.Windows.VerticalAlignment.Bottom;
+            //chart.YAxisArea.Add(yAxisCoords);
+            //chart.YAxisArea.Add(chrtLabel);
 
-            chrtLabel.Child = tb;
+            //LineSeries actlineSeries = new LineSeries();
+            //actlineSeries.Label = "Actual";
+            //actlineSeries.Id = "S0";
+            //actlineSeries.LineKind = LineKind.Auto;
+            //actlineSeries.DashStyle = LineDashStyle.Solid;
+            //actlineSeries.MarkerSize = 10.0;
+            //actlineSeries.Marker = new Marker("Circle");
+            //actlineSeries.MarkerFill = new SolidColorBrush(Color.FromArgb(55, 39, 97, 143));
+            //actlineSeries.Thickness = 1.0;
+            //actlineSeries.DataSource = actualValues;
+            //actlineSeries.XPath = "IndependentValue";
+            //actlineSeries.YPath = "DependentValue";
+            //actlineSeries.DoubleLine = true;
+            //actlineSeries.Color = Color.FromArgb(255, 39, 97, 143);
+            //actlineSeries.Padding = new Thickness(20);
+            //actlineSeries.BarRelativeBegin = 0.15;
+            //actlineSeries.BarRelativeEnd = 0.55;
+            //actlineSeries.AnimationProgress = 0.1;
 
-            chart.YAxisArea.Add(yAxisCoords);
-            chart.YAxisArea.Add(chrtLabel);
+            //LineSeries expLineSeries = new LineSeries();
+            //expLineSeries.Label = "Expected";
+            //expLineSeries.Id = "S1";
+            //expLineSeries.LineKind = LineKind.Auto;
+            //expLineSeries.DashStyle = LineDashStyle.Dash;
+            //expLineSeries.MarkerVisible = false;
+            //expLineSeries.Thickness = 3.0;
+            //expLineSeries.Color = Color.FromArgb(255, 254, 203, 0);
+            //expLineSeries.DoubleLine = true;
+            //expLineSeries.DataSource = trendValues;
+            //expLineSeries.XPath = "IndependentValue";
+            //expLineSeries.YPath = "DependentValue";
+            //expLineSeries.DoubleLine = true;
+            //expLineSeries.BarRelativeBegin = 0.15;
+            //expLineSeries.BarRelativeEnd = 0.55;
+            //expLineSeries.AnimationProgress = 0.9;
 
-            LineSeries actlineSeries = new LineSeries();
-            actlineSeries.Label = "Actual";
-            //actlineSeries.Animate = AnimationTiming(0, 0, 1);
-            actlineSeries.Id = "S0";
-            //actlineSeries.YPath = "Y";
-            actlineSeries.LineKind = LineKind.Auto;
-            actlineSeries.DashStyle = LineDashStyle.Solid;
-            actlineSeries.MarkerSize = 10.0;
-            actlineSeries.Marker = new Marker("Circle");
-            actlineSeries.MarkerFill = new SolidColorBrush(Color.FromArgb(55, 39, 97, 143));
-            actlineSeries.Thickness = 1.0;
-            actlineSeries.DataSource = actualValues;
-            actlineSeries.XPath = "IndependentValue";
-            actlineSeries.YPath = "DependentValue";
-            actlineSeries.DoubleLine = true;
-            actlineSeries.Color = Color.FromArgb(255, 39, 97, 143);
-            actlineSeries.Padding = new Thickness(20);
-            actlineSeries.BarRelativeBegin = 0.15;//Dont know what this does
-            actlineSeries.BarRelativeEnd = 0.55;//Dont know what this does
-            actlineSeries.AnimationProgress = 0.1;//Dont know what this does
+            //MarkerSeries abrMrkSeries = new MarkerSeries();
+            //abrMrkSeries.Label = "Aberration";
+            //abrMrkSeries.Marker = new Marker("Diamond");
+            //abrMrkSeries.DataSource = aberrationValues;
+            //abrMrkSeries.MarkerSize = 13.0;
+            //abrMrkSeries.Color = Color.FromArgb(255, 255, 0, 0);
+            //abrMrkSeries.XPath = "IndependentValue";
+            //abrMrkSeries.YPath = "DependentValue";
+            //abrMrkSeries.BarRelativeBegin = 0.15;
+            //abrMrkSeries.BarRelativeEnd = 0.55;
+            //abrMrkSeries.AnimationProgress = 1.0;
 
-            LineSeries expLineSeries = new LineSeries();
-            expLineSeries.Label = "Expected";
-            expLineSeries.Id = "S1";
-            expLineSeries.LineKind = LineKind.Auto;
-            expLineSeries.DashStyle = LineDashStyle.Dash;
-            expLineSeries.MarkerVisible = false;
-            expLineSeries.Thickness = 3.0;
-            expLineSeries.Color = Color.FromArgb(255, 254, 203, 0);
-            expLineSeries.DoubleLine = true;
-            expLineSeries.DataSource = trendValues;
-            expLineSeries.XPath = "IndependentValue";
-            expLineSeries.YPath = "DependentValue";
-            expLineSeries.DoubleLine = true;
-            expLineSeries.BarRelativeBegin = 0.15;//Dont know what this does
-            expLineSeries.BarRelativeEnd = 0.55;//Dont know what this does
-            expLineSeries.AnimationProgress = 0.9;//Dont know what this does
+            //SeriesTracker st = new SeriesTracker();
+            //st.SeriesId = "S0,S1";
 
-            MarkerSeries abrMrkSeries = new MarkerSeries();
-            abrMrkSeries.Label = "Aberration";
-            abrMrkSeries.Marker = new Marker("Diamond");
-            abrMrkSeries.DataSource = aberrationValues;
-            abrMrkSeries.MarkerSize = 13.0;
-            abrMrkSeries.Color = Color.FromArgb(255, 255, 0, 0);
-            abrMrkSeries.XPath = "IndependentValue";
-            abrMrkSeries.YPath = "DependentValue";
-            abrMrkSeries.BarRelativeBegin = 0.15;//Dont know what this does
-            abrMrkSeries.BarRelativeEnd = 0.55;//Dont know what this does
-            abrMrkSeries.AnimationProgress = 1.0;//Dont know what this does
+            //SeriesAnnotationTracker sat = new SeriesAnnotationTracker();
+            //sat.SeriesIdsCSS = "S0,S1";
 
-            //LineSeries abrLineSeries = new LineSeries();
-            //abrLineSeries.Label = "Aberration";
-            //abrLineSeries.Marker = new Marker("Diamond");
-            //abrLineSeries.DataSource = aberrationValues;
-            //abrLineSeries.MarkerSize = 13.0;
-            //abrLineSeries.XPath = "IndependentValue";
-            //abrLineSeries.YPath = "DependentValue";
-            //abrLineSeries.Thickness = 0;
-            //abrLineSeries.DoubleLine = false;
+            //chart.XYChartMainArea.Add(actlineSeries);
+            //chart.XYChartMainArea.Add(expLineSeries);
+            //chart.XYChartMainArea.Add(abrMrkSeries);
+            //chart.XYChartMainArea.Add(st);
+            //chart.XYChartMainArea.Add(sat);
 
-            //abrMrkSeries.
+            //this.pnlCharts.Visibility = System.Windows.Visibility.Visible;
 
-            SeriesTracker st = new SeriesTracker();
-            st.SeriesId = "S0,S1";
-
-            SeriesAnnotationTracker sat = new SeriesAnnotationTracker();
-            sat.SeriesIdsCSS = "S0,S1";
-
-            chart.XYChartMainArea.Add(actlineSeries);
-            chart.XYChartMainArea.Add(expLineSeries);
-            chart.XYChartMainArea.Add(abrMrkSeries);
-            chart.XYChartMainArea.Add(st);
-            chart.XYChartMainArea.Add(sat);
-
-            this.pnlCharts.Visibility = System.Windows.Visibility.Visible;
-
-            //LinearAxis dependentAxis = new LinearAxis();
-            //dependentAxis.Orientation = AxisOrientation.Y;
-            //dependentAxis.Minimum = 0;
-            //CategoryAxis independentAxis = new CategoryAxis();
-            //independentAxis.Orientation = AxisOrientation.X;
-            //independentAxis.SortOrder = CategorySortOrder.Ascending;
-            //independentAxis.AxisLabelStyle = Resources["RotateAxisStyle"] as Style;
-            //try
+            //if (actualValues.Count > 37)
             //{
-            //    independentAxis.AxisLabelStyle.Setters.Add(new Setter(AxisLabel.StringFormatProperty, "{0:d}"));
+            //    chart.Width = (actualValues.Count * (871.0 / 37.0)) + 129;
             //}
-            //catch (Exception ex)
+            //else
             //{
-            //    //already added
+            //    chart.Width = 1000;
             //}
+            //chart.BorderThickness = new Thickness(0);
+            //chart.Margin = new Thickness(-100, -40, 0, 0);
 
-            //LineSeries series1 = new LineSeries();
-            ////series1.DataSource
-            ////series1.IndependentValuePath = "IndependentValue";
-            ////series1.DependentValuePath = "DependentValue";
-            //series1.DataSource = actualValues;
-            //series1.Title = "Actual";
-            //series1.DependentRangeAxis = dependentAxis;
-            //series1.IndependentAxis = independentAxis;
+            //Label title = new Label();
+            //title.Content = strataValue;
+            //title.Margin = new Thickness(0, -20, 0, 20);
+            //title.FontWeight = FontWeights.Bold;
 
-            //LineSeries series2 = new LineSeries();
-            //series2.IndependentValuePath = "IndependentValue";
-            //series2.DependentValuePath = "DependentValue";
-            //series2.ItemsSource = trendValues;
-            //series2.Title = "Expected";
-            //series2.DependentRangeAxis = dependentAxis;
-            //series2.IndependentAxis = independentAxis;
-            //series2.PolylineStyle = Resources["GooglePolylineStyle"] as Style;
-            //series2.DataPointStyle = Resources["GoogleDataPointStyle"] as Style;
 
-            //ScatterSeries series3 = new ScatterSeries();
-            //series3.IndependentValuePath = "IndependentValue";
-            //series3.DependentValuePath = "DependentValue";
-            //series3.ItemsSource = aberrationValues;
-            //series3.Title = "Aberration";
-            //series3.DependentRangeAxis = dependentAxis;
-            //series3.IndependentAxis = independentAxis;
-            //series3.DataPointStyle = Resources["DataPointStyle"] as Style;
-
-            //chart.Series.Add(series1);
-            //chart.Series.Add(series3);
-            //chart.Series.Add(series2);
-            //chart.Height = 400;
-            if (actualValues.Count > 37)
-            {
-                chart.Width = (actualValues.Count * (871.0 / 37.0)) + 129;
-            }
-            else
-            {
-                chart.Width = 1000;
-            }
-            chart.BorderThickness = new Thickness(0);
-            chart.Margin = new Thickness(-100, -40, 0, 0);
-
-            Label title = new Label();
-            title.Content = strataValue;
-            title.Margin = new Thickness(0, -20, 0, 20);
-            title.FontWeight = FontWeights.Bold;
-            // Title.Text = strataValue;
-
-            this.pnlCharts.Children.Add(title);
-            this.pnlCharts.Children.Add(chart);
-            //title.Visibility = System.Windows.Visibility.Visible;
-            //chart.Visibility = System.Windows.Visibility.Visible;
-            //DataContent.Children.Add(title);
-            //DataContent.Children.Add(chart);
+            //this.pnlCharts.Children.Add(title);
+            //this.pnlCharts.Children.Add(chart);
 
             if (aberrationDetails.Count == 0)
             {
@@ -1357,7 +1280,6 @@ namespace EWAV
                 for (int y = 0; y < /*grdFreq*/grid.ColumnDefinitions.Count; y++)
                 {
                     Rectangle rctHeader = new Rectangle();
-                    //rctHeader.Fill = new SolidColorBrush(SystemColors.HighlightColor);  //SystemColors.MenuHighlightBrush;
                     rctHeader.Style = Application.Current.Resources["HeaderCell"] as Style;
                     Grid.SetRow(rctHeader, 0);
                     Grid.SetColumn(rctHeader, y);
@@ -1366,11 +1288,6 @@ namespace EWAV
 
                 TextBlock txtValHeader = new TextBlock();
                 txtValHeader.Text = " Date ";
-                //txtValHeader.VerticalAlignment = VerticalAlignment.Center;
-                //txtValHeader.HorizontalAlignment = HorizontalAlignment.Center;
-                //txtValHeader.Margin = new Thickness(2, 0, 2, 0);
-                //txtValHeader.FontWeight = FontWeights.Bold;
-                //txtValHeader.Foreground = Brushes.White;
                 txtValHeader.Style = Application.Current.Resources["HeaderFont"] as Style; //Brushes.White;
                 Grid.SetRow(txtValHeader, 0);
                 Grid.SetColumn(txtValHeader, 0);
@@ -1378,11 +1295,6 @@ namespace EWAV
 
                 TextBlock txtFreqHeader = new TextBlock();
                 txtFreqHeader.Text = " Count ";
-                //txtFreqHeader.VerticalAlignment = VerticalAlignment.Center;
-                //txtFreqHeader.HorizontalAlignment = HorizontalAlignment.Center;
-                //txtFreqHeader.Margin = new Thickness(2, 0, 2, 0);
-                //txtFreqHeader.FontWeight = FontWeights.Bold;
-                //txtFreqHeader.Foreground = Brushes.White;
                 txtFreqHeader.Style = Application.Current.Resources["HeaderFont"] as Style; //Brushes.White;
                 Grid.SetRow(txtFreqHeader, 0);
                 Grid.SetColumn(txtFreqHeader, 1);
@@ -1390,11 +1302,6 @@ namespace EWAV
 
                 TextBlock txtPctHeader = new TextBlock();
                 txtPctHeader.Text = " Expected ";
-                //txtPctHeader.VerticalAlignment = VerticalAlignment.Center;
-                //txtPctHeader.HorizontalAlignment = HorizontalAlignment.Center;
-                //txtPctHeader.Margin = new Thickness(2, 0, 2, 0);
-                //txtPctHeader.FontWeight = FontWeights.Bold;
-                //txtPctHeader.Foreground = Brushes.White;
                 txtPctHeader.Style = Application.Current.Resources["HeaderFont"] as Style; //Brushes.White;
                 Grid.SetRow(txtPctHeader, 0);
                 Grid.SetColumn(txtPctHeader, 2);
@@ -1402,11 +1309,6 @@ namespace EWAV
 
                 TextBlock txtAccuHeader = new TextBlock();
                 txtAccuHeader.Text = " Difference ";
-                //txtAccuHeader.VerticalAlignment = VerticalAlignment.Center;
-                //txtAccuHeader.HorizontalAlignment = HorizontalAlignment.Center;
-                //txtAccuHeader.Margin = new Thickness(2, 0, 2, 0);
-                //txtAccuHeader.FontWeight = FontWeights.Bold;
-                //txtAccuHeader.Foreground = Brushes.White;
                 txtAccuHeader.Style = Application.Current.Resources["HeaderFont"] as Style; //Brushes.White;
                 Grid.SetRow(txtAccuHeader, 0);
                 Grid.SetColumn(txtAccuHeader, 3);
@@ -1503,8 +1405,6 @@ namespace EWAV
         {
             this.waitCursor.Visibility = Visibility.Collapsed;
 
-            //pnlStatus.Background = Brushes.Gold;
-            //pnlStatusTop.Background = Brushes.Goldenrod;
             spContent.Visibility = System.Windows.Visibility.Visible;
             ResizeButton.Template = (ControlTemplate)Application.Current.Resources["resizebtn"];
             this.pnlStatus.Visibility = System.Windows.Visibility.Visible;
@@ -1525,7 +1425,6 @@ namespace EWAV
 
         private void RequestUpdateStatusMessage(string statusMessage)
         {
-            //this.Dispatcher.BeginInvoke(new SetStatusDelegate(SetStatusMessage), statusMessage);
             this.SetStatusMessage(statusMessage);
         }
 
@@ -1569,7 +1468,6 @@ namespace EWAV
             {
                 inputVariableList.Add("stratavar", ((EWAVColumn)this.cbxSyndrome.SelectedItem).Name.ToString()); //cbxSyndrome.SelectedItem.ToString());
                 this.gadgetOptions.StrataVariableNames = new List<string>();
-                //gadgetOptions.StrataVariableNames.Add();
 
                 this.gadgetOptions.StrataVariableNames = new List<string>();
                 List<MyString> listMyString = new List<MyString>();
@@ -1729,8 +1627,7 @@ namespace EWAV
                         if (!string.IsNullOrEmpty(child.Value.ToString()))
                         {
                             byte[] encodedDataAsBytes = System.Convert.FromBase64String(child.Value.ToString());
-                            viewModel.GadgetDescription =
-                               System.Text.ASCIIEncoding.Unicode.GetString(encodedDataAsBytes);
+                            //dpb viewModel.GadgetDescription = System.Text.ASCIIEncoding.Unicode.GetString(encodedDataAsBytes);
                         }
                         else
                         {
@@ -1983,7 +1880,7 @@ namespace EWAV
                 new XElement("sort", sort),
                 
                 new XElement("gadgetName", viewModel.GadgetName),
-                new XElement("gadgetDescription", Convert.ToBase64String(System.Text.ASCIIEncoding.Unicode.GetBytes(viewModel.GadgetDescription))),
+                // dpb new XElement("gadgetDescription", Convert.ToBase64String(System.Text.ASCIIEncoding.Unicode.GetBytes(viewModel.GadgetDescription))),
                 new XElement("colorPalette", viewModel.CollorPallet),
                 new XElement("useDiffColors", viewModel.UseDifferentBarColors),
                 new XElement("showLegend", viewModel.ShowLegend),

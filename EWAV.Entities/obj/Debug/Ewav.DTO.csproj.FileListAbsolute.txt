@@ -23,4 +23,4 @@ C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\System.Xml.dll
 C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\bin\Debug\System.Xml.Linq.dll
 C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\obj\Debug\EWAV.DTO.dll
 C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\obj\Debug\EWAV.DTO.pdb
-C:\_CODE\EVAW-CC-TEMP\Ewav.Entities\obj\Debug\EWAV.DTO.csprojResolveAssemblyReference.cache
+C:\_CODE\EVAW-CC-TEMP\EWAV.Entities\obj\Debug\EWAV.DTO.csprojResolveAssemblyReference.cache

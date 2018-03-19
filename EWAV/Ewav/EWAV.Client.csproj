@@ -18,7 +18,7 @@
     <SupportedCultures>
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
-    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <GenerateSilverlightManifest>false</GenerateSilverlightManifest>
     <XapFilename>EWAV.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>Ewav.App</SilverlightAppEntry>
@@ -67,21 +67,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical, Version=2011.1.2220.40, Culture=neutral, PublicKeyToken=9bc9f846553156bb, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ComponentArt.Silverlight.DataVisualization.Charting, Version=2011.1.2220.40, Culture=neutral, PublicKeyToken=9bc9f846553156bb, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ComponentArt.Silverlight.DataVisualization.Common, Version=2011.1.2220.40, Culture=neutral, PublicKeyToken=9bc9f846553156bb, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ComponentArt.Silverlight.Export.PDF, Version=2011.1.2220.40, Culture=neutral, PublicKeyToken=9bc9f846553156bb, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ComponentArt.VisualStudio.Silverlight, Version=2011.1.2220.35, Culture=neutral, PublicKeyToken=9bc9f846553156bb, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="ESRI.ArcGIS.Client">
       <HintPath>Assemblies\ESRI.ArcGIS.Client.dll</HintPath>
     </Reference>
@@ -809,7 +794,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ComponentArt.Silverlight.DataVisualization.lic" />
     <None Include="Membership\ClassDiagram1.cd" />
     <None Include="Properties\AppManifest.xml" />
   </ItemGroup>
@@ -863,18 +847,7 @@
     <Content Include="Assemblies\FJ.Core.dll" />
     <Content Include="Assemblies\SimpleMvvmToolkit.dll" />
     <Content Include="Assemblies\System.Windows.Interactivity.dll" />
-    <Content Include="Assemblies\ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical.dll" />
-    <Content Include="Assemblies\ComponentArt.Silverlight.DataVisualization.CalcExtensions.Statistical.xml" />
-    <Content Include="Assemblies\ComponentArt.Silverlight.DataVisualization.Charting.Design.4.0.dll" />
-    <Content Include="Assemblies\ComponentArt.Silverlight.DataVisualization.Charting.dll" />
-    <Content Include="Assemblies\ComponentArt.Silverlight.DataVisualization.Charting.xml" />
-    <Content Include="Assemblies\ComponentArt.Silverlight.DataVisualization.Common.Design.4.0.dll" />
-    <Content Include="Assemblies\ComponentArt.Silverlight.DataVisualization.Common.dll" />
-    <Content Include="Assemblies\ComponentArt.Silverlight.DataVisualization.Common.xml" />
-    <Content Include="Assemblies\ComponentArt.Silverlight.Export.PDF.dll" />
-    <Content Include="Assemblies\ComponentArt.Silverlight.Export.PDF.xml" />
     <Content Include="Assemblies\ComponentArt.VisualStudio.Common.dll" />
-    <Content Include="Assemblies\ComponentArt.VisualStudio.Silverlight.dll" />
     <Content Include="Assemblies\ComponentArt.Win.DataVisualization.Common.dll" />
     <Resource Include="Images\title.png" />
     <Resource Include="Images\add.png" />

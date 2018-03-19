@@ -48,7 +48,7 @@ C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.WebApi.dll.config
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.WebApi.dll
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.WebApi.pdb
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.BAL.dll
-C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\Ewav.Clients.Common.dll
+C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.Clients.Common.dll
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.DTO.dll
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.Security.dll
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.Web.dll
@@ -72,7 +72,7 @@ C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\Epi.Windows.Globalization.dll
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\Mono.Security.dll
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.BAL.pdb
-C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\Ewav.Clients.Common.pdb
+C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.Clients.Common.pdb
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.DTO.pdb
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.Security.pdb
 C:\_CODE\EVAW-CC-TEMP\EWAV.WebApi\bin\EWAV.Web.pdb

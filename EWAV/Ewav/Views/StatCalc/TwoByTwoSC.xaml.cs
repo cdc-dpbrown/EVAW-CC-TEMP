@@ -14,7 +14,6 @@ using System.Text;
 using EWAV.Web.Services;
 using EWAV.ExtensionMethods;
 using EWAV.ViewModels;
-using ComponentArt.Silverlight.DataVisualization.Common;
 
 namespace EWAV
 {

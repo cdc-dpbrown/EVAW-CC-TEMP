@@ -48,8 +48,8 @@ C:\TFSCode\EWAV\Ewav.Clients.Common\bin\Debug\zh-Hant\System.ServiceModel.Domain
 C:\TFSCode\EWAV\Ewav.Clients.Common\obj\Debug\Ewav.Clients.Common.csprojResolveAssemblyReference.cache
 C:\TFSCode\EWAV\Ewav.Clients.Common\obj\Debug\Ewav.Clients.Common.dll
 C:\TFSCode\EWAV\Ewav.Clients.Common\obj\Debug\Ewav.Clients.Common.pdb
-C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\bin\Debug\Ewav.Clients.Common.dll
-C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\bin\Debug\Ewav.Clients.Common.pdb
+C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\bin\Debug\EWAV.Clients.Common.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\bin\Debug\EWAV.Clients.Common.pdb
 C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\bin\Debug\EWAV.BAL.dll
 C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\bin\Debug\EWAV.DTO.dll
 C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\bin\Debug\EWAV.Web.dll
@@ -96,5 +96,5 @@ C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\bin\Debug\ru\System.ServiceModel.Domai
 C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\bin\Debug\zh-Hans\System.ServiceModel.DomainServices.Server.resources.dll
 C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\bin\Debug\zh-Hant\System.ServiceModel.DomainServices.Server.resources.dll
 C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\obj\Debug\EWAV.Clients.Common.csprojResolveAssemblyReference.cache
-C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\obj\Debug\Ewav.Clients.Common.dll
-C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\obj\Debug\Ewav.Clients.Common.pdb
+C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\obj\Debug\EWAV.Clients.Common.dll
+C:\_CODE\EVAW-CC-TEMP\Ewav.Clients.Common\obj\Debug\EWAV.Clients.Common.pdb

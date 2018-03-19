@@ -58,7 +58,7 @@
       <Project>{E031AF81-D66D-463F-8191-C41C00CB6151}</Project>
       <Name>EWAV.DTO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ewav\Ewav.Web\EWAV.Web.csproj">
+    <ProjectReference Include="..\EWAV\Ewav.Web\EWAV.Web.csproj">
       <Project>{2B546B07-1B3B-4A89-8622-E7FC005049A9}</Project>
       <Name>EWAV.Web</Name>
     </ProjectReference>

@@ -11,10 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Xml.Linq;
 using CommonLibrary;
-using ComponentArt.Silverlight.DataVisualization;
-using ComponentArt.Silverlight.DataVisualization.Charting;
-using ComponentArt.Silverlight.DataVisualization.Common;
-using ComponentArt.Silverlight.Export.PDF;
 using EWAV.Web.EpiDashboard;
 using EWAV.BAL;
 using EWAV.Client.Application;
@@ -44,7 +40,7 @@ namespace EWAV
         private object objXAxisStart;
         private object objXAxisEnd;
         DatatableBag databag;
-        DashboardPanel dbp;
+        // dpb DashboardPanel dbp;
         EpiCurveViewModel eCrvViewModel;
         List<string> dateColumnNames = new List<string>();
         List<string> numericColumnNames = new List<string>();
@@ -54,17 +50,16 @@ namespace EWAV
         public event GadgetCheckForCancellationHandler GadgetCheckForCancellation;
         int Index1 = -1, Index2 = -1;
         EWAVColumn Col1 = null, Col2 = null, DFInUse = null;
-        XYChart epiCurveChart = null;
-        CompositeSeries compositeSeries = null;
+        // dpb XYChart epiCurveChart = null;
+        // dpb CompositeSeries compositeSeries = null;
         private delegate void SetStatusDelegate(string statusMessage);
         private delegate void RequestUpdateStatusDelegate(string statusMessage);
         private delegate bool CheckForCancellationDelegate();
         private delegate void RenderFinishWithErrorDelegate(string errorMessage);
         private delegate void RenderFinishWithWarningDelegate(string errorMessage);
-        // private delegate void RenderFinishEpiCurveDelegate(DataTable data, List<List<StringDataValue>> dataValues);
+
         private delegate void RenderFinishSingleChartDelegate(List<List<StringDataValue>> stratifiedValues);
-        //private delegate void RenderFinishScatterChartDelegate(List<NumericDataValue> dataValues, StatisticsRepository.LinearRegression.LinearRegressionResults results, NumericDataValue maxValue, NumericDataValue minValue);
-        //private delegate void RenderFinishStackedChartDelegate(List<List<StringDataValue>> dataValues, DataTable data);
+
         private delegate void SimpleCallback();
         private bool loadingDropDowns = false;
 
@@ -156,7 +151,7 @@ namespace EWAV
             XAxisLabel = YAxisLabel = ChartTitle = "";
 
             this.Loaded += new RoutedEventHandler(EpiCurve_Loaded);
-            //InitializeControl();
+
             FillDropDowns();
         }
 
@@ -173,17 +168,12 @@ namespace EWAV
             {
                 DatatableBag eCrvData = new DatatableBag();
                 eCrvViewModel = (EpiCurveViewModel)this.DataContext;
-                //    eCrvViewModel.ColumnsLoadedEvent += new EventHandler<SimpleMvvmToolkit.NotificationEventArgs<Exception>>(eCrvViewModel_ColumnsLoadedEvent);
+
                 eCrvViewModel.EpiCurveTableLoadedEvent += new EventHandler<SimpleMvvmToolkit.NotificationEventArgs<Exception>>(eCrvViewModel_EpiCurveTableLoadedEvent);
-                // applicationViewModel.ConnectionStringReadyEvent += new ConnectionStringReadyEventHandler(applicationViewModel_ConnectionStringLoadedEvent);
-                //   eCrvViewModel.GetColumns("NEDS", "vwExternalData");                             
+                     
                 applicationViewModel.ApplyDataFilterEvent += new ApplyFilterEventHandler(applicationViewModel_ApplyDataFilterEvent);
                 applicationViewModel.UnloadedEvent += new UnloadedEventHandler(applicationViewModel_UnloadedEvent);
-                //applicationViewModel.DefinedVariableAddedEvent += new DefinedVariableAddedEventHandler(applicationViewModel_DefinedVariableAddedEvent);
-                //applicationViewModel.DefinedVariableInUseDeletedEvent += new DefinedVariableInUseDeletedEventHandler(applicationViewModel_DefinedVariableInUseDeletedEvent);
-                //applicationViewModel.DefinedVariableNotInUseDeletedEvent += new DefinedVariableNotInUseDeletedEventHandler(applicationViewModel_DefinedVariableNotInUseDeletedEvent);
-                //applicationViewModel.PreColumnChangedEvent += new PreColumnChangedEventHandler(applicationViewModel_PreColumnChangedEvent);
-
+                
                 eCrvViewModel.ErrorNotice += new EventHandler<SimpleMvvmToolkit.NotificationEventArgs<Exception>>(eCrvViewModel_ErrorNotice);
             }
             catch (Exception)
@@ -396,38 +386,37 @@ namespace EWAV
 
         private void LoadViewModel()
         {
-            //if (viewModel == null)
+            // dpb 
+
+            //viewModel = new SetLabelsViewModel();
+            //viewModel.GadgetName = tbChartName.Text;
+            //viewModel.GadgetDescription = tbGadgetDescription.Text;
+            //viewModel.ShowLegend = this.epiCurveChart.LegendVisible;
+            //viewModel.Width = this.epiCurveChart.Width;
+            //viewModel.Height = this.epiCurveChart.Height;
+            //viewModel.CollorPallet = this.epiCurveChart.Palette.PaletteName.ToString();
+            //viewModel.ChartTitle = dbp.Title.ToString();
+            //switch (this.epiCurveChart.LegendDock)
             //{
-            viewModel = new SetLabelsViewModel();
-            viewModel.GadgetName = tbChartName.Text;
-            viewModel.GadgetDescription = tbGadgetDescription.Text;
-            viewModel.ShowLegend = this.epiCurveChart.LegendVisible;
-            viewModel.Width = this.epiCurveChart.Width;
-            viewModel.Height = this.epiCurveChart.Height;
-            viewModel.CollorPallet = this.epiCurveChart.Palette.PaletteName.ToString();
-            viewModel.ChartTitle = dbp.Title.ToString();
-            switch (this.epiCurveChart.LegendDock)
-            {
-                case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom:
-                    viewModel.LegendPostion = "Bottom";
-                    break;
-                case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left:
-                    viewModel.LegendPostion = "Left";
-                    break;
-                case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right:
-                    viewModel.LegendPostion = "Right";
-                    break;
+            //    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom:
+            //        viewModel.LegendPostion = "Bottom";
+            //        break;
+            //    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left:
+            //        viewModel.LegendPostion = "Left";
+            //        break;
+            //    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right:
+            //        viewModel.LegendPostion = "Right";
+            //        break;
 
-                case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top:
-                    viewModel.LegendPostion = "Top";
-                    break;
-                default:
-                    viewModel.LegendPostion = "Top";
-                    break;
-            }
+            //    case ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top:
+            //        viewModel.LegendPostion = "Top";
+            //        break;
+            //    default:
+            //        viewModel.LegendPostion = "Top";
+            //        break;
+            //}
 
-            viewModel.UseDifferentBarColors = this.epiCurveChart.UseDifferentBarColors;
-            // }
+            //viewModel.UseDifferentBarColors = this.epiCurveChart.UseDifferentBarColors;
         }
 
         void window_Closed(object sender, EventArgs e)
@@ -436,125 +425,88 @@ namespace EWAV
             {
                 SetValuesForAxis();
             }
-
         }
 
         public void SetChartLabels(string chartTitle, string legendTitle, string xAxisLabel, string yAxisLabel)
         {
-
-
-            //if (YAxisLabel != null)
-            //    textBlockY.Text = YAxisLabel;
-            //if (XAxisLabel != null)
-            //    textBlockX.Text = XAxisLabel;
-            //if (dbp != null && ChartTitle != null)
-            //    dbp.Title = ChartTitle;
 
         }
 
         void window_Unloaded(object sender, RoutedEventArgs e)
         {
 
-
         }
 
         private void SetValuesForAxis()
         {
             viewModel = (SetLabelsViewModel)this.window.DataContext;
-
             XAxisLabel = window.txtboxXaxis.Text;
             YAxisLabel = window.txtboxYaxis.Text;    
 
-
-            if (textBlockX != null && textBlockY != null && dbp != null)
+            if (textBlockX != null && textBlockY != null) // dpb  && dbp != null)
             {
-
-     
-
                 textBlockX.Text = window.txtboxXaxis.Text;
                 textBlockY.Text = window.txtboxYaxis.Text;
-                //txtChartTitle.Text = window.txtbxChrtTitle.Text;
                 ChartTitle = window.txtbxChrtTitle.Text;
-                dbp.Title = ChartTitle;
+                // dpb                 dbp.Title = ChartTitle;
                 LoadChart(viewModel);
             }
         }
         private void LoadChart(SetLabelsViewModel viewModel)
         {
-            this.tbChartName.Text = viewModel.GadgetName;
-            this.tbGadgetDescription.Text = viewModel.GadgetDescription;
-            //if (viewModel.ShowLegend)
-            //{
-            if (dbp != null)
-            {
-                dbp.Title = viewModel.ChartTitle;
-            }
-            //this.txtChartTitle.Text = viewModel.ChartTitle;
-            if (viewModel.ShowVariableNames)
-            {
-                Legend CLegend = new Legend();
-                foreach (var item in this.epiCurveChart.Legend.LegendItems)
-                {
-                    CLegend.LegendItems.Add(new LegendItem() { Data = this.textBlockX.Text + " = " + item.Data });
-                }
-                this.epiCurveChart.Legend = null;
-                this.epiCurveChart.Legend = CLegend;
-            }
-            //}
-            //else
-            //{
-            //    this.epiCurveChart.Legend = null;
-            //}
-            this.epiCurveChart.Palette = Palette.GetPalette(viewModel.CollorPallet);
-            this.epiCurveChart.Width = viewModel.Width;
-            this.epiCurveChart.Height = viewModel.Height;
+            // dpb 
 
-            switch (viewModel.LegendPostion.ToLower())
-            {
-                case "left":
-                    this.epiCurveChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left;
-                    break;
-                case "right":
-                    this.epiCurveChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right;
-                    break;
-                case "bottom":
-                    this.epiCurveChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom;
-                    break;
-                default:
-                    this.epiCurveChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top;
-                    break;
-            }
+            //this.tbChartName.Text = viewModel.GadgetName;
+            //this.tbGadgetDescription.Text = viewModel.GadgetDescription;
 
-            //if (compositeSeries != null)
+            //if (dbp != null)
             //{
-            //    switch (viewModel.SpacesBetweenBars.ToLower())
+            //    dbp.Title = viewModel.ChartTitle;
+            //}
+
+            //if (viewModel.ShowVariableNames)
+            //{
+            //    Legend CLegend = new Legend();
+            //    foreach (var item in this.epiCurveChart.Legend.LegendItems)
             //    {
-            //        case "small":
-            //            compositeSeries.RelativePointSpace = 0.1;
-            //            break;
-            //        case "medium":
-            //            compositeSeries.RelativePointSpace = 0.4;
-            //            break;
-            //        case "large":
-            //            compositeSeries.RelativePointSpace = 0.8;
-            //            break;
-            //        default:
-            //            compositeSeries.RelativePointSpace = -0.1;
-            //            break;
+            //        CLegend.LegendItems.Add(new LegendItem() { Data = this.textBlockX.Text + " = " + item.Data });
             //    }
+            //    this.epiCurveChart.Legend = null;
+            //    this.epiCurveChart.Legend = CLegend;
             //}
 
-            this.epiCurveChart.LegendVisible = viewModel.ShowLegend;
-            this.epiCurveChart.Legend.Orientation = ComponentArt.Silverlight.DataVisualization.Common.LegendItemOrientation.Vertical;
-            this.epiCurveChart.UseDifferentBarColors = viewModel.UseDifferentBarColors;
+            //this.epiCurveChart.Palette = Palette.GetPalette(viewModel.CollorPallet);
+            //this.epiCurveChart.Width = viewModel.Width;
+            //this.epiCurveChart.Height = viewModel.Height;
+
+            //switch (viewModel.LegendPostion.ToLower())
+            //{
+            //    case "left":
+            //        this.epiCurveChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Left;
+            //        break;
+            //    case "right":
+            //        this.epiCurveChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right;
+            //        break;
+            //    case "bottom":
+            //        this.epiCurveChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Bottom;
+            //        break;
+            //    default:
+            //        this.epiCurveChart.LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Top;
+            //        break;
+            //}
+
+            //this.epiCurveChart.LegendVisible = viewModel.ShowLegend;
+            //this.epiCurveChart.Legend.Orientation = ComponentArt.Silverlight.DataVisualization.Common.LegendItemOrientation.Vertical;
+            //this.epiCurveChart.UseDifferentBarColors = viewModel.UseDifferentBarColors;
 
         }
         public void SaveAsImage()
         {
-            ExportToPDF etp = new ExportToPDF();
-            // XYChart currentChart = (XYChart)dp.Content;// (XYChart)pnlChartContainer.Children[0];//
-            DashboardPanel currentChart = dbp;
-            etp.SavePNG(currentChart, 200);
+            // dpb 
+
+            //ExportToPDF etp = new ExportToPDF();
+            //DashboardPanel currentChart = dbp;
+            //etp.SavePNG(currentChart, 200);
         }
 
 
@@ -565,12 +517,8 @@ namespace EWAV
                 string chartType = ((ComboBoxItem)e.AddedItems[0]).Content.ToString();
                 switch (chartType)
                 {
-
                     case "Epi Curve":
-                        //pnlScatterConfig.Visibility = Visibility.Collapsed;
-                        //pnlStackedColumnConfig.Visibility = Visibility.Collapsed;
                         pnlEpiCurveConfig.Visibility = Visibility.Visible;
-                        //pnlSingleConfig.Visibility = Visibility.Collapsed;
                         break;
 
                     default:
@@ -763,235 +711,209 @@ namespace EWAV
 
         private void GenerateEpiCurve()
         {
+            // dpb 
 
-            DatatableBag dtb = eCrvViewModel.DataTableBag;
-            string dateFormat = ((ComboBoxItem)cbxDateInterval.SelectedValue).Content.ToString();
-            dbp = new DashboardPanel();
-            //dp.Title = "My Chart Title";
-            dbp.Theme = Defaults.THEME; //"ArcticWhite";
-            dbp.Style = Resources["DashboardPanelStyle1"] as Style;
+            //DatatableBag dtb = eCrvViewModel.DataTableBag;
+            //string dateFormat = ((ComboBoxItem)cbxDateInterval.SelectedValue).Content.ToString();
+            //dbp = new DashboardPanel();
+            //dbp.Theme = Defaults.THEME; //"ArcticWhite";
+            //dbp.Style = Resources["DashboardPanelStyle1"] as Style;
 
-            epiCurveChart = new XYChart
-            {
-                MinWidth = Defaults.MIN_CHART_WIDTH, //800,
-                Height = Defaults.CHART_HEGHT, // 500,
-                HighlightDataPointOnHover = true,
-                XPath = "IndependentValue",
-                SelectionVisualHint = ComponentArt.Silverlight.DataVisualization.Charting.SelectionVisualHint.InvertedColor,
-                Theme = Defaults.THEME,// "ArcticWhite",
-                Palette = Palette.GetPalette(Defaults.COLOR_PALETTE), // "VibrantC")     
-                EnableAnimation = true,
-                AnimationDuration = new TimeSpan(0, 0, 0, 4),
-                EnableDataPointPopup = false,
-                LegendVisible = Defaults.SHOW_CHART_LEGEND,// false,
-                LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right,
-                CoordinatesPaddingPercentage = new Thickness(5, 5, 0, 0),
-                DefaultAxisAnnotationsVisible = true,
-                DefaultGridLinesVisible = true,
-                GlareCoverVisible = false,
-                AnimationOnLoad = false,
-                DefaultStripesVisible = true
-            };
+            //epiCurveChart = new XYChart
+            //{
+            //    MinWidth = Defaults.MIN_CHART_WIDTH, //800,
+            //    Height = Defaults.CHART_HEGHT, // 500,
+            //    HighlightDataPointOnHover = true,
+            //    XPath = "IndependentValue",
+            //    SelectionVisualHint = ComponentArt.Silverlight.DataVisualization.Charting.SelectionVisualHint.InvertedColor,
+            //    Theme = Defaults.THEME,// "ArcticWhite",
+            //    Palette = Palette.GetPalette(Defaults.COLOR_PALETTE), // "VibrantC")     
+            //    EnableAnimation = true,
+            //    AnimationDuration = new TimeSpan(0, 0, 0, 4),
+            //    EnableDataPointPopup = false,
+            //    LegendVisible = Defaults.SHOW_CHART_LEGEND,// false,
+            //    LegendDock = ComponentArt.Silverlight.DataVisualization.Charting.Dock.Right,
+            //    CoordinatesPaddingPercentage = new Thickness(5, 5, 0, 0),
+            //    DefaultAxisAnnotationsVisible = true,
+            //    DefaultGridLinesVisible = true,
+            //    GlareCoverVisible = false,
+            //    AnimationOnLoad = false,
+            //    DefaultStripesVisible = true
+            //};
 
-            Legend EpiLegend = new Legend()
-            {
-                // CornerRadius = new CornerRadius(10),
-                BorderBrush = new SolidColorBrush(Color.FromArgb(255, 192, 207, 226)), //   "#FFc0cfe2", 
-                Margin = new Thickness(30, 0, 10, 0),
-                FontFamily = new FontFamily("Segoe UI"),
-            };
+            //Legend EpiLegend = new Legend()
+            //{
+            //    BorderBrush = new SolidColorBrush(Color.FromArgb(255, 192, 207, 226)), 
+            //    Margin = new Thickness(30, 0, 10, 0),
+            //    FontFamily = new FontFamily("Segoe UI"),
+            //};
 
-            //<my:XYChart.XAxisArea>
-            //    <my:AxisCoordinates AxisId="XAxis" Angle="70" Margin="20"/>
-            //    <my:ChartLabel Orientation="Horizontal">
-            //        <TextBlock Text="X-XAXIS LABEL GOES HERE" Width="402" TextAlignment="Center" Padding="0,10,0,10" Margin="0,40,0,0" />
-            //    </my:ChartLabel>
-            //</my:XYChart.XAxisArea>
+            //AxisCoordinates XaxisCoordinates = new AxisCoordinates()
+            //{
+            //    AxisId = "XAxis",
+            //    Angle = 70,
+            //    Margin = new Thickness(0, 5, 0, 0),
+            //    FontSize = 9.5,
+            //    LabelGap = 1.0,
+            //    Coordinates = new DateTimeCoordinates()
+            //};
 
-            AxisCoordinates XaxisCoordinates = new AxisCoordinates()
-            {
-                AxisId = "XAxis",
-                Angle = 70,
-                Margin = new Thickness(0, 5, 0, 0),
-                FontSize = 9.5,
-                LabelGap = 1.0,
-                Coordinates = new DateTimeCoordinates()
-            };
+            //ChartLabel chartLabel = new ChartLabel()
+            //{
+            //    Orientation = ChartLabelOrientation.Horizontal
+            //};
 
-            ChartLabel chartLabel = new ChartLabel()
-            {
-                Orientation = ChartLabelOrientation.Horizontal
-            };
+            //textBlockX = new TextBlock()
+            //{
+            //    Text = ((EWAVColumn)cbxDateField.SelectedItem).Name.FromCamelCase(),
+            //    Width = 402,
+            //    TextAlignment = System.Windows.TextAlignment.Center,
+            //    Padding = new Thickness(0, 10, 0, 10),
+            //    Margin = new Thickness(0, 40, 0, 0)
+            //};
 
-            textBlockX = new TextBlock()
-            {
-                Text = ((EWAVColumn)cbxDateField.SelectedItem).Name.FromCamelCase(),
-                Width = 402,
-                TextAlignment = System.Windows.TextAlignment.Center,
-                Padding = new Thickness(0, 10, 0, 10),
-                Margin = new Thickness(0, 40, 0, 0)
-            };
+            //chartLabel.Child = textBlockX;
 
-            chartLabel.Child = textBlockX;
+            //epiCurveChart.XAxisArea.Add(XaxisCoordinates);  //   axisCoordinates);
+            //epiCurveChart.XAxisArea.Add(chartLabel);
 
-            //  AxisCoordinates
-            epiCurveChart.XAxisArea.Add(XaxisCoordinates);  //   axisCoordinates);
-            epiCurveChart.XAxisArea.Add(chartLabel);
+            //textBlockY = new TextBlock()
+            //{
+            //    Text = "Count",
+            //    Width = 402,
+            //    VerticalAlignment = System.Windows.VerticalAlignment.Bottom,
+            //    TextAlignment = System.Windows.TextAlignment.Center,
+            //    Padding = new Thickness(0, 10, 0, 10),
+            //    Margin = new Thickness(0, 40, 0, 0)
+            //};
 
-            textBlockY = new TextBlock()
-            {
-                Text = "Count",
-                Width = 402,
-                VerticalAlignment = System.Windows.VerticalAlignment.Bottom,
-                TextAlignment = System.Windows.TextAlignment.Center,
-                Padding = new Thickness(0, 10, 0, 10),
-                Margin = new Thickness(0, 40, 0, 0)
-            };
+            //epiCurveChart.YAxisArea.Add(new AxisCoordinates());
+            //epiCurveChart.YAxisArea.Add(new ChartLabel()
+            //{
+            //    Child = textBlockY,
+            //    Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Vertical
+            //});
 
-            epiCurveChart.YAxisArea.Add(new AxisCoordinates());
-            epiCurveChart.YAxisArea.Add(new ChartLabel()
-            {
-                Child = textBlockY,
-                Orientation = ComponentArt.Silverlight.DataVisualization.Charting.ChartLabelOrientation.Vertical
-            });
+            //bool byEpiWeek = false;
+            //if (gadgetOptions.InputVariableList.ContainsKey("isdatecolumnnumeric"))
+            //{
+            //    byEpiWeek = bool.Parse(gadgetOptions.InputVariableList["isdatecolumnnumeric"]);
+            //}
 
-            bool byEpiWeek = false;
-            if (gadgetOptions.InputVariableList.ContainsKey("isdatecolumnnumeric"))
-            {
-                byEpiWeek = bool.Parse(gadgetOptions.InputVariableList["isdatecolumnnumeric"]);
-            }
+            //string seriesTrackerText = "";
+            //int seriesCounter = 0;
+            //if (dtb.ColumnNameList.Count == 0)
+            //{
+            //    RenderFinishWithError(SharedStrings.NO_RECORDS_SELECTED);
+            //    return;
+            //}
+            //List<MyString> chartColsList = dtb.ColumnNameList.GetRange(1, dtb.ColumnNameList.Count - 1);
 
-            string seriesTrackerText = "";
-            int seriesCounter = 0;
-            if (dtb.ColumnNameList.Count == 0)
-            {
-                RenderFinishWithError(SharedStrings.NO_RECORDS_SELECTED);
-                return;
-            }
-            List<MyString> chartColsList = dtb.ColumnNameList.GetRange(1, dtb.ColumnNameList.Count - 1);
+            //compositeSeries = new CompositeSeries()
+            //{
+            //    CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.Stacked
+            //};
 
-            compositeSeries = new CompositeSeries()
-            {
-                CompositionKind = ComponentArt.Silverlight.DataVisualization.Charting.CompositionKind.Stacked
-            };
+            //foreach (MyString col in chartColsList)
+            //{
+            //    List<ChartDataValue> chartDataValuesList = new List<ChartDataValue>();
 
-            foreach (MyString col in chartColsList)
-            {
-                List<ChartDataValue> chartDataValuesList = new List<ChartDataValue>();
+            //    foreach (FieldsList row in dtb.RecordList)
+            //    {
+            //        ChartDataValue data = new ChartDataValue()
+            //        {
+            //            Format = dateFormat,
+            //            IndependentValue = row.Fields[0].VarName,
+            //            DependentValue = dtb.GetValueAtRow(col.VarName, row)
+            //        };
 
-                foreach (FieldsList row in dtb.RecordList)
-                {
+            //        EpiLegend.LegendItems.Add(new LegendItem()
+            //        {
+            //            Data = dtb.GetValueAtRow(col.VarName, row)
+            //        });
 
+            //        if (data.DependentValue.Length == 0)
+            //        {
+            //            data.DependentValue = "0";
+            //        }
+            //        chartDataValuesList.Add(data);
+            //    }
 
-                    //DateTime.TryParse(row.Fields[0].VarName, out dresult);
+            //    ColorShift topColorShift = new ColorShift();
+            //    topColorShift.BrightnessShift = 70;
 
+            //    ColorShift bottomColorShift = new ColorShift();
+            //    bottomColorShift.BrightnessShift = 1;
+            //    seriesCounter++;
+            //    seriesTrackerText += string.Format("{0},", dtb.ColumnNameList.ElementAt<MyString>(seriesCounter).VarName);      //   "S" + seriesCounter + ",";
 
-                    ChartDataValue data = new ChartDataValue()
-                    {
-                        Format = dateFormat,
-                        IndependentValue = row.Fields[0].VarName,
-                        DependentValue = dtb.GetValueAtRow(col.VarName, row)
-                    };
+            //    AreaSeriesAnimator asa = AreaSeriesAnimator.Create("SwipeSmooth");
 
-                    EpiLegend.LegendItems.Add(new LegendItem()
-                    {
-                        Data = dtb.GetValueAtRow(col.VarName, row)
-                    });
+            //    epiCurveChart.Width = Defaults.CHART_WIDTH; //800.0; //chartDataValuesList.Count * 20;
+            //    epiCurveChart.Height = Defaults.CHART_HEGHT; // 500.0;
+            //    epiCurveChart.MaxWidth = Defaults.MAX_CHART_WIDTH;// 5000.0;
 
-                    if (data.DependentValue.Length == 0)
-                    {
-                        data.DependentValue = "0";
-                    }
-                    chartDataValuesList.Add(data);
-                }
+            //    foreach (var extraInfo in dtb.ExtraInfo)
+            //    {
+            //        switch (extraInfo.Key.VarName.ToLower())
+            //        {
+            //            case "recordcount":
+            //                RecordCount = Convert.ToInt16(extraInfo.Value.VarName);
+            //                break;
+            //            default:
+            //                break;
+            //        }
+            //    }
 
-                ColorShift topColorShift = new ColorShift();
-                topColorShift.BrightnessShift = 70;
+            //    AreaSeries areaSeries = new AreaSeries()
+            //    {
+            //        Id = dtb.ColumnNameList.ElementAt<MyString>(seriesCounter).VarName.FromCamelCase(), //     "S" + seriesCounter,
+            //        LineKind = ComponentArt.Silverlight.DataVisualization.Charting.LineKind.Step,
+            //        DataSource = chartDataValuesList,
+            //        YPath = "DependentValue",
+            //        XPath = "IndependentValue",
+            //        SeriesLineVisible = false,
+            //        EnableAnimation = true,
+            //        Texture = TextureKind.BrushedMetal,
+            //        Animator = asa
+            //    };
 
-                ColorShift bottomColorShift = new ColorShift();
-                bottomColorShift.BrightnessShift = 1;
-                seriesCounter++;
-                seriesTrackerText += string.Format("{0},", dtb.ColumnNameList.ElementAt<MyString>(seriesCounter).VarName);      //   "S" + seriesCounter + ",";
+            //    compositeSeries.SubSeries.Add(areaSeries);
+            //}
 
-                AreaSeriesAnimator asa = AreaSeriesAnimator.Create("SwipeSmooth");
+            //seriesTrackerText = seriesTrackerText.Substring(0, seriesTrackerText.Length - 1);
+            //SeriesTracker st = new SeriesTracker();
+            //st.SeriesId = seriesTrackerText;
 
-                epiCurveChart.Width = Defaults.CHART_WIDTH; //800.0; //chartDataValuesList.Count * 20;
-                epiCurveChart.Height = Defaults.CHART_HEGHT; // 500.0;
-                epiCurveChart.MaxWidth = Defaults.MAX_CHART_WIDTH;// 5000.0;
+            //SeriesAnnotationTracker sat = new SeriesAnnotationTracker();
+            //sat.SeriesIdsCSS = seriesTrackerText;
 
-                foreach (var extraInfo in dtb.ExtraInfo)
-                {
-                    switch (extraInfo.Key.VarName.ToLower())
-                    {
-                        case "recordcount":
-                            RecordCount = Convert.ToInt16(extraInfo.Value.VarName);
-                            break;
-                        default:
-                            break;
-                    }
+            //epiCurveChart.XYChartMainArea.Add(compositeSeries);
+            //epiCurveChart.XYChartMainArea.Add(st);
+            //epiCurveChart.XYChartMainArea.Add(sat);
 
-                }
+            //pnlChartContainer.Visibility = System.Windows.Visibility.Visible;
 
-                AreaSeries areaSeries = new AreaSeries()
-                {
-                    Id = dtb.ColumnNameList.ElementAt<MyString>(seriesCounter).VarName.FromCamelCase(), //     "S" + seriesCounter,
-                    LineKind = ComponentArt.Silverlight.DataVisualization.Charting.LineKind.Step,
-                    DataSource = chartDataValuesList,
-                    YPath = "DependentValue",
-                    XPath = "IndependentValue",
-                    SeriesLineVisible = false,
-                    EnableAnimation = true,
-                    Texture = TextureKind.BrushedMetal,
-                    Animator = asa
-                    //LineThickness = 2,
-                    ////    Color = Color.FromArgb(255, 254, 203, 0),
-                    //GradientTopColorShift = topColorShift,
-                    //GradientBottomColorShift = bottomColorShift
-                };
+            //pnlChartContainer.Children.Clear();
+            //if (chartColsList.Count > 1)
+            //{
+            //    epiCurveChart.Legend = EpiLegend;
+            //}
 
-                compositeSeries.SubSeries.Add(areaSeries);
-            }
+            //dbp.Content = epiCurveChart;
 
-            seriesTrackerText = seriesTrackerText.Substring(0, seriesTrackerText.Length - 1);
-            SeriesTracker st = new SeriesTracker();
-            st.SeriesId = seriesTrackerText;
-
-            SeriesAnnotationTracker sat = new SeriesAnnotationTracker();
-            sat.SeriesIdsCSS = seriesTrackerText;
-
-            epiCurveChart.XYChartMainArea.Add(compositeSeries);
-            epiCurveChart.XYChartMainArea.Add(st);
-            epiCurveChart.XYChartMainArea.Add(sat);
-
-            pnlChartContainer.Visibility = System.Windows.Visibility.Visible;
-
-            pnlChartContainer.Children.Clear();
-            if (chartColsList.Count > 1)
-            {
-                epiCurveChart.Legend = EpiLegend;
-            }
-
-            dbp.Content = epiCurveChart;
-
-            long x = 7;
-
-
-            pnlChartContainer.Children.Add(dbp);
-
-
-
-            if (XAxisLabel != "")
-                textBlockX.Text = XAxisLabel;
-            if (YAxisLabel != "")
-                textBlockY.Text = YAxisLabel;
-            if (dbp != null)
-                dbp.Title = ChartTitle;
-
-
-
-
-            RenderFinish();
-
+            //long x = 7;
+            
+            //pnlChartContainer.Children.Add(dbp);
+            
+            //if (XAxisLabel != "")
+            //    textBlockX.Text = XAxisLabel;
+            //if (YAxisLabel != "")
+            //    textBlockY.Text = YAxisLabel;
+            //if (dbp != null)
+            //    dbp.Title = ChartTitle;
+            
+            //RenderFinish();
         }
 
         void epiCurveWorker_RunWorkerCompleted()
@@ -1005,126 +927,18 @@ namespace EWAV
 
         private void RenderFinishEpiCurve(DatatableBag data, List<List<StringDataValue>> dataValues)
         {
-
             waitCursor.Visibility = System.Windows.Visibility.Collapsed;
 
-            XYChart chart = new XYChart();
+            // dpb XYChart chart = new XYChart();
             chart.BorderThickness = new Thickness(0);
             chart.Loaded += new RoutedEventHandler(chart_Loaded);
-            //chart.Series.Add(stackedSeries);
-            //chart.XYChartMainArea.Add(stackedSeries);
             chart.Height = 500;
-            //chart.Width = (stackedSeries.IndependentValueCount * 25) + 150;
             pnlChartContainer.Children.Clear();
             pnlChartContainer.Children.Add(chart);
 
             SetChartLabels(ChartTitle, LegendTitle, XAxisLabel, YAxisLabel);
         }
 
-        //void epiCurveWorker_DoWork(DatatableBag data, GadgetParameters gadgetOptions)
-        //{
-        //    try
-        //    {
-        //        bool byEpiWeek = false;
-        //        if (gadgetOptions.InputVariableList.ContainsKey("isdatecolumnnumeric"))
-        //        {
-        //            byEpiWeek = bool.Parse(gadgetOptions.InputVariableList["isdatecolumnnumeric"]);
-        //        }
-        //        // cbxDateField.S
-        //        //gadgetOptions.CrosstabVariableName;
-        //        //gadgetOptions.InputVariableList["dateinterval"];
-        //        //object[] args = (object[])e.Argument;
-        //        string dateVar = gadgetOptions.MainVariableName;
-        //        string caseStatusVar = gadgetOptions.CrosstabVariableName;
-        //        string dateFormat = gadgetOptions.InputVariableList["dateinterval"];
-
-        //        //this.Dispatcher.BeginInvoke(new SimpleCallback(SetGadgetToProcessingState));
-        //        SetGadgetToProcessingState();
-        //        //this.Dispatcher.BeginInvoke(new SimpleCallback(ClearResults));
-        //        ClearResults();
-
-
-
-
-        //        if (data != null && data.FieldsList.Fields.Count > 0)
-        //        {
-        //            //DataRow[] allRows = data.Select(string.Empty, "[" + gadgetOptions.MainVariableName + "]");
-        //            List<FieldsList> allRows = data.RecordList;
-        //            for (int i = 1; i < data.ColumnNameList.Count; i++)
-        //            {
-        //                List<StringDataValue> values = new List<StringDataValue>();
-        //                foreach (FieldsList row in allRows)
-        //                {
-        //                    StringDataValue val = new StringDataValue();
-        //                    data.GetValueAtRow(data.ColumnNameList[i].VarName,
-        //                        row);
-        //                    if (!string.IsNullOrEmpty(data.GetValueAtRow(data.ColumnNameList[i].VarName,
-        //                        row)))
-        //                    {
-        //                        val.DependentValue = Convert.ToInt32(data.GetValueAtRow(data.ColumnNameList[i].VarName,
-        //                            row));
-        //                    }
-        //                    else
-        //                    {
-        //                        val.DependentValue = 0;
-        //                    }
-        //                    if (byEpiWeek)
-        //                    {
-        //                        val.IndependentValue = data.GetValueAtRow(data.ColumnNameList[0].VarName,
-        //                            row); //row[0].ToString();
-        //                    }
-        //                    else
-        //                    {
-        //                        if (dateFormat.ToLower().Equals("hours"))
-        //                        {
-        //                            val.IndependentValue = Convert.ToDateTime(data.GetValueAtRow(data.ColumnNameList[0].VarName,
-        //                                row)).ToString("g"); //((DateTime)row[0]).ToString("g");
-        //                        }
-        //                        else if (dateFormat.ToLower().Equals("months"))
-        //                        {
-        //                            val.IndependentValue = Convert.ToDateTime(data.GetValueAtRow(data.ColumnNameList[0].VarName,
-        //                                row)).ToString("MMM yyyy");//((DateTime)row[0]).ToString("MMM yyyy");
-        //                        }
-        //                        else if (dateFormat.ToLower().Equals("years"))
-        //                        {
-        //                            val.IndependentValue = Convert.ToDateTime(data.GetValueAtRow(data.ColumnNameList[0].VarName,
-        //                                row)).ToString("yyyy");//((DateTime)row[0]).ToString("yyyy");
-        //                        }
-        //                        else
-        //                        {
-        //                            val.IndependentValue = Convert.ToDateTime(data.GetValueAtRow(data.ColumnNameList[0].VarName,
-        //                                row)).ToShortDateString();
-        //                        }
-        //                    }
-        //                    values.Add(val);
-        //                }
-        //                dataValues.Add(values);
-        //            }
-
-        //            databag = data;
-        //            RenderFinish();
-        //        }
-        //        else if (data == null || data.FieldsList.Fields.Count == 0)
-        //        {
-        //            //this.Dispatcher.BeginInvoke(new RenderFinishWithErrorDelegate(RenderFinishWithError), SharedStrings.NO_RECORDS_SELECTED);
-        //            RenderFinishWithError(SharedStrings.NO_RECORDS_SELECTED);
-        //        }
-        //        else
-        //        {
-        //            //this.Dispatcher.BeginInvoke(new SimpleCallback(RenderFinish));
-        //            RenderFinish();
-        //        }
-        //        //this.Dispatcher.BeginInvoke(new SimpleCallback(SetGadgetToFinishedState));
-        //        SetGadgetToFinishedState();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //this.Dispatcher.BeginInvoke(new RenderFinishWithErrorDelegate(RenderFinishWithError), ex.Message);
-        //        RenderFinishWithError(ex.Message);
-        //        //this.Dispatcher.BeginInvoke(new SimpleCallback(SetGadgetToFinishedState));
-        //        SetGadgetToFinishedState();
-        //    }
-        //}
 
         private List<StringDataValue> ConvertToPct(List<StringDataValue> list)
         {
@@ -1160,24 +974,6 @@ namespace EWAV
             pnlChartContainer.Visibility = System.Windows.Visibility.Collapsed;
         }
 
-        #region Private Properties
-        //private View View
-        //{
-        //    get
-        //    {
-        //        return this.dashboardHelper.View;
-        //    }
-        //}
-
-        //private IDbDriver Database
-        //{
-        //    get
-        //    {
-        //        return this.dashboardHelper.Database;
-        //    }
-        //}
-        #endregion // Private Properties
-
         #region IGadget Members
 
         public bool IsProcessing { get; set; }
@@ -1212,7 +1008,6 @@ namespace EWAV
 
                 if (!string.IsNullOrEmpty(datePicker1.Text))
                 {
-                    //    gadgetOptions.InputVariableList.Add("xaxisstart", txtXAxisStartValue.Text);
                     gadgetOptions.InputVariableList.Add("xaxisstart", datePicker1.Text);
                 }
                 if (!string.IsNullOrEmpty(datePicker2.Text))
@@ -1226,10 +1021,8 @@ namespace EWAV
                 {
                     gadgetOptions.CrosstabVariableName = ((EWAVColumn)cbxCaseStatusField.SelectedItem).Name.ToString();
                 }
-
             }
         }
-
 
         void chart_Loaded(object sender, RoutedEventArgs e)
         {
@@ -1243,10 +1036,7 @@ namespace EWAV
         {
             cbxCaseStatusField.IsEnabled = false;
             cbxDateInterval.IsEnabled = false;
-
             cbxDateField.IsEnabled = false;
-
-
             datePicker1.IsEnabled = false;
             datePicker2.IsEnabled = false;
 
@@ -1294,8 +1084,7 @@ namespace EWAV
             string xAxisRotation = "90";
 
             chartType = "EpiCurve";
-
-
+            
             if (cbxCaseStatusField.SelectedIndex > -1)
             {
                 caseStatusField = ((EWAVColumn)cbxCaseStatusField.SelectedItem).Name.ToString().Replace("<", "&lt;");
@@ -1331,7 +1120,7 @@ namespace EWAV
                 new XElement("xAxisEndValue", datePicker2.Text),
 
                 new XElement("gadgetName", viewModel.GadgetName),
-                new XElement("gadgetDescription", Convert.ToBase64String(System.Text.ASCIIEncoding.Unicode.GetBytes(viewModel.GadgetDescription))),
+                // dpb new XElement("gadgetDescription", Convert.ToBase64String(System.Text.ASCIIEncoding.Unicode.GetBytes(viewModel.GadgetDescription))),
                 new XElement("colorPalette", viewModel.CollorPallet),
                 new XElement("useDiffColors", viewModel.UseDifferentBarColors),
                 new XElement("spacesBetweenBars", viewModel.SpacesBetweenBars),
@@ -1341,13 +1130,6 @@ namespace EWAV
                 new XElement("width", viewModel.Width),
                 new XElement("height", viewModel.Height)
                 );
-
-            //element.Attributes.Append(locationY);
-            //element.Attributes.Append(locationX);
-            //element.Attributes.Append(collapsed);                       
-            //element.Attributes.Append(type);
-
-            //return element;
 
             if (this.GadgetFilters != null)
             {
@@ -1426,12 +1208,7 @@ namespace EWAV
 
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
-
-
-          //     XAxisLabel = YAxisLabel = ChartTitle = "";
-
             DoEpi();
-
         }
 
         private void ResizeButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -1559,7 +1336,6 @@ namespace EWAV
             LoadingCanvas = true;
             viewModel = new SetLabelsViewModel();
             viewModel.GadgetName = MyUIName.ToString();
-            //InitializeControl();
             this.GadgetFilters = new List<EWAVDataFilterCondition>();
             List<EWAVColumn> caseColList = cmnClass.GetItemsSource(GetFieldStatusDataType);
 
@@ -1573,7 +1349,6 @@ namespace EWAV
                         cbxCaseStatusField.SelectedIndex = cmnClass.FindIndexToSelect(caseColList, child.Value.ToString().Replace("&lt;", "<"));
                         break;
                     case "datevariable":
-                        //cbxDateField.Text = child.InnerText.Replace("&lt;", "<");
                         cbxDateField.SelectedIndex = cmnClass.FindIndexToSelect(dateColList, child.Value.ToString().Replace("&lt;", "<"));
                         break;
                     case "dateinterval":
@@ -1623,8 +1398,7 @@ namespace EWAV
                         if (!string.IsNullOrEmpty(child.Value.ToString()))
                         {
                             byte[] encodedDataAsBytes = System.Convert.FromBase64String(child.Value.ToString());
-                            viewModel.GadgetDescription =
-                               System.Text.ASCIIEncoding.Unicode.GetString(encodedDataAsBytes);
+                            // dpb viewModel.GadgetDescription = System.Text.ASCIIEncoding.Unicode.GetString(encodedDataAsBytes);
                         }
                         else
                         {
