@@ -8,8 +8,8 @@
     <ProjectGuid>{59C155F3-7DFD-4FC5-A0C1-D6F875EFA411}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EWAV.BAL</RootNamespace>
-    <AssemblyName>EWAV.BAL</AssemblyName>
+    <RootNamespace>BAL</RootNamespace>
+    <AssemblyName>BAL</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -90,17 +90,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ewav.DAL\EWAV.DAL.csproj">
+    <ProjectReference Include="..\EWAV.DAL\DAL.csproj">
       <Project>{0CE1F7DE-5815-4591-978D-14D7E0B18273}</Project>
-      <Name>EWAV.DAL</Name>
+      <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ewav.Entities\EWAV.DTO.csproj">
+    <ProjectReference Include="..\EWAV.Entities\DTO.csproj">
       <Project>{E031AF81-D66D-463F-8191-C41C00CB6151}</Project>
-      <Name>EWAV.DTO</Name>
+      <Name>DTO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ewav.Security\EWAV.Security.csproj">
+    <ProjectReference Include="..\EWAV.Security\Security.csproj">
       <Project>{7143E4D6-1CE6-4F7E-B6BE-4CB70BF51E4F}</Project>
-      <Name>EWAV.Security</Name>
+      <Name>Security</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

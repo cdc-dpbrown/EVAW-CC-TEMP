@@ -8,8 +8,8 @@
     <ProjectGuid>{0CE1F7DE-5815-4591-978D-14D7E0B18273}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EWAV.DAL</RootNamespace>
-    <AssemblyName>EWAV.DAL</AssemblyName>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -124,13 +124,13 @@
     <Content Include="Assemblies\PostgreSQL\Npgsql.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ewav.Entities\EWAV.DTO.csproj">
+    <ProjectReference Include="..\EWAV.Entities\DTO.csproj">
       <Project>{E031AF81-D66D-463F-8191-C41C00CB6151}</Project>
-      <Name>EWAV.DTO</Name>
+      <Name>DTO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ewav.Security\EWAV.Security.csproj">
+    <ProjectReference Include="..\EWAV.Security\Security.csproj">
       <Project>{7143E4D6-1CE6-4F7E-B6BE-4CB70BF51E4F}</Project>
-      <Name>EWAV.Security</Name>
+      <Name>Security</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

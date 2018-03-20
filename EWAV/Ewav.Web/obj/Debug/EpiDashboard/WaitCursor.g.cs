@@ -59,7 +59,7 @@ namespace EWAV.Web.EpiDashboard {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EWAV.Web;V1.1.6;component/epidashboard/waitcursor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Web;V1.1.6;component/epidashboard/waitcursor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\EpiDashboard\WaitCursor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

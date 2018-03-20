@@ -13,6 +13,7 @@ using EWAV.Web.EpiDashboard.Rules;
 using EWAV.BAL;
 using EWAV.Web;
 using EWAV.Web.Services;
+using Web.EpiDashboard;
 
 namespace EWAV.Web.EpiDashboard
 {

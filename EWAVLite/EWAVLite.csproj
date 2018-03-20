@@ -429,9 +429,9 @@
     <None Include="update-angular.sh" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ewav.Clients.Common\EWAV.Clients.Common.csproj">
+    <ProjectReference Include="..\EWAV.Clients.Common\Clients.Common.csproj">
       <Project>{0210956F-A6F3-42FC-87B3-6867688B73BD}</Project>
-      <Name>EWAV.Clients.Common</Name>
+      <Name>Clients.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

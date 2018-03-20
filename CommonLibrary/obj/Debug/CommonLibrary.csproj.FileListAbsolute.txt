@@ -9,7 +9,6 @@ C:\TFSCode\EWAV\CommonLibrary\obj\Debug\CommonLibrary.dll
 C:\TFSCode\EWAV\CommonLibrary\obj\Debug\CommonLibrary.pdb
 C:\_CODE\EVAW-CC-TEMP\CommonLibrary\Bin\Debug\CommonLibrary.dll
 C:\_CODE\EVAW-CC-TEMP\CommonLibrary\Bin\Debug\CommonLibrary.pdb
-C:\_CODE\EVAW-CC-TEMP\CommonLibrary\obj\Debug\CommonLibrary.csprojResolveAssemblyReference.cache
 C:\_CODE\EVAW-CC-TEMP\CommonLibrary\obj\Debug\WaitCursor.g.cs
 C:\_CODE\EVAW-CC-TEMP\CommonLibrary\obj\Debug\CommonLibrary.g.resources
 C:\_CODE\EVAW-CC-TEMP\CommonLibrary\obj\Debug\CommonLibrary.SharedStrings.resources

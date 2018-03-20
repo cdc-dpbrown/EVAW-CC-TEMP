@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EWAV.Web.EpiDashboard {
+namespace Web.EpiDashboard {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace EWAV.Web.EpiDashboard {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EWAV.Web.EpiDashboard.DashboardSharedStrings", typeof(DashboardSharedStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Web.EpiDashboard.DashboardSharedStrings", typeof(DashboardSharedStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

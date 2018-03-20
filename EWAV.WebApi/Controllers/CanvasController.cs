@@ -8,7 +8,7 @@ using System.Net.Http.Headers;
 using System.Xml;
 using EWAV.Web.Services.CanvasDomainService;
 using Newtonsoft.Json;
-using EWAV.BAL;
+using BAL;
 using EWAV;
 using System.Data;
 using System.Xml.Linq;
