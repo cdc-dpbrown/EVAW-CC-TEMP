@@ -95,7 +95,6 @@ C:\_CODE\EVAW-CC-TEMP\EwavLite\obj\Debug\EwavLite.dll
 C:\_CODE\EVAW-CC-TEMP\EwavLite\obj\Debug\EwavLite.pdb
 C:\_CODE\EVAW-CC-TEMP\EWAVLite\bin\BAL.dll
 C:\_CODE\EVAW-CC-TEMP\EWAVLite\bin\DAL.dll
-C:\_CODE\EVAW-CC-TEMP\EWAVLite\bin\GoldParserEngine.dll
 C:\_CODE\EVAW-CC-TEMP\EWAVLite\bin\BAL.pdb
 C:\_CODE\EVAW-CC-TEMP\EWAVLite\bin\DAL.pdb
 C:\_CODE\EVAW-CC-TEMP\EWAVLite\bin\DTO.dll
