@@ -6,19 +6,9 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Net.Http.Headers;
 using System.Xml;
-using EWAV.Web.Services.CanvasDomainService;
 using Newtonsoft.Json;
-using BAL;
-using EWAV;
-using System.Data;
-using System.Xml.Linq;
-using System.Configuration;
-using EWAV.Security;
-using System.Data.SqlClient;
-using EWAV.Web.Services;
 using EWAV.DTO;
 using Newtonsoft.Json.Linq;
-using EWAV.Web.Services.AdminDatasourcesDomainService;
 
 namespace EWAV.WebApi.Controllers
 {
