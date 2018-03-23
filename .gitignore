@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+*.cache
+
+
 # User-specific files
 *.suo
 *.user
@@ -312,3 +315,19 @@ EpiDashboard/ComponentArt.Win.DataVisualization.lic
 CommonLibrary/Bin/Debug/CommonLibrary.dll
 EWAV/Ewav/obj/Debug/Ewav.Client.RiaClientRefs.txt
 EWAV/Ewav/obj/Debug/Ewav.Client.RiaClientRefs.txt
+
+*.cache
+/EWAV/Ewav.Web/obj/Debug
+/EWAV/Ewav.Web/obj/Release
+/EWAV.BAL/obj/Debug
+/EWAV.BAL/obj/Release
+/EWAV.Clients.Common/obj/Debug
+/EWAV.Clients.Common/obj/Release
+/EWAV.DAL/obj/Debug
+/EWAV.DAL/obj/Release
+/EWAV.Entities/obj/Debug
+/EWAV.Entities/obj/Release
+/EWAV.Security/obj/Debug
+/EWAV.Security/obj/Release
+/EWAV.WebApi/obj/Debug
+/EWAV.WebApi/obj/Release

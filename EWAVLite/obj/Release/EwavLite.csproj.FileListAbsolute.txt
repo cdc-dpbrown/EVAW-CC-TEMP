@@ -1,4 +1,0 @@
-C:\Ewav Utility\EwavLite\bin\EwavLite.dll
-C:\Ewav Utility\EwavLite\bin\EwavLite.pdb
-C:\Ewav Utility\EwavLite\obj\Release\EwavLite.dll
-C:\Ewav Utility\EwavLite\obj\Release\EwavLite.pdb
