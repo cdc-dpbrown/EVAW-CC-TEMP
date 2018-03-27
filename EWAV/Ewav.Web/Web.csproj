@@ -53,21 +53,17 @@
     <DesktopBuildPackageLocation>Z:\EpiInfoVisualization\Deployment\Sprint 10\Version1.0\Ewav.Web.zip</DesktopBuildPackageLocation>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CDC.ISB.EIDEV.BAL, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\EWAV.BAL\bin\Debug\CDC.ISB.EIDEV.BAL.dll</HintPath>
+    <Reference Include="CDC.ISB.EIDEV.BAL">
+      <HintPath>..\..\BAL\bin\Debug\CDC.ISB.EIDEV.BAL.dll</HintPath>
     </Reference>
-    <Reference Include="CDC.ISB.EIDEV.DAL, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\EWAV.BAL\bin\Debug\CDC.ISB.EIDEV.DAL.dll</HintPath>
+    <Reference Include="CDC.ISB.EIDEV.DAL">
+      <HintPath>..\..\DAL\bin\Debug\CDC.ISB.EIDEV.DAL.dll</HintPath>
     </Reference>
-    <Reference Include="CDC.ISB.EIDEV.DTO, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\EWAV.BAL\bin\Debug\CDC.ISB.EIDEV.DTO.dll</HintPath>
+    <Reference Include="CDC.ISB.EIDEV.DTO">
+      <HintPath>..\..\DTO\bin\Debug\CDC.ISB.EIDEV.DTO.dll</HintPath>
     </Reference>
-    <Reference Include="CDC.ISB.EIDEV.Security, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\EWAV.BAL\bin\Debug\CDC.ISB.EIDEV.Security.dll</HintPath>
+    <Reference Include="CDC.ISB.EIDEV.Security">
+      <HintPath>..\..\Security\bin\Debug\CDC.ISB.EIDEV.Security.dll</HintPath>
     </Reference>
     <Reference Include="DynamicDataDisplay">
       <HintPath>..\..\..\..\Components\Epi\DynamicDataDisplay.dll</HintPath>

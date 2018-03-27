@@ -84,15 +84,10 @@
             {
                 dt = dh.GenerateTable(columnNames, gadgetOptions, customFilter);
             }
-            catch (System.Exception e)
+            catch 
             {
                 throw new Exception("Error retrieving data from Dashboard Helper");
-                //results.ErrorMessage = e.Message;
-                //return results;
             }
-
-
-  
 
             StatisticsRepository.LogisticRegression.LogisticRegressionResults regressionResults = logisticRegression.LogisticRegression(inputVariableList, dt);
 

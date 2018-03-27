@@ -52,6 +52,22 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CDC.ISB.EIDEV.BAL, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BAL\bin\Debug\CDC.ISB.EIDEV.BAL.dll</HintPath>
+    </Reference>
+    <Reference Include="CDC.ISB.EIDEV.Clients.Common, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Clients.Common\bin\Debug\CDC.ISB.EIDEV.Clients.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CDC.ISB.EIDEV.DTO, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DTO\bin\Debug\CDC.ISB.EIDEV.DTO.dll</HintPath>
+    </Reference>
+    <Reference Include="CDC.ISB.EIDEV.Security, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Security\bin\Debug\CDC.ISB.EIDEV.Security.dll</HintPath>
+    </Reference>
     <Reference Include="Google.DataTable.Net.Wrapper">
       <HintPath>..\packages\Google.DataTable.Net.Wrapper.3.1.0.0\lib\Google.DataTable.Net.Wrapper.dll</HintPath>
     </Reference>
@@ -231,22 +247,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BAL\BAL.csproj">
-      <Project>{59C155F3-7DFD-4FC5-A0C1-D6F875EFA411}</Project>
-      <Name>BAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Clients.Common\Clients.Common.csproj">
-      <Project>{0210956F-A6F3-42FC-87B3-6867688B73BD}</Project>
-      <Name>Clients.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EncryptionUtility\EpiInfoWebSecurity.csproj">
-      <Project>{f77b2768-0aca-4ee3-847a-19ca001e36a3}</Project>
-      <Name>EpiInfoWebSecurity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EWAV.Entities\DTO.csproj">
-      <Project>{E031AF81-D66D-463F-8191-C41C00CB6151}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EWAV\Ewav.Web\Web.csproj">
       <Project>{2b546b07-1b3b-4a89-8622-e7fc005049a9}</Project>
       <Name>Web</Name>

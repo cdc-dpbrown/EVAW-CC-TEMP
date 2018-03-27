@@ -37,6 +37,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CDC.ISB.EIDEV.DAL, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DAL\bin\Debug\CDC.ISB.EIDEV.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="CDC.ISB.EIDEV.DTO, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DTO\bin\Debug\CDC.ISB.EIDEV.DTO.dll</HintPath>
+    </Reference>
+    <Reference Include="CDC.ISB.EIDEV.Security, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Security\bin\Debug\CDC.ISB.EIDEV.Security.dll</HintPath>
+    </Reference>
     <Reference Include="StatisticsRepository, Version=7.0.9.27, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\Ewav\Ewav.Web\Assemblies\StatisticsRepository.dll</HintPath>
     </Reference>

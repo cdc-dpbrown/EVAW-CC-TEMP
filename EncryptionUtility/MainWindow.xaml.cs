@@ -305,7 +305,8 @@ namespace EpiInfoWebSecurity
                 ClearText.IsEnabled = true;
                 
             }
-            catch (Exception ex){
+            catch
+            {
                 string messageBoxText = "Error occurred! Text entered can't be decrypted. Please validate entered text and try again.";
                 string caption = "WARNING!";
                 MessageBoxButton button = MessageBoxButton.OK;

@@ -36,6 +36,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CDC.ISB.EIDEV.BAL, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BAL\bin\Debug\CDC.ISB.EIDEV.BAL.dll</HintPath>
+    </Reference>
+    <Reference Include="CDC.ISB.EIDEV.Web, Version=1.1.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EWAV\Ewav.Web\bin\CDC.ISB.EIDEV.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -48,16 +56,6 @@
   <ItemGroup>
     <Compile Include="DefinedVariables\RulesConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BAL\BAL.csproj">
-      <Project>{59C155F3-7DFD-4FC5-A0C1-D6F875EFA411}</Project>
-      <Name>BAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EWAV\Ewav.Web\Web.csproj">
-      <Project>{2B546B07-1B3B-4A89-8622-E7FC005049A9}</Project>
-      <Name>Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,7 +14,7 @@ namespace CDC.ISB.EIDEV.Web.Services
         private List<FieldsList> recordList = new List<FieldsList>();
         private string _tableName;
         private string _exposure;
-        private DataTable value;
+        //private DataTable value;
         private GridCells _gridCellData = new GridCells();
         private List<DictionaryDTO> extraInfo;
 
