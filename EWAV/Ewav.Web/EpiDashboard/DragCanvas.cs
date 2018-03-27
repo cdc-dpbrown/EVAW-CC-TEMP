@@ -9,7 +9,7 @@
   using System.Windows.Media;
   using System.Windows.Media.Media3D;
 
-namespace EWAV.Web.EpiDashboard
+namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     public class DragCanvas : Canvas
     {

@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
-namespace EWAV.Web.EpiDashboard.Rules
+namespace CDC.ISB.EIDEV.Web.EpiDashboard.Rules
 {
     /// <summary>
     /// A class for assigning data to a column in the database

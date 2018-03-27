@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web.EpiDashboard {
+namespace CDC.ISB.EIDEV.Web.EpiDashboard {
     using System;
     
     
@@ -19,7 +19,7 @@ namespace Web.EpiDashboard {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class DashboardSharedStrings {
@@ -39,7 +39,7 @@ namespace Web.EpiDashboard {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Web.EpiDashboard.DashboardSharedStrings", typeof(DashboardSharedStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CDC.ISB.EIDEV.Web.EpiDashboard.DashboardSharedStrings", typeof(DashboardSharedStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

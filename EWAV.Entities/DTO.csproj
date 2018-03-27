@@ -8,8 +8,8 @@
     <ProjectGuid>{E031AF81-D66D-463F-8191-C41C00CB6151}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DTO</RootNamespace>
-    <AssemblyName>DTO</AssemblyName>
+    <RootNamespace>CDC.ISB.EIDEV.DTO</RootNamespace>
+    <AssemblyName>CDC.ISB.EIDEV.DTO</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

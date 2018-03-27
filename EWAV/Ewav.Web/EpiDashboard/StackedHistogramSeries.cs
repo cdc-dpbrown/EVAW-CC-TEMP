@@ -6,7 +6,7 @@ using System.Windows.Controls.DataVisualization.Charting;
 using System.Windows.Controls.DataVisualization;
 using System.Windows.Controls;
 
-namespace EWAV.Web.EpiDashboard
+namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     public class StackedHistogramSeries : StackedColumnSeries
     {

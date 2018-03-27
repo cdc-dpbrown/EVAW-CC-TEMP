@@ -8,7 +8,7 @@ using Epi;
 using Epi.Core;
 using Epi.Data;
 
-namespace EWAV.Web.EpiDashboard
+namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     /// <summary>
     /// Represents the allowable types of variables that may store recoded data through the dashboard
@@ -371,7 +371,7 @@ namespace EWAV.Web.EpiDashboard
             {
                 case "System.DateTimeOffset":
                 case "System.DateTime":
-                    if (friendlyValue.ToUpper() == EWAV.Web.Config.ConfigDataSet.RepresentationOfMissing.ToUpper())//"MISSING")
+                    if (friendlyValue.ToUpper() == CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfMissing.ToUpper())//"MISSING")
                     {
                         value = string.Empty;
                     }
@@ -394,15 +394,15 @@ namespace EWAV.Web.EpiDashboard
                     {
                         value = string.Empty;
                     }
-                    else if (friendlyValue.ToUpper() == EWAV.Web.Config.ConfigDataSet.RepresentationOfYes.ToUpper())//"YES")
+                    else if (friendlyValue.ToUpper() == CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes.ToUpper())//"YES")
                     {
                         value = "1";
                     }
-                    else if (friendlyValue.ToUpper() == EWAV.Web.Config.ConfigDataSet.RepresentationOfNo.ToUpper())//"NO")
+                    else if (friendlyValue.ToUpper() == CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo.ToUpper())//"NO")
                     {
                         value = "0";
                     }
-                    else if (friendlyValue.ToUpper() == EWAV.Web.Config.ConfigDataSet.RepresentationOfMissing.ToUpper())//"MISSING")
+                    else if (friendlyValue.ToUpper() == CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfMissing.ToUpper())//"MISSING")
                     {
                         value = "missing";
                     }
@@ -421,15 +421,15 @@ namespace EWAV.Web.EpiDashboard
                             value = string.Empty;
                         }
 
-                        else if (friendlyValue.ToUpper() == EWAV.Web.Config.ConfigDataSet.RepresentationOfYes.ToUpper())//"YES")
+                        else if (friendlyValue.ToUpper() == CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes.ToUpper())//"YES")
                         {
                             value = "1";
                         }
-                        else if (friendlyValue.ToUpper() == EWAV.Web.Config.ConfigDataSet.RepresentationOfNo.ToUpper())//"NO")
+                        else if (friendlyValue.ToUpper() == CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo.ToUpper())//"NO")
                         {
                             value = "0";
                         }
-                        else if (friendlyValue.ToUpper() == EWAV.Web.Config.ConfigDataSet.RepresentationOfMissing.ToUpper())//"MISSING")
+                        else if (friendlyValue.ToUpper() == CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfMissing.ToUpper())//"MISSING")
                         {
                             value = "missing";
                         }

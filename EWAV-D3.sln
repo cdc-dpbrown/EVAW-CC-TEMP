@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{899B2BB2-52EC-4305-9999-A3015F9891F2}"
 	ProjectSection(SolutionItems) = preProject
@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "EWAV.WebApi\WebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clients.Common", "EWAV.Clients.Common\Clients.Common.csproj", "{0210956F-A6F3-42FC-87B3-6867688B73BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWAVLite", "EWAVLite\EWAVLite.csproj", "{C5C0587A-331E-4CC4-86F9-5A0B15C05F98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngJS", "EWAVLite\AngJS.csproj", "{C5C0587A-331E-4CC4-86F9-5A0B15C05F98}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "EWAV\Ewav.Web\Web.csproj", "{2B546B07-1B3B-4A89-8622-E7FC005049A9}"
 EndProject
@@ -134,6 +134,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9584281F-B122-4FD7-BF3F-0BCCA9085A7F}
 	EndGlobalSection
 	GlobalSection(AutomaticVersions) = postSolution
 		PrimaryVersionType = AssemblyVersionAttribute

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace EWAV.Security
+namespace CDC.ISB.EIDEV.Security
 {
     /// <summary>
     /// This class contains two static methods one to entrypt string and one to decrypt string

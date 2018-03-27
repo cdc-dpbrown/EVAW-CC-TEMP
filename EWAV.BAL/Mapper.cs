@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 
-namespace EWAV.BAL
+namespace CDC.ISB.EIDEV.BAL
 {
     public static class Mapper
     {
-  
-
         public static List<DTO.EWAVFrequencyControlDto> FrequencyOutputList(System.Data.DataTable dt, EWAVGadgetParameters ewavGadgetParameters)
         {
             List<EWAVFrequencyControlDto> fdsList = new List<EWAVFrequencyControlDto>();

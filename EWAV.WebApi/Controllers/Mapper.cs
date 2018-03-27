@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using EWAV.Web.Services;
+using CDC.ISB.EIDEV.Web.Services;
 using Newtonsoft.Json.Linq;
 
-namespace EWAV.WebApi.Controllers
+namespace CDC.ISB.EIDEV.WebApi.Controllers
 {
     public class Mapper
     {

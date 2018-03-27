@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     /// <summary>
     /// Linear Regression Results Class. Local representation of EpiInfos RegressionResults class

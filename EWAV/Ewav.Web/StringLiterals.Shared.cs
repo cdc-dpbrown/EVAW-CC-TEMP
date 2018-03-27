@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-//namespace EWAV.Web
+//namespace CDC.ISB.EIDEV.Web
 //{
-    public partial class StringLiterals
+public partial class StringLiterals
     {
 
         public string RenderFinishWithError = "RenderFinishWithError";

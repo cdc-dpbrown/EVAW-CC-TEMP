@@ -1,4 +1,4 @@
-﻿namespace EWAV.DAL.MySqlLayer
+﻿namespace CDC.ISB.EIDEV.DAL.MySqlLayer
 {
     using System;
     using System.Data;

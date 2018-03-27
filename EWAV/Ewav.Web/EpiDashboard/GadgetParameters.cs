@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Epi;
-using EWAV.Web.Services;
-using EWAV.BAL;
+using CDC.ISB.EIDEV.Web.Services;
+using CDC.ISB.EIDEV.BAL;
 
-namespace EWAV.Web.EpiDashboard
+namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     /// <summary>
     /// A class used to encompass input parameters, delegates, and events

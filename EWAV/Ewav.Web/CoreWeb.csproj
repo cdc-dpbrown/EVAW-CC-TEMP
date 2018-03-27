@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CDC.ISB.EIDEV.Web</RootNamespace>
-    <AssemblyName>CDC.ISB.EIDEV.Web</AssemblyName>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <SilverlightApplicationList>{F683EEFE-8653-4AF5-B004-F0F0BB380801}|..\Ewav\Ewav.csproj|ClientBin|False</SilverlightApplicationList>
@@ -37,7 +37,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>..\EWAV.WebApi\bin\</OutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -53,22 +53,6 @@
     <DesktopBuildPackageLocation>Z:\EpiInfoVisualization\Deployment\Sprint 10\Version1.0\Ewav.Web.zip</DesktopBuildPackageLocation>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CDC.ISB.EIDEV.BAL, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\EWAV.BAL\bin\Debug\CDC.ISB.EIDEV.BAL.dll</HintPath>
-    </Reference>
-    <Reference Include="CDC.ISB.EIDEV.DAL, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\EWAV.BAL\bin\Debug\CDC.ISB.EIDEV.DAL.dll</HintPath>
-    </Reference>
-    <Reference Include="CDC.ISB.EIDEV.DTO, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\EWAV.BAL\bin\Debug\CDC.ISB.EIDEV.DTO.dll</HintPath>
-    </Reference>
-    <Reference Include="CDC.ISB.EIDEV.Security, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\EWAV.BAL\bin\Debug\CDC.ISB.EIDEV.Security.dll</HintPath>
-    </Reference>
     <Reference Include="DynamicDataDisplay">
       <HintPath>..\..\..\..\Components\Epi\DynamicDataDisplay.dll</HintPath>
       <Private>True</Private>
@@ -547,7 +531,9 @@
     </Compile>
     <Compile Include="Services\AdminDatasourcesDomainService\AdminDatasourcesDomainService.cs" />
     <Compile Include="Services\AuthenticationDomainService\AuthenticationDomainService.cs" />
-    <Compile Include="Services\CombinedFrequencyDomainService\CombinedFrequencyDomainService.cs" />
+    <Compile Include="Services\CombinedFrequencyDomainService\CombinedFrequencyDomainService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Services\DefinedVariable\Rule_GroupVariable.cs" />
     <Compile Include="Services\DiagnosticsDomainService\DiagnosticsDomainService.cs" />
     <Compile Include="Services\ErrorDomainService\ErrorDomainService.cs" />
@@ -613,6 +599,30 @@
     <Compile Include="Settings.cs" />
     <Compile Include="StringLiterals.Shared.cs" />
     <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EWAV.BAL\BAL.csproj">
+      <Project>{59C155F3-7DFD-4FC5-A0C1-D6F875EFA411}</Project>
+      <Name>BAL</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EWAV.DAL\DAL.csproj">
+      <Project>{0CE1F7DE-5815-4591-978D-14D7E0B18273}</Project>
+      <Name>DAL</Name>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EWAV.Entities\DTO.csproj">
+      <Project>{E031AF81-D66D-463F-8191-C41C00CB6151}</Project>
+      <Name>DTO</Name>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EWAV.Security\Security.csproj">
+      <Project>{7143E4D6-1CE6-4F7E-B6BE-4CB70BF51E4F}</Project>
+      <Name>Security</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Config\ConfigDataSet.resx" />

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace EWAV.DTO
+namespace CDC.ISB.EIDEV.DTO
 {
     class TwoxTwoDto
     {

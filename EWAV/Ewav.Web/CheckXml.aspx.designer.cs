@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EWAV.Web {
+namespace CDC.ISB.EIDEV.Web {
     
     
     public partial class CheckXml {

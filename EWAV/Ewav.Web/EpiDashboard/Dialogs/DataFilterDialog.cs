@@ -5,15 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using EWAV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
 using Epi;
 using Epi.Core;
 using Epi.Fields;
 using Epi.Windows;
 using Epi.Windows.Dialogs;
-using EWAV.Web.EpiDashboard.Rules;
+using CDC.ISB.EIDEV.Web.EpiDashboard.Rules;
 
-namespace EWAV.Web.EpiDashboard.Dialogs
+namespace CDC.ISB.EIDEV.Web.EpiDashboard.Dialogs
 {
     public partial class DataFilterDialog : DialogBase
     {
@@ -83,7 +83,7 @@ namespace EWAV.Web.EpiDashboard.Dialogs
         /// <summary>
         /// Gets the EWAVView associated with the attached dashboard helper
         /// </summary>
-        private   EWAV.Web.EWAVView View
+        private CDC.ISB.EIDEV.Web.EWAVView View
         {
             get
             {

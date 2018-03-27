@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EWAV.DAL.Interfaces;
+using CDC.ISB.EIDEV.DAL.Interfaces;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using System.Data.SqlClient;
 using System.Data;
 using Microsoft.SqlServer.Server;
-using EWAV.Security;
+using CDC.ISB.EIDEV.Security;
 
 
-namespace EWAV.DAL.SqlServer
+namespace CDC.ISB.EIDEV.DAL.SqlServer
 {
     public class SqlServerDatasourceDao : IAdminDatasourceDao
     {
@@ -137,7 +137,7 @@ namespace EWAV.DAL.SqlServer
 
             try
             {
-                foreach (EWAV.DTO.UserDTO item in dsDto.AssociatedUsers)
+                foreach (CDC.ISB.EIDEV.DTO.UserDTO item in dsDto.AssociatedUsers)
                 {
                     sqdr = new SqlDataRecord(new SqlMetaData[] 
                     { new SqlMetaData("DatasourceID", SqlDbType.Int ), 
@@ -216,7 +216,7 @@ namespace EWAV.DAL.SqlServer
 
             try
             {
-                foreach (EWAV.DTO.UserDTO item in dsDto.AssociatedUsers)
+                foreach (CDC.ISB.EIDEV.DTO.UserDTO item in dsDto.AssociatedUsers)
                 {
                     sqdr = new SqlDataRecord(new SqlMetaData[] 
                     { new SqlMetaData("DatasourceID", SqlDbType.Int ), 

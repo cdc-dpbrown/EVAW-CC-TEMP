@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace EWAV.Web.EpiDashboard
+namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     /// <summary>
     /// Column data types

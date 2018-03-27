@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using EWAV.Web.Services;
+using CDC.ISB.EIDEV.Web.Services;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
   public class EWAVDataFilterCondition
   {

@@ -1,4 +1,4 @@
-﻿namespace EWAV.DAL
+﻿namespace CDC.ISB.EIDEV.DAL
 {
     /// <summary>
     /// Character Literals static class

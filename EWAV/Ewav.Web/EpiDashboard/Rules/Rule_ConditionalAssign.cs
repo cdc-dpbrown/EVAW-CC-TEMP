@@ -8,7 +8,7 @@ using Epi;
 using Epi.Core;
 using Epi.Fields;
 
-namespace EWAV.Web.EpiDashboard.Rules
+namespace CDC.ISB.EIDEV.Web.EpiDashboard.Rules
 {
 
     /// <summary>

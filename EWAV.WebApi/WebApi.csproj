@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApi</RootNamespace>
-    <AssemblyName>WebApi</AssemblyName>
+    <RootNamespace>CDC.ISB.EIDEV.WebApi</RootNamespace>
+    <AssemblyName>CDC.ISB.EIDEV.WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <SccProjectName>%24/ewav/EWAV.WebApi</SccProjectName>
@@ -30,6 +30,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <AssemblyVersion>1.1.1</AssemblyVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -132,6 +133,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\CDC.ISB.EIDEV.BAL.dll" />
+    <Content Include="bin\CDC.ISB.EIDEV.Clients.Common.dll" />
+    <Content Include="bin\CDC.ISB.EIDEV.DAL.dll" />
+    <Content Include="bin\CDC.ISB.EIDEV.DTO.dll" />
+    <Content Include="bin\CDC.ISB.EIDEV.Security.dll" />
+    <Content Include="bin\CDC.ISB.EIDEV.Web.dll" />
     <Content Include="bin\DynamicDataDisplay.dll" />
     <Content Include="bin\Epi.Analysis.Statistics.dll" />
     <Content Include="bin\Epi.Core.AnalysisInterpreter.dll" />
@@ -160,20 +167,6 @@
     <Content Include="bin\ESRI.ArcGIS.Client.Toolkit.DataSources.dll" />
     <Content Include="bin\ESRI.ArcGIS.Client.Toolkit.dll" />
     <Content Include="bin\ESRI.ArcGIS.Client.WebMap.dll" />
-    <Content Include="bin\Ewav.BAL.dll" />
-    <Content Include="bin\Ewav.BAL.pdb" />
-    <Content Include="bin\Ewav.Clients.Common.dll" />
-    <Content Include="bin\Ewav.Clients.Common.pdb" />
-    <Content Include="bin\Ewav.DAL.dll" />
-    <Content Include="bin\Ewav.DAL.pdb" />
-    <Content Include="bin\Ewav.DTO.dll" />
-    <Content Include="bin\Ewav.DTO.pdb" />
-    <Content Include="bin\Ewav.Security.dll" />
-    <Content Include="bin\Ewav.Security.pdb" />
-    <Content Include="bin\Ewav.Web.dll" />
-    <Content Include="bin\Ewav.Web.pdb" />
-    <Content Include="bin\EWAV.WebApi.dll" />
-    <Content Include="bin\EWAV.WebApi.pdb" />
     <Content Include="bin\GoldParserEngine.dll" />
     <Content Include="bin\Google.DataTable.Net.Wrapper.dll" />
     <Content Include="bin\Microsoft.CSharp.dll" />
@@ -253,6 +246,10 @@
     <ProjectReference Include="..\EWAV.Security\Security.csproj">
       <Project>{7143E4D6-1CE6-4F7E-B6BE-4CB70BF51E4F}</Project>
       <Name>Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EWAV\Ewav.Web\Web.csproj">
+      <Project>{2b546b07-1b3b-4a89-8622-e7fc005049a9}</Project>
+      <Name>Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

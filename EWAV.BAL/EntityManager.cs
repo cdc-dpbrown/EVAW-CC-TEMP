@@ -1,4 +1,4 @@
-﻿namespace EWAV.BAL
+﻿namespace CDC.ISB.EIDEV.BAL
 {
     using System;
     using System.Collections.Generic;
@@ -9,15 +9,13 @@
     using System.Web.Configuration;
     using System.Web.Hosting;
     using System.Xml.Linq;
-    using EWAV.DAL;
-    using EWAV.DAL.Interfaces;
-    using EWAV.DTO;
-    using EWAV.Security;
-
+    using CDC.ISB.EIDEV.DAL;
+    using CDC.ISB.EIDEV.DAL.Interfaces;
+    using CDC.ISB.EIDEV.DTO;
+    using CDC.ISB.EIDEV.Security;
     using System.Web;
-    using EWAV.Membership;
-
-
+    using CDC.ISB.EIDEV.DTO.Membership;
+    
     /// <summary>
     /// TODO: Update summary.
     /// </summary>

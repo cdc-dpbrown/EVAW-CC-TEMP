@@ -1,4 +1,4 @@
-﻿namespace EWAV.Web.Services
+﻿namespace CDC.ISB.EIDEV.Web.Services
 {
     using System;
     using System.Collections.Generic;
@@ -9,24 +9,19 @@
     using System.ServiceModel.DomainServices.Hosting;
     using System.ServiceModel.DomainServices.Server;
     using EpiDashboard;
-    using EWAV.DTO;
-    using EWAV.BAL;
-
+    using CDC.ISB.EIDEV.DTO;
+    using CDC.ISB.EIDEV.BAL;
 
     // TODO: Create methods containing your application logic.
     [EnableClientAccess()]
     public class XYChartDomainService : DomainService
     {
-
-
         [Query(IsComposable = false)]
         public EWAVRule_Base Getrule(int id)
         {
             return new EWAVRule_Base();
-
         }
-
-
+        
         DashboardHelper dh;
 
         [Invoke]

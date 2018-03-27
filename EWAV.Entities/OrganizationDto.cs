@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 
-namespace EWAV
+namespace CDC.ISB.EIDEV.DTO
 {
     //This Data transfer object carries meta information about a given organization
     public class OrganizationDto

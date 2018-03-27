@@ -1,12 +1,12 @@
-﻿namespace EWAV.Web.Services
+﻿namespace CDC.ISB.EIDEV.Web.Services
 {
     using System.Collections.Generic;
     using System.Data;
     using System.ServiceModel.DomainServices.Hosting;
     using System.ServiceModel.DomainServices.Server;
     using EpiDashboard;
-    using EWAV.BAL;
-    using EWAV.DTO;
+    using CDC.ISB.EIDEV.BAL;
+    using CDC.ISB.EIDEV.DTO;
 
 
     // TODO: Create methods containing your application logic.
@@ -36,13 +36,6 @@
         //public void PortClassToClient(EWAVColumnsMetaData wcmd) { }
 
         #endregion
-
-
-
-
-
-
-
 
 
         [Query(IsComposable = false)]

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Data;
-using EWAV.Web.EpiDashboard;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.DTO;
+using CDC.ISB.EIDEV.BAL;
 
-namespace EWAV.BAL
+namespace CDC.ISB.EIDEV.Web.Services
 {
     public class FrequencyManager
     {
@@ -69,7 +70,7 @@ namespace EWAV.BAL
 
             foreach (KeyValuePair<DataTable, List<DescriptiveStatistics>> khp in dataTableDictionary)
             {
-                DataTable dt = EWAV.Web.Utilities.Pivot(khp.Key, "Frequency", "MainVarname", "totals");
+                DataTable dt = CDC.ISB.EIDEV.Web.Utilities.Pivot(khp.Key, "Frequency", "MainVarname", "totals");
                 List<EWAVFrequencyControlDto> ewavFrequencyControlDto = Mapper.FrequencyOutputList(dt, g);
                 DtoDictionary.Add(ewavFrequencyControlDto, khp.Value);
             }

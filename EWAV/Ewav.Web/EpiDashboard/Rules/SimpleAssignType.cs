@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EWAV.Web.EpiDashboard.Rules
+namespace CDC.ISB.EIDEV.Web.EpiDashboard.Rules
 {
     public enum SimpleAssignType
     {

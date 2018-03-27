@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using Epi;
-using EWAV.Web.EpiDashboard;
-using EWAV.Web.EpiDashboard.Rules;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.EpiDashboard.Rules;
 
-namespace EWAV.Web.EpiDashboard.Rules
+namespace CDC.ISB.EIDEV.Web.EpiDashboard.Rules
 {
     public class DashboardRules : IEnumerable<IDashboardRule>
     {

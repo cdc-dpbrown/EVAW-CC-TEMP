@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel.DomainServices.Hosting;
 using System.ServiceModel.DomainServices.Server;
-using EWAV.BAL;
-using EWAV.DTO;
-using EWAV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.BAL;
+using CDC.ISB.EIDEV.DTO;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
 using System;
 using System.Reflection;
 using System.Data;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services.DatasourceDomainService
 {
     [EnableClientAccess()]
     public class DatasourceDomainService : DomainService

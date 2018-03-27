@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace EWAV
+namespace CDC.ISB.EIDEV.DTO
 {
     /// <summary>
     /// This Class will act as a communicating object between client and Server.
@@ -80,8 +80,7 @@ namespace EWAV
         /// </summary>
         /// <value>The meta datasource ID.</value>
         public int DatasourceID { get; set; }
-
-
+        
         /// <summary>
         /// Gets or sets the width.
         /// </summary>
@@ -121,11 +120,7 @@ namespace EWAV
 
         //  a jpeg as a  Base64  string
         public string CanvasSnapshotAsBase64 { get; set; }
-
-
-
-
-
+        
         /// <summary>
         /// Gets or sets XML Data
         /// </summary>

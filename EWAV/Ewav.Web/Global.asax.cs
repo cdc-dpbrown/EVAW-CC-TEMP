@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace EWAV.Web
+namespace CDC.ISB.EIDEV.Web
 {
     public class Global : System.Web.HttpApplication
     {

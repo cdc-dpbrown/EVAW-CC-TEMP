@@ -7,10 +7,12 @@ using System.Web.Http;
 using System.Net.Http.Headers;
 using System.Xml;
 using Newtonsoft.Json;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 using Newtonsoft.Json.Linq;
+using CDC.ISB.EIDEV.Web.Services.CanvasDomainService;
+using CDC.ISB.EIDEV.Web.Services;
 
-namespace EWAV.WebApi.Controllers
+namespace CDC.ISB.EIDEV.WebApi.Controllers
 {
     public class CanvasController : ApiController
     {
@@ -221,9 +223,9 @@ namespace EWAV.WebApi.Controllers
         /// <returns></returns>
         public HttpResponseMessage Post([FromBody]JObject value)
         {
-            UserDomainService UserDomainService = new EWAV.Web.Services.UserDomainService();
+            UserDomainService UserDomainService = new CDC.ISB.EIDEV.Web.Services.UserDomainService();
             AdminDatasourcesDomainService AdminDatasourcesDomainService = new AdminDatasourcesDomainService();
-            CanvasDomainService CanvasDomainService = new EWAV.Web.Services.CanvasDomainService.CanvasDomainService();
+            CanvasDomainService CanvasDomainService = new CDC.ISB.EIDEV.Web.Services.CanvasDomainService.CanvasDomainService();
             ControllerCommon Common = new Controllers.ControllerCommon();
             DatatableBag dtb = null;
             UserDTO possibleUser = new UserDTO();

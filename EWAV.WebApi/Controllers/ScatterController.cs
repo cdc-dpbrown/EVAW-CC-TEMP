@@ -4,16 +4,16 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 using System.Net.Http.Headers;
 using Google.DataTable.Net.Wrapper;
-using EWAV.Web.Services;
-using EWAV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.Services;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
 using Newtonsoft.Json.Linq;
-using EWAV.Web.Services.CombinedFrequencyDomainService;
+using CDC.ISB.EIDEV.Web.Services.CombinedFrequencyDomainService;
 using System.Globalization;
 
-namespace EWAV.WebApi.Controllers
+namespace CDC.ISB.EIDEV.WebApi.Controllers
 {
     public class ScatterController : ApiController
     {
@@ -31,9 +31,9 @@ namespace EWAV.WebApi.Controllers
 
 
         // POST api/<controller>
-        public HttpResponseMessage Post([FromBody]      JObject value)
+        public HttpResponseMessage Post([FromBody] JObject value)
         {
-            ScatterDomainService ScatterDomainService = new EWAV.Web.Services.ScatterDomainService();
+            ScatterDomainService ScatterDomainService = new CDC.ISB.EIDEV.Web.Services.ScatterDomainService();
             GadgetParameters GadgetParameters;
             ControllerCommon CommonClass = new ControllerCommon();
             List<EWAVRule_Base> Rules = new List<EWAVRule_Base>();

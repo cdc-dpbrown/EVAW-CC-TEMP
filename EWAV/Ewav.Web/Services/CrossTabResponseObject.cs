@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EWAV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     public class CrossTabResponseObjectDto
     {

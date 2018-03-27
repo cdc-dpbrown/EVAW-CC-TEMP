@@ -9,13 +9,12 @@ using System.Xml;
 using Epi;
 using Epi.Data;
 using Epi.Fields;
-using EWAV.Web.EpiDashboard.Rules;
-using EWAV.BAL;
-using EWAV.Web;
-using EWAV.Web.Services;
-using Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.EpiDashboard.Rules;
+using CDC.ISB.EIDEV.BAL;
+using CDC.ISB.EIDEV.Web.Services;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
 
-namespace EWAV.Web.EpiDashboard
+namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     /// <summary>
     /// A class used for dashboard-based data management
@@ -36,7 +35,7 @@ namespace EWAV.Web.EpiDashboard
         readonly StringLiterals stringLiterals;
         readonly List<EWAVRule_Base> _dashboardRulesTable = null;
 
-        private readonly IEnumerable<EWAV.Web.Services.EWAVDataFilterCondition> ewavDataFilters;
+        private readonly IEnumerable<CDC.ISB.EIDEV.Web.Services.EWAVDataFilterCondition> ewavDataFilters;
 
         #endregion // Private Members
 
@@ -53,7 +52,7 @@ namespace EWAV.Web.EpiDashboard
         /// 
         /// </summary>
         /// <param name="ewavDataFilters"></param>
-        public DashboardHelper(GadgetParameters gp, IEnumerable<EWAV.Web.Services.EWAVDataFilterCondition> ewavDataFilters,
+        public DashboardHelper(GadgetParameters gp, IEnumerable<CDC.ISB.EIDEV.Web.Services.EWAVDataFilterCondition> ewavDataFilters,
             List<EWAVRule_Base> rulesTable = null)
             : this()
         {
@@ -197,7 +196,7 @@ namespace EWAV.Web.EpiDashboard
             {
                 EWAVRule_GroupVariable ruleGroup = rule as EWAVRule_GroupVariable;
 
-                MyString ms = new MyString();
+                CDC.ISB.EIDEV.Web.Services.MyString ms = new CDC.ISB.EIDEV.Web.Services.MyString();
 
                 return new Rule_VariableGroup(this, ruleGroup.VaraiableName, ms.ToListOfString(ruleGroup.Items));
             }
@@ -2311,7 +2310,7 @@ namespace EWAV.Web.EpiDashboard
                         if (string.IsNullOrEmpty(this.CustomQuery))
                         {
                             //unfilteredTable = Database.GetTableData(inputs.TableName);    
-                            EWAV.BAL.EWAVDatasourceListManager edlm = new EWAV.BAL.EWAVDatasourceListManager();
+                            CDC.ISB.EIDEV.BAL.EWAVDatasourceListManager edlm = new CDC.ISB.EIDEV.BAL.EWAVDatasourceListManager();
 
                             //      DataManager dm = new DataManager(edlm.ConnectionString, edlm.MetaDataViewName,
                             //                                edlm.MetaDatabaseTypeEnum);
@@ -4755,11 +4754,6 @@ namespace EWAV.Web.EpiDashboard
 
         public void EWAVConstructTableColumnNames(GadgetParameters inputs)
         {
-            ////   EWAV.DAL.SqlServer.CommonSQLDAO ewDAL = new EWAV.DAL.SqlServer.CommonSQLDAO();
-            //EWAV.BAL.EWAVDatasourceListManager edlm = new EWAV.BAL.EWAVDatasourceListManager();
-            //DataManager dm = new DataManager(edlm.ConnectionString, edlm.MetaDataViewName,
-            //    edlm.MetaDatabaseTypeEnum);
-            //IRawDataDao ewDAL = dm.DAOFactory.RawDataDao;
             EntityManager ewDAL = new EntityManager();
 
             if (this.View != null || !string.IsNullOrEmpty(TableName))
@@ -6461,7 +6455,7 @@ namespace EWAV.Web.EpiDashboard
                 //  DataFilters df = new DataFilters(this);
                 if (ewavDataFilters != null)
                 {
-                    CreateDataFilters(this.ewavDataFilters);
+                    CreateDataFilters(ewavDataFilters);
                 }
 
                 if (DataFilters.Count > 0)
@@ -6516,7 +6510,7 @@ namespace EWAV.Web.EpiDashboard
                                                 dfc.FriendLowValue.VarName,
                                                 dfc.FriendHighValue.VarName,
                                                 dfc.FieldName.VarName,
-                                                (ConditionJoinType)EWAV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
+                                                (ConditionJoinType)CDC.ISB.EIDEV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
                 }
                 else
                 {
@@ -6526,7 +6520,7 @@ namespace EWAV.Web.EpiDashboard
                                                 "is like",
                                                 dfc.FriendlyValue.VarName + "%",
                                                 dfc.FieldName.VarName,
-                                                (ConditionJoinType)EWAV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
+                                                (ConditionJoinType)CDC.ISB.EIDEV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
                     }
                     else if (dfc.FriendlyOperand.VarName.ToUpper() == "ENDS WITH")
                     {
@@ -6534,7 +6528,7 @@ namespace EWAV.Web.EpiDashboard
                                                 "is like",
                                                  "%" + dfc.FriendlyValue.VarName,
                                                 dfc.FieldName.VarName,
-                                                (ConditionJoinType)EWAV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
+                                                (ConditionJoinType)CDC.ISB.EIDEV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
                     }
                     else if (dfc.FriendlyOperand.VarName.ToUpper() == "CONTAINS")
                     {
@@ -6542,7 +6536,7 @@ namespace EWAV.Web.EpiDashboard
                                                 "is like",
                                                  "%" + dfc.FriendlyValue.VarName + "%",
                                                 dfc.FieldName.VarName,
-                                                (ConditionJoinType)EWAV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
+                                                (ConditionJoinType)CDC.ISB.EIDEV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
                     }
                     else
                     {
@@ -6550,7 +6544,7 @@ namespace EWAV.Web.EpiDashboard
                             dfc.FriendlyOperand.VarName,
                             dfc.FriendlyValue.VarName,
                             dfc.FieldName.VarName,
-                            (ConditionJoinType)EWAV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
+                            (ConditionJoinType)CDC.ISB.EIDEV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
 
                     }
                 }
@@ -6570,7 +6564,7 @@ namespace EWAV.Web.EpiDashboard
                         dfc.FriendLowValue.VarName,
                         dfc.FriendHighValue.VarName,
                         dfc.FieldName.VarName,
-                        (ConditionJoinType)EWAV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
+                        (ConditionJoinType)CDC.ISB.EIDEV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
                 }
                 else
                 {
@@ -6586,7 +6580,7 @@ namespace EWAV.Web.EpiDashboard
                                                 "is like",
                                                 dfc.FriendlyValue.VarName + "%",
                                                 dfc.FieldName.VarName,
-                                                (ConditionJoinType)EWAV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
+                                                (ConditionJoinType)CDC.ISB.EIDEV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
                     }
                     else if (dfc.FriendlyOperand.VarName.ToUpper() == "ENDS WITH")
                     {
@@ -6594,7 +6588,7 @@ namespace EWAV.Web.EpiDashboard
                                                 "is like",
                                                  "%" + dfc.FriendlyValue.VarName,
                                                 dfc.FieldName.VarName,
-                                                (ConditionJoinType)EWAV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
+                                                (ConditionJoinType)CDC.ISB.EIDEV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
                     }
                     else if (dfc.FriendlyOperand.VarName.ToUpper() == "CONTAINS")
                     {
@@ -6602,7 +6596,7 @@ namespace EWAV.Web.EpiDashboard
                                                 "is like",
                                                  "%" + dfc.FriendlyValue.VarName + "%",
                                                 dfc.FieldName.VarName,
-                                                (ConditionJoinType)EWAV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
+                                                (ConditionJoinType)CDC.ISB.EIDEV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
                     }
                     else
                     {
@@ -6610,7 +6604,7 @@ namespace EWAV.Web.EpiDashboard
                             dfc.FriendlyOperand.VarName,
                             dfc.FriendlyValue.VarName,
                             dfc.FieldName.VarName,
-                            (ConditionJoinType)EWAV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
+                            (ConditionJoinType)CDC.ISB.EIDEV.Web.Utilities.ParseEnum<ConditionJoinType>(dfc.JoinType.VarName));
 
                     }
                 }
@@ -6860,9 +6854,9 @@ namespace EWAV.Web.EpiDashboard
             string[] yesNoValues = new string[3];
             // WPF_TO_SL  These must ultimaely be converted back to readihg the
             // Configuration object, whatever FormatException that object takes 
-            yesNoValues[0] = EWAV.Web.Config.ConfigDataSet.RepresentationOfYes.ToLower();//"yes"; //config.Settings.RepresentationOfYes;
-            yesNoValues[1] = EWAV.Web.Config.ConfigDataSet.RepresentationOfNo.ToLower();// "no"; //config.Settings.RepresentationOfNo;
-            yesNoValues[2] = EWAV.Web.Config.ConfigDataSet.RepresentationOfMissing.ToLower();// "missing";  // config.Settings.RepresentationOfMissing;
+            yesNoValues[0] = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes.ToLower();//"yes"; //config.Settings.RepresentationOfYes;
+            yesNoValues[1] = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo.ToLower();// "no"; //config.Settings.RepresentationOfNo;
+            yesNoValues[2] = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfMissing.ToLower();// "missing";  // config.Settings.RepresentationOfMissing;
             string[] values = null;
 
             DataRow[] rowArray = null;
@@ -6928,10 +6922,9 @@ namespace EWAV.Web.EpiDashboard
 
             if (values == null)
             {
-                // WPF_TO_SL  
-                if (EWAV.Web.Config.ConfigDataSet.RepresentationOfYes.Equals(compareValue) ||
-                    EWAV.Web.Config.ConfigDataSet.RepresentationOfNo.Equals(compareValue) ||
-                    EWAV.Web.Config.ConfigDataSet.RepresentationOfMissing.Equals(compareValue))
+                if (CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes.Equals(compareValue) ||
+                    CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo.Equals(compareValue) ||
+                    CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfMissing.Equals(compareValue))
                 {
                     values = yesNoValues;
                 }
@@ -8685,9 +8678,9 @@ namespace EWAV.Web.EpiDashboard
             return crosstabValues;
         }
 
-        readonly string EWAVTempRepresentationOfYes = EWAV.Web.Config.ConfigDataSet.RepresentationOfYes;//"Yes";
-        readonly string EWAVTempRepresentationOfNo = EWAV.Web.Config.ConfigDataSet.RepresentationOfNo;//"No";
-        readonly string EWAVTempRepresentationOfMissing = EWAV.Web.Config.ConfigDataSet.RepresentationOfMissing;//"Missing";
+        readonly string EWAVTempRepresentationOfYes = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes;//"Yes";
+        readonly string EWAVTempRepresentationOfNo = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo;//"No";
+        readonly string EWAVTempRepresentationOfMissing = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfMissing;//"Missing";
 
         /// <summary>
         /// Recodes a boolean "true" or "false" (or 1 and 0) into Epi Info 7 representations of yes and no

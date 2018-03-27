@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     /// <summary>
     /// Custome VariableRow class. It was struct in EpiInfo statistical repository. combines variables from LinearRegression And LogisticRegression

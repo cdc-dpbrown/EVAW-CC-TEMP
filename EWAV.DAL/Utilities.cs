@@ -1,11 +1,11 @@
-﻿namespace EWAV.DAL
+﻿namespace CDC.ISB.EIDEV.DAL
 {
     using System;
     using System.Configuration;
     using System.Data;
     using System.Linq;
-    using EWAV.DTO;
-    using EWAV.Security;
+    using CDC.ISB.EIDEV.DTO;
+    using CDC.ISB.EIDEV.Security;
 
     /// <summary>
     /// TODO: Update summary.

@@ -5,17 +5,17 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Newtonsoft.Json.Linq;
-using EWAV.Web.EpiDashboard;
-using EWAV.Web.Services.CombinedFrequencyDomainService;
-using EWAV.Web.Services;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.Services.CombinedFrequencyDomainService;
+using CDC.ISB.EIDEV.Web.Services;
 using System.Net.Http.Headers;
-using EWAV.Clients.Common.DefinedVariables;
+using CDC.ISB.EIDEV.Clients.Common.DefinedVariables;
 using Newtonsoft.Json;
 using System.Xml.Linq;
 using System.Xml;
-using EWAV.BAL;
+using CDC.ISB.EIDEV.BAL;
 
-namespace EWAV.WebApi.Controllers
+namespace CDC.ISB.EIDEV.WebApi.Controllers
 {
     public class CombinedFrequencyController : ApiController
     {
@@ -34,7 +34,6 @@ namespace EWAV.WebApi.Controllers
         // POST api/<controller>
         public HttpResponseMessage Post([FromBody]      JObject value)
         {
-
             CombinedFrequencyDomainService CFDS = new CombinedFrequencyDomainService();
             HttpResponseMessage ReturnedObj = null;
             GadgetParameters GadgetParameters = null;

@@ -7,7 +7,7 @@ using System.ServiceModel.DomainServices.Hosting;
 using System.ServiceModel.DomainServices.Server;
 using System.ServiceModel.DomainServices.Server.ApplicationServices;
 
-namespace EWAV.Web.Services.AuthenticationDomainService
+namespace CDC.ISB.EIDEV.Web.Services.AuthenticationDomainService
 {
     [EnableClientAccess]
     public class AuthenticationDomainService : AuthenticationBase<User>

@@ -1,4 +1,4 @@
-﻿namespace EWAV.BAL
+﻿namespace CDC.ISB.EIDEV.BAL
 {
     using System;
     using System.Collections.Generic;

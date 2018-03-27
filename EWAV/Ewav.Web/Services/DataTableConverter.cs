@@ -2,7 +2,7 @@
 using System.Data;
 using System.Linq;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     /// <summary>
     /// Converts a DataTable to other formats    

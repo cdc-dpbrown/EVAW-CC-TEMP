@@ -1,9 +1,9 @@
 ﻿using Epi;
 using Epi.Data;
-using EWAV.Web;
+using CDC.ISB.EIDEV.Web;
 
 
-namespace EWAV.Web.EpiDashboard
+namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     public class RelatedConnection
     {

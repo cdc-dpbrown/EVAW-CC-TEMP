@@ -1,4 +1,4 @@
-﻿namespace EWAV.Web.Services.AdminDatasourcesDomainService
+﻿namespace CDC.ISB.EIDEV.Web.Services
 {
     using System;
     using System.Collections.Generic;
@@ -7,8 +7,8 @@
     using System.Linq;
     using System.ServiceModel.DomainServices.Hosting;
     using System.ServiceModel.DomainServices.Server;
-    using EWAV.DTO;
-    using EWAV.BAL;
+    using CDC.ISB.EIDEV.DTO;
+    using CDC.ISB.EIDEV.BAL;
 
 
     // TODO: Create methods containing your application logic.

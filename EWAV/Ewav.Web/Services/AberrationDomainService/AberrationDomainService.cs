@@ -2,14 +2,13 @@
 using System.Data;
 using System.ServiceModel.DomainServices.Hosting;
 using System.ServiceModel.DomainServices.Server;
-using EWAV.Web.EpiDashboard;
-using EWAV.BAL;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.Web;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.BAL;
+using CDC.ISB.EIDEV.DTO;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
-
-
     // TODO: Create methods containing your application logic.
     [EnableClientAccess()]
     public class AberrationDomainService : DomainService

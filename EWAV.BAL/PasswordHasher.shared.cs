@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace EWAV
+namespace CDC.ISB.EIDEV
 {
     /// <summary>
     /// Class to create salted hashed values for username / passwords.  A hash alone is not enough to defeat 

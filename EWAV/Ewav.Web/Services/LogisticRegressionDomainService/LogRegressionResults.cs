@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     /// <summary>
     /// Class created to mimic LogisticRegressionResults in EpiInfo. It was a struct in EpiInfo.

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using EWAV.Web.EpiDashboard;
-using EWAV.Web.EpiDashboard.Rules;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.EpiDashboard.Rules;
 using System.Runtime.Serialization;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     [DataContract]
     public class EWAVRule_Recode : EWAVRule_Base

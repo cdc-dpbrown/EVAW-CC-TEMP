@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using EWAV.BAL;
+using CDC.ISB.EIDEV.BAL;
 using System.IO;
 
-namespace EWAV.Web
+namespace CDC.ISB.EIDEV.Web
 {
     public partial class GetSnapshot : System.Web.UI.Page
     {

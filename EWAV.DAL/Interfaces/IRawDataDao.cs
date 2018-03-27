@@ -1,6 +1,6 @@
 using System.Data;
 
-namespace EWAV.DAL.Interfaces
+namespace CDC.ISB.EIDEV.DAL.Interfaces
 {
     public interface IRawDataDao
     {

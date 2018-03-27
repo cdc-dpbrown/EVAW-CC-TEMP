@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
-using EWAV.DAL.Interfaces;
-using EWAV.Security;
+using CDC.ISB.EIDEV.DAL.Interfaces;
+using CDC.ISB.EIDEV.Security;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
+using CDC.ISB.EIDEV.DTO;
 
-namespace EWAV.DAL.MySqlLayer
+namespace CDC.ISB.EIDEV.DAL.MySqlLayer
 {
     public class MySqlDatasourceDao : IAdminDatasourceDao
     {
@@ -92,7 +93,7 @@ namespace EWAV.DAL.MySqlLayer
                 string assUsers = "";
                 string datasourceID = "";
 
-                foreach (EWAV.DTO.UserDTO item in dsDto.AssociatedUsers)
+                foreach (CDC.ISB.EIDEV.DTO.UserDTO item in dsDto.AssociatedUsers)
                 {
                     assUsers += string.Format("{0},", item.UserID.ToString());
                     datasourceID += string.Format("{0},", dsDto.DatasourceId.ToString());
@@ -295,7 +296,7 @@ namespace EWAV.DAL.MySqlLayer
                 string assUsers = "";
                 string datasourceID = "";
 
-                foreach (EWAV.DTO.UserDTO item in dsDto.AssociatedUsers)
+                foreach (CDC.ISB.EIDEV.DTO.UserDTO item in dsDto.AssociatedUsers)
                 {
                     assUsers += string.Format("{0},", item.UserID.ToString());
                     datasourceID += string.Format("{0},", dsDto.DatasourceId.ToString());

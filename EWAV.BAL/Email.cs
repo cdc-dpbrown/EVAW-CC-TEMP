@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Configuration;
 
-namespace EWAV.BAL
+namespace CDC.ISB.EIDEV.BAL
 {
     public static class Email
     {

@@ -6,7 +6,7 @@ using System.Xml;
 using Epi;
 using Epi.Core;
 
-namespace EWAV.Web.EpiDashboard
+namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     /// <summary>
     /// A class for representing a single data filter condition

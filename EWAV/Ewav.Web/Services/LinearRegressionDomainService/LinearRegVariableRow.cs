@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     /// <summary>
     /// Linear Regression variable Row. It was struct in EpiInfo
@@ -45,7 +45,5 @@ namespace EWAV.Web.Services
             get { return variableName; }
             set { variableName = value; }
         }
-
-
     }
 }

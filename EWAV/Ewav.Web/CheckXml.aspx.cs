@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using EWAV;
-using EWAV.BAL;
+using CDC.ISB.EIDEV;
+using CDC.ISB.EIDEV.BAL;
+using CDC.ISB.EIDEV.DTO;
 
-namespace EWAV.Web
+namespace CDC.ISB.EIDEV.Web
 {
     public partial class CheckXml : System.Web.UI.Page
     {

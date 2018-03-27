@@ -8,8 +8,8 @@
     <ProjectGuid>{59C155F3-7DFD-4FC5-A0C1-D6F875EFA411}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BAL</RootNamespace>
-    <AssemblyName>BAL</AssemblyName>
+    <RootNamespace>CDC.ISB.EIDEV.BAL</RootNamespace>
+    <AssemblyName>CDC.ISB.EIDEV.BAL</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

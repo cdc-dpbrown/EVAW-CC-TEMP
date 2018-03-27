@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
-using EWAV.Web.EpiDashboard.Rules;
+using CDC.ISB.EIDEV.Web.EpiDashboard.Rules;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     [DataContract]
     public class EWAVRule_SimpleAssignment : EWAVRule_Base

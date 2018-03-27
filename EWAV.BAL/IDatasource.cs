@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace EWAV.BAL
+namespace CDC.ISB.EIDEV.BAL
 {
     interface IDatasource
     {

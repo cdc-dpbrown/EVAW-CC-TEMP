@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EWAV.Web.EpiDashboard.NutStat
+namespace CDC.ISB.EIDEV.Web.EpiDashboard.NutStat
 {
     public static class PercentileArrays
     {

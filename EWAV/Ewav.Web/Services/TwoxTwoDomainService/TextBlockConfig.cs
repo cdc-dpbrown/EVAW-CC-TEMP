@@ -1,8 +1,7 @@
 using System.ServiceModel.DomainServices.Server;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
-  
     public partial class TwoByTwoDomainService : DomainService
     {
         public class TextBlockConfig

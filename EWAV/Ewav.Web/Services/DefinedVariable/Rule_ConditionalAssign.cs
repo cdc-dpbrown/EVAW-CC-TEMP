@@ -5,7 +5,7 @@ using System.Web;
 using System.Runtime.Serialization;
 using System.Data.Objects.DataClasses;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     [DataContract]
     public class EWAVRule_ConditionalAssign : EWAVRule_Base

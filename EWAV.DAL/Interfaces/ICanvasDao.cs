@@ -3,27 +3,20 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-// using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using Microsoft.Practices.EnterpriseLibrary.Data;
+using CDC.ISB.EIDEV.DTO;
 
-// -----------------------------------------------------------------------
-// <copyright file="$safeitemrootname$.cs" company="$registeredorganization$">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-namespace EWAV.DAL
+namespace CDC.ISB.EIDEV.DAL
 {
     public interface ICanvasDao
     {
         DataSet ShareCanvas(int CanvasId, int orgId, List<int> SharedUserIdList);
-          
-
+        
         DataTable GetCanvasShareStatus(int canvasID, int organizationID);
 
         DataTable GetCanvasShareStatusGuid(string canvasGuid);    
-
-
+        
         /// <summary>
         /// Gets the snapshot.
         /// </summary>

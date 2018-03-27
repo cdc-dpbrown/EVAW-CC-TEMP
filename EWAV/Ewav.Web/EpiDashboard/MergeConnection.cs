@@ -6,7 +6,7 @@ using Epi;
 using Epi.Core;
 using Epi.Data;
 
-namespace EWAV.Web.EpiDashboard
+namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     public class MergeConnection
     {

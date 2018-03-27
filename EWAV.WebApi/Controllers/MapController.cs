@@ -4,14 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using EWAV.Web.Services.MapCluster;
-using EWAV.Web.EpiDashboard;
-using EWAV.Web.Services;
+using CDC.ISB.EIDEV.Web.Services.MapCluster;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.Services;
 using Newtonsoft.Json.Linq;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 using System.Net.Http.Headers;
 
-namespace EWAV.WebApi.Controllers
+namespace CDC.ISB.EIDEV.WebApi.Controllers
 {
     public class MapController : ApiController
     {

@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using EWAV.BAL;
-using EWAV.Web.EpiDashboard;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.BAL;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.DTO;
 using System.Data;
 
-
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     /// <summary>
     ///   LineListManager     

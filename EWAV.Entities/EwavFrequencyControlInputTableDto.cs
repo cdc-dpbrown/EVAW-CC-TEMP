@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace EWAV.DTO
+namespace CDC.ISB.EIDEV.DTO
 {
     public class EWAVFrequencyControlInputTableDto
     {

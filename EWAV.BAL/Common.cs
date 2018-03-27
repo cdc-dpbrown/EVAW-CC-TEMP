@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using EWAV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
 
-namespace EWAV.BAL
+namespace CDC.ISB.EIDEV.BAL
 {
     public static class Common
     {

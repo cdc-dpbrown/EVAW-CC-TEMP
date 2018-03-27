@@ -1,4 +1,4 @@
-﻿namespace EWAV.Web.EpiDashboard
+﻿namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     partial class ChartLabelDialog
     {

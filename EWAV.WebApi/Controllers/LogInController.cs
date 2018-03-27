@@ -4,18 +4,16 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using EWAV.DTO;
-using EWAV.Security;
-using EWAV.Web.Services;
+using CDC.ISB.EIDEV.DTO;
+using CDC.ISB.EIDEV.Security;
+using CDC.ISB.EIDEV.Web.Services;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
-using EWAV;
-using EWAV.Web.Services;
-using EWAV.Web.Services.CanvasDomainService;
-using EWAV.Web.Services.AdminDatasourcesDomainService;
-//  using System.Web.Http.Cors;
+using CDC.ISB.EIDEV;
+using CDC.ISB.EIDEV.Web.Services.CanvasDomainService;
+using CDC.ISB.EIDEV.Web.Services;
 
-namespace EWAV.WebApi.Controllers
+namespace CDC.ISB.EIDEV.WebApi.Controllers
 {
     public class LogInController : ApiController
     {
@@ -33,9 +31,9 @@ namespace EWAV.WebApi.Controllers
         /// <returns></returns>
         public bool Get(JObject bigObject)
         {
-            UserDomainService UserDomainService = new EWAV.Web.Services.UserDomainService();
+            UserDomainService UserDomainService = new UserDomainService();
             AdminDatasourcesDomainService AdminDatasourcesDomainService = new AdminDatasourcesDomainService();
-            CanvasDomainService CanvasDomainService = new EWAV.Web.Services.CanvasDomainService.CanvasDomainService();
+            CanvasDomainService CanvasDomainService = new CanvasDomainService();
             ControllerCommon Common = new Controllers.ControllerCommon();
             DatatableBag dtb = null;
             UserDTO possibleUser = new UserDTO();
@@ -134,7 +132,7 @@ namespace EWAV.WebApi.Controllers
 
 
             string KeyForUserPasswordSalt = System.Configuration.ConfigurationManager.AppSettings["KeyForUserPasswordSalt"];
-            EWAV.PasswordHasher ph = new EWAV.PasswordHasher(KeyForUserPasswordSalt);
+            CDC.ISB.EIDEV.PasswordHasher ph = new CDC.ISB.EIDEV.PasswordHasher(KeyForUserPasswordSalt);
             string salt = ph.CreateSalt(possibleUser.UserName);
             possibleUser.PasswordHash = ph.HashPassword(salt, pwd);
 

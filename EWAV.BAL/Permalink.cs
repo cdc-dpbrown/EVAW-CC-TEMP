@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EWAV.BAL
+namespace CDC.ISB.EIDEV.BAL
 {
       public  class Permalink
     {
+        public string EWAVPermalink { get; set; }
 
-
-          public string EWAVPermalink { get; set; }
-
-          public string EWAVLITEPermalink { get; set; }    
-
-
-
+        public string EWAVLITEPermalink { get; set; }    
     }
 }

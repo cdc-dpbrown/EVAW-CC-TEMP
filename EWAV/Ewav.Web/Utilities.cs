@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 
-namespace EWAV.Web
+namespace CDC.ISB.EIDEV.Web
 {
     public class Utilities
     {

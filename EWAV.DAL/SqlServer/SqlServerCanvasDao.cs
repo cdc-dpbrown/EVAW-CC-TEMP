@@ -1,10 +1,11 @@
-﻿namespace EWAV.DAL.SqlServer
+﻿namespace CDC.ISB.EIDEV.DAL.SqlServer
 {
     using System;
     using System.Collections.Generic;
     using System.Data;
     using System.Data.SqlClient;
     using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
+    using CDC.ISB.EIDEV.DTO;
 
     /// <summary>
     /// TODO: Update summary.

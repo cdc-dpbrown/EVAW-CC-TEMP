@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using EWAV.Web.Services;
+using CDC.ISB.EIDEV.Web.Services;
 
-namespace EWAV.Web          
+namespace CDC.ISB.EIDEV.Web          
 {
     public class Class1
     {

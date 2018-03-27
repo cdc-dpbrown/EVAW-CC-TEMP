@@ -7,7 +7,7 @@ using System.Web.SessionState;
 using System.Web.Http;
 using System.Web.Http.Routing;
 
-namespace EWAV.WebApi
+namespace CDC.ISB.EIDEV.WebApi
 {
     public class Global : System.Web.HttpApplication
     {

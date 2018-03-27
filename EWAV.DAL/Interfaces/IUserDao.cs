@@ -1,7 +1,7 @@
-namespace EWAV.DAL.Interfaces
+namespace CDC.ISB.EIDEV.DAL.Interfaces
 {
     using System.Data;
-    using EWAV.DTO;
+    using CDC.ISB.EIDEV.DTO;
 
     public interface IUserDao
     {

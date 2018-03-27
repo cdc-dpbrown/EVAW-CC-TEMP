@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 using System.Data;
 // using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 
-namespace EWAV.DAL.Interfaces
+namespace CDC.ISB.EIDEV.DAL.Interfaces
 {
     public interface IAdminDatasourceDao
     {

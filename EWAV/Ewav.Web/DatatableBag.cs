@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System;
 using System.Runtime.CompilerServices;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     public class DatatableBag : INotifyPropertyChanged
     {    

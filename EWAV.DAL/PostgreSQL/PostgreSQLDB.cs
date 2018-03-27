@@ -5,7 +5,7 @@ using System.Text;
 using Npgsql;
 using System.Data;
 
-namespace EWAV.DAL.PostgreSQL
+namespace CDC.ISB.EIDEV.DAL.PostgreSQL
 {
     public class PostgreSQLDB
     {

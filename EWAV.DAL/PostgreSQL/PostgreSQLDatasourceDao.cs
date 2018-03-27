@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EWAV.DAL.Interfaces;
+using CDC.ISB.EIDEV.DAL.Interfaces;
 using Npgsql;
 using System.Data;
-using EWAV.Security;
+using CDC.ISB.EIDEV.Security;
 
-namespace EWAV.DAL.PostgreSQL
+namespace CDC.ISB.EIDEV.DAL.PostgreSQL
 {
     public class PostgreSQLDatasourceDao : IAdminDatasourceDao
     {
@@ -232,7 +232,7 @@ namespace EWAV.DAL.PostgreSQL
             try
             {
 
-                foreach (EWAV.DTO.UserDTO item in dsDto.AssociatedUsers)
+                foreach (CDC.ISB.EIDEV.DTO.UserDTO item in dsDto.AssociatedUsers)
                 {
                     sb.Append(item.UserID);
                     sb.Append(",");
@@ -351,7 +351,7 @@ namespace EWAV.DAL.PostgreSQL
             try
             {
 
-                foreach (EWAV.DTO.UserDTO item in dsDto.AssociatedUsers)
+                foreach (CDC.ISB.EIDEV.DTO.UserDTO item in dsDto.AssociatedUsers)
                 {
                     sb.Append(item.UserID);
                     sb.Append(",");

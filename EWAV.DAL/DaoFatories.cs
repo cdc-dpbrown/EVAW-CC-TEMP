@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Linq;
-using EWAV.DAL.Interfaces;
-using EWAV.DAL.MySqlLayer;
-using EWAV.DAL.SqlServer;
-using EWAV.DTO;
-using EWAV.DAL.PostgreSQL;
+using CDC.ISB.EIDEV.DAL.Interfaces;
+using CDC.ISB.EIDEV.DAL.MySqlLayer;
+using CDC.ISB.EIDEV.DAL.SqlServer;
+using CDC.ISB.EIDEV.DTO;
+using CDC.ISB.EIDEV.DAL.PostgreSQL;
 
-// -----------------------------------------------------------------------
-// <copyright file="$safeitemrootname$.cs" company="$registeredorganization$">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-namespace EWAV.DAL
+namespace CDC.ISB.EIDEV.DAL
 {
     public static class DaoFatories
     {
@@ -22,22 +17,19 @@ namespace EWAV.DAL
         /// <param name="MetaDataConnectionString">The meta data connection string.</param>
         /// <param name="MetaDataViewName">Name of the meta data view.</param>
         /// <returns></returns>
-        public static IDaoFactory GetFactory(DataBaseTypeEnum dataBaseTypeEnum, 
-                    string MetaDataConnectionString, string MetaDataViewName)
+        public static IDaoFactory GetFactory(DataBaseTypeEnum dataBaseTypeEnum, string MetaDataConnectionString, string MetaDataViewName)
         {
             switch (dataBaseTypeEnum)
             {
                 case DataBaseTypeEnum.MySQL:
                     return new MySqlDaoFactory(MetaDataConnectionString, MetaDataViewName);
-
-
+                    
                 case DataBaseTypeEnum.SQLServer:
                     return new SqlServerDaoFactory(MetaDataConnectionString, MetaDataViewName);
 
                 case DataBaseTypeEnum.PostgreSQL:
                     return new PostgreSQLDaoFactory(MetaDataConnectionString, MetaDataViewName);
                     
-                    // default:
                 default:
                     throw new ApplicationException(string.Format("Database type {0} is not supported ", dataBaseTypeEnum.ToString()));
             }
@@ -54,12 +46,10 @@ namespace EWAV.DAL
             {
                 case DataBaseTypeEnum.MySQL:
                     return new MySqlDaoFactory();
-                  
                 case DataBaseTypeEnum.SQLServer:
                     return new SqlServerDaoFactory();
                 case DataBaseTypeEnum.PostgreSQL:
                     return new PostgreSQLDaoFactory();
-                    // default:
                 default:
                     throw new ApplicationException(string.Format("Database type {0} is not supported ", dataBaseTypeEnum.ToString()));
             }

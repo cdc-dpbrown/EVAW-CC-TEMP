@@ -1,4 +1,4 @@
-﻿namespace EWAV.DTO
+﻿namespace CDC.ISB.EIDEV.DTO
 {
     using System;
     using System.Collections.Generic;

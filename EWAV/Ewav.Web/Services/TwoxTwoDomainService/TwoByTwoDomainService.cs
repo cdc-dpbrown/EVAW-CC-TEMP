@@ -1,11 +1,11 @@
-﻿namespace EWAV.Web.Services
+﻿namespace CDC.ISB.EIDEV.Web.Services
 {
     using System;
     using System.Collections.Generic;
     using System.ServiceModel.DomainServices.Hosting;
     using System.ServiceModel.DomainServices.Server;
     using EpiDashboard;
-    using EWAV.BAL;
+    using CDC.ISB.EIDEV.BAL;
 
     // TODO: Create methods containing your application logic.
     [EnableClientAccess()]

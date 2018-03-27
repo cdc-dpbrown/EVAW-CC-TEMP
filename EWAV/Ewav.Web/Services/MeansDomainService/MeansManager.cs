@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Data;
-using EWAV.Web.EpiDashboard;
-using EWAV.DTO;
-using EWAV.Web.Services;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.DTO;
+using CDC.ISB.EIDEV.Web.Services;
 
-namespace EWAV.BAL
+namespace CDC.ISB.EIDEV.Web
 {
     public class MeansManager
     {

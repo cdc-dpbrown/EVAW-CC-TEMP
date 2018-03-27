@@ -24,7 +24,7 @@ servicesModule.factory('chartService', function ($http) {
 //servicesModule.factory('chartService', function ($http) {
 //    return {
 //        postChartData: function (chart) {
-//            var url = 'http://localhost/EWAV.WebApi/api/chart';
+//            var url = 'http://localhost/CDC.ISB.EIDEV.WebApi/api/chart';
 
 //            return $http.post(url, chart);
 //        }

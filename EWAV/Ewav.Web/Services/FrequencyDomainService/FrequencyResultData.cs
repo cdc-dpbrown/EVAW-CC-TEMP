@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     public class FrequencyResultData
     {
-        private List<EWAV.DTO.EWAVFrequencyControlDto> frequencyControlDtoList;
+        private List<CDC.ISB.EIDEV.DTO.EWAVFrequencyControlDto> frequencyControlDtoList;
         private List<EpiDashboard.DescriptiveStatistics> descriptiveStatisticsList;
 
         public FrequencyResultData()
         {
         }
 
-        public List<EWAV.DTO.EWAVFrequencyControlDto> FrequencyControlDtoList
+        public List<CDC.ISB.EIDEV.DTO.EWAVFrequencyControlDto> FrequencyControlDtoList
         {
             get { return frequencyControlDtoList; }
             set { frequencyControlDtoList = value; }

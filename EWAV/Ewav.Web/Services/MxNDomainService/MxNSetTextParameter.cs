@@ -1,4 +1,4 @@
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     public class MxNSetTextParameter
     {
@@ -27,7 +27,7 @@ namespace EWAV.Web.Services
                 this.strataValue1 = value;
             }
         }
-        public EWAV.Web.Services.TwoByTwoDomainService.TextBlockConfig textBlockConfig
+        public CDC.ISB.EIDEV.Web.Services.TwoByTwoDomainService.TextBlockConfig textBlockConfig
         {
             get
             {

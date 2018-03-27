@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using EWAV.BAL;
+using CDC.ISB.EIDEV.BAL;
 using System.Data;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 
-namespace EWAV.Web.Services.CanvasDomainService
+namespace CDC.ISB.EIDEV.Web.Services.CanvasDomainService
 {
     public class CanvasManager
     {

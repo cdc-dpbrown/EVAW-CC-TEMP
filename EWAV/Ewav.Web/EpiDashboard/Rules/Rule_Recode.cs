@@ -8,7 +8,7 @@ using System.Xml;
 using Epi;
 using Epi.Core;
 
-namespace EWAV.Web.EpiDashboard.Rules
+namespace CDC.ISB.EIDEV.Web.EpiDashboard.Rules
 {
     /// <summary>
     /// Represents the allowable types of variables that may store recoded data through the dashboard
@@ -35,9 +35,9 @@ namespace EWAV.Web.EpiDashboard.Rules
         private DataTable recodeTable;
         private bool shouldMaintainSortOrder;
         private bool shouldUseWildcards;
-        private string configYesValue = EWAV.Web.Config.ConfigDataSet.RepresentationOfYes;//"Yes";
-        private string configNoValue = EWAV.Web.Config.ConfigDataSet.RepresentationOfNo;//"No";
-        private string configMissingValue = EWAV.Web.Config.ConfigDataSet.RepresentationOfMissing;//"Missing";
+        private string configYesValue = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes;//"Yes";
+        private string configNoValue = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo;//"No";
+        private string configMissingValue = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfMissing;//"Missing";
         private string elseValue;
         #endregion // Private Members
 
@@ -78,11 +78,11 @@ namespace EWAV.Web.EpiDashboard.Rules
             {
                 string val = elseValue.ToLower();
 
-                if (val == "true" || val == "(+)" || val == EWAV.Web.Config.ConfigDataSet.RepresentationOfYes.ToLower())
+                if (val == "true" || val == "(+)" || val == CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes.ToLower())
                 {
                     this.elseValue = "true";
                 }
-                else if (val == "false" || val == "(-)" || val == EWAV.Web.Config.ConfigDataSet.RepresentationOfNo.ToLower())
+                else if (val == "false" || val == "(-)" || val == CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo.ToLower())
                 {
                     this.elseValue = "false";
                 }
@@ -351,9 +351,9 @@ namespace EWAV.Web.EpiDashboard.Rules
             }
 
             //Configuration config = dashboardHelper.Config;
-            configYesValue = EWAV.Web.Config.ConfigDataSet.RepresentationOfYes.ToUpper();// "YES";//config.Settings.RepresentationOfYes;
-            configNoValue = EWAV.Web.Config.ConfigDataSet.RepresentationOfNo.ToUpper();// "NO";// config.Settings.RepresentationOfNo;
-            configMissingValue = EWAV.Web.Config.ConfigDataSet.RepresentationOfMissing;// "Missing";// config.Settings.RepresentationOfMissing;
+            configYesValue = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes.ToUpper();// "YES";//config.Settings.RepresentationOfYes;
+            configNoValue = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo.ToUpper();// "NO";// config.Settings.RepresentationOfNo;
+            configMissingValue = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfMissing;// "Missing";// config.Settings.RepresentationOfMissing;
         }
 
         /// <summary>

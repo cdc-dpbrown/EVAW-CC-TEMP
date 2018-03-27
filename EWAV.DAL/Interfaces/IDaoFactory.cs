@@ -1,6 +1,6 @@
 using System;
 
-namespace EWAV.DAL.Interfaces
+namespace CDC.ISB.EIDEV.DAL.Interfaces
 {
     public interface IDaoFactory
     {
@@ -8,10 +8,6 @@ namespace EWAV.DAL.Interfaces
         IMetaDataDao MetaDataDao { get; }
         IMetaDataDao MetaDataDaoEmpty { get; }
         IRawDataDao RawDataDao { get; }
-        /// <summary>
-        /// Gets or sets the user DAO.
-        /// </summary>
-        /// <value>The user DAO.</value>
         IUserDao UserDao { get; }
         IOrganizationDao OrganizationDao { get; }
         IAdminDatasourceDao AdminDSDao { get; }

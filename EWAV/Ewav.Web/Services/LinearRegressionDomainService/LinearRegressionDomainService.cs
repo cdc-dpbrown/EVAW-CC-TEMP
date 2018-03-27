@@ -1,4 +1,4 @@
-﻿namespace EWAV.Web.Services
+﻿namespace CDC.ISB.EIDEV.Web.Services
 {
     using System;
     using System.Collections.Generic;
@@ -8,8 +8,8 @@
     using System.ServiceModel.DomainServices.Hosting;
     using System.ServiceModel.DomainServices.Server;
     using EpiDashboard;
-    using EWAV.BAL;
-    using EWAV.DTO;
+    using CDC.ISB.EIDEV.BAL;
+    using CDC.ISB.EIDEV.DTO;
     using System.Data;
 
 

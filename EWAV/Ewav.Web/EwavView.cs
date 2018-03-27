@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace EWAV.Web
+namespace CDC.ISB.EIDEV.Web
 {
     public class EWAVView : Epi.IView
     {

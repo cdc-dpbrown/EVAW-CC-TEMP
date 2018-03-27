@@ -17,7 +17,7 @@ using System.Data;
 using Epi;
 using Epi.Data;
 
-namespace EWAV.Web.EpiDashboard
+namespace CDC.ISB.EIDEV.Web.EpiDashboard
 {
     /// <summary>
     /// Interaction logic for SimpleDataGrid.xaml

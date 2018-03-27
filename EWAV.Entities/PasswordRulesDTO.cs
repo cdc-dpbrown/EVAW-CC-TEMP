@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Configuration;
 
-namespace EWAV.DTO
+namespace CDC.ISB.EIDEV.DTO
 {
     public class PasswordRulesDTO
     {

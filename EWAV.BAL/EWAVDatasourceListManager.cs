@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
-using EWAV.DAL;
-using EWAV.DTO;
-using EWAV.Security;
+using CDC.ISB.EIDEV.DAL;
+using CDC.ISB.EIDEV.DTO;
+using CDC.ISB.EIDEV.Security;
 
-namespace EWAV.BAL
+namespace CDC.ISB.EIDEV.BAL
 {
     /// <summary>
     /// Manager for the list of data sources avail to the application   
@@ -255,7 +255,7 @@ namespace EWAV.BAL
             DataBaseTypeEnum externalDataBaseType =
                 (DataBaseTypeEnum)Enum.Parse(typeof(DataBaseTypeEnum), dr[0]["DataBaseType"].ToString());
 
-            string externalDataConnectionString = EWAV.DAL.Utilities.CreateConnectionString(externalDataBaseType, dr);
+            string externalDataConnectionString = CDC.ISB.EIDEV.DAL.Utilities.CreateConnectionString(externalDataBaseType, dr);
 
             // Get the right factory    
             string externalDataViewName = dr[0]["DatabaseObject"].ToString();
@@ -276,7 +276,7 @@ namespace EWAV.BAL
                     {
                         Index = ewavColumns.Count,
                         Name = col.ColumnName,
-                        SqlDataTypeAsString = EWAV.BAL.Common.GetDBType(col.DataType)
+                        SqlDataTypeAsString = CDC.ISB.EIDEV.BAL.Common.GetDBType(col.DataType)
                     };
 
                     ewavColumns.Add(ec);

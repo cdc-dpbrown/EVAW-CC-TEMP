@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace EWAV.DTO
+namespace CDC.ISB.EIDEV.DTO
 {
     /// <summary>
     /// This Class is used as a DTO for Statcalc2x2.

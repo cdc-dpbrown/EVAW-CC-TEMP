@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using Npgsql;
 using System.Data;
+using CDC.ISB.EIDEV.DTO;
 
-namespace EWAV.DAL.PostgreSQL
+namespace CDC.ISB.EIDEV.DAL.PostgreSQL
 {
     class PostgreSQLCanvasDao : ICanvasDao
     {
@@ -128,8 +129,7 @@ namespace EWAV.DAL.PostgreSQL
             parameter.Value = canvasId;
             parameter.Direction = ParameterDirection.Input;
             Command.Parameters.Add(parameter);
-
-
+            
             try
             {
                 db.ExecuteNonQuery(Command);
@@ -140,8 +140,7 @@ namespace EWAV.DAL.PostgreSQL
                 throw new Exception("Error deleting the canvas. " + ex.Message);
             }
         }
-
-
+        
         /// <summary>
         /// Loads the canvas.
         /// </summary>

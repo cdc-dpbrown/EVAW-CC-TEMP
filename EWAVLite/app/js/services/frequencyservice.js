@@ -4,7 +4,7 @@ servicesModule.factory('frequencyService', function ($http) {
         return {
             postGadgetData: function (gadget, Rules, dataFilters) {
                 var currentUrl = globalURL;
-                //var url = 'http://localhost/EWAV.WebApi/api/frequency';
+                //var url = 'http://localhost/CDC.ISB.EIDEV.WebApi/api/frequency';
                 var url = currentUrl + 'api/frequency';
 
                 var bigObject = {

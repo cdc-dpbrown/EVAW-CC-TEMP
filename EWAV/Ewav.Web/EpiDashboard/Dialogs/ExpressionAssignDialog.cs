@@ -2,9 +2,9 @@
 using System.Windows.Forms;
 using Epi.Windows;
 using Epi.Windows.Dialogs;
-using EWAV.Web.EpiDashboard.Rules;
+using CDC.ISB.EIDEV.Web.EpiDashboard.Rules;
 
-namespace EWAV.Web.EpiDashboard.Dialogs
+namespace CDC.ISB.EIDEV.Web.EpiDashboard.Dialogs
 {
     //public partial class ExpressionAssignDialog : DialogBase
     //{

@@ -2,12 +2,12 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using EWAV.DAL.Interfaces;
+using CDC.ISB.EIDEV.DAL.Interfaces;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
-using EWAV.DTO;
-using EWAV.Security;
+using CDC.ISB.EIDEV.DTO;
+using CDC.ISB.EIDEV.Security;
 
-namespace EWAV.DAL.SqlServer
+namespace CDC.ISB.EIDEV.DAL.SqlServer
 {
     public class SqlServerOrganizationDao : IOrganizationDao
     {

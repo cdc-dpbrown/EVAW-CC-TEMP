@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
-namespace EWAV.DTO
+namespace CDC.ISB.EIDEV.DTO
 {
     public class DatasourceDto
     {

@@ -1,4 +1,4 @@
-﻿namespace EWAV.Web.EpiDashboard.Dialogs
+﻿namespace CDC.ISB.EIDEV.Web.EpiDashboard.Dialogs
 {
     partial class FillRangesDialog
     {

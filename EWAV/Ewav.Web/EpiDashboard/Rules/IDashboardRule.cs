@@ -4,7 +4,7 @@ using System.Data;
 using System.Text;
 using System.Xml;
 
-namespace EWAV.Web.EpiDashboard.Rules
+namespace CDC.ISB.EIDEV.Web.EpiDashboard.Rules
 {
     /// <summary>
     /// An interface used for implementing dashboard rules

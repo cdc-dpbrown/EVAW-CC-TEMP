@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace EWAV.DTO
+namespace CDC.ISB.EIDEV.DTO
 {
     public class Connection
     {

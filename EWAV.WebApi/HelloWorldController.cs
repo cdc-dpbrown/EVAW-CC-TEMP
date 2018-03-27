@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace EWAV.WebApi
+namespace CDC.ISB.EIDEV.WebApi
 {
     public class HelloWorldController : ApiController
     {

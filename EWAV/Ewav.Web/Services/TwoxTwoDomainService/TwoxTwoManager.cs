@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Epi.Fields;
-using EWAV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     /// <summary>
     /// TwoxTwoManager  
@@ -181,9 +182,9 @@ namespace EWAV.Web.Services
                 booleanValues.Add("f", "t");
                 booleanValues.Add("n", "y");
 
-                if (!booleanValues.ContainsKey(EWAV.Web.Config.ConfigDataSet.RepresentationOfNo.ToLower()))
+                if (!booleanValues.ContainsKey(CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo.ToLower()))
                 {
-                    booleanValues.Add(EWAV.Web.Config.ConfigDataSet.RepresentationOfNo.ToLower(), EWAV.Web.Config.ConfigDataSet.RepresentationOfYes.ToLower());
+                    booleanValues.Add(CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo.ToLower(), CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes.ToLower());
                 }
 
                 string firstColumnName = table.Columns[1].ColumnName.ToLower();
@@ -469,11 +470,11 @@ namespace EWAV.Web.Services
                         {
                             if (row[freqVar].ToString().Equals("1"))
                             {
-                                displayValue = EWAV.Web.Config.ConfigDataSet.RepresentationOfYes;//"Yes";
+                                displayValue = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes;//"Yes";
                             }
                             else if (row[freqVar].ToString().Equals("0"))
                             {
-                                displayValue = EWAV.Web.Config.ConfigDataSet.RepresentationOfNo;// "No";
+                                displayValue = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo;// "No";
                             }
                         }
                         else if (field != null && field is DateField)
@@ -497,7 +498,7 @@ namespace EWAV.Web.Services
                     }
 
                     //  this.Dispatcher.BeginInvoke(setText, strataValue/new TextBlockConfig(thisStringLiterals.SPACE + displayValue + thisStringLiterals.SPACE, new Thickness(2, 0, 2, 0), VerticalAlignment.Center, HorizontalAlignment.Left, rowCount, 0), FontWeights.Normal);
-                    this.setText(strataValue, new EWAV.Web.Services.TwoByTwoDomainService.TextBlockConfig(string.Format("{0}{1}{2}", thisStringLiterals.SPACE, displayValue, thisStringLiterals.SPACE),
+                    this.setText(strataValue, new CDC.ISB.EIDEV.Web.Services.TwoByTwoDomainService.TextBlockConfig(string.Format("{0}{1}{2}", thisStringLiterals.SPACE, displayValue, thisStringLiterals.SPACE),
                         rowCount, 0), "Normal");
 
                     int rowTotal = 0;
@@ -518,7 +519,7 @@ namespace EWAV.Web.Services
                         }
 
                         //  this.Dispatcher.BeginInvoke(setText, strataValue, new TextBlockConfig(thisStringLiterals.SPACE + row[column.ColumnName].ToString() + thisStringLiterals.SPACE, new Thickness(2, 0, 2, 0), VerticalAlignment.Center, HorizontalAlignment.Right, rowCount, columnCount), FontWeights.Normal);
-                        this.setText(strataValue, new EWAV.Web.Services.TwoByTwoDomainService.TextBlockConfig(string.Format("{0}{1}{2}", thisStringLiterals.SPACE, row[column.ColumnName].ToString(), thisStringLiterals.SPACE), rowCount, columnCount), "normal");
+                        this.setText(strataValue, new CDC.ISB.EIDEV.Web.Services.TwoByTwoDomainService.TextBlockConfig(string.Format("{0}{1}{2}", thisStringLiterals.SPACE, row[column.ColumnName].ToString(), thisStringLiterals.SPACE), rowCount, columnCount), "normal");
 
                         columnCount++;
 
@@ -532,7 +533,7 @@ namespace EWAV.Web.Services
                     }
 
                     //  this.Dispatcher.BeginInvoke(setText, strataValue, new TextBlockConfig(thisStringLiterals.SPACE + rowTotal.ToString() + thisStringLiterals.SPACE, new Thickness(2, 0, 2, 0), VerticalAlignment.Center, HorizontalAlignment.Right, rowCount, columnCount), FontWeights.Bold);
-                    this.setText(strataValue, new EWAV.Web.Services.TwoByTwoDomainService.TextBlockConfig(string.Format("{0}{1}{2}", thisStringLiterals.SPACE, rowTotal.ToString(), thisStringLiterals.SPACE),
+                    this.setText(strataValue, new CDC.ISB.EIDEV.Web.Services.TwoByTwoDomainService.TextBlockConfig(string.Format("{0}{1}{2}", thisStringLiterals.SPACE, rowTotal.ToString(), thisStringLiterals.SPACE),
                         rowCount, columnCount), "bo");
 
                     rowCount++;
@@ -554,13 +555,13 @@ namespace EWAV.Web.Services
                         }
 
                         //  this.Dispatcher.BeginInvoke(setText, strataValue, new TextBlockConfig(thisStringLiterals.SPACE + thisStringLiterals.ELLIPSIS + thisStringLiterals.SPACE, new Thickness(2, 0, 2, 0), VerticalAlignment.Center, HorizontalAlignment.Right, rowCount, columnCount), FontWeights.Normal);
-                        this.setText(strataValue, new EWAV.Web.Services.TwoByTwoDomainService.TextBlockConfig(string.Format("{0}{1}{2}", thisStringLiterals.SPACE, thisStringLiterals.ELLIPSIS, thisStringLiterals.SPACE),
+                        this.setText(strataValue, new CDC.ISB.EIDEV.Web.Services.TwoByTwoDomainService.TextBlockConfig(string.Format("{0}{1}{2}", thisStringLiterals.SPACE, thisStringLiterals.ELLIPSIS, thisStringLiterals.SPACE),
                             rowCount, columnCount), "normal");
                         columnCount++;
                     }
 
                     //  this.Dispatcher.BeginInvoke(setText, strataValue, new TextBlockConfig(thisStringLiterals.SPACE + thisStringLiterals.ELLIPSIS + thisStringLiterals.SPACE, new Thickness(2, 0, 2, 0), VerticalAlignment.Center, HorizontalAlignment.Right, rowCount, columnCount), FontWeights.Bold);
-                    this.setText(strataValue, new EWAV.Web.Services.TwoByTwoDomainService.TextBlockConfig(string.Format("{0}{1}{2}", thisStringLiterals.SPACE, thisStringLiterals.ELLIPSIS, thisStringLiterals.SPACE),
+                    this.setText(strataValue, new CDC.ISB.EIDEV.Web.Services.TwoByTwoDomainService.TextBlockConfig(string.Format("{0}{1}{2}", thisStringLiterals.SPACE, thisStringLiterals.ELLIPSIS, thisStringLiterals.SPACE),
                         rowCount, columnCount), "bo");
 
                     rowCount++;
@@ -872,7 +873,7 @@ namespace EWAV.Web.Services
             return mystResults;
         }
 
-        private void setText(string strataValue, EWAV.Web.Services.TwoByTwoDomainService.TextBlockConfig textBlockConfig, string weight)
+        private void setText(string strataValue, CDC.ISB.EIDEV.Web.Services.TwoByTwoDomainService.TextBlockConfig textBlockConfig, string weight)
         {
             this.mxNSetTextParameters.Add(new MxNSetTextParameter
             {

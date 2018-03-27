@@ -1,13 +1,13 @@
-﻿namespace EWAV.Web.Services
+﻿namespace CDC.ISB.EIDEV.Web.Services
 {
     using System.ServiceModel.DomainServices.Hosting;
     using System.ServiceModel.DomainServices.Server;
-    using EWAV.BAL;
+    using CDC.ISB.EIDEV.BAL;
     using System.Collections.Generic;
     using System.Xml;
     using System.Configuration;
-    using EWAV.DTO;
-    using EWAV.Security;
+    using CDC.ISB.EIDEV.DTO;
+    using CDC.ISB.EIDEV.Security;
 
     // TODO: Create methods containing your application logic.
     [EnableClientAccess()]

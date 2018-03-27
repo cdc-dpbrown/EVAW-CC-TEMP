@@ -1,4 +1,4 @@
-﻿namespace EWAV.Web.Services.CombinedFrequencyDomainService
+﻿namespace CDC.ISB.EIDEV.Web.Services.CombinedFrequencyDomainService
 {
     using System;
     using System.Collections.Generic;

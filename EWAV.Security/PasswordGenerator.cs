@@ -1,10 +1,10 @@
-namespace EWAV.Security
+namespace CDC.ISB.EIDEV.Security
 {
     using System;
     using System.Security.Cryptography;
     using System.Text;
     using System.Configuration;
-    using EWAV.DTO;
+    using CDC.ISB.EIDEV.DTO;
 
     public class PasswordGenerator
     {

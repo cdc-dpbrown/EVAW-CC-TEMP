@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using EWAV.Web.Services;
+using CDC.ISB.EIDEV.Web.Services;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
 using Newtonsoft.Json.Linq;
-using EWAV.Clients.Common.DefinedVariables;
+using CDC.ISB.EIDEV.Clients.Common.DefinedVariables;
 using System.Xml;
 using System.Xml.Linq;
 using Newtonsoft.Json;
-using EWAV.BAL;
+using CDC.ISB.EIDEV.BAL;
 
-namespace EWAV.WebApi.Controllers
+namespace CDC.ISB.EIDEV.WebApi.Controllers
 {
     public class ControllerCommon
     {
@@ -35,7 +36,7 @@ namespace EWAV.WebApi.Controllers
                 return null;
             }
 
-            RulesConverter RulesConverter = new EWAV.Clients.Common.DefinedVariables.RulesConverter();
+            RulesConverter RulesConverter = new CDC.ISB.EIDEV.Clients.Common.DefinedVariables.RulesConverter();
 
             var jsonString = value.ToString(Newtonsoft.Json.Formatting.None);
 

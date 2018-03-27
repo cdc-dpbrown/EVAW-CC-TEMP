@@ -1,4 +1,4 @@
-﻿namespace EWAV.Web.Services
+﻿namespace CDC.ISB.EIDEV.Web.Services.BinomialDomainService
 {
     using System;
     using System.Collections.Generic;

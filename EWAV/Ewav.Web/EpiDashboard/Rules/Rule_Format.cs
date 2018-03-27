@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Text;
 using System.Xml;
 
-namespace EWAV.Web.EpiDashboard.Rules
+namespace CDC.ISB.EIDEV.Web.EpiDashboard.Rules
 {
     public enum FormatTypes
     {

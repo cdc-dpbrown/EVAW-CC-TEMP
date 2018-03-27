@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EWAV.BAL 
+namespace CDC.ISB.EIDEV.BAL 
 {
     public class EWAVGadgetParameters
     {

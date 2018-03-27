@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     /// <summary>
     /// Linear Regression results class. Local representation of what is presented in Statistics Repository.
@@ -95,14 +95,5 @@ namespace EWAV.Web.Services
                 get { return variables; }
                 set { variables = value; }
             }
-        //Redundant unnecessary attribute. 
-            //private LinRegressionResults regressionResults;
-
-            //public LinRegressionResults RegressionResults
-            //{
-            //    get { return regressionResults; }
-            //    set { regressionResults = value; }
-            //}   
-
     }
 }

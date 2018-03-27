@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using EWAV.Web.Services;
-using EWAV.BAL;
-using EWAV.Web.EpiDashboard.Rules;
+using CDC.ISB.EIDEV.Web.Services;
+using CDC.ISB.EIDEV.BAL;
+using CDC.ISB.EIDEV.Web.EpiDashboard.Rules;
 
-namespace EWAV.Clients.Common.DefinedVariables
+namespace CDC.ISB.EIDEV.Clients.Common.DefinedVariables
 {
     public class RulesConverter
     {
@@ -35,7 +35,7 @@ namespace EWAV.Clients.Common.DefinedVariables
                                 rule.CbxFieldName = item.Element("sourceColumnName").Value.ToString();
                                 rule.TxtDestinationField = item.Element("destinationColumnName").Value.ToString();
                                 rule.CbxFormatOptions = item.Element("formatString").Value.ToString();
-                                rule.FormatTypes = (EWAV.Web.EpiDashboard.Rules.FormatTypes)Enum.Parse(typeof(EWAV.Web.EpiDashboard.Rules.FormatTypes),
+                                rule.FormatTypes = (CDC.ISB.EIDEV.Web.EpiDashboard.Rules.FormatTypes)Enum.Parse(typeof(CDC.ISB.EIDEV.Web.EpiDashboard.Rules.FormatTypes),
                                     item.Element("formatType").Value.ToString(), true);
                                 rule.VaraiableDataType = item.Element("variableDataType").Value.ToString();
 
@@ -137,7 +137,7 @@ namespace EWAV.Clients.Common.DefinedVariables
                             case "rule_simpleassign":
                                 EWAVRule_SimpleAssignment ruleSimple = new EWAVRule_SimpleAssignment();
                                 ruleSimple.FriendlyLabel = item.Element("friendlyRule").Value.ToString();
-                                ruleSimple.AssignmentType = (EWAV.Web.EpiDashboard.Rules.SimpleAssignType)Enum.Parse(typeof(EWAV.Web.EpiDashboard.Rules.SimpleAssignType),
+                                ruleSimple.AssignmentType = (CDC.ISB.EIDEV.Web.EpiDashboard.Rules.SimpleAssignType)Enum.Parse(typeof(CDC.ISB.EIDEV.Web.EpiDashboard.Rules.SimpleAssignType),
                                     item.Element("assignmentType").Value.ToString(),
                                     true);
                                 ruleSimple.TxtDestinationField = item.Element("destinationColumnName").Value.ToString();

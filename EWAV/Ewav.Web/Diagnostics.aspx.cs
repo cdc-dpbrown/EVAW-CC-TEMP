@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using EWAV.BAL;
-using EWAV.DTO;
-using EWAV.DAL.SqlServer;
+using CDC.ISB.EIDEV.BAL;
+using CDC.ISB.EIDEV.DTO;
+using CDC.ISB.EIDEV.DAL.SqlServer;
 using System.Data.SqlClient;
 using System.Configuration;
 
 
-namespace EWAV.Web
+namespace CDC.ISB.EIDEV.Web
 {
     public partial class Diagnostics : System.Web.UI.Page
     {

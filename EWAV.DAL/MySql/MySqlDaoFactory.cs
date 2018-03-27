@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using EWAV.DAL.Interfaces;
+using CDC.ISB.EIDEV.DAL.Interfaces;
 
-namespace EWAV.DAL.MySqlLayer
+namespace CDC.ISB.EIDEV.DAL.MySqlLayer
 {
     public class MySqlDaoFactory : IDaoFactory    
     {

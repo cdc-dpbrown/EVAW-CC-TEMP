@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EWAV.Membership
+namespace CDC.ISB.EIDEV.DTO.Membership
 {
     /// <summary>
     /// These flags control the security level of a User    

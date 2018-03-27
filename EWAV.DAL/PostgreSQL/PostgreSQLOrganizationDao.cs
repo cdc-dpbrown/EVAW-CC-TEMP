@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EWAV.DAL.Interfaces;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DAL.Interfaces;
+using CDC.ISB.EIDEV.DTO;
 using Npgsql;
 using System.Data;
 
-namespace EWAV.DAL.PostgreSQL
+namespace CDC.ISB.EIDEV.DAL.PostgreSQL
 {
     public class PostgreSQLOrganizationDao : IOrganizationDao
     {

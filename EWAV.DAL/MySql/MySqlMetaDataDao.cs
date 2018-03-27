@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
-using EWAV.DAL.Interfaces;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DAL.Interfaces;
+using CDC.ISB.EIDEV.DTO;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using MySql.Data.MySqlClient;
 
-namespace EWAV.DAL.MySqlLayer
+namespace CDC.ISB.EIDEV.DAL.MySqlLayer
 {
     public class MySqlMetaDataDao : IMetaDataDao
     {

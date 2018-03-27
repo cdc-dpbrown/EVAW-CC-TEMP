@@ -41,24 +41,24 @@ controllerModule.controller('GadgetCtrl', function ($scope, $location, $rootScop
 
 
         var postParameterCallBackHandler = function (result) {
-            if ($scope.gadget.type == "EWAV.LinearRegression") {
+            if ($scope.gadget.type == "CDC.ISB.EIDEV.LinearRegression") {
                 $scope.gadget.linregdirective = result;
                 $scope.ShowGadget = "linregdirective";
             }
-            else if ($scope.gadget.type == "EWAV.LogisticRegression") {
+            else if ($scope.gadget.type == "CDC.ISB.EIDEV.LogisticRegression") {
                 $scope.gadget.logregdirective = result;
                 $scope.ShowGadget = "logregdirective";
             }
-            else if ($scope.gadget.type == "EWAV.CombinedFrequency") {
+            else if ($scope.gadget.type == "CDC.ISB.EIDEV.CombinedFrequency") {
                 $scope.gadget.combinedfrequencydirective = result;
                 $scope.gadget.showdenominator = gadget.showdenominator;
                 $scope.ShowGadget = "combinedfrequencydirective";
             }
-            else if ($scope.gadget.type == "EWAV.MeansControl") {
+            else if ($scope.gadget.type == "CDC.ISB.EIDEV.MeansControl") {
                 $scope.gadget.meansdirective = result;
                 $scope.ShowGadget = "meansdirective";
             }
-            else if ($scope.gadget.type == "EWAV.MapControl") {
+            else if ($scope.gadget.type == "CDC.ISB.EIDEV.MapControl") {
                 $scope.ClusterSize = gadget.ClusterSize;
                 $scope.Radius = gadget.Radius;
                 $scope.gadget.mapdirective = result;
@@ -72,7 +72,7 @@ controllerModule.controller('GadgetCtrl', function ($scope, $location, $rootScop
 
 
             }
-            else if ($scope.gadget.type == "EWAV.FrequencyControl") {
+            else if ($scope.gadget.type == "CDC.ISB.EIDEV.FrequencyControl") {
                 $scope.gadget.frequencydirective = result;
                 $scope.ShowGadget = "frequencydirective";
             }
@@ -88,33 +88,33 @@ controllerModule.controller('GadgetCtrl', function ($scope, $location, $rootScop
 
         var gadgetType = $scope.gadget.type;
         $scope.ShowGadget = 0;
-        if (gadgetType == "EWAV.FrequencyControl") {
+        if (gadgetType == "CDC.ISB.EIDEV.FrequencyControl") {
             frequencyService.postGadgetData(gadget, Rules, dataFilters).success(postParameterCallBackHandler).error(function (data, status) {
                 alert(status);
             });
         }
-        else if (gadgetType == "EWAV.CombinedFrequency") {
+        else if (gadgetType == "CDC.ISB.EIDEV.CombinedFrequency") {
             combinedFrequencyService.postGadgetData(gadget, Rules, dataFilters).success(postParameterCallBackHandler).error(function (data, status) {
                 alert(status);
             });
         }
-        else if (gadgetType == "EWAV.LinearRegression") {
+        else if (gadgetType == "CDC.ISB.EIDEV.LinearRegression") {
             linearRegressionService.postGadgetData(gadget, Rules, dataFilters).success(postParameterCallBackHandler).error(function (data, status) {
                 alert(status);
             });
         }
 
-        else if (gadgetType == "EWAV.LogisticRegression") {
+        else if (gadgetType == "CDC.ISB.EIDEV.LogisticRegression") {
             logisticRegressionService.postGadgetData(gadget, Rules, dataFilters).success(postParameterCallBackHandler).error(function (data, status) {
                 alert(status);
             });
         }
-        else if (gadgetType == "EWAV.MapControl") {
+        else if (gadgetType == "CDC.ISB.EIDEV.MapControl") {
             mapService.postGadgetData(gadget, Rules, dataFilters).success(postParameterCallBackHandler).error(function (data, status) {
                 alert(status);
             });
         }
-        else if (gadgetType == "EWAV.MeansControl") {
+        else if (gadgetType == "CDC.ISB.EIDEV.MeansControl") {
             meansService.postGadgetData(gadget, Rules, dataFilters).success(postParameterCallBackHandler).error(function (data, status) {
                 alert(status);
             });

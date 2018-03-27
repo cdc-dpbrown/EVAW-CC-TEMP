@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EWAV.DTO;
-using EWAV.Web.EpiDashboard;
-using EWAV.Web.Services;
+using CDC.ISB.EIDEV.DTO;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.Services;
 using System.Data;
 
-namespace EWAV.BAL
+namespace CDC.ISB.EIDEV.Web
 {
     public class MapManager
     {

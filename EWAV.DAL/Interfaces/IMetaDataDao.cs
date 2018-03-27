@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 
-// -----------------------------------------------------------------------
-// <copyright file="$safeitemrootname$.cs" company="$registeredorganization$">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-namespace EWAV.DAL.Interfaces
+namespace CDC.ISB.EIDEV.DAL.Interfaces
 {
     public interface IMetaDataDao
     {

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EWAV.DAL.Interfaces;
+using CDC.ISB.EIDEV.DAL.Interfaces;
 using System.Data;
 using Npgsql;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 
-namespace EWAV.DAL.PostgreSQL
+namespace CDC.ISB.EIDEV.DAL.PostgreSQL
 {
     public class PostgreSQLMetaDataDao : IMetaDataDao
     {
@@ -199,7 +199,7 @@ namespace EWAV.DAL.PostgreSQL
             extConnectionString = Utilities.CreateConnectionString(DataBaseTypeEnum.PostgreSQL,
                 new DataRow[] { dtGet.Rows[0] });
 
-            EWAV.Security.Cryptography cy = new Security.Cryptography();
+            CDC.ISB.EIDEV.Security.Cryptography cy = new Security.Cryptography();
             tableName = cy.Decrypt(dtGet.Rows[0]["DatabaseObject"].ToString());
 
 

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
- using System.Data.Objects.DataClasses;
+using System.Data.Objects.DataClasses;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     [DataContract]
     [KnownType(typeof(EWAVRule_Recode)), 
@@ -48,11 +48,9 @@ namespace EWAV.Web.Services
         [DataMember]
         public string VaraiableDataType
         { get; set; }
-
-        
+               
     }
-
-
+    
     public enum EWAVRuleType
     {
         Recode = 0,

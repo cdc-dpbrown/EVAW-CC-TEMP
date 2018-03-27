@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     public class TwoxTwoTableDTO
     {
-        private string columnName1 = EWAV.Web.Config.ConfigDataSet.RepresentationOfYes;//"Yes";
-        private string columnName2 = EWAV.Web.Config.ConfigDataSet.RepresentationOfNo;//"No";
+        private string columnName1 = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfYes;//"Yes";
+        private string columnName2 = CDC.ISB.EIDEV.Web.Config.ConfigDataSet.RepresentationOfNo;//"No";
 
         private string tableName;  
 

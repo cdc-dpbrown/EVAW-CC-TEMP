@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EWAV;
+using CDC.ISB.EIDEV.DTO;
 using System.Data;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 
-namespace EWAV.DAL.Interfaces
+namespace CDC.ISB.EIDEV.DAL.Interfaces
 {
     public interface IOrganizationDao
     {

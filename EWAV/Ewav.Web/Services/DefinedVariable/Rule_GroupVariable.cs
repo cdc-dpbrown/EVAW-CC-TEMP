@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
+using CDC.ISB.EIDEV.Web;
+using CDC.ISB.EIDEV.Web.Services;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
     [DataContract]
     public class EWAVRule_GroupVariable : EWAVRule_Base

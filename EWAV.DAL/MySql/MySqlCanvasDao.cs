@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
+using CDC.ISB.EIDEV.DTO;
 
 /// <summary>
 /// TODO: Update summary.
 /// </summary>
-namespace EWAV.DAL.MySqlLayer
+namespace CDC.ISB.EIDEV.DAL.MySqlLayer
 {
     public class MySqlCanvasDao : ICanvasDao
     {
@@ -17,9 +18,7 @@ namespace EWAV.DAL.MySqlLayer
         public string ConnectionString { get; set; }
 
         public string TableName { get; set; }
-
-   
-
+        
         /// <summary>
         /// Shares the canvas.
         /// </summary>

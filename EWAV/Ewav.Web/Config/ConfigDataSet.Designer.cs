@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EWAV.Web.Config {
+namespace CDC.ISB.EIDEV.Web.Config {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace EWAV.Web.Config {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EWAV.Web.Config.ConfigDataSet", typeof(ConfigDataSet).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CDC.ISB.EIDEV.Web.Config.ConfigDataSet", typeof(ConfigDataSet).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

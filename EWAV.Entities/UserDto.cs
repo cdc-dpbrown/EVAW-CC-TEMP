@@ -1,10 +1,10 @@
-﻿namespace EWAV.DTO
+﻿namespace CDC.ISB.EIDEV.DTO
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using EWAV.Membership;
+    using CDC.ISB.EIDEV.DTO.Membership;
 
     /// <summary>
     /// 
@@ -141,7 +141,7 @@
         /// <value>
         /// The type of the user edit.
         /// </value>
-        public EWAV.DTO.UserEditType UserEditType { get;set; }
+        public CDC.ISB.EIDEV.DTO.UserEditType UserEditType { get;set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is existing user.

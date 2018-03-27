@@ -2,7 +2,7 @@
 
 using System.Linq;
 
-namespace EWAV.DTO
+namespace CDC.ISB.EIDEV.DTO
 {
     public class EWAVFrequencyControlDto
     {

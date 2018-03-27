@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using EWAV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
 
-namespace EWAV.Web.Services
+namespace CDC.ISB.EIDEV.Web.Services
 {
-  
     public class TwoxTwoAndMxNResultsSet
     {
         private List<string> allColumns;

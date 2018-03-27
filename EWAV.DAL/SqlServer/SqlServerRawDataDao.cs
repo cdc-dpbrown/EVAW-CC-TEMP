@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
-using EWAV.DAL.Interfaces;
+using CDC.ISB.EIDEV.DAL.Interfaces;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
-using EWAV.DTO;
+using CDC.ISB.EIDEV.DTO;
 
 // -----------------------------------------------------------------------
 // <copyright file="$safeitemrootname$.cs" company="$registeredorganization$">
 // TODO: Update copyright text.
 // </copyright>
 // -----------------------------------------------------------------------
-namespace EWAV.DAL.SqlServer
+namespace CDC.ISB.EIDEV.DAL.SqlServer
 {
     public class SqlServerRawDataDao : IRawDataDao
     {

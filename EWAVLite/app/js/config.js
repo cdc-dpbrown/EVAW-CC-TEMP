@@ -6,14 +6,14 @@ var EWAVConfiguration =
 {
     servername: 'servername',
     supportedGadgets: [
-        'EWAV.FrequencyControl',
-        'EWAV.MeansControl',
-        'EWAV.CombinedFrequency',
-        'EWAV.XYChartcontrol',
-        'EWAV.EpiCurve',
-        'EWAV.LinearRegression',
-        'EWAV.LogisticRegression',
-        'EWAV.MapControl'
+        'CDC.ISB.EIDEV.FrequencyControl',
+        'CDC.ISB.EIDEV.MeansControl',
+        'CDC.ISB.EIDEV.CombinedFrequency',
+        'CDC.ISB.EIDEV.XYChartcontrol',
+        'CDC.ISB.EIDEV.EpiCurve',
+        'CDC.ISB.EIDEV.LinearRegression',
+        'CDC.ISB.EIDEV.LogisticRegression',
+        'CDC.ISB.EIDEV.MapControl'
     ],
     supportedChartTypes: [
         'Bar',

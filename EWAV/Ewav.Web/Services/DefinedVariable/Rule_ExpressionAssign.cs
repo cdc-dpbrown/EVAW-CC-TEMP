@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Runtime.Serialization;
 
-namespace EWAV.Web.Services           
+namespace CDC.ISB.EIDEV.Web.Services           
 {
     [DataContract]
     public class EWAVRule_ExpressionAssign : EWAVRule_Base

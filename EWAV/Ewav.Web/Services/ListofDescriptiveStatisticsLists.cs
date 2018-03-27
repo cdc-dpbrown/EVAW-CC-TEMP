@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using EWAV.Web.EpiDashboard;
+using CDC.ISB.EIDEV.Web.EpiDashboard;
 
-namespace EWAV.Web.Services  
+namespace CDC.ISB.EIDEV.Web.Services  
 {
-
     public class ListofDescriptiveStatistics
     {
         private List<DescriptiveStatistics> descriptiveStatisticsList;

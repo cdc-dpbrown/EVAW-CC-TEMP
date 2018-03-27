@@ -5,17 +5,17 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-using EWAV.DTO;
-using EWAV.Security;
-using EWAV.Web.Services;
+using CDC.ISB.EIDEV.DTO;
+using CDC.ISB.EIDEV.Security;
+using CDC.ISB.EIDEV.Web.Services;
 using Newtonsoft.Json.Linq;
-using EWAV.Web.Services.CanvasDomainService;
+using CDC.ISB.EIDEV.Web.Services.CanvasDomainService;
 using System.Net.Http.Headers;
 using EWAV;
 
 
 
-namespace EWAV.WebApi.Controllers
+namespace CDC.ISB.EIDEV.WebApi.Controllers
 {
     public class PublishController : ApiController
     {
@@ -37,8 +37,8 @@ namespace EWAV.WebApi.Controllers
         // POST api/<controller>
         public HttpResponseMessage Post([FromBody] JObject value)
         {
-            UserDomainService UserDomainService = new EWAV.Web.Services.UserDomainService();
-            CanvasDomainService CanvasDomainService = new EWAV.Web.Services.CanvasDomainService.CanvasDomainService();
+            UserDomainService UserDomainService = new CDC.ISB.EIDEV.Web.Services.UserDomainService();
+            CanvasDomainService CanvasDomainService = new CDC.ISB.EIDEV.Web.Services.CanvasDomainService.CanvasDomainService();
             ControllerCommon Common = new Controllers.ControllerCommon();
             DatatableBag dtb = null;
             UserDTO possibleUser = new UserDTO();
@@ -46,7 +46,7 @@ namespace EWAV.WebApi.Controllers
 
             var pwd = value["password"].ToString();
             string KeyForUserPasswordSalt = System.Configuration.ConfigurationManager.AppSettings["KeyForUserPasswordSalt"];
-            EWAV.PasswordHasher ph = new EWAV.PasswordHasher(KeyForUserPasswordSalt);
+            CDC.ISB.EIDEV.PasswordHasher ph = new CDC.ISB.EIDEV.PasswordHasher(KeyForUserPasswordSalt);
             string salt = ph.CreateSalt(possibleUser.UserName);
             possibleUser.PasswordHash = ph.HashPassword(salt, pwd);
 
