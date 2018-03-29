@@ -11,7 +11,6 @@ using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 using CDC.ISB.EIDEV;
 using CDC.ISB.EIDEV.Web.Services.CanvasDomainService;
-using CDC.ISB.EIDEV.Web.Services;
 
 namespace CDC.ISB.EIDEV.WebApi.Controllers
 {
