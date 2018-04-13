@@ -12,4 +12,10 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CDC.ISB.EIDEV.WebApi">
+      <HintPath>..\WebApi\bin\CDC.ISB.EIDEV.WebApi.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
