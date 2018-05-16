@@ -1,0 +1,292 @@
+﻿{
+  "DashboardCanvas": {
+    "dashboardHelper": {
+      "projectPath": "C:\\Epi Info 7\\Projects\\EColi\\EColi.prj",
+      "viewName": "FoodHistory",
+      "advancedDataFilterCondition": "",
+      "useAdvancedDataFilterCondition": "False",
+      "relatedDataConnections": "",
+      "dataFilters": {
+        "_recordProcessScope": "undeleted"
+      },
+      "dashboardRules": {
+        "rule": {
+          "friendlyRule": "Recode the values in Age to AgeGroup",
+          "sourceColumnName": "Age",
+          "sourceColumnType": "System.Single",
+          "destinationColumnName": "AgeGroup",
+          "destinationColumnType": "System.String",
+          "tableColumns": "3",
+          "elseValue": "",
+          "shouldUseWildcards": "False",
+          "shouldMaintainSortOrder": "True",
+          "recodeTable": {
+            "recodeTableRow": [
+              {
+                "recodeTableData": [
+                  "LOVALUE",
+                  "0",
+                  "LOVALUE - &lt;0"
+                ]
+              },
+              {
+                "recodeTableData": [
+                  "0",
+                  "10",
+                  "0 to &lt;10"
+                ]
+              },
+              {
+                "recodeTableData": [
+                  "10",
+                  "20",
+                  "10 to &lt;20"
+                ]
+              },
+              {
+                "recodeTableData": [
+                  "20",
+                  "30",
+                  "20 to &lt;30"
+                ]
+              },
+              {
+                "recodeTableData": [
+                  "30",
+                  "40",
+                  "30 to &lt;40"
+                ]
+              },
+              {
+                "recodeTableData": [
+                  "40",
+                  "50",
+                  "40 to &lt;50"
+                ]
+              },
+              {
+                "recodeTableData": [
+                  "50",
+                  "60",
+                  "50 to &lt;60"
+                ]
+              },
+              {
+                "recodeTableData": [
+                  "60",
+                  "65",
+                  "60 to &lt;65"
+                ]
+              },
+              {
+                "recodeTableData": [
+                  "65",
+                  "HIVALUE",
+                  "65+"
+                ]
+              }
+            ]
+          },
+          "_ruleType": "EpiDashboard.Rules.Rule_Recode"
+        }
+      }
+    },
+    "Gadgets": {
+      "standardTextReportGadget": {
+        "text": "Outbreak Investigation:  Food History Leading to Outbreak of E. coli",
+        "fontWeight": "regular",
+        "fontSize": "14",
+        "fontStretch": "Normal",
+        "fontStyle": "Normal",
+        "fontFamily": "Global User Interface",
+        "textDecorations": "",
+        "foregroundColor": {
+          "red": "0",
+          "green": "0",
+          "blue": "0"
+        },
+        "_top": "22",
+        "_left": "379",
+        "_width": "451",
+        "_height": "43",
+        "_collapsed": "false",
+        "_gadgetType": "EpiDashboard.Gadgets.Reporting.StandardTextControl"
+      },
+      "pieChartGadget": {
+        "mainVariable": "AgeGroup",
+        "weightVariable": "",
+        "crosstabVariable": "",
+        "height": "333",
+        "width": "533",
+        "sort": "",
+        "allValues": "False",
+        "showListLabels": "False",
+        "includeMissing": "False",
+        "customHeading": "Pie Chart",
+        "customDescription": "Ages grouped into ten year intervals.",
+        "customCaption": "",
+        "showAnnotations": "True",
+        "showAnnotationLabel": "True",
+        "showAnnotationValue": "True",
+        "showAnnotationPercent": "True",
+        "annotationPercent": "20",
+        "chartKind": "0",
+        "palette": "12",
+        "chartTitle": "Age Groups",
+        "chartSubTitle": "",
+        "showLegend": "True",
+        "showLegendBorder": "False",
+        "showLegendVarNames": "True",
+        "legendFontSize": "12",
+        "_top": "101",
+        "_left": "76",
+        "_collapsed": "false",
+        "_gadgetType": "EpiDashboard.Gadgets.Charting.PieChartGadget",
+        "_id": "7957a7e2-bc31-4579-8164-69168bdfdd21"
+      },
+      "frequencyGadget": [
+        {
+          "mainVariable": "ILL",
+          "strataVariable": "Sex",
+          "weightVariable": "",
+          "sort": "",
+          "allValues": "False",
+          "precision": "2",
+          "showListLabels": "False",
+          "useFieldPrompts": "True",
+          "columnsToShow": "1,2,3,4,5,6",
+          "includeMissing": "False",
+          "customHeading": "Frequency",
+          "customDescription": "Frequency of illness (Yes or No) stratified by sex (F-Female or M-Male).",
+          "customCaption": "",
+          "anchorLeft": "7957a7e2-bc31-4579-8164-69168bdfdd21",
+          "dataFilters": {
+            "_recordProcessScope": "undeleted"
+          },
+          "_top": "101",
+          "_left": "634",
+          "_collapsed": "False",
+          "_gadgetType": "EpiDashboard.FrequencyControl",
+          "_id": "3974a998-9686-4554-830d-370f581cc95d"
+        },
+        {
+          "mainVariable": "FoodsEaten",
+          "crosstabVariable": "ILL",
+          "weightVariable": "",
+          "maxColumnNameLength": "24",
+          "allValues": "False",
+          "showListLabels": "False",
+          "showConfLimits": "True",
+          "showCumulativePercent": "True",
+          "includeMissing": "False",
+          "showStrataSummaryOnly": "False",
+          "treatOutcomeAsContinuous": "False",
+          "customHeading": "Crosstabulation (MxN, 2x2)",
+          "customDescription": "",
+          "customCaption": "",
+          "layoutMode": "vertical",
+          "rowColPercents": "True",
+          "showHeatMap": "False",
+          "breakType": "0",
+          "break1": "0",
+          "break2": "20",
+          "break3": "40",
+          "break4": "60",
+          "break5": "80",
+          "startColor": {
+            "red": "255",
+            "green": "255",
+            "blue": "255"
+          },
+          "endColor": {
+            "red": "252",
+            "green": "90",
+            "blue": "84"
+          },
+          "anchorTop": "b0b7f373-549a-431f-9c91-a0a73437c636",
+          "dataFilters": {
+            "_recordProcessScope": "undeleted"
+          },
+          "_top": "2028",
+          "_left": "76",
+          "_collapsed": "False",
+          "_gadgetType": "EpiDashboard.CrosstabControl",
+          "_id": "948bb4b1-74ff-4182-aade-7d379365670e"
+        }
+      ],
+      "histogramChartGadget": {
+        "mainVariable": "OnsetDate",
+        "strataVariable": "Sex",
+        "weightVariable": "",
+        "crosstabVariable": "",
+        "height": "500",
+        "width": "800",
+        "sort": "",
+        "allValues": "False",
+        "includeMissing": "False",
+        "customHeading": "Epi Curve Chart",
+        "customDescription": "Epi Curve chart showing the count of cases by onset date.",
+        "customCaption": "",
+        "useRefValues": "True",
+        "showAnnotations": "False",
+        "step": "1",
+        "barSpace": "1",
+        "palette": "12",
+        "barType": "0",
+        "yAxisLabel": "Case Count",
+        "xAxisLabelType": "3",
+        "xAxisLabel": "Day",
+        "xAxisAngle": "-45",
+        "chartTitle": "E. Coli Outbreak",
+        "chartSubTitle": "",
+        "showLegend": "False",
+        "showLegendBorder": "False",
+        "showLegendVarNames": "True",
+        "legendFontSize": "12",
+        "anchorTop": "7957a7e2-bc31-4579-8164-69168bdfdd21",
+        "_top": "542",
+        "_left": "76",
+        "_collapsed": "false",
+        "_gadgetType": "EpiDashboard.Gadgets.Charting.HistogramChartGadget",
+        "_id": "a11711b2-155b-4d44-a423-e504c7d762c8"
+      },
+      "meansGadget": {
+        "mainVariable": "FeverTemp",
+        "weightVariable": "",
+        "crosstabVariable": "Sex",
+        "columnsToShow": "1,2,3,4,5,6,7,8,9,10,11",
+        "precision": "4",
+        "showANOVA": "True",
+        "customHeading": "Means",
+        "customDescription": "Means of fever temperature cross-tabulated by sex.",
+        "customCaption": "",
+        "anchorTop": "a11711b2-155b-4d44-a423-e504c7d762c8",
+        "dataFilters": {
+          "_recordProcessScope": "undeleted"
+        },
+        "_top": "1150",
+        "_left": "76",
+        "_collapsed": "False",
+        "_gadgetType": "EpiDashboard.MeansControl",
+        "_id": "b0b7f373-549a-431f-9c91-a0a73437c636"
+      }
+    },
+    "OutputSettings": {
+      "showCanvasSummaryInfo": "True",
+      "showGadgetHeadings": "True",
+      "showGadgetSettings": "True",
+      "useAlternatingColors": "False",
+      "tableFontSize": "13",
+      "customHeading": "",
+      "customSummary": "",
+      "customConclusion": "",
+      "customTableFontFamily": "",
+      "canvasHeight": "8000",
+      "sortGadgets": "True"
+    },
+    "CanvasSettings": {
+      "editMode": "True",
+      "layoutMode": "free"
+    }
+  }
+}

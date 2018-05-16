@@ -1,0 +1,28 @@
+﻿{
+  "canvas": {
+    "id": "58f89690-950d-4d63-a9e3-ee09976841f2",
+    "inEdit": "false",
+    "charts": [
+      {
+        "type": "rate",
+        "id": "d8e43cd1-e7a6-4103-8452-585b06e4ee9a",
+        "inEdit": "false"
+      },
+      {
+        "type": "rate",
+        "id": "pac83cf6-5aca-45bb-a76f-df86f562e081",
+        "inEdit": "true"
+      },
+      {
+        "type": "freq",
+        "id": "bd0e0b6d-3c96-4f99-8771-5e4826e94928",
+        "inEdit": "false;"
+      },
+      {
+        "type": "nxm",
+        "id": "7db66664-67fd-433e-affb-fd3b50c56810",
+        "inEdit": "false"
+      }
+    ]
+  }
+}

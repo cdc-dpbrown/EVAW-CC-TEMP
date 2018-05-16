@@ -33,39 +33,28 @@ namespace CDC.ISB.EIDEV.WebApi.Controllers
             UserDomainService UserDomainService = new UserDomainService();
             AdminDatasourcesDomainService AdminDatasourcesDomainService = new AdminDatasourcesDomainService();
             CanvasDomainService CanvasDomainService = new CanvasDomainService();
-            ControllerCommon Common = new Controllers.ControllerCommon();
+            ControllerCommon Common = new ControllerCommon();
             DatatableBag dtb = null;
             UserDTO possibleUser = new UserDTO();
             possibleUser.UserName = Request.GetQueryNameValuePairs().Single(x => x.Key == "userid").Value;
 
-
-
             UserDTO returnedUser = UserDomainService.GetUserForAuthentication(possibleUser);
             UserDTO LoadedUser = null;
+
             if (returnedUser.UserID != -1)
             {
                 LoadedUser = UserDomainService.LoadUser(returnedUser.UserName);
-                //dtb = CanvasDomainService.LoadCanvasListForUser(LoadedUser.UserID);
             }
-
-            //Guid DSGuid, UserGuid;
-
-            //Guid.TryParse(Request.GetQueryNameValuePairs().Single(x => x.Key == "datasourceid").Value, out DSGuid);
-            //Guid.TryParse(Request.GetQueryNameValuePairs().Single(x => x.Key == "userid").Value, out UserGuid);
 
             dtb = CanvasDomainService.ReadCanvasListForLite(Request.GetQueryNameValuePairs().Single(x => x.Key == "datasourceid").Value, LoadedUser.UserID);
 
-            //Guid DSGuid;
-            //string dsid = ; //datasourceid
-            //Guid.TryParse(dsid, out DSGuid);
-
-            //int ewavdatasourceid = AdminDatasourcesDomainService.ReadEWAVDatasource(DSGuid);
-
             List<CanvasDto> CanvasList = new List<CanvasDto>();
             Guid TempCanvasGuid;
+
             for (int i = 0; i < dtb.RecordList.Count; i++)
             {
                 Guid.TryParse(Common.GetValueAtRow(dtb, "CanvasGUID", dtb.RecordList[i]), out TempCanvasGuid);
+
                 CanvasList.Add(
                     new CanvasDto()
                     {
@@ -79,26 +68,14 @@ namespace CDC.ISB.EIDEV.WebApi.Controllers
                         Status = Common.GetValueAtRow(dtb, "Status", dtb.RecordList[i]),
                         Datasource = Common.GetValueAtRow(dtb, "DatasourceName", dtb.RecordList[i]),
                         CanvasGUID = TempCanvasGuid
-
-                        //XmlData = new System.Xml.Linq.XElement()
-                    });
+                    }
+                );
             }
-
-            // CanvasList = CanvasList.Where(canvas => canvas.DatasourceID == ewavdatasourceid).ToList();
 
             if (CanvasList.Count > 0)
             {
                 return true;
             }
-
-            //HttpResponseMessage ReturnedObj = new HttpResponseMessage()
-            //{
-            //    Content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(CanvasList))
-            //};
-
-
-            //ReturnedObj.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
 
             return false;
         }
@@ -129,9 +106,8 @@ namespace CDC.ISB.EIDEV.WebApi.Controllers
 
             var canvasid = new Guid(value["canvasid"].ToString());
 
-
             string KeyForUserPasswordSalt = System.Configuration.ConfigurationManager.AppSettings["KeyForUserPasswordSalt"];
-            CDC.ISB.EIDEV.PasswordHasher ph = new CDC.ISB.EIDEV.PasswordHasher(KeyForUserPasswordSalt);
+            PasswordHasher ph = new PasswordHasher(KeyForUserPasswordSalt);
             string salt = ph.CreateSalt(possibleUser.UserName);
             possibleUser.PasswordHash = ph.HashPassword(salt, pwd);
 
@@ -168,7 +144,6 @@ namespace CDC.ISB.EIDEV.WebApi.Controllers
                         DatasourceID = Convert.ToInt32(Common.GetValueAtRow(dtb, "DatasourceID", dtb.RecordList[i])),
                         Status = Common.GetValueAtRow(dtb, "Status", dtb.RecordList[i]),
                         Datasource = Common.GetValueAtRow(dtb, "DatasourceName", dtb.RecordList[i])
-                        //XmlData = new System.Xml.Linq.XElement()
                     });
             }
 
@@ -188,10 +163,7 @@ namespace CDC.ISB.EIDEV.WebApi.Controllers
                 Content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(returnedUser))
             };
 
-
             ReturnedObj.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-
 
             return ReturnedObj;
         }

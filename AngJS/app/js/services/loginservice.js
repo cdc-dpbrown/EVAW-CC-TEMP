@@ -2,7 +2,6 @@
 
 servicesModule.factory('loginService', function ($http) {
 
-
         return {
             login: function (id, password, canvasid) {
                 var currentUrl = globalURL;
@@ -13,7 +12,6 @@ servicesModule.factory('loginService', function ($http) {
                     canvasid: canvasid
                 }
                 return $http.post(url, bigObject);
-
             }
         }
     }

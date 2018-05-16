@@ -13,6 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="CDC.ISB.EIDEV.AngJS">
+      <HintPath>..\AngJS\bin\CDC.ISB.EIDEV.AngJS.dll</HintPath>
+    </Reference>
     <Reference Include="CDC.ISB.EIDEV.WebApi">
       <HintPath>..\WebApi\bin\CDC.ISB.EIDEV.WebApi.dll</HintPath>
     </Reference>

@@ -1,0 +1,74 @@
+﻿{
+  "ratesGadget": {
+    "dataFilters": {
+      "_recordProcessScope": "undeleted"
+    },
+    "numerVariable": "HouseID",
+    "denomVariable": "HouseID",
+    "numerAggFxVariable": "count",
+    "denomAggFxVariable": "count",
+    "groupVariable": "Region",
+    "groupVariableSecondary": "",
+    "sortColumnsByTabOrder": "False",
+    "usepromptsforcolumnnames": "False",
+    "showListLabels": "False",
+    "showLineColumn": "True",
+    "showColumnHeadings": "True",
+    "showNullLabels": "True",
+    "rateMultiplierString": "100",
+    "showAsPercent": "True",
+    "numerDistinct": "True",
+    "denomDistinct": "True",
+    "customHeading": "Rates",
+    "customDescription": "",
+    "maxRows": "50",
+    "maxColumnNameLength": "24",
+    "maxWidth": "800",
+    "listFields": {
+      "listField": [
+        "MosquitoesPresent"
+      ]
+    },
+    "numerDataFilter": {
+      "dataFilters": {
+        "filterCondition": {
+          "condition": "([MosquitoesPresent] = 1)",
+          "friendlyCondition": "The value of [MosquitoesPresent] is equal to Yes",
+          "columnName": "[MosquitoesPresent]",
+          "columnType": "System.Boolean",
+          "rawColumnName": "MosquitoesPresent",
+          "operand": "=",
+          "friendlyOperand": "is equal to",
+          "value": "1",
+          "friendlyValue": "Yes",
+          "highValue": "",
+          "friendlyHighValue": "",
+          "lowValue": "",
+          "friendlyLowValue": "",
+          "isBetween": "false",
+          "isEnabled": "true",
+          "joinType": ""
+        },
+        "_recordProcessScope": "undeleted"
+      }
+    },
+    "defaultColor": "#FF3F51B5",
+    "useDefaultColor": "False",
+    "color_L1": "#FF3F51B5",
+    "color_L2": "#FFFFEB3B",
+    "color_L3": "#FFFF9800",
+    "color_L4": "#FFF44336",
+    "highValue_L1": "25",
+    "lowValue_L2": "25",
+    "highValue_L2": "50",
+    "lowValue_L3": "50",
+    "highValue_L3": "100",
+    "lowValue_L4": "100",
+    "_top": "54",
+    "_left": "108",
+    "_collapsed": "False",
+    "_gadgetType": "RatesControl",
+    "_id": "056fbfe5-7cd2-4f63-9986-fea651b034dd",
+    "_actualHeight": "342"
+  }
+}
