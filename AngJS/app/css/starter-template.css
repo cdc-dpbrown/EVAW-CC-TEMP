@@ -28,9 +28,9 @@ navbar-inverse .navbar-brand {
 
 .navbar-inverse {
     box-shadow: 0 -1px 0 rgba(77, 117, 164, 0.8) inset;
-    background-image: linear-gradient(to bottom, #4e75a5, #4d75a4);
-    background-color: #4d75a4;
-    border-color: #4d75a4;
+    /* background-image: linear-gradient(to bottom, #4e75a5, #4d75a4); */
+    background-color: white; /* #4d75a4; */
+    border-color: white; /* #4d75a4; */
     background-repeat: repeat;
     background-attachment: scroll;
 }
@@ -93,7 +93,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 .gadgetCss table {
     border-spacing: 1px !important;
     border-collapse: collapse;
-    border: 1px solid #4d75a4 !important;
+    border: 1px solid white !important;
 }
 
 /* Zebra striping */
@@ -115,7 +115,7 @@ h1, .h1, h2, .h2, h3, .h3 {
     padding: 6px 8px 6px 6px;
     text-align: left;
     vertical-align: top;
-    border: 1px solid #4d75a4 !important;
+    border: 1px solid white !important;
 }
 
 .lowmargin {

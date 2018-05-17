@@ -35,7 +35,6 @@ interface ToggleFullScreen {
     chart_id: string;
 }
 
-//type ChartAction = RequestChartAction | ReceiveChartAction | GetChartAction | ToggleFullScreen;
 type ChartActions = RequestChartAction | ReceiveChartAction | GetChartAction | ToggleFullScreen;
 
 export const actionCreators = {
@@ -45,15 +44,16 @@ export const actionCreators = {
 };
 
 const unloadedState: ChartState = {
-    chart_id: null,
-    chart_type: null,
-    chart_inEdit: null,
+    chart_id: '',
+    chart_type: '',
+    chart_inEdit: '',
     chart_loading: false,
     chart_isFullScreen: false,
     chart_isFullWidth: false,
 };
 
-export const reducer: Reducer<ChartState> = (state: ChartState, action: ChartActions) => {
+export const reducer: Reducer<ChartState> = (state: ChartState, incomingAction: Action) => {
+    const action = incomingAction as ChartActions;
     switch (action.type) {
 
         case 'REQUEST_CHART':
@@ -61,16 +61,20 @@ export const reducer: Reducer<ChartState> = (state: ChartState, action: ChartAct
                 chart_id: state.chart_id,
                 chart_type: state.chart_type,
                 chart_inEdit: state.chart_inEdit,
-                chart_loading: true
+                chart_loading: true,
+                chart_isFullScreen: false,
+                chart_isFullWidth: false
             };
 
         case 'RECEIVE_CHART':
             return {
                 chart_id: action.chart_id,
                 chart_json: action.chart_json,
-                chart_type: null,
-                chart_inEdit: null,
-                chart_loading: false
+                chart_type: '',
+                chart_inEdit: '',
+                chart_loading: false,
+                chart_isFullScreen: false,
+                chart_isFullWidth: false
             };
 
         case 'TOGGLE_FULL_SCREEN':
@@ -79,10 +83,13 @@ export const reducer: Reducer<ChartState> = (state: ChartState, action: ChartAct
             console.log(state);
             console.log("action");
             console.log(action);
-
             return {
                 chart_id: action.chart_id,
-                chart_isFullScreen: state.chart_isFullScreen === true ? false : true
+                chart_type: state.chart_type,
+                chart_inEdit: state.chart_inEdit,
+                chart_loading: false,
+                chart_isFullScreen: state.chart_isFullScreen === true ? false : true,
+                chart_isFullWidth: false
             };
 
         case 'GET_CHART':
@@ -90,7 +97,9 @@ export const reducer: Reducer<ChartState> = (state: ChartState, action: ChartAct
                 chart_id: action.chart_id,
                 chart_type: action.chart_type,
                 chart_inEdit: action.chart_inEdit,
-                chart_loading: false
+                chart_loading: false,
+                chart_isFullScreen: false,
+                chart_isFullWidth: false
             };
 
         default:

@@ -4,6 +4,7 @@ import { RouteComponentProps } from 'react-router-dom';
 export default class Home extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
         return <div>
+            {/*
             <h3>Options</h3>
             <p><br /></p>
             <p>Set data source</p>
@@ -23,6 +24,7 @@ export default class Home extends React.Component<RouteComponentProps<{}>, {}> {
             <p>Canvas Properties</p>
             <p>Auto-arrange gadgets</p>
             <p>Refresh data source</p>
+            */}
         </div>;
     }
 }

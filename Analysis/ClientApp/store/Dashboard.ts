@@ -23,10 +23,10 @@ interface ReceiveDashboardAction {
     charts: any;
 }
 
-type DashboardAction = RequestDashboardAction | ReceiveDashboardAction;
+type DashboardActions = RequestDashboardAction | ReceiveDashboardAction;
 
 export const actionCreators = {
-    requestDashboard: (id: string): AppThunkAction<DashboardAction> => (dispatch, getState) => {
+    requestDashboard: (id: string): AppThunkAction<DashboardActions> => (dispatch, getState) => {
         if (id !== getState().dashboard.id) {
             let fetchTask = fetch(`/api/SettingsData/Dashboard?id=${ id }`)
                 .then(response => response.json() as Promise<any>)
@@ -41,14 +41,15 @@ export const actionCreators = {
 };
 
 const unloadedState: DashboardState = {
-    id: null,
+    id: '',
     isLoading: false,
-    json: null,
-    chartIds: null,
-    charts: null
+    json: '',
+    chartIds: [],
+    charts: []
 };
 
-export const reducer: Reducer<DashboardState> = (state: DashboardState, action: DashboardAction) => {
+export const reducer: Reducer<DashboardState> = (state: DashboardState, incomingAction: Action) => {
+    const action = incomingAction as DashboardActions;
     switch (action.type) {
 
         case 'REQUEST_DASHBOARD':
@@ -76,11 +77,11 @@ export const reducer: Reducer<DashboardState> = (state: DashboardState, action: 
             let ids: string[] = [];
             let chartStates: ChartState[] = []; 
 
-            action.json.canvas.charts.forEach((c) => {
+            action.json.canvas.charts.forEach((c: any) => {
                 ids.push(c.chart_id as string);
             })
 
-            action.json.canvas.charts.forEach((c) => {
+            action.json.canvas.charts.forEach((c: any) => {
                 chartStates.push({
                     chart_id: c.chart_id,
                     chart_type: c.chart_type,

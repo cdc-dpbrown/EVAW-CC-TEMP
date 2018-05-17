@@ -18,10 +18,10 @@ export class NavMenu extends React.Component<{}, {}> {
                 <div className='navbar-collapse collapse'>
                     <ul className='nav navbar-nav'>
                         <li>
-                            <NavLink exact to={ '/' } activeClassName='active'>Options</NavLink>
+                            <NavLink exact to={'/'} activeClassName='active'>Options</NavLink>
                         </li>
                         <li>
-                            <NavLink to={ '/set-data-source' } activeClassName='active'>Set Data Source</NavLink>
+                            <NavLink to={'/set-data-source'} activeClassName='active'>Set Data Source</NavLink>
                         </li>
                         <li>
                             <NavLink to={'/open'} activeClassName='active'>Open</NavLink>
@@ -38,6 +38,13 @@ export class NavMenu extends React.Component<{}, {}> {
                         <li>
                             <NavLink to={'/fetchdata'} activeClassName='active'>Filter</NavLink>
                         </li>
+                        {/*
+
+
+
+
+
+                        */}
                     </ul>
                 </div>
             </div>

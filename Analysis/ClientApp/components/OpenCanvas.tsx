@@ -2,11 +2,11 @@ import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
-import * as CanvasStore from '../store/Canvas';
+import * as CanvasStore from '../store/Dashboard';
 import * as WeatherForecasts from '../store/WeatherForecasts';
 
 type CanvasProps =
-    CanvasStore.CanvasState
+    CanvasStore.DashboardState
     & typeof CanvasStore.actionCreators
     & RouteComponentProps<{}>;
 
@@ -30,7 +30,7 @@ class OpenCanvas extends React.Component<CanvasProps, {}> {
 
 // Wire up the React component to the Redux store
 export default connect(
-    (state: ApplicationState) => state.canvas, // Selects which state properties are merged into the component's props
+    (state: ApplicationState) => state.dashboard, // Selects which state properties are merged into the component's props
     CanvasStore.actionCreators                 // Selects which action creators are merged into the component's props
 )(OpenCanvas) as typeof OpenCanvas;
 
